@@ -3,14 +3,83 @@ import polars as pl
 import ollama
 from ddgs import DDGS
 
-def search_internet_for_doctor(query):
-    """Mencari informasi tambahan di internet untuk akun yang meragukan"""
-    print(f"   🌐 [Internet Search] Verifikasi akun di web: {query}...")
+# ==============================================================================
+# MEMORI LOKAL / KNOWLEDGE BASE INFLUENCER KESEHATAN INDONESIA
+# (Bisa kamu tambah sewaktu-waktu tanpa perlu akses internet)
+# ==============================================================================
+# ==============================================================================
+# MEMORI LOKAL / KNOWLEDGE BASE INFLUENCER KESEHATAN INDONESIA (CURATED)
+# ==============================================================================
+HEALTH_INFLUENCERS_MEMORY = [
+    # --- Dokter Umum & Edukator Populer ---
+    "tirta", "tirtacipeng", "dr. tirta",
+    "ayman", "aymanalts", "dr. ayman",
+    "clarin hayes", "clarinhayes", "dr. clarin",
+    "kevin mak", "drkevinmak", "dr. kevin",
+    "gia pratama", "giapratamamd", "dr. gia",
+    "alip hildan", "doklip", "qonita", "doklip universe",
+    "asa ibrahim", "dr. asa",
+    
+    # --- Skincare & Estetika (Medical) ---
+    "zie", "drzie", "yessicatania", "dr. yessica",
+    "richard lee", "dr.richard_lee", "dr. richard",
+    "danar", "dr_danar", "danar wicaksono",
+    "kamila jaidi", "dr. kamila",
+    "ekles", "dr_ekles", "dr. ekles",
+    "abelina", "abelina_md", "dr. abelina",
+    "kamilah", "dr. kamilah",
+    
+    # --- Gizi, Diet & Lifestyle ---
+    "dion haryadi", "dionharyadi", "dr. dion",
+    "hans tandra", "dr. hans",
+    "santi", "susanti", "dr. santi",
+
+    # --- Dokter Spesialis Kandungan (ObGyn) & Seksologi ---
+    "boyke", "wishdrboyke", "drboyke",
+    "yassin bintang", "dr. yassin",
+    "amira", "amiradokter", "dr. amira",
+    "nisa fathoni", "dr. nisa",
+    "boy abidin", "dr. boy abidin",
+
+    # --- Dokter Spesialis Anak (Pediatric) ---
+    "mesty", "mestyariotedjo", "mesty ariotedjo",
+    "meta hanindita", "dr. meta",
+    "citra amelinda", "dr. citra",
+    "k.s. diniari", "dr. dini",
+
+    # --- Penyakit Dalam & Spesialis Lainnya ---
+    "decsa", "dokterdecsa", "decsa medika",
+    "vito damay", "vitodamay", "dr. vito",
+    "ikeda", "dr ikeda", "ikedaputri",
+    
+    # --- Nakes Lainnya (Perawat, Bidan, Apoteker) ---
+    "rizal do", "afrumed", "ners rizal",
+    "bidan novel", "bidannovel",
+    "apt", "apoteker" # Kata kunci umum pendukung
+]
+
+def is_in_health_memory(display_name, signature):
+    """Fungsi cocokologi dengan memori lokal"""
+    text_combined = f"{display_name} {signature}".lower()
+    for key in HEALTH_INFLUENCERS_MEMORY:
+        if key in text_combined:
+            return True, f"Terdeteksi di memori lokal sebagai influencer kesehatan terpercaya ({key})."
+    return False, ""
+
+
+def search_internet_targeted(query):
+    """Pencarian Google terarah khusus kualifikasi influencer kesehatan TikTok"""
+    search_query = f'"{query}" influencer edukator kesehatan tiktok indonesia'
+    print(f"   🌐 [Google Search] Cocokologi web: {search_query}...")
     try:
         with DDGS() as ddgs:
-            results = list(ddgs.text(f"{query} kesehatan tiktok indonesia", max_results=3))
+            results = list(ddgs.text(search_query, max_results=3))
             if not results:
-                return "Tidak ditemukan informasi relevan di internet."
+                # Retry dengan query lebih fleksibel jika query pertama kosong
+                results = list(ddgs.text(f"{query} dokter edukator kesehatan indonesia", max_results=3))
+            
+            if not results:
+                return "Tidak ditemukan data pencarian relevan di internet."
             
             snippets = [f"- {r['title']}: {r['body']}" for r in results]
             return "\n".join(snippets)
@@ -21,39 +90,47 @@ def search_internet_for_doctor(query):
 def check_bio_hybrid(signature, display_name):
     text_to_check = f"Name: {display_name} | Bio: {signature}"
     
-    # PROMPT STAGE 1: Perluasan Indikator Valid & Aturan Bio Singkat
+    # 1. CEK MEMORI LOKAL TERLEBIH DAHULU (FAST PATH)
+    in_memory, memory_reason = is_in_health_memory(display_name, signature)
+    if in_memory:
+        return True, memory_reason, "MEMORY_MATCH"
+
+    # 2. CEK BIO KOSONG
+    if not signature or str(signature).strip() in ("", '""', "null", "None"):
+        return False, "Bio kosong atau informasi terlalu minim.", "LOCAL_DIRECT"
+
+    # 3. PROMPT STAGE 1: EVALUASI KONTEKS LOKAL
     prompt_stage1 = f"""
-    Tugas: Evaluasi profil media sosial berikut untuk memfilter akun EDUKATOR / KREATOR KONTEN KESEHATAN INDONESIA.
+    Tugas: Evaluasi profil media sosial berikut untuk mengidentifikasi apakah pemilik akun adalah EDUKATOR / DOKTER / NAKES / KREATOR KONTEN KESEHATAN MANUSIA INDONESIA.
 
-    KRITERIA VALID (DILOLOSKAN):
-    1. INDIVIDUAL & TIM: Dokter, nakes, mahasiswa kedokteran, edukator kesehatan, health creator, atau tim/kolaborasi edukasi kesehatan (misal: "dokter rame-rame", tim edukasi nakes).
-    2. HOST / CREATOR HEALTH: Kreator/Host yang fokus pada konten kesehatan, wellness, skincare, atau Health & Personal Care.
-    3. GAYA BAHASA & HUMOR: Menggunakan bahasa gaul, humor lokal, istilah "doklip", "dok", "kadang dokter kadang pasien", dll.
-    4. Merek/link skincare, endorse, atau reservasi klinik pribadi TETAP VALID.
+    ANALISIS UTAMA:
 
-    KRITERIA RAGU (WAJIB LEMPAR KE GOOGLE / JAWAB "RAGU"):
-    1. Bio sangat singkat yang HANYA berisi kontak bisnis/endorse/email/WA (contoh: "Business inquiry: email@gmail.com").
-    2. Nama/Bio menggunakan bahasa Inggris standar tanpa penjelasan spesifik apakah dia kreator asal Indonesia.
+    1. UJI PROFESI / SPESIALISASI MEDIS MANUSIA:
+       - Apakah kata "Dokter/Dok/Dr" merujuk pada KESEHATAN MANUSIA / MEDIS ASLI?
+       - BILA METAFORA / NON-MEDIS (misal: "Dokter Sepatu" -> reparasi sepatu, "Dokter HP" -> servis HP, "Dokter Mobil" -> bengkel): WAJIB JAWAB "TIDAK VALID".
+       - BILA GELAR AKADEMIS NON-MEDIS (Doktor S3 Ekonomi/Hukum/dll): WAJIB JAWAB "TIDAK VALID".
 
-    KRITERIA TIDAK VALID (LANGSUNG DITOLAK):
-    1. INSTITUSI / PERUSAHAAN MURNI: Rumah sakit, klinik, PT/CV, instansi pemerintah (contoh: Kemenkes RI), atau brand/pabrik produk.
-    2. BAHASA ASING NON-INGGRIS: Bio 100% menggunakan bahasa Arab, Spanyol, Mandarin, dll. TANPA ada unsur Indonesia/lokal.
-    3. TOKO ONLINE MURNI: Akun jualan baju, makanan, judi online, atau olshop non-kesehatan yang tidak punya unsur edukasi/kreator.
+    2. UJI KONTEN EDUKASI KESEHATAN:
+       - Jika akun merupakan clipper/reposter/tim edukasi, TETAPI fokus materinya adalah EDUKASI KESEHATAN MANUSIA yang valid -> BISA DIANGGAP "VALID" atau "RAGU" untuk dicek Google.
+       - Jika clipper/bot spam non-kesehatan atau olshop/jasa non-medis murni -> JAWAB "TIDAK VALID".
+
+    3. UJI BAHASA & KEWARGANEGARAAN:
+       - Bio full bahasa asing non-Inggris (Arab/Spanyol/dll) tanpa konteks Indonesia -> JAWAB "TIDAK VALID".
+       - Bio bahasa Inggris atau kasual yang belum jelas lokasi/kredensialnya -> WAJIB JAWAB "RAGU" AGAR DICEK GOOGLE.
 
     PILIH SALAH SATU KEPUTUSAN:
-    - "VALID" : Jika yakin ini edukator/kreator kesehatan/host personal care Indonesia.
-    - "TIDAK VALID" : Jika murni instansi/perusahaan, toko online non-kreator, atau akun luar negeri.
-    - "RAGU" : Jika bionya hanya kontak endorse/bisnis singkat, atau belum jelas konteks Indonesianya.
+    - "VALID" : Jika terbukti kuat merupakan dokter/nakes/edukator kesehatan manusia Indonesia.
+    - "TIDAK VALID" : Jika metafora (reparasi sepatu/HP), dokter non-medis, jasa non-kesehatan, atau luar negeri.
+    - "RAGU" : Jika bionya meragukan dan butuh konfirmasi via Google Search.
 
     Format Balasan (WAJIB PERSIS):
     KEPUTUSAN: [VALID / TIDAK VALID / RAGU]
-    ALASAN: [1 kalimat singkat]
+    ALASAN: [1 kalimat analisis kontekstual]
 
     Profil: "{text_to_check}"
     """
 
     try:
-        # Step 1: Cek Lokal via Ollama
         response = ollama.chat(
             model='llama3.1',
             messages=[{'role': 'user', 'content': prompt_stage1}],
@@ -69,24 +146,24 @@ def check_bio_hybrid(signature, display_name):
 
         reason = content.split("ALASAN:")[-1].strip() if "ALASAN:" in content.upper() else content
 
-        # Step 2: Cek Internet Khusus yang "RAGU"
+        # 4. STAGE 2: PENCARIAN GOOGLE TERARAH JIKA "RAGU"
         if status == "RAGU":
-            search_context = search_internet_for_doctor(display_name)
+            search_context = search_internet_targeted(display_name)
             
             prompt_stage2 = f"""
-            Tugas: Tentukan apakah profil berikut milik Edukator / Nakes / Health Creator Indonesia berdasarkan data internet.
+            Tugas: Tentukan apakah profil berikut milik Influencer / Edukator / Dokter Kesehatan MANUSIA di Indonesia berdasarkan data pencarian web.
 
             Profil: "{text_to_check}"
-            Hasil Google:
+            Hasil Google Search:
             {search_context}
 
-            Aturan:
-            - Jika dari hasil pencarian terbukti dia adalah kreator kesehatan/host/edukator/dokter Indonesia, jawab "VALID".
-            - Jika ternyata akun toko murni non-kreator, instansi/perusahaan, atau dari luar negeri, jawab "TIDAK VALID".
+            ATURAN EVALUASI GOOGLE:
+            1. Jika dari hasil Google terbukti dia adalah influencer/kreator/dokter/nakes edukasi kesehatan asal Indonesia, jawab "VALID".
+            2. Jika hasil Google menunjukkan dia berasal dari luar negeri, jasa reparasi/non-medis, atau tidak ada bukti bahwa dia edukator kesehatan Indonesia, jawab "TIDAK VALID".
 
             Format Balasan:
             KEPUTUSAN: [VALID / TIDAK VALID]
-            ALASAN: [1 kalimat berdasarkan data internet]
+            ALASAN: [1 kalimat berdasarkan bukti Google]
             """
 
             response_web = ollama.chat(
@@ -108,7 +185,7 @@ def check_bio_hybrid(signature, display_name):
 
 
 def filter_valid_influencers(input_csv, final_csv):
-    print("🎬 === MEMULAI PENYARINGAN HYBRID (PERLUASAN EDUKATOR + WEB SEARCH) ===")
+    print("🎬 === MEMULAI PENYARINGAN HYBRID (MEMORY + CONTEXT AI + TARGETED GOOGLE) ===")
 
     if not os.path.exists(input_csv):
         print(f"❌ File input tidak ditemukan: {input_csv}")
@@ -167,6 +244,6 @@ def filter_valid_influencers(input_csv, final_csv):
 
 if __name__ == "__main__":
     file_mentah = r"01_pengumpulan_data\01_scrapping_informasi_akun\metadata_akun_raw.csv"
-    file_final = r"01_pengumpulan_data\02_filter_akun_folls_like_bio\metadata_akun_filtered_1.csv"
+    file_final = r"01_pengumpulan_data\02_filter_akun_folls_like_bio\metadata_akun_filtered_reasoning.csv"
 
     filter_valid_influencers(file_mentah, file_final)
