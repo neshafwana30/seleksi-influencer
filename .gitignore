@@ -217,3 +217,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+tiktok_browser_profile/
+tiktok_cookies_raw.json
+tiktok_cookies.json

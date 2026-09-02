@@ -68,23 +68,28 @@ def is_in_health_memory(display_name, signature):
 
 
 def search_internet_targeted(query):
-    """Pencarian Google terarah khusus kualifikasi influencer kesehatan TikTok"""
-    search_query = f'"{query}" influencer edukator kesehatan tiktok indonesia'
-    print(f"   🌐 [Google Search] Cocokologi web: {search_query}...")
+    """Pencarian menggunakan DuckDuckGo dengan penekanan asal negara dan bahasa"""
+    search_query = f'"{query}" asal negara profil dokter influencer kesehatan tiktok indonesia'
+    print(f"   🌐 [DuckDuckGo] Cocokologi web: {search_query}...")
+    
     try:
         with DDGS() as ddgs:
+            # Mengambil 3 hasil teratas dari DuckDuckGo
             results = list(ddgs.text(search_query, max_results=3))
+            
             if not results:
-                # Retry dengan query lebih fleksibel jika query pertama kosong
-                results = list(ddgs.text(f"{query} dokter edukator kesehatan indonesia", max_results=3))
+                # Retry dengan query cadangan
+                results = list(ddgs.text(f"{query} dokter nakes pembuat konten bahasa indonesia", max_results=3))
             
             if not results:
                 return "Tidak ditemukan data pencarian relevan di internet."
             
+            # Format output dari DDGS itu r['title'] dan r['body']
             snippets = [f"- {r['title']}: {r['body']}" for r in results]
             return "\n".join(snippets)
+            
     except Exception as e:
-        return f"Gagal akses internet: {e}"
+        return f"Gagal akses DuckDuckGo: {e}"
 
 
 def check_bio_hybrid(signature, display_name):
@@ -101,34 +106,40 @@ def check_bio_hybrid(signature, display_name):
 
     # 3. PROMPT STAGE 1: EVALUASI KONTEKS LOKAL
     prompt_stage1 = f"""
-    Tugas: Evaluasi profil media sosial berikut untuk mengidentifikasi apakah pemilik akun adalah EDUKATOR / DOKTER / NAKES / KREATOR KONTEN KESEHATAN MANUSIA INDONESIA.
+        Tugas: Evaluasi profil media sosial berikut untuk mengidentifikasi apakah pemilik akun adalah EDUKATOR / DOKTER / NAKES / KREATOR KONTEN KESEHATAN MANUSIA INDONESIA yang bersifat PERORANGAN (INDIVIDU).
 
-    ANALISIS UTAMA:
+        ANALISIS UTAMA:
 
-    1. UJI PROFESI / SPESIALISASI MEDIS MANUSIA:
-       - Apakah kata "Dokter/Dok/Dr" merujuk pada KESEHATAN MANUSIA / MEDIS ASLI?
-       - BILA METAFORA / NON-MEDIS (misal: "Dokter Sepatu" -> reparasi sepatu, "Dokter HP" -> servis HP, "Dokter Mobil" -> bengkel): WAJIB JAWAB "TIDAK VALID".
-       - BILA GELAR AKADEMIS NON-MEDIS (Doktor S3 Ekonomi/Hukum/dll): WAJIB JAWAB "TIDAK VALID".
+        1. UJI ENTITAS (INDIVIDU VS INSTITUSI/BRAND/APLIKASI) -> PALING KRUSIAL:
+        - Target UTAMA adalah KREATOR PERORANGAN.
+        - BILA INSTITUSI PEMERINTAH / LEMBAGA (misal: "Badan Gizi Nasional", "Kemenkes", "Dinas Kesehatan", "Puskesmas", "BPOM"): WAJIB JAWAB "TIDAK VALID".
+        - BILA APLIKASI / PERUSAHAAN / STARTUP (misal: "Alodokter", "Halodoc", "KlikDokter", "Siloam", "Media Medis"): WAJIB JAWAB "TIDAK VALID".
+        - BILA RUMAH SAKIT / KLINIK / BRAND SKINCARE (yang bukan akun personal): WAJIB JAWAB "TIDAK VALID".
 
-    2. UJI KONTEN EDUKASI KESEHATAN:
-       - Jika akun merupakan clipper/reposter/tim edukasi, TETAPI fokus materinya adalah EDUKASI KESEHATAN MANUSIA yang valid -> BISA DIANGGAP "VALID" atau "RAGU" untuk dicek Google.
-       - Jika clipper/bot spam non-kesehatan atau olshop/jasa non-medis murni -> JAWAB "TIDAK VALID".
+        2. UJI PROFESI / SPESIALISASI MEDIS MANUSIA:
+        - Apakah kata "Dokter/Dok/Dr" merujuk pada KESEHATAN MANUSIA / MEDIS ASLI?
+        - BILA METAFORA / NON-MEDIS (misal: "Dokter Sepatu" -> reparasi sepatu, "Dokter HP" -> servis HP, "Dokter Mobil" -> bengkel): WAJIB JAWAB "TIDAK VALID".
+        - BILA GELAR AKADEMIS NON-MEDIS (Doktor S3 Ekonomi/Hukum/dll): WAJIB JAWAB "TIDAK VALID".
 
-    3. UJI BAHASA & KEWARGANEGARAAN:
-       - Bio full bahasa asing non-Inggris (Arab/Spanyol/dll) tanpa konteks Indonesia -> JAWAB "TIDAK VALID".
-       - Bio bahasa Inggris atau kasual yang belum jelas lokasi/kredensialnya -> WAJIB JAWAB "RAGU" AGAR DICEK GOOGLE.
+        3. UJI KONTEN EDUKASI KESEHATAN:
+        - Jika akun membagikan edukasi kesehatan secara individu/perorangan -> BISA DIANGGAP "VALID" atau "RAGU" untuk dicek Google.
+        - Jika bot spam, olshop murni non-kesehatan, atau clipper tanpa nilai edukasi -> WAJIB JAWAB "TIDAK VALID".
 
-    PILIH SALAH SATU KEPUTUSAN:
-    - "VALID" : Jika terbukti kuat merupakan dokter/nakes/edukator kesehatan manusia Indonesia.
-    - "TIDAK VALID" : Jika metafora (reparasi sepatu/HP), dokter non-medis, jasa non-kesehatan, atau luar negeri.
-    - "RAGU" : Jika bionya meragukan dan butuh konfirmasi via Google Search.
+        4. UJI BAHASA & KEWARGANEGARAAN:
+        - Bio full bahasa asing non-Inggris (Arab/Spanyol/dll) tanpa konteks Indonesia -> WAJIB JAWAB "TIDAK VALID".
+        - Bio bahasa Inggris atau kasual yang belum jelas lokasi/kredensialnya -> WAJIB JAWAB "RAGU" AGAR DICEK GOOGLE.
 
-    Format Balasan (WAJIB PERSIS):
-    KEPUTUSAN: [VALID / TIDAK VALID / RAGU]
-    ALASAN: [1 kalimat analisis kontekstual]
+        PILIH SALAH SATU KEPUTUSAN:
+        - "VALID" : Jika terbukti kuat merupakan INDIVIDU / PERORANGAN dokter/nakes/edukator kesehatan Indonesia.
+        - "TIDAK VALID" : Jika institusi pemerintah, aplikasi, rumah sakit, klinik, brand, metafora (reparasi), atau jasa non-kesehatan.
+        - "RAGU" : Jika bionya meragukan (perorangan atau bukan) dan butuh konfirmasi via Google.
 
-    Profil: "{text_to_check}"
-    """
+        Format Balasan (WAJIB PERSIS):
+        KEPUTUSAN: [VALID / TIDAK VALID / RAGU]
+        ALASAN: [1 kalimat analisis kontekstual]
+
+        Profil: "{text_to_check}"
+        """
 
     try:
         response = ollama.chat(
@@ -151,15 +162,16 @@ def check_bio_hybrid(signature, display_name):
             search_context = search_internet_targeted(display_name)
             
             prompt_stage2 = f"""
-            Tugas: Tentukan apakah profil berikut milik Influencer / Edukator / Dokter Kesehatan MANUSIA di Indonesia berdasarkan data pencarian web.
+            Tugas: Tentukan apakah profil berikut milik Influencer / Edukator / Dokter Kesehatan MANUSIA yang berasal dari / berdomisili di INDONESIA dan membuat konten BERBAHASA INDONESIA.
 
             Profil: "{text_to_check}"
             Hasil Google Search:
             {search_context}
 
-            ATURAN EVALUASI GOOGLE:
-            1. Jika dari hasil Google terbukti dia adalah influencer/kreator/dokter/nakes edukasi kesehatan asal Indonesia, jawab "VALID".
-            2. Jika hasil Google menunjukkan dia berasal dari luar negeri, jasa reparasi/non-medis, atau tidak ada bukti bahwa dia edukator kesehatan Indonesia, jawab "TIDAK VALID".
+            ATURAN EVALUASI GOOGLE (WAJIB DIIKUTI):
+            1. UJI ASAL NEGARA & BAHASA: Jika hasil Google membuktikan dia berasal dari LUAR NEGERI (misal: Malaysia, Amerika, Inggris, dll) atau bukan pembuat konten berbahasa Indonesia, WAJIB jawab "TIDAK VALID".
+            2. UJI ENTITAS: Jika dia ternyata institusi pemerintah, aplikasi, atau brand (bukan individu), jawab "TIDAK VALID".
+            3. Jika hasil Google terbukti bahwa dia adalah EDUKATOR PERORANGAN asal INDONESIA yang membuat konten kesehatan, jawab "VALID".
 
             Format Balasan:
             KEPUTUSAN: [VALID / TIDAK VALID]
