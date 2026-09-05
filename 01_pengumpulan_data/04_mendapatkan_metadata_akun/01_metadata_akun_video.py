@@ -7,19 +7,32 @@ Output:
   - metadata_video.csv : like_count, comment_count, share_count, save_count, description
 
 Fitur:
-- Lazy scraping: delay panjang antar video (30-60s) + antar influencer (10-15 min)
-- Resume otomatis: skip influencer yang sudah di-scrape profil-nya
-- Batch write per 10 video buat minimize data loss
+- DIRECT LINK NAVIGATION (v2 -> v4): Langsung goto ke video link @username/video/videoid
+  (gak perlu scroll grid, gak perlu klik, gak perlu arrow key). Lebih cepat & reliable.
+- Video ID selalu diambil dari master CSV, dipakai buat bikin link video.
+- Lazy scraping: delay antar video (10-50s) + jeda panjang tiap 300 video
+  (2-3 menit) + delay antar influencer (3-5 menit)
+- Resume otomatis (v3): urutan proses TETAP SESUAI urutan asli di master
+  CSV, cuma yang sudah profil+video lengkap yang di-skip.
+- TIKTOK SHOP VIDEO DETECTION: video TikTok Shop (warning "can only be viewed
+  in the TikTok app") DIBEDAIN dari captcha -> langsung skip, gak nunggu.
+- EXTRACT METADATA (FIXED): nunggu elemen like-count BENERAN muncul + ada
+  isinya sebelum extract (bukan cuma nunggu URL berubah). Kalau gagal load
+  dalam waktu wajar, video di-skip (bukan nulis nol palsu) -> otomatis ke-retry.
+- Write LANGSUNG per video ke CSV -> minimize data loss.
 - Audio warning saat captcha (pygame)
-- Dedup: gak ulang video yang sudah ada
+- TELEGRAM ALERT saat captcha kedeteksi / solved / timeout
+- Dedup: gak ulang video yang sudah ada di CSV
 """
 
 import asyncio
 import csv
 import os
+import sys
 import random
 import pygame
-from datetime import datetime, timedelta, timezone
+import requests
+from datetime import datetime
 
 from playwright.async_api import async_playwright
 
@@ -49,19 +62,54 @@ VIDEO_FIELDS = ["username", "video_id", "video_url", "like_count", "comment_coun
                 "share_count", "save_count", "description", "scraped_at"]
 
 # ============================================================
-# KONFIGURASI SCRAPING (LAZY/SLOW)
+# KONFIGURASI SCRAPING (LAZY/SLOW, HUMAN-LIKE)
 # ============================================================
-DELAY_BETWEEN_VIDEO = (30, 60)        # 30-60 detik antar video
-DELAY_BETWEEN_INFLUENCER = (10*60, 15*60)  # 10-15 menit antar influencer
-DELAY_EVERY_N_VIDEOS = 15             # Setelah 15 video, jeda panjang
-DELAY_AFTER_N_VIDEOS = (3*60, 5*60)   # 3-5 menit jeda panjang (anti-captcha)
-BATCH_SIZE_VIDEO = 10
-MAX_VIDEOS_PER_INFLUENCER = 200  # safety cap
+DELAY_BETWEEN_VIDEO = (10, 40)             # jeda antar video
+DELAY_BETWEEN_INFLUENCER = (30, 120)  # 3-5 menit antar influencer
+DELAY_EVERY_N_VIDEOS = 300                  # tiap N video, jeda panjang
+DELAY_AFTER_N_VIDEOS = (2 * 60, 3 * 60)    # 2-3 menit jeda panjang (anti-captcha)
+METADATA_READY_TIMEOUT = 10000             # ms -- max nunggu elemen like-count
 
 REALISTIC_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 )
+
+
+# ============================================================
+# TELEGRAM ALERT
+# ============================================================
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
+try:
+    from credentials import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+    TELEGRAM_ENABLED = bool(TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID)
+    if TELEGRAM_ENABLED:
+        print(f"✅ credentials.py ketemu di {ROOT_DIR} -> Telegram alert ENABLED.")
+except ImportError:
+    TELEGRAM_BOT_TOKEN = None
+    TELEGRAM_CHAT_ID = None
+    TELEGRAM_ENABLED = False
+    print(f"⚠️  credentials.py gak ketemu di {ROOT_DIR} -> Telegram alert DISABLED.")
+
+
+def send_telegram_alert(message: str):
+    """Kirim notifikasi ke Telegram. Silent-fail kalau gagal."""
+    if not TELEGRAM_ENABLED:
+        print(f"   📵 [Telegram disabled] pesan gak dikirim: {message[:60]}...")
+        return
+    try:
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        payload = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
+        resp = requests.post(url, json=payload, timeout=10)
+        data = resp.json()
+        if not data.get("ok"):
+            print(f"   ⚠️ Telegram API nolak pesan: {data}")
+        else:
+            print(f"   📤 Telegram terkirim: {message[:60]}...")
+    except Exception as e:
+        print(f"   ⚠️ Gagal kirim Telegram alert: {e}")
 
 
 # ============================================================
@@ -95,7 +143,7 @@ def stop_warning():
 # HELPER: baca master CSV
 # ============================================================
 def load_master_csv():
-    """Load video_ids_master.csv, group by username."""
+    """Load video_ids_master.csv, group by username (urutan sesuai urutan di CSV)."""
     videos_by_user = {}
     with open(MASTER_CSV, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
@@ -165,11 +213,10 @@ def append_video_rows(rows):
 # ============================================================
 # LOGIN WALL / CAPTCHA CHECK (timeout 10 menit)
 # ============================================================
-async def wait_for_login_wall_clear(page, timeout=600):
+async def wait_for_login_wall_clear(page, timeout=600, context_label=""):
     """
     Check & wait untuk login wall/captcha hilang.
-    Default timeout: 600 detik = 10 menit (sesuai request user).
-    Kalo 10 menit gak di-solve, return False & exit program.
+    Default timeout: 600 detik = 10 menit.
     """
     blocker_selectors = [
         'text="Log in to TikTok"',
@@ -180,9 +227,15 @@ async def wait_for_login_wall_clear(page, timeout=600):
         '[id*="captcha"]',
         '[class*="captcha"]',
         'iframe[src*="captcha"]',
+        'img[alt="Captcha" i]',
+        'img[alt*="captcha" i]',
     ]
+    ALERT_REPEAT_EVERY = 30  # detik -- kirim ulang reminder Telegram tiap segini
+
     start = asyncio.get_event_loop().time()
     was_found = False
+    alert_sent = False
+    last_alert_at = None
 
     while asyncio.get_event_loop().time() - start < timeout:
         found = False
@@ -199,30 +252,80 @@ async def wait_for_login_wall_clear(page, timeout=600):
             if was_found:
                 print("   ✅ Captcha/login wall hilang, lanjut.")
                 stop_warning()
+                if alert_sent:
+                    send_telegram_alert(
+                        f"✅ Captcha solved! Lanjut Scraping! 🚀\n{context_label}".strip()
+                    )
                 await asyncio.sleep(random.uniform(2, 4))
             return True
 
-        if not was_found:
-            elapsed = asyncio.get_event_loop().time() - start
-            print("\n" + "="*70)
-            print("   🔒 🔊 CAPTCHA / LOGIN WALL TERDETEKSI !!!")
-            print(f"   ⏰ Timeout dalam {timeout - int(elapsed)} detik ({(timeout - int(elapsed))/60:.1f} menit)")
-            print("="*70)
-            play_warning()
-        was_found = True
-        elapsed = asyncio.get_event_loop().time() - start
+        now = asyncio.get_event_loop().time()
+        elapsed = now - start
         remaining = int(timeout - elapsed)
-        print(f"   ⏳ Solve dalam {remaining}s ({remaining/60:.1f} menit)...", end="\r")
+
+        if not was_found:
+            print("\n" + "=" * 70)
+            print("   🔒 🔊 CAPTCHA / LOGIN WALL TERDETEKSI !!!")
+            print(f"   ⏰ Timeout dalam {remaining} detik ({remaining / 60:.1f} menit)")
+            print("=" * 70)
+            play_warning()
+
+        if last_alert_at is None or (now - last_alert_at) >= ALERT_REPEAT_EVERY:
+            send_telegram_alert(
+                "⚠️ CAPTCHA DETECTED!\n"
+                f"{context_label}\n"
+                f"Waktu: {datetime.now().strftime('%H:%M:%S')}\n"
+                f"⏳ Sisa waktu: {remaining}s ({remaining / 60:.1f} menit)\n\n"
+                "📱 Buka Chrome Remote Desktop di HP buat solve."
+            )
+            alert_sent = True
+            last_alert_at = now
+
+        was_found = True
+        print(f"   ⏳ Solve dalam {remaining}s ({remaining / 60:.1f} menit)...", end="\r")
         await asyncio.sleep(3)
 
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("   ❌ TIMEOUT 10 MENIT - CAPTCHA GAK DI-SOLVE!")
     print("   Program akan ditutup...")
-    print("="*70)
+    print("=" * 70)
     stop_warning()
+    send_telegram_alert(
+        "❌ CAPTCHA TIMEOUT (10 menit)!\n"
+        f"{context_label}\n"
+        "Program dihentikan. Data yang sempat ke-scrape aman di CSV.\n"
+        "Jalanin ulang script kapan aja, otomatis resume."
+    )
     raise CaptchaTimeoutError(
         "Captcha/login wall gak di-solve dalam 10 menit. Program dihentikan."
     )
+
+
+# ============================================================
+# TIKTOK SHOP / VIDEO UNPLAYABLE CHECK
+# ============================================================
+async def is_video_unplayable(page):
+    """
+    Deteksi video yang MEMANG gak bisa diputar di browser -- paling sering
+    video TikTok Shop yang mucul warning "can only be viewed in the TikTok
+    app". Ini BUKAN captcha!
+    """
+    selectors = [
+        'text=/can\\s*only\\s*be\\s*viewed\\s*in\\s*the\\s*tiktok\\s*app/i',
+        'text=/only\\s*available\\s*(on|in)\\s*the\\s*tiktok\\s*app/i',
+        'text=/hanya\\s*(dapat|bisa)\\s*dilihat\\s*di\\s*aplikasi\\s*tiktok/i',
+        'text=/video\\s*(is\\s*)?not\\s*available/i',
+        'text=/video\\s*ini\\s*tidak\\s*tersedia/i',
+        'text=/this\\s*video\\s*is\\s*unavailable/i',
+    ]
+    for sel in selectors:
+        try:
+            elem = await page.query_selector(sel)
+            if elem and await elem.is_visible():
+                return True
+        except Exception:
+            continue
+    return False
 
 
 # ============================================================
@@ -243,10 +346,9 @@ async def scrape_profil_metadata(page, username):
         return None
 
     await asyncio.sleep(random.uniform(2, 4))
-    await wait_for_login_wall_clear(page, timeout=600)
+    await wait_for_login_wall_clear(page, timeout=600, context_label=f"@{username} (profil)")
 
     try:
-        # Extract followers/following dari text "123.4K Followers"
         followers_text = ""
         following_text = ""
         bio_text = ""
@@ -254,51 +356,45 @@ async def scrape_profil_metadata(page, username):
         is_verified = False
         avatar_url = ""
 
-        # Followers count (biasanya di h3 dengan text "Followers")
         try:
             followers_elem = await page.query_selector('h3:has-text("Followers")')
             if followers_elem:
                 followers_text = await followers_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Following count
         try:
             following_elem = await page.query_selector('h3:has-text("Following")')
             if following_elem:
                 following_text = await following_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Bio / signature
         try:
             bio_elem = await page.query_selector('[data-e2e="user-bio"]')
             if bio_elem:
                 bio_text = await bio_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Display name
         try:
             name_elem = await page.query_selector('h1')
             if name_elem:
                 display_name = await name_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Verification badge
         try:
             verified_badge = await page.query_selector('svg[data-e2e="icon-verified"]')
             is_verified = verified_badge is not None
-        except:
+        except Exception:
             is_verified = False
 
-        # Avatar URL
         try:
             avatar_elem = await page.query_selector('img[alt*="avatar"]')
             if avatar_elem:
                 avatar_url = await avatar_elem.get_attribute("src")
-        except:
+        except Exception:
             pass
 
         row = {
@@ -321,23 +417,26 @@ async def scrape_profil_metadata(page, username):
 
 
 # ============================================================
-# SCRAPE VIDEO METADATA
+# MODAL: extract metadata dari video yang lagi kebuka
 # ============================================================
-async def scrape_video_metadata(page, username, video_url, video_id):
+async def extract_video_metadata_current(page, username):
     """
-    Buka video page, extract: like_count, comment_count, share_count,
-    save_count, description.
+    Extract like/comment/share/save/description dari video yang LAGI TERBUKA.
+    
+    PENTING (fix race condition): TikTok itu SPA -- URL video bisa berubah
+    DULUAN sebelum konten detail video (like-count, share-count, dll)
+    beneran ke-render. Kalau extract langsung abis URL berubah, ada
+    kemungkinan semua elemen masih kosong -> ke-extract semua "0"/kosong
+    padahal videonya valid. Makanya di sini WAJIB nunggu elemen like-count
+    beneran muncul (dan ada isinya) dulu sebelum extract beneran.
     """
-    print(f"   🎬 Buka video {video_id[:8]}...")
-
     try:
-        await page.goto(video_url, wait_until="load", timeout=60000)
-    except Exception as e:
-        print(f"      ❌ Gagal buka video: {e}")
+        await page.wait_for_selector('[data-e2e="like-count"]', timeout=METADATA_READY_TIMEOUT)
+    except Exception:
+        print(f"      ⚠️ Elemen metadata (like-count) gak muncul dalam "
+              f"{METADATA_READY_TIMEOUT / 1000:.0f}s -- render kemungkinan lambat / "
+              "video gak valid. Skip dulu, bakal ke-retry otomatis di run berikutnya.")
         return None
-
-    await asyncio.sleep(random.uniform(2, 3))
-    await wait_for_login_wall_clear(page, timeout=600)
 
     try:
         like_count = ""
@@ -346,69 +445,160 @@ async def scrape_video_metadata(page, username, video_url, video_id):
         save_count = ""
         description = ""
 
-        # Like count
         try:
             like_elem = await page.query_selector('[data-e2e="like-count"]')
             if like_elem:
                 like_count = await like_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Comment count
         try:
             comment_elem = await page.query_selector('[data-e2e="comment-count"]')
             if comment_elem:
                 comment_count = await comment_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Share count
         try:
             share_elem = await page.query_selector('[data-e2e="share-count"]')
             if share_elem:
                 share_count = await share_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        # Save count (bookmark)
         try:
-            save_elem = await page.query_selector('strong[data-e2e$="-count"]')
+            save_elem = await page.query_selector('[data-e2e="favorite-count"]')
             if save_elem:
-                # Ambil dari urutan ke-4 (biasanya: like, comment, save, share)
-                all_counts = await page.query_selector_all('strong[data-e2e$="-count"]')
-                if len(all_counts) >= 3:
-                    save_count = await all_counts[2].text_content()
-        except:
+                save_count = await save_elem.text_content()
+        except Exception:
             pass
 
-        # Description
         try:
             desc_elem = await page.query_selector('[data-e2e="video-desc"]')
             if desc_elem:
                 description = await desc_elem.text_content()
-        except:
+        except Exception:
             pass
 
-        row = {
-            "username": username,
-            "video_id": video_id,
-            "video_url": video_url,
+        # Sanity check tambahan: elemen like-count udah ADA di DOM (lolos
+        # wait_for_selector di atas), tapi kalau TEKS-nya masih kosong itu
+        # artinya render-nya belum selesai (elemen nempel duluan, isinya
+        # nyusul beberapa saat kemudian). Kasih 1x kesempatan retry.
+        if not (like_count or "").strip():
+            print("      ⚠️ like-count elemen ada tapi teksnya masih kosong -- "
+                  "kemungkinan render belum selesai, tunggu & retry sekali...")
+            await asyncio.sleep(2)
+            try:
+                like_elem = await page.query_selector('[data-e2e="like-count"]')
+                if like_elem:
+                    like_count = await like_elem.text_content()
+            except Exception:
+                pass
+            if not (like_count or "").strip():
+                print("      ⚠️ Masih kosong setelah retry. Skip video ini dulu.")
+                return None
+
+        return {
             "like_count": like_count.strip() if like_count else "0",
             "comment_count": comment_count.strip() if comment_count else "0",
             "share_count": share_count.strip() if share_count else "0",
             "save_count": save_count.strip() if save_count else "0",
             "description": description.strip() if description else "",
-            "scraped_at": datetime.now().isoformat(),
         }
-
-        print(f"      ✅ Video {video_id[:8]}: "
-              f"like={row['like_count']}, comment={row['comment_count']}, "
-              f"share={row['share_count']}, save={row['save_count']}")
-        return row
-
     except Exception as e:
-        print(f"      ❌ Error scrape video: {e}")
+        print(f"      ❌ Error extract metadata: {e}")
         return None
+
+
+# ============================================================
+# CORE: scrape semua video 1 influencer (langsung goto link)
+# ============================================================
+async def scrape_videos_human_like(page, username, target_video_ids, scraped_videos,
+                                    csv_writer_callback):
+    """
+    target_video_ids : set of video_id yang KITA MAU (dari master.csv, sudah
+                        difilter needs_comment_scrape==True) untuk username ini.
+    scraped_videos   : set (username, video_id) yang sudah ada di CSV (in-memory,
+                        dipakai buat skip + di-update tiap dapet video baru).
+    csv_writer_callback : dipanggil tiap video selesai, buat nulis ke CSV.
+
+    Return: jumlah video baru yang berhasil di-extract.
+    
+    Flow: LANGSUNG goto ke video link @username/video/videoid (gak perlu scroll
+    grid). Login/captcha check tetap sama sebelumnya.
+    """
+    videos_scraped_count = 0
+
+    # Filter: hanya video yang belum discrape & ada di target list
+    pending_videos = [
+        vid for vid in target_video_ids
+        if (username, vid) not in scraped_videos
+    ]
+
+    if not pending_videos:
+        print(f"   ⏭️  Semua video @{username} sudah ada di CSV, gak ada yang diproses.")
+        return 0
+
+    print(f"   📋 Total video yang perlu discrape: {len(pending_videos)}")
+
+    for idx, vid in enumerate(pending_videos, start=1):
+        video_url = f"https://www.tiktok.com/@{username}/video/{vid}"
+        print(f"\n   [{idx}/{len(pending_videos)}] Buka: {video_url}")
+
+        try:
+            await page.goto(video_url, wait_until="load", timeout=60000)
+        except Exception as e:
+            print(f"      ⚠️ Gagal goto video: {e}")
+            continue
+
+        await asyncio.sleep(random.uniform(2, 3))
+
+        # ⚡ Cek TikTok Shop / video unplayable DULU, SEBELUM cek captcha
+        if await is_video_unplayable(page):
+            print(f"      🛍️  Video {vid[:10]} adalah TikTok Shop video "
+                  f"(cuma bisa dilihat di app) -- skip.")
+            continue
+
+        # Cek & tunggu captcha/login wall hilang
+        await wait_for_login_wall_clear(
+            page, timeout=600, context_label=f"@{username} (video {vid[:10]})"
+        )
+
+        # Extract metadata
+        meta = await extract_video_metadata_current(page, username)
+        if meta:
+            row = {
+                "username": username,
+                "video_id": vid,
+                "video_url": video_url,
+                **meta,
+                "scraped_at": datetime.now().isoformat(),
+            }
+            csv_writer_callback([row])
+            print(f"      💾 Tersimpan ke CSV: video {vid[:10]}")
+            scraped_videos.add((username, vid))
+            videos_scraped_count += 1
+            print(f"      ✅ Video {vid[:10]}: like={meta['like_count']}, "
+                  f"comment={meta['comment_count']}, share={meta['share_count']}, "
+                  f"save={meta['save_count']}")
+        else:
+            # Extract gagal (timeout/kosong), video gak ditandai scraped
+            # -> otomatis ke-retry di run berikutnya
+            print(f"      ⏭️  Video {vid[:10]} di-skip (metadata gagal di-load), "
+                  f"belum ditandai scraped -- bakal ke-retry di run berikutnya.")
+
+        # Jeda antar video
+        if videos_scraped_count % DELAY_EVERY_N_VIDEOS == 0 and videos_scraped_count > 0:
+            long_delay = random.uniform(*DELAY_AFTER_N_VIDEOS)
+            print(f"\n      🌙 Jeda PANJANG {long_delay / 60:.1f} menit "
+                  f"(anti-captcha, setelah {videos_scraped_count} video total)...")
+            await asyncio.sleep(long_delay)
+        else:
+            delay = random.uniform(*DELAY_BETWEEN_VIDEO)
+            print(f"      ⏳ Jeda {delay:.0f}s...")
+            await asyncio.sleep(delay)
+
+    return videos_scraped_count
 
 
 # ============================================================
@@ -423,11 +613,7 @@ async def main():
     print(f"   Profil sudah scraped: {len(scraped_profil)}")
     print(f"   Video sudah scraped: {len(scraped_videos)}")
 
-    # ⚡ FIX RESUME: seorang influencer di-skip TOTAL cuma kalau profil-nya
-    # SUDAH discrape DAN semua video-nya juga udah ada di CSV. Kalau
-    # sebelumnya berhenti di tengah jalan (misal captcha timeout) padahal
-    # profil udah sempat ke-scrape, video yang tersisa harus tetap
-    # dilanjutkan -- bukan di-skip cuma karena profil udah ada.
+    # ====== RESUME LOGIC (v3 -- urutan asli master CSV) ======
     to_process = []
     n_fully_done = 0
     for u in videos_by_user.keys():
@@ -446,7 +632,14 @@ async def main():
 
     if not to_process:
         print("✅ Semua profil & video sudah scraped.")
+        send_telegram_alert("✅ Semua profil & video sudah scraped. Gak ada yang perlu dijalankan.")
         return
+
+    send_telegram_alert(
+        f"🚀 Scraping dimulai.\n"
+        f"Influencer yang akan diproses: {len(to_process)}\n"
+        f"Waktu mulai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    )
 
     async with async_playwright() as p:
         context = await p.chromium.launch_persistent_context(
@@ -463,12 +656,13 @@ async def main():
 
         try:
             for idx, username in enumerate(to_process, start=1):
-                print(f"\n{'='*70}")
+                print(f"\n{'=' * 70}")
                 print(f"[{idx}/{len(to_process)}] @{username}")
-                print(f"{'='*70}")
+                print(f"{'=' * 70}")
 
-                # Scrape profil metadata -- SKIP kalau udah pernah discrape
-                # (resume case: profil udah ada, tapi video belum kelar semua)
+                target_video_ids = {v["video_id"] for v in videos_by_user[username]}
+
+                # --- Profil (goto langsung profile page tetap OK) ---
                 if username in scraped_profil:
                     print(f"   ⏭️  Profil @{username} udah pernah discrape, skip.")
                 else:
@@ -477,55 +671,17 @@ async def main():
                         append_profil_row(profil_row)
                         scraped_profil.add(username)
 
-                # Scrape video metadata
-                user_videos = videos_by_user[username]
-                video_batch = []
-                videos_scraped_this_influencer = 0  # Counter untuk long break setiap 15 video
+                # --- Video (langsung goto link) ---
+                already_done_ids = {vid for (uname, vid) in scraped_videos if uname == username}
+                if target_video_ids.issubset(already_done_ids):
+                    print(f"   ⏭️  Semua video @{username} udah ada di CSV, skip video scraping.")
+                else:
+                    n_new = await scrape_videos_human_like(
+                        page, username, target_video_ids, scraped_videos,
+                        append_video_rows,
+                    )
+                    print(f"   📊 Total video baru di-scrape untuk @{username}: {n_new}")
 
-                for v_idx, video_row in enumerate(user_videos[:MAX_VIDEOS_PER_INFLUENCER], 1):
-                    video_id = video_row["video_id"]
-                    video_url = video_row["video_url"]
-
-                    # ⚡ Cek dulu di CSV (in-memory set) SEBELUM buka video --
-                    # kalau udah ada, langsung skip tanpa buka page/nunggu apapun.
-                    # Ini yang bikin resume jadi cepat, gak perlu buka video
-                    # satu-satu buat video yang udah pasti ada datanya.
-                    if (username, video_id) in scraped_videos:
-                        print(f"   ⏭️  Video {video_id[:8]} sudah ada di CSV, skip (gak dibuka).")
-                        continue
-
-                    # Scrape video
-                    v_meta = await scrape_video_metadata(page, username, video_url, video_id)
-                    if v_meta:
-                        video_batch.append(v_meta)
-                        scraped_videos.add((username, video_id))
-                        videos_scraped_this_influencer += 1
-
-                    # Batch write
-                    if len(video_batch) >= BATCH_SIZE_VIDEO:
-                        append_video_rows(video_batch)
-                        print(f"   💾 Tersimpan {len(video_batch)} video metadata")
-                        video_batch = []
-
-                    # LONG BREAK setiap 15 video (anti-captcha strategy)
-                    if videos_scraped_this_influencer % DELAY_EVERY_N_VIDEOS == 0:
-                        long_delay = random.uniform(*DELAY_AFTER_N_VIDEOS)
-                        long_mins = long_delay / 60
-                        print(f"\n   🌙 Jeda PANJANG {long_mins:.1f} menit (anti-captcha, setelah {videos_scraped_this_influencer} video)...")
-                        await asyncio.sleep(long_delay)
-
-                    # Delay antar video (30-60s, LAZY/SLOW)
-                    if v_idx < len(user_videos):
-                        delay = random.uniform(*DELAY_BETWEEN_VIDEO)
-                        print(f"   ⏳ Jeda {delay:.0f}s sebelum video berikutnya...")
-                        await asyncio.sleep(delay)
-
-                # Flush sisa batch
-                if video_batch:
-                    append_video_rows(video_batch)
-                    print(f"   💾 Tersimpan sisa {len(video_batch)} video metadata")
-
-                # Delay antar influencer (10-15 min, SANGAT SLOW)
                 if idx < len(to_process):
                     delay = random.uniform(*DELAY_BETWEEN_INFLUENCER)
                     mins = delay / 60
@@ -535,11 +691,12 @@ async def main():
             print("\n\n✅✅✅ SEMUA PROFIL & VIDEO METADATA SELESAI DI-SCRAPE ✅✅✅")
             print(f"Metadata profil: {OUTPUT_PROFIL}")
             print(f"Metadata video : {OUTPUT_VIDEO}")
+            send_telegram_alert(
+                "✅✅✅ SEMUA PROFIL & VIDEO METADATA SELESAI DI-SCRAPE ✅✅✅\n"
+                f"Waktu selesai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            )
 
         except CaptchaTimeoutError as e:
-            # Sisa video/profil yang belum sempat diproses aman -- yang
-            # sudah ke-scrape sudah tersimpan lewat batch write & append
-            # per-row, jadi run berikutnya bisa langsung resume dari sini.
             print(f"\n\n🛑 PROGRAM DIHENTIKAN: {e}")
             print("   Data yang udah sempat ke-scrape aman tersimpan di CSV.")
             print("   Jalanin ulang script ini kapan aja, otomatis resume dari sini.")

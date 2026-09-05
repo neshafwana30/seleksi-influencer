@@ -6,51 +6,44 @@ Output:
   - metadata_profil.csv : followers, following, bio, nama, verification, avatar_url
   - metadata_video.csv : like_count, comment_count, share_count, save_count, description
 
-Fitur:
-- HUMAN-LIKE NAVIGATION (v2): gak ada page.goto() langsung ke link video.
-  Flow: buka profil -> scroll grid (kayak manusia scroll-scroll) -> klik video
-  yang BELUM discrape -> extract metadata dari modal -> lanjut ke video
-  berikutnya pake ARROW KEY (bukan goto link baru) -> kalau video hasil
-  arrow key udah pernah discrape, skip aja (gak extract ulang) tapi tetap
-  lanjut arrow key -> kalau arrow key mentok / keluar dari profil user ini,
-  balik ke grid, scroll lagi, ulang.
-- Video ID selalu diambil dari URL (page.url), BUKAN dari cari-cari di DOM.
-  Ini konsisten sama cara Tahap 1 nyusun video_ids_master.csv.
-- Lazy scraping: delay antar aksi (10-50s) + jeda panjang tiap 300 video
-  (2-3 menit) + delay antar influencer (3-5 menit)
-- Resume otomatis (v3): urutan proses TETAP SESUAI urutan asli di master
-  CSV, cuma yang sudah profil+video lengkap yang di-skip. SENGAJA gak
-  dikelompokkan jadi "profil baru dulu" vs "lanjut video" -- pengelompokan
-  itu pernah dicoba dan malah bikin lebih sering kena captcha, karena
-  browser jadi buka banyak profil yang belum pernah dikunjungi secara
-  beruntun (pattern kayak systematic list crawling). Urutan asli yang
-  natural mixed lebih aman.
-- TIKTOK SHOP VIDEO DETECTION (BARU): video TikTok Shop yang muncul warning
-  "can only be viewed in the TikTok app" itu DIBEDAIN dari captcha. Kalau
-  ini ke-detect sebagai captcha biasa, program nunggu 10 menit sia-sia
-  padahal videonya emang gak akan PERNAH bisa diputar di browser walau
-  ditunggu berapa lama pun / di-solve captcha manual pun. Sekarang dicek
-  duluan SEBELUM cek captcha -> kalau ke-detect, langsung skip & lanjut ke
-  video berikutnya (gak nunggu, gak kirim Telegram alert).
-- EXTRACT METADATA (FIXED): nunggu elemen like-count BENERAN muncul + ada
-  isinya sebelum extract (bukan cuma nunggu URL berubah), biar gak ada
-  race condition SPA yang bikin semua field ke-extract "0"/kosong padahal
-  videonya valid. Kalau gagal load dalam waktu wajar, video di-skip (BUKAN
-  ditulis ke CSV dengan nilai nol palsu) -- otomatis ke-retry di run
-  berikutnya karena belum ditandai scraped.
-- Write LANGSUNG per video ke CSV (gak nunggu batch) -- minimize data loss
-  kalau script crash / captcha timeout di tengah jalan
-- Audio warning saat captcha (pygame)
-- TELEGRAM ALERT saat captcha kedeteksi / solved / timeout -- biar bisa
-  dipantau & di-solve remote dari HP (credentials di file terpisah,
-  credentials.py, JANGAN di-push ke GitHub). credentials.py boleh ada di
-  ROOT_DIR project (gak harus sefolder sama script ini) -- ROOT_DIR
-  otomatis ditambahin ke sys.path biar import-nya ketemu.
-- Dedup: gak ulang video yang sudah ada di CSV
+⚡ VERSI INI: EXTRACT METADATA DARI NETWORK RESPONSE (JSON API), BUKAN DOM.
+
+Kenapa: mode grid+klik (modal) TikTok gak nampilin elemen share-count di
+DOM secara reliable. Tapi TikTok tetap FETCH data video itu di background
+lewat internal API (buat render modal-nya) -- dan response JSON itu
+ISINYA share_count/like_count/comment_count/save_count dalam bentuk ANGKA
+MENTAH (bukan "1.2K" yang perlu di-parse). Jadi daripada scrape teks dari
+DOM (gak reliable + perlu parsing "1.2K" -> 1200), kita dengerin response
+network yang lewat pas video dibuka, ambil datanya langsung dari situ.
+
+Ini SUDAH DIVERIFIKASI jalan lewat script diagnostik terpisah (nemuin
+share_count muncul di response JSON pas video dibuka via klik grid).
+
+Cara kerja:
+1. Sebelum mulai scraping, pasang listener `page.on("response", ...)` yang
+   nyaring SEMUA response JSON dari tiktok.com yang mengandung field stats
+   video (diggCount/shareCount/dst), lalu simpan ke cache in-memory
+   (dict: video_id -> stats) berdasarkan id yang ketemu di JSON-nya.
+2. Sama seperti sebelumnya: grid -> klik video -> arrow-key ke video
+   berikutnya (SPA navigation, BUKAN goto langsung -- ini yang bikin aman
+   dari WAF/Akamai block, karena cuma trigger fetch API, bukan full page
+   load per video).
+3. Pas mau extract 1 video: TUNGGU SEBENTAR cache keisi buat video_id itu
+   (network response biasanya nyusul beberapa ratus ms - 2 detik setelah
+   video dibuka). Kalau ketemu di cache -> pakai itu (prioritas utama).
+   Kalau TIDAK ketemu dalam waktu wajar -> fallback ke cara lama (scrape
+   DOM), biar tetap ada hasil walau mungkin share_count-nya kosong/gak
+   akurat -- daripada video-nya di-skip total.
+
+Fitur lain (SEMUA SAMA PERSIS kayak versi sebelumnya):
+- HUMAN-LIKE NAVIGATION: scroll grid -> klik video -> arrow-key.
+- Lazy scraping, resume otomatis, TikTok Shop detection, Telegram alert,
+  audio warning, dedup, write langsung per video ke CSV.
 """
 
 import asyncio
 import csv
+import json
 import os
 import sys
 import random
@@ -82,21 +75,26 @@ OUTPUT_VIDEO = os.path.join(OUTPUT_DIR, "metadata_video.csv")
 
 PROFIL_FIELDS = ["username", "followers", "following", "bio", "display_name",
                  "is_verified", "avatar_url", "scraped_at"]
-VIDEO_FIELDS = ["username", "video_id", "video_url", "like_count", "comment_count",
+VIDEO_FIELDS = ["username", "video_id", "video_url", "is_photo", "like_count", "comment_count",
                 "share_count", "save_count", "description", "scraped_at"]
 
 # ============================================================
 # KONFIGURASI SCRAPING (LAZY/SLOW, HUMAN-LIKE)
 # ============================================================
-DELAY_BETWEEN_VIDEO = (10, 50)             # jeda abis extract 1 video (arrow-key based, lebih ringan drpd goto)
-DELAY_BETWEEN_INFLUENCER = (3 * 60, 5 * 60)  # 3-5 menit antar influencer
-DELAY_EVERY_N_VIDEOS = 300                  # tiap N video, jeda panjang
-DELAY_AFTER_N_VIDEOS = (2 * 60, 3 * 60)    # 2-3 menit jeda panjang (anti-captcha)
-DELAY_SCROLL_STEP = (1.5, 3)               # jeda antar scroll step (biar kayak manusia)
-MAX_VIDEOS_PER_INFLUENCER = 500            # safety cap
-MAX_SCROLL_ATTEMPTS_NO_NEW = 4             # kalau scroll N kali gak nambah video baru -> anggap mentok
-MAX_ARROW_STEPS_PER_CHAIN = 60             # safety cap biar gak infinite loop arrow key
-METADATA_READY_TIMEOUT = 10000             # ms -- max nunggu elemen like-count muncul sebelum extract
+DELAY_BETWEEN_VIDEO = (10, 50)
+DELAY_BETWEEN_INFLUENCER = (3 * 60, 5 * 60)
+DELAY_EVERY_N_VIDEOS = 300
+DELAY_AFTER_N_VIDEOS = (2 * 60, 3 * 60)
+DELAY_SCROLL_STEP = (1.5, 3)
+MAX_VIDEOS_PER_INFLUENCER = 500
+MAX_SCROLL_ATTEMPTS_NO_NEW = 4
+MAX_ARROW_STEPS_PER_CHAIN = 60
+METADATA_READY_TIMEOUT = 10000
+
+# ⬇️ BARU: berapa lama nunggu network response keisi cache sebelum
+# fallback ke DOM scraping. Biasanya response nyampe cepat (<2s).
+NETWORK_STATS_WAIT_TIMEOUT = 8.0   # detik
+NETWORK_STATS_POLL_INTERVAL = 0.25  # detik, jeda antar cek cache
 
 REALISTIC_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -107,15 +105,6 @@ REALISTIC_UA = (
 # ============================================================
 # TELEGRAM ALERT
 # ============================================================
-# Token & chat_id DISIMPAN TERPISAH di credentials.py, supaya bisa
-# di-.gitignore-in dan gak ikut ke-push ke GitHub.
-#
-# PENTING: credentials.py BOLEH ada di ROOT_DIR project, TIDAK HARUS
-# sefolder sama script ini. Karena script ini bisa aja disimpan di
-# subfolder (misal 01_pengumpulan_data\03_videoid_perakun\), sedangkan
-# credentials.py ada di root (seleksi-influencer\). Makanya ROOT_DIR
-# ditambahin dulu ke sys.path SEBELUM import, biar Python nemuin
-# credentials.py di sana.
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
@@ -129,12 +118,9 @@ except ImportError:
     TELEGRAM_CHAT_ID = None
     TELEGRAM_ENABLED = False
     print(f"⚠️  credentials.py gak ketemu di {ROOT_DIR} -> Telegram alert DISABLED.")
-    print("    (Pastikan credentials.py ada persis di folder ROOT_DIR di atas,")
-    print("     isi TELEGRAM_BOT_TOKEN & TELEGRAM_CHAT_ID)")
 
 
 def send_telegram_alert(message: str):
-    """Kirim notifikasi ke Telegram. Silent-fail kalau gagal (gak boleh nge-crash scraper)."""
     if not TELEGRAM_ENABLED:
         print(f"   📵 [Telegram disabled] pesan gak dikirim: {message[:60]}...")
         return
@@ -155,7 +141,6 @@ def send_telegram_alert(message: str):
 # AUDIO ALERT (PYGAME)
 # ============================================================
 def play_warning():
-    """Play warning.mp3 saat captcha/login wall terdeteksi."""
     if not os.path.exists(WARNING_MP3):
         print(f"   ⚠️ File {WARNING_MP3} gak ketemu")
         return
@@ -169,7 +154,6 @@ def play_warning():
 
 
 def stop_warning():
-    """Stop audio."""
     try:
         if pygame.mixer.get_init():
             pygame.mixer.music.stop()
@@ -182,12 +166,10 @@ def stop_warning():
 # HELPER: baca master CSV
 # ============================================================
 def load_master_csv():
-    """Load video_ids_master.csv, group by username (urutan sesuai urutan di CSV)."""
     videos_by_user = {}
     with open(MASTER_CSV, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # Filter: hanya yang needs_comment_scrape == True
             if str(row.get("needs_comment_scrape", "")).strip().lower() == "true":
                 username = row["username"]
                 videos_by_user.setdefault(username, []).append(row)
@@ -198,7 +180,6 @@ def load_master_csv():
 # HELPER: baca existing data
 # ============================================================
 def load_existing_profil():
-    """Load metadata_profil.csv, return set of username yang sudah scraped."""
     if not os.path.exists(OUTPUT_PROFIL):
         return set()
     scraped_users = set()
@@ -210,7 +191,6 @@ def load_existing_profil():
 
 
 def load_existing_videos():
-    """Load metadata_video.csv, return set of (username, video_id) yang sudah scraped."""
     if not os.path.exists(OUTPUT_VIDEO):
         return set()
     scraped_videos = set()
@@ -222,7 +202,6 @@ def load_existing_videos():
 
 
 def append_profil_row(row):
-    """Append profil metadata ke CSV."""
     file_exists = os.path.exists(OUTPUT_PROFIL)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT_PROFIL, "a", encoding="utf-8", newline="") as f:
@@ -235,7 +214,6 @@ def append_profil_row(row):
 
 
 def append_video_rows(rows):
-    """Append video metadata ke CSV (batch)."""
     if not rows:
         return
     file_exists = os.path.exists(OUTPUT_VIDEO)
@@ -250,17 +228,105 @@ def append_video_rows(rows):
 
 
 # ============================================================
-# LOGIN WALL / CAPTCHA CHECK (timeout 10 menit)
+# ⬇️ BARU: NETWORK RESPONSE CAPTURE -- cari stats video di JSON response
+# ============================================================
+def find_video_stats_blocks(obj, _depth=0):
+    """
+    Recursive search di dalam JSON (dict/list apapun bentuknya) buat nemuin
+    "blok" yang punya struktur kayak item video TikTok: ada field id-ish
+    (id / itemId / awemeId) DAN ada sub-object "stats" yang isinya
+    diggCount/shareCount/dst.
+
+    Return: list of (video_id, stats_dict, desc_or_None)
+
+    Kenapa recursive & fleksibel kayak gini (bukan langsung akses path
+    JSON yang fixed): karena TikTok bisa naro item video ini di berbagai
+    posisi struktur JSON tergantung endpoint-nya (kadang di "itemInfo.
+    itemStruct", kadang di list "itemList", dll). Dengan nyari pola
+    "punya stats dengan diggCount/shareCount" di manapun posisinya, kita
+    gak perlu hardcode path yang gampang berubah.
+    """
+    results = []
+    if _depth > 12:  # safety limit, jangan sampai infinite recursion
+        return results
+
+    if isinstance(obj, dict):
+        stats = obj.get("stats") or obj.get("statsV2")
+        if isinstance(stats, dict) and (
+            "diggCount" in stats or "shareCount" in stats or "playCount" in stats
+        ):
+            vid = obj.get("id") or obj.get("itemId") or obj.get("awemeId")
+            desc = obj.get("desc")
+            if vid:
+                results.append((str(vid), stats, desc))
+
+        for value in obj.values():
+            results.extend(find_video_stats_blocks(value, _depth + 1))
+
+    elif isinstance(obj, list):
+        for item in obj:
+            results.extend(find_video_stats_blocks(item, _depth + 1))
+
+    return results
+
+
+def make_network_response_listener(video_stats_cache):
+    """
+    Return sebuah async function yang bisa dipasang ke page.on("response", ...).
+    Tiap response JSON dari tiktok.com yang lewat, dicek -- kalau ketemu
+    blok stats video, disimpan ke video_stats_cache (dict video_id -> dict).
+    """
+    async def on_response(response):
+        try:
+            url = response.url
+            if "tiktok.com" not in url:
+                return
+            content_type = response.headers.get("content-type", "")
+            if "json" not in content_type:
+                return
+
+            body = await response.json()
+        except Exception:
+            return
+
+        try:
+            blocks = find_video_stats_blocks(body)
+        except Exception:
+            return
+
+        for vid, stats, desc in blocks:
+            video_stats_cache[vid] = {
+                "like_count": str(stats.get("diggCount", "")),
+                "comment_count": str(stats.get("commentCount", "")),
+                "share_count": str(stats.get("shareCount", "")),
+                "save_count": str(stats.get("collectCount", "")),
+                "description": (desc or "").strip(),
+            }
+
+    return on_response
+
+
+async def wait_for_network_stats(video_stats_cache, video_id,
+                                  timeout=NETWORK_STATS_WAIT_TIMEOUT,
+                                  poll_interval=NETWORK_STATS_POLL_INTERVAL):
+    """
+    Polling video_stats_cache nunggu video_id ini keisi (dari network
+    listener yang jalan di background). Return dict stats kalau ketemu
+    dalam batas waktu, None kalau timeout.
+    """
+    elapsed = 0.0
+    while elapsed < timeout:
+        if video_id in video_stats_cache:
+            return video_stats_cache[video_id]
+        await asyncio.sleep(poll_interval)
+        elapsed += poll_interval
+    return None
+
+
+# ============================================================
+# LOGIN WALL / CAPTCHA CHECK
 # ============================================================
 async def wait_for_login_wall_clear(page, timeout=600, context_label=""):
-    """
-    Check & wait untuk login wall/captcha hilang.
-    Default timeout: 600 detik = 10 menit.
-    Kalo 10 menit gak di-solve, raise CaptchaTimeoutError & exit program.
-
-    context_label: info tambahan (misal "@username") buat dimasukin ke
-    pesan Telegram, biar tau lagi macet di influencer mana.
-    """
     blocker_selectors = [
         'text="Log in to TikTok"',
         '[data-e2e="login-modal"]',
@@ -270,18 +336,15 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label=""):
         '[id*="captcha"]',
         '[class*="captcha"]',
         'iframe[src*="captcha"]',
-        # Tipe captcha "floating UI portal" -- class-nya "cap-*" (bukan
-        # "captcha" literal) jadi gak ketangkep selector [class*="captcha"]
-        # di atas.
         'img[alt="Captcha" i]',
         'img[alt*="captcha" i]',
     ]
-    ALERT_REPEAT_EVERY = 30  # detik -- kirim ulang reminder Telegram tiap segini
+    ALERT_REPEAT_EVERY = 30
 
     start = asyncio.get_event_loop().time()
     was_found = False
     alert_sent = False
-    last_alert_at = None  # timestamp (loop time) alert terakhir dikirim
+    last_alert_at = None
 
     while asyncio.get_event_loop().time() - start < timeout:
         found = False
@@ -316,8 +379,6 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label=""):
             print("=" * 70)
             play_warning()
 
-        # Kirim alert pertama kali langsung, lalu re-kirim tiap ALERT_REPEAT_EVERY
-        # detik selama captcha masih belum di-solve.
         if last_alert_at is None or (now - last_alert_at) >= ALERT_REPEAT_EVERY:
             send_telegram_alert(
                 "⚠️ CAPTCHA DETECTED!\n"
@@ -354,18 +415,44 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label=""):
 # ============================================================
 def parse_video_id_from_url(url: str):
     """
-    Ambil video_id dari URL TikTok, format:
-    https://www.tiktok.com/@username/video/7123456789012345678?lang=en
+    Ambil video_id dari URL TikTok. TikTok punya 2 tipe post yang formatnya
+    mirip banget:
+      - Video biasa : https://www.tiktok.com/@user/video/7123456789012345678
+      - Photo/slide  : https://www.tiktok.com/@user/photo/7123456789012345678
+    Dua-duanya PUNYA id numerik yang sama polanya, cuma segment path-nya
+    beda ("video" vs "photo"). Sebelumnya cuma "/video/" yang dikenalin,
+    jadi kalau arrow-key nyasar ke post foto, id-nya gagal keparse dan
+    chain berhenti padahal itemnya valid -- cuma beda tipe konten.
     """
-    if not url or "/video/" not in url:
+    if not url:
         return None
-    tail = url.split("/video/", 1)[1]
+    if "/video/" in url:
+        tail = url.split("/video/", 1)[1]
+    elif "/photo/" in url:
+        tail = url.split("/photo/", 1)[1]
+    else:
+        return None
     vid = tail.split("?", 1)[0].strip("/")
     return vid if vid.isdigit() else None
 
 
+def get_content_type_from_url(url: str):
+    """
+    Return "photo" kalau URL-nya post foto/slide, "video" kalau video
+    biasa, None kalau gak keduanya (misal lagi di halaman profil).
+    Dipakai buat nentuin kolom is_photo di CSV & buat bikin video_url
+    yang benar (path /photo/ vs /video/).
+    """
+    if not url:
+        return None
+    if "/photo/" in url:
+        return "photo"
+    if "/video/" in url:
+        return "video"
+    return None
+
+
 def parse_username_from_url(url: str):
-    """Ambil username dari URL TikTok (buat guard arrow-key gak nyasar ke akun lain)."""
     if not url or "/@" not in url:
         return None
     tail = url.split("/@", 1)[1]
@@ -374,7 +461,6 @@ def parse_username_from_url(url: str):
 
 
 async def wait_url_change(page, old_url, timeout_ms=8000):
-    """Nunggu page.url berubah dari old_url. Return True kalau berubah, False kalau timeout."""
     try:
         await page.wait_for_function(
             "oldUrl => window.location.href !== oldUrl",
@@ -390,18 +476,6 @@ async def wait_url_change(page, old_url, timeout_ms=8000):
 # TIKTOK SHOP / VIDEO UNPLAYABLE CHECK
 # ============================================================
 async def is_video_unplayable(page):
-    """
-    Deteksi video yang MEMANG gak bisa diputar di browser -- paling sering
-    video TikTok Shop yang mucul warning "can only be viewed in the TikTok
-    app". Ini BUKAN captcha! Bedanya penting:
-      - Captcha  -> nunggu di-solve manual, abis itu BISA lanjut.
-      - Video ini -> ditunggu berapa lama pun / di-refresh berapa kali pun
-        TETAP gak akan bisa diputar di browser. Solusinya cuma satu: skip,
-        lanjut ke video berikutnya.
-    Kalau gak dibedain dari captcha, program bakal nunggu 10 menit sia-sia
-    tiap ketemu video kayak gini + spam Telegram alert padahal gak ada
-    yang perlu di-solve.
-    """
     selectors = [
         'text=/can\\s*only\\s*be\\s*viewed\\s*in\\s*the\\s*tiktok\\s*app/i',
         'text=/only\\s*available\\s*(on|in)\\s*the\\s*tiktok\\s*app/i',
@@ -424,10 +498,6 @@ async def is_video_unplayable(page):
 # SCRAPE PROFILE METADATA
 # ============================================================
 async def scrape_profil_metadata(page, username):
-    """
-    Buka profile page, extract: followers, following, bio, display_name,
-    is_verified, avatar_url.
-    """
     profile_url = f"https://www.tiktok.com/@{username}"
     print(f"\n   🔍 Buka profil @{username}...")
 
@@ -512,13 +582,8 @@ async def scrape_profil_metadata(page, username):
 # GRID: cari video-video yang keliatan di profile grid
 # ============================================================
 async def get_grid_video_ids(page):
-    """
-    Return list of (video_id, element_handle) dari video item yang lagi
-    kelihatan di profile grid, urut sesuai urutan DOM.
-    """
     anchors = await page.query_selector_all('div[data-e2e="user-post-item"] a')
     if not anchors:
-        # fallback selector kalau struktur DOM TikTok berubah
         anchors = await page.query_selector_all('a[href*="/video/"]')
 
     results = []
@@ -536,35 +601,52 @@ async def get_grid_video_ids(page):
 
 
 async def scroll_grid_step(page):
-    """1 langkah scroll, human-ish increment (bukan langsung ke bawah banget)."""
     await page.evaluate("window.scrollBy(0, window.innerHeight * (0.6 + Math.random()*0.4))")
     await asyncio.sleep(random.uniform(*DELAY_SCROLL_STEP))
 
 
 # ============================================================
 # MODAL: extract metadata dari video yang lagi kebuka
+# ⬇️ VERSI BARU: prioritas ambil dari network cache, fallback DOM
 # ============================================================
-async def extract_video_metadata_current(page, username):
+async def extract_video_metadata_current(page, username, video_id, video_stats_cache):
     """
-    Extract like/comment/share/save/description dari video yang LAGI TERBUKA
-    (modal atau full page -- selectornya sama). video_id & video_url diambil
-    dari page.url oleh caller.
+    video_id: video_id yang LAGI DIBUKA (dari page.url, dikasih caller).
+    video_stats_cache: dict shared, diisi otomatis oleh network listener
+                        yang jalan di background (lihat make_network_response_listener).
 
-    PENTING (fix race condition): TikTok itu SPA -- URL video bisa berubah
-    DULUAN sebelum konten detail video (like-count, share-count, dll)
-    beneran ke-render. Kalau extract langsung abis URL berubah, ada
-    kemungkinan semua elemen masih kosong -> ke-extract semua "0"/kosong
-    padahal videonya valid. Makanya di sini WAJIB nunggu elemen like-count
-    beneran muncul (dan ada isinya) dulu sebelum extract beneran. Kalau gak
-    muncul dalam waktu wajar, return None (bukan nulis nol palsu) -- video
-    ini akan otomatis ke-retry di run berikutnya karena gak ditandai scraped.
+    Prioritas 1: cek video_stats_cache -- kalau ada, pakai ini (dari JSON
+    API asli, angka mentah & akurat termasuk share_count).
+    Prioritas 2 (fallback): kalau network response gak nangkep data ini
+    dalam waktu wajar, balik ke cara lama -- scrape teks dari DOM (biar
+    tetap ada hasil walau mungkin share_count kosong).
     """
+    # --- PRIORITAS 1: network cache ---
+    stats_from_network = await wait_for_network_stats(video_stats_cache, video_id)
+    if stats_from_network:
+        print(f"      📡 Metadata didapat dari network response (JSON API)")
+        # Description dari network kadang kosong (endpoint tertentu gak
+        # nyertain desc) -- kalau kosong, coba ambil dari DOM sebagai pelengkap.
+        result = dict(stats_from_network)
+        if not result.get("description"):
+            try:
+                desc_elem = await page.query_selector('[data-e2e="video-desc"]')
+                if desc_elem:
+                    dom_desc = await desc_elem.text_content()
+                    result["description"] = dom_desc.strip() if dom_desc else ""
+            except Exception:
+                pass
+        return result
+
+    # --- PRIORITAS 2: fallback DOM scraping (cara lama) ---
+    print(f"      ⚠️ Network response gak nangkep data video ini dalam "
+          f"{NETWORK_STATS_WAIT_TIMEOUT:.0f}s -- fallback ke DOM scraping.")
+
     try:
         await page.wait_for_selector('[data-e2e="like-count"]', timeout=METADATA_READY_TIMEOUT)
     except Exception:
-        print(f"      ⚠️ Elemen metadata (like-count) gak muncul dalam "
-              f"{METADATA_READY_TIMEOUT / 1000:.0f}s -- render kemungkinan lambat / "
-              "video gak valid. Skip dulu, bakal ke-retry otomatis di run berikutnya.")
+        print(f"      ⚠️ Elemen metadata (like-count) juga gak muncul -- "
+              "video kemungkinan invalid. Skip, bakal ke-retry di run berikutnya.")
         return None
 
     try:
@@ -595,7 +677,6 @@ async def extract_video_metadata_current(page, username):
         except Exception:
             pass
 
-        # Save/bookmark count -- pake data-e2e="favorite-count" langsung
         try:
             save_elem = await page.query_selector('[data-e2e="favorite-count"]')
             if save_elem:
@@ -610,13 +691,7 @@ async def extract_video_metadata_current(page, username):
         except Exception:
             pass
 
-        # Sanity check tambahan: elemen like-count udah ADA di DOM (lolos
-        # wait_for_selector di atas), tapi kalau TEKS-nya masih kosong itu
-        # artinya render-nya belum selesai (elemen nempel duluan, isinya
-        # nyusul beberapa saat kemudian). Kasih 1x kesempatan retry.
         if not (like_count or "").strip():
-            print("      ⚠️ like-count elemen ada tapi teksnya masih kosong -- "
-                  "kemungkinan render belum selesai, tunggu & retry sekali...")
             await asyncio.sleep(2)
             try:
                 like_elem = await page.query_selector('[data-e2e="like-count"]')
@@ -636,15 +711,11 @@ async def extract_video_metadata_current(page, username):
             "description": description.strip() if description else "",
         }
     except Exception as e:
-        print(f"      ❌ Error extract metadata: {e}")
+        print(f"      ❌ Error extract metadata (fallback DOM): {e}")
         return None
 
 
 async def close_video_modal(page, profile_url):
-    """
-    Tutup modal video, balik ke profile grid. Coba Escape dulu (paling
-    human-like), fallback go_back(), fallback langsung goto profile_url.
-    """
     old_url = page.url
     try:
         await page.keyboard.press("Escape")
@@ -662,7 +733,6 @@ async def close_video_modal(page, profile_url):
     except Exception:
         pass
 
-    # fallback terakhir -- jarang kepake
     try:
         await page.goto(profile_url, wait_until="load", timeout=30000)
     except Exception:
@@ -670,11 +740,6 @@ async def close_video_modal(page, profile_url):
 
 
 async def navigate_next_video_arrow(page):
-    """
-    Pindah ke video berikutnya pakai tombol panah TikTok (klik tombol kalau
-    ada, fallback ArrowDown).
-    Return True kalau url berubah (berhasil pindah), False kalau mentok.
-    """
     old_url = page.url
     moved = False
 
@@ -699,18 +764,10 @@ async def navigate_next_video_arrow(page):
 
 # ============================================================
 # CORE: scrape semua video 1 influencer, human-like
+# ⬇️ diupdate: passing video_stats_cache ke extract_video_metadata_current
 # ============================================================
 async def scrape_videos_human_like(page, username, target_video_ids, scraped_videos,
-                                    csv_writer_callback):
-    """
-    target_video_ids : set of video_id yang KITA MAU (dari master.csv, sudah
-                        difilter needs_comment_scrape==True) untuk username ini.
-    scraped_videos   : set (username, video_id) yang sudah ada di CSV (in-memory,
-                        dipakai buat skip + di-update tiap dapet video baru).
-    csv_writer_callback : dipanggil tiap video selesai, buat nulis ke CSV.
-
-    Return: jumlah video baru yang berhasil di-extract.
-    """
+                                    csv_writer_callback, video_stats_cache):
     profile_url = f"https://www.tiktok.com/@{username}"
     videos_scraped_count = 0
     clicked_ids_this_session = set()
@@ -776,34 +833,28 @@ async def scrape_videos_human_like(page, username, target_video_ids, scraped_vid
 
         await asyncio.sleep(random.uniform(2, 3))
 
-        # ⚡ Cek TikTok Shop / video unplayable DULU, SEBELUM cek captcha.
-        # Chain (loop arrow-key) di bawah juga bakal ngecek ini di setiap
-        # video yang dibuka, jadi video pertama ini otomatis ke-handle sama
-        # logic yang sama di iterasi pertama loop -- gak perlu skip manual
-        # di sini, cukup masuk ke loop seperti biasa.
-
         steps = 0
         while steps < MAX_ARROW_STEPS_PER_CHAIN:
             steps += 1
             current_url = page.url
             current_vid = parse_video_id_from_url(current_url)
             current_uname = parse_username_from_url(current_url)
+            # ⬇️ BARU: deteksi tipe konten (video biasa vs photo/slide).
+            # current_vid udah handle 2 tipe URL ini di parse_video_id_from_url,
+            # tapi kita perlu tau tipe-nya juga buat nulis kolom is_photo &
+            # bikin video_url yang path-nya benar.
+            current_content_type = get_content_type_from_url(current_url)
 
             if current_uname and current_uname != username:
                 print(f"      🔀 Arrow key nyasar ke akun lain (@{current_uname}), balik ke profil @{username}.")
                 break
 
             if not current_vid:
-                print("      ⚠️ Gak bisa parse video_id dari URL, stop chain ini.")
+                print("      ⚠️ Gak bisa parse video_id dari URL (bukan /video/ maupun /photo/), stop chain ini.")
                 break
 
             clicked_ids_this_session.add(current_vid)
 
-            # ⚡ Cek dulu: video TikTok Shop (gak bisa diputar di browser)?
-            # Ini HARUS dicek SEBELUM wait_for_login_wall_clear, karena
-            # overlay warning-nya suka ke-detect salah sebagai captcha --
-            # padahal ini bukan captcha, dan ditunggu berapa lama pun video
-            # ini gak akan pernah bisa diputar/di-extract metadata-nya.
             if await is_video_unplayable(page):
                 print(f"      🛍️  Video {current_vid[:10]} adalah TikTok Shop video "
                       f"(cuma bisa diliat di app TikTok) -- skip, BUKAN captcha.")
@@ -817,17 +868,23 @@ async def scrape_videos_human_like(page, username, target_video_ids, scraped_vid
                 elif current_vid not in target_video_ids:
                     print(f"      ⏭️  Video {current_vid[:10]} di luar rentang tanggal target, skip extract.")
                 else:
-                    meta = await extract_video_metadata_current(page, username)
+                    meta = await extract_video_metadata_current(
+                        page, username, current_vid, video_stats_cache
+                    )
                     if meta:
+                        is_photo_flag = (current_content_type == "photo")
+                        content_path = current_content_type or "video"  # fallback aman
                         row = {
                             "username": username,
                             "video_id": current_vid,
-                            "video_url": f"https://www.tiktok.com/@{username}/video/{current_vid}",
+                            "video_url": f"https://www.tiktok.com/@{username}/{content_path}/{current_vid}",
+                            "is_photo": str(is_photo_flag),
                             **meta,
                             "scraped_at": datetime.now().isoformat(),
                         }
                         csv_writer_callback([row])
-                        print(f"      💾 Tersimpan ke CSV: video {current_vid[:10]}")
+                        print(f"      💾 Tersimpan ke CSV: video {current_vid[:10]}"
+                              f"{' (photo)' if is_photo_flag else ''}")
                         scraped_videos.add((username, current_vid))
                         videos_scraped_count += 1
                         print(f"      ✅ Video {current_vid[:10]}: like={meta['like_count']}, "
@@ -844,10 +901,6 @@ async def scrape_videos_human_like(page, username, target_video_ids, scraped_vid
                         print(f"      ⏳ Jeda {delay:.0f}s...")
                         await asyncio.sleep(delay)
                     else:
-                        # extract_video_metadata_current udah nge-print alasannya
-                        # sendiri (timeout / kosong setelah retry). Video ini
-                        # SENGAJA gak ditandai scraped, jadi otomatis ke-retry
-                        # di run berikutnya.
                         print(f"      ⏭️  Video {current_vid[:10]} di-skip (metadata gagal di-load), "
                               f"belum ditandai scraped -- bakal ke-retry di run berikutnya.")
 
@@ -862,9 +915,6 @@ async def scrape_videos_human_like(page, username, target_video_ids, scraped_vid
                 break
 
             await asyncio.sleep(random.uniform(1, 2))
-            # NOTE: captcha/unplayable check buat video baru ini dilakuin
-            # otomatis di AWAL iterasi loop berikutnya (di atas), jadi gak
-            # perlu duplikat check di sini.
 
         await close_video_modal(page, profile_url)
         await asyncio.sleep(random.uniform(1, 2))
@@ -888,12 +938,6 @@ async def main():
     print(f"   Profil sudah scraped: {len(scraped_profil)}")
     print(f"   Video sudah scraped: {len(scraped_videos)}")
 
-    # ====== RESUME LOGIC (v3 -- urutan asli master CSV) ======
-    # PENTING: sengaja TIDAK dikelompokkan jadi "profil baru dulu" vs
-    # "lanjut video". Urutan asli CSV dipertahankan apa adanya -- ini
-    # natural mixed order yang terbukti lebih aman (gak ada blok besar
-    # kunjungan profil baru yang beruntun, yang ternyata jadi salah satu
-    # signature bot).
     to_process = []
     n_fully_done = 0
     for u in videos_by_user.keys():
@@ -905,7 +949,7 @@ async def main():
         if profil_done and videos_done:
             n_fully_done += 1
             continue
-        to_process.append(u)  # urutan tetap sesuai urutan di master CSV
+        to_process.append(u)
 
     print(f"   Influencer selesai total (profil+video) : {n_fully_done}")
     print(f"   Influencer perlu diproses (baru/lanjut)  : {len(to_process)}")
@@ -916,7 +960,7 @@ async def main():
         return
 
     send_telegram_alert(
-        f"🚀 Scraping dimulai.\n"
+        f"🚀 Scraping dimulai (network-capture mode).\n"
         f"Influencer yang akan diproses: {len(to_process)}\n"
         f"Waktu mulai: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     )
@@ -934,6 +978,13 @@ async def main():
         )
         page = context.pages[0] if context.pages else await context.new_page()
 
+        # ⬇️ BARU: pasang network listener SEKALI di awal, sebelum loop.
+        # video_stats_cache diisi otomatis di background tiap ada response
+        # yang lewat -- dipakai nanti sama extract_video_metadata_current().
+        video_stats_cache = {}
+        page.on("response", make_network_response_listener(video_stats_cache))
+        print("📡 Network response listener aktif (buat nangkep stats video, termasuk share_count)")
+
         try:
             for idx, username in enumerate(to_process, start=1):
                 print(f"\n{'=' * 70}")
@@ -942,7 +993,6 @@ async def main():
 
                 target_video_ids = {v["video_id"] for v in videos_by_user[username]}
 
-                # --- Profil (goto langsung profile page tetap OK, cuma 1x per influencer) ---
                 if username in scraped_profil:
                     print(f"   ⏭️  Profil @{username} udah pernah discrape, skip.")
                 else:
@@ -967,9 +1017,13 @@ async def main():
 
                     n_new = await scrape_videos_human_like(
                         page, username, target_video_ids, scraped_videos,
-                        append_video_rows,
+                        append_video_rows, video_stats_cache,
                     )
                     print(f"   📊 Total video baru di-scrape untuk @{username}: {n_new}")
+
+                # ⬇️ Bersihin cache tiap ganti influencer, biar gak numpuk
+                # terus di memory selama scraping ratusan/ribuan video.
+                video_stats_cache.clear()
 
                 if idx < len(to_process):
                     delay = random.uniform(*DELAY_BETWEEN_INFLUENCER)

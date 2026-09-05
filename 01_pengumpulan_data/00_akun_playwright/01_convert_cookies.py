@@ -14,7 +14,7 @@ Cara pakai:
 import json
 import os
 
-BASE_DIR = r"C:\Users\nesha\Tugas_akhir\seleksi-influencer\Playwright_test"
+BASE_DIR = r"01_pengumpulan_data\00_akun_playwright"
 RAW_FILE = os.path.join(BASE_DIR, "tiktok_cookies_raw.json")
 OUTPUT_FILE = os.path.join(BASE_DIR, "tiktok_cookies.json")
 
