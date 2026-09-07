@@ -85,7 +85,7 @@ DELAY_BETWEEN_VIDEO = (10, 50)
 DELAY_BETWEEN_INFLUENCER = (3 * 60, 5 * 60)
 DELAY_EVERY_N_VIDEOS = 300
 DELAY_AFTER_N_VIDEOS = (2 * 60, 3 * 60)
-DELAY_SCROLL_STEP = (1.5, 3)
+DELAY_SCROLL_STEP = (1.5, 2)
 MAX_VIDEOS_PER_INFLUENCER = 500
 MAX_SCROLL_ATTEMPTS_NO_NEW = 4
 MAX_ARROW_STEPS_PER_CHAIN = 60
@@ -338,6 +338,29 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label=""):
         'iframe[src*="captcha"]',
         'img[alt="Captcha" i]',
         'img[alt*="captcha" i]',
+        # ⬇️ BARU: TikTok sekarang (kadang) bungkus captcha-nya di komponen
+        # "TUXModal" dengan class "captcha-verify-container" -- selector
+        # [class*="captcha"] di atas HARUSNYA nangkep ini juga karena
+        # "captcha-verify-container" ada substring "captcha"-nya, tapi
+        # kadang elemen captcha yang sebenernya keliatan itu ke-nest di
+        # DALAM container ini (bukan di elemen paling luar yang match
+        # selector), jadi is_visible() checknya bisa miss. Tambahin
+        # selector eksplisit buat wrapper-nya biar lebih pasti ke-detect.
+        '.TUXModal:has-text("captcha")',
+        '.TUXModal:has-text("Captcha")',
+        '[class*="captcha-verify"]',
+        '[class*="captcha_verify"]',
+        'div[class*="TUXModal"] iframe',
+        # Varian teks puzzle captcha TikTok yang umum muncul (macem-macem
+        # jenis puzzle: slider, rotate, select similar images, dll).
+        # Ditaruh terpisah dari .TUXModal biar tetep ke-detect walau
+        # suatu saat wrapper-nya bukan TUXModal lagi.
+        'text=/verify\\s*to\\s*continue/i',
+        'text=/select\\s*2\\s*similar\\s*images/i',
+        'text=/tap\\s*the\\s*objects/i',
+        'text=/rotate\\s*the\\s*image/i',
+        'text=/drag\\s*the\\s*puzzle/i',
+        'text=/verify\\s*you\\s*are\\s*human/i',
     ]
     ALERT_REPEAT_EVERY = 30
 
@@ -787,6 +810,15 @@ async def scrape_videos_human_like(page, username, target_video_ids, scraped_vid
         if not pending:
             before_count = len(grid_videos)
             await scroll_grid_step(page)
+
+            # ⬇️ BARU: cek captcha PROAKTIF abis scroll, jangan nunggu
+            # sampai klik gagal. Captcha bisa muncul kapan aja (trigger
+            # dari request network pas scroll), dan kalau muncul TAPI
+            # elemen grid-nya masih "keklik-able" secara teknis (modal
+            # gak selalu bikin click() throw exception), captcha bisa
+            # kelewat gak ke-detect sama sekali.
+            await wait_for_login_wall_clear(page, timeout=600, context_label=f"@{username} (scroll grid)")
+
             after_videos = await get_grid_video_ids(page)
             after_count = len(after_videos)
 
@@ -809,6 +841,11 @@ async def scrape_videos_human_like(page, username, target_video_ids, scraped_vid
             continue
 
         vid, elem = pending[0]
+
+        # ⬇️ BARU: cek captcha PROAKTIF sebelum klik, jangan nunggu sampai
+        # klik gagal dulu baru cek. Sama alasannya kayak di atas.
+        await wait_for_login_wall_clear(page, timeout=600, context_label=f"@{username} (sebelum klik grid)")
+
         print(f"   👆 Klik video {vid[:10]}... dari grid")
         try:
             await elem.click(timeout=15000)
