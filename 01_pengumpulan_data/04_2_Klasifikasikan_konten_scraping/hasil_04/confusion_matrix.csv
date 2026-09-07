@@ -1,0 +1,5 @@
+Metric,Count,Percentage
+True Positive (Health),138,62.44343891402715
+False Positive,18,8.144796380090497
+False Negative,20,9.049773755656108
+True Negative (Non-Health),45,20.361990950226243

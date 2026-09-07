@@ -32,7 +32,7 @@ from datetime import datetime
 # ⬇️ GANTI SESUAI PATH KAMU
 ROOT_DIR = r"C:\Users\nesha\Tugas_akhir\seleksi-influencer"
 OUTPUT_VIDEO = os.path.join(
-    ROOT_DIR, "01_pengumpulan_data", "04_mendapatkan_metadata_akun", "metadata_video.csv"
+    ROOT_DIR, "01_pengumpulan_data", "04_1_mendapatkan_metadata_akun", "metadata_video.csv"
 )
 
 # Urutan kolom TARGET (harus sama persis kayak VIDEO_FIELDS di scraper

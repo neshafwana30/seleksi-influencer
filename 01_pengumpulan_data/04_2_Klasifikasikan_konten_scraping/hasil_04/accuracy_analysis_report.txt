@@ -1,0 +1,89 @@
+======================================================================
+ACCURACY ANALYSIS REPORT
+======================================================================
+
+OVERALL PERFORMANCE METRICS
+----------------------------------------------------------------------
+Total Videos Tested: 221
+Accuracy: 82.8%
+Precision (TP / (TP+FP)): 88.5%
+Recall (TP / (TP+FN)): 87.3%
+F1-Score: 87.9%
+Specificity (TN / (TN+FP)): 71.4%
+
+CONFUSION MATRIX (Absolute Numbers)
+----------------------------------------------------------------------
+True Positive (TP): 138
+  → Correctly predicted HEALTH
+
+False Positive (FP): 18
+  → Predicted HEALTH but actually NOT_HEALTH
+
+True Negative (TN): 45
+  → Correctly predicted NOT_HEALTH
+
+False Negative (FN): 20
+  → Predicted NOT_HEALTH but actually HEALTH
+
+PREDICTIONS BREAKDOWN
+----------------------------------------------------------------------
+Total actual HEALTH videos: 158
+  → Predicted correctly: 138
+  → Predicted wrong: 18
+
+Total actual NON-HEALTH videos: 63
+  → Predicted correctly: 45
+  → Predicted wrong: 20
+
+TOP 10 BEST PERFORMING INFLUENCERS
+----------------------------------------------------------------------
+1. @drkevinmak: 100.0% (21/21)
+2. @drrichardlee: 100.0% (4/4)
+3. @dr.ziee: 100.0% (5/5)
+4. @roozzaak: 100.0% (28/28)
+5. @doktermatahendra: 100.0% (7/7)
+6. @giapratamamd: 100.0% (7/7)
+7. @wishdrboyke: 100.0% (4/4)
+8. @drgfira: 100.0% (3/3)
+9. @jamilatussadiyah: 100.0% (1/1)
+10. @dokter.reni.anak: 100.0% (2/2)
+
+BOTTOM 10 WORST PERFORMING INFLUENCERS
+----------------------------------------------------------------------
+1. @spesialist.kesehatan: 0.0% (0/1)
+2. @dokter.harmonospanak: 50.0% (5/10)
+3. @dionharyadi: 50.0% (1/2)
+4. @aymanalts: 54.5% (12/22)
+5. @bidancynthia: 60.0% (9/15)
+6. @itsdoktermuda: 71.4% (5/7)
+7. @tirtacipeng: 75.0% (9/12)
+8. @ikhsanqthii: 80.0% (12/15)
+9. @dokternadiyah: 80.0% (4/5)
+10. @gelarsramdhani: 83.3% (5/6)
+
+ALL INFLUENCERS RANKING
+----------------------------------------------------------------------
+@drkevinmak: 100.0% (TP:21, FP:0, TN:0, FN:0)
+@drrichardlee: 100.0% (TP:0, FP:0, TN:4, FN:0)
+@dr.ziee: 100.0% (TP:5, FP:0, TN:0, FN:0)
+@roozzaak: 100.0% (TP:28, FP:0, TN:0, FN:0)
+@doktermatahendra: 100.0% (TP:7, FP:0, TN:0, FN:0)
+@giapratamamd: 100.0% (TP:7, FP:0, TN:0, FN:0)
+@wishdrboyke: 100.0% (TP:4, FP:0, TN:0, FN:0)
+@drgfira: 100.0% (TP:1, FP:0, TN:2, FN:0)
+@jamilatussadiyah: 100.0% (TP:1, FP:0, TN:0, FN:0)
+@dokter.reni.anak: 100.0% (TP:1, FP:0, TN:1, FN:0)
+@dr.deamaulidia: 100.0% (TP:0, FP:0, TN:1, FN:0)
+@aliphildan: 91.7% (TP:2, FP:0, TN:9, FN:1)
+@dokteramiraobgyn: 90.0% (TP:9, FP:1, TN:0, FN:0)
+@dokter_ika: 85.7% (TP:17, FP:2, TN:1, FN:1)
+@gelarsramdhani: 83.3% (TP:3, FP:1, TN:2, FN:0)
+@ikhsanqthii: 80.0% (TP:7, FP:1, TN:5, FN:2)
+@dokternadiyah: 80.0% (TP:4, FP:0, TN:0, FN:1)
+@tirtacipeng: 75.0% (TP:6, FP:1, TN:3, FN:2)
+@itsdoktermuda: 71.4% (TP:5, FP:1, TN:0, FN:1)
+@bidancynthia: 60.0% (TP:1, FP:5, TN:8, FN:1)
+@aymanalts: 54.5% (TP:7, FP:4, TN:5, FN:6)
+@dokter.harmonospanak: 50.0% (TP:1, FP:1, TN:4, FN:4)
+@dionharyadi: 50.0% (TP:1, FP:0, TN:0, FN:1)
+@spesialist.kesehatan: 0.0% (TP:0, FP:1, TN:0, FN:0)

@@ -29,10 +29,10 @@ from datetime import datetime
 # ⬇️ GANTI SESUAI PATH KAMU
 ROOT_DIR = r"C:\Users\nesha\Tugas_akhir\seleksi-influencer"
 INPUT_FILE = os.path.join(
-    ROOT_DIR, "01_pengumpulan_data", "04_mendapatkan_metadata_akun", "metadata_video.csv"
+    ROOT_DIR, "01_pengumpulan_data", "04_1_mendapatkan_metadata_akun", "metadata_video.csv"
 )
 REMOVED_LOG_FILE = os.path.join(
-    ROOT_DIR, "01_pengumpulan_data", "04_mendapatkan_metadata_akun", "_removed_zero_rows.csv"
+    ROOT_DIR, "01_pengumpulan_data", "04_1_mendapatkan_metadata_akun", "_removed_zero_rows.csv"
 )
 
 STAT_COLUMNS = ["like_count", "comment_count", "share_count", "save_count"]

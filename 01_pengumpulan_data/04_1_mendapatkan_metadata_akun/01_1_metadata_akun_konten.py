@@ -76,7 +76,7 @@ MASTER_CSV = os.path.join(DATA_DIR, "03_videoid_perakun", "video_ids_master.csv"
 PROFILE_DIR = os.path.join(DATA_DIR, "00_akun_playwright", "tiktok_browser_profile")
 WARNING_MP3 = os.path.join(DATA_DIR, "03_videoid_perakun", "warning.mp3")
 
-OUTPUT_DIR = os.path.join(DATA_DIR, "04_mendapatkan_metadata_akun")
+OUTPUT_DIR = os.path.join(DATA_DIR, "04_1_mendapatkan_metadata_akun")
 OUTPUT_PROFIL = os.path.join(OUTPUT_DIR, "metadata_profil.csv")
 OUTPUT_VIDEO = os.path.join(OUTPUT_DIR, "metadata_video.csv")
 
