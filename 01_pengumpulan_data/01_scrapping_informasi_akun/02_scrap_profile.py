@@ -53,7 +53,7 @@ def crosscheck_progress(txt_path, csv_path):
 
 async def run_bulk_profile_pipeline():
     input_file = r"01_pengumpulan_data\01_scrapping_informasi_akun\list_dokter.txt"
-    output_file = r"01_pengumpulan_data\01_scrapping_informasi_akun\informasi_dokter.csv"
+    output_file = r"01_pengumpulan_data\01_scrapping_informasi_akun\metadata_akun_raw.csv"
     
     target_usernames, has_progress = crosscheck_progress(input_file, output_file)
     is_first_row = not has_progress 

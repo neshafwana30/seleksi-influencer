@@ -1,0 +1,61 @@
+======================================================================
+TEST MODEL - ACCURACY REPORT
+======================================================================
+
+Generated: 2026-09-10T12:31:17.673615
+
+OVERALL METRICS (Test Set - 40%)
+----------------------------------------------------------------------
+Total videos: 818
+Accuracy: 81.3%
+Precision: 80.9%
+Recall: 88.3%
+F1-Score: 84.5%
+
+PER-INFLUENCER ACCURACY
+----------------------------------------------------------------------
+@aliphildan: 78.3%
+@aymanalts: 57.5%
+@bidancynthia: 64.3%
+@dionharyadi: 71.4%
+@dokter.harmonospanak: 50.0%
+@dokter.reni.anak: 100.0%
+@dokter_ika: 84.2%
+@dokteramiraobgyn: 93.3%
+@doktergigitantri: 100.0%
+@doktermatahendra: 100.0%
+@doktermedok: 89.5%
+@dokternadiyah: 90.0%
+@dokterprasadja: 100.0%
+@doktervito: 91.7%
+@dr.deamaulidia: 100.0%
+@dr.mariojohan: 85.7%
+@dr.ndreamon: 60.0%
+@dr.saddam_ismail: 96.0%
+@dr.ziee: 75.0%
+@dr.zulvia.syarif.spkj: 50.0%
+@drgfira: 100.0%
+@drhans_spesialisanak: 85.7%
+@drkevinmak: 95.0%
+@drluckyspa: 57.1%
+@drrichardlee: 100.0%
+@ekidarehanf: 77.8%
+@farhanzubedi: 0.0%
+@fauzaannibras: 52.5%
+@gelarsramdhani: 90.0%
+@giapratamamd: 75.0%
+@guru.bidan.wulan: 86.5%
+@ikhsanqthii: 83.3%
+@itsdoktermuda: 81.2%
+@jamilatussadiyah: 75.0%
+@jiemiardian: 73.3%
+@meta.hanindita: 100.0%
+@nadialaydrus: 90.8%
+@nisaobgyn: 50.0%
+@putriemje: 62.5%
+@reisabrotoasmoro: 85.7%
+@roozzaak: 100.0%
+@spesialist.kesehatan: 0.0%
+@tirtacipeng: 72.7%
+@wishdrboyke: 100.0%
+@zickyneuro: 100.0%

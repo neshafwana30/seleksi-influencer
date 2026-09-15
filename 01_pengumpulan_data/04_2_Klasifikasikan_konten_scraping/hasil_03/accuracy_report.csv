@@ -1,0 +1,819 @@
+username,video_id,description,predicted_label,predicted_confidence,actual_label,correct,method
+drkevinmak,7640789328888745234,"Buat kamu yang tiap hari belom mulai kerja aja udah capek, ati2 kecolongan dan kekurangan vitamin D!",health,0.95,health,True,ollama_enhanced
+drkevinmak,7659978009771822344,"Nggak semua buah itu sama, apalagi kalau lagi diet. Masih pakai susu kental manis? Saatnya lebih cer",health,0.95,health,True,ollama_enhanced
+drkevinmak,7668524029321514247,Stop kebiasaan gigit atau nyemil es! Ini bukan kebiasaan yang bagus dan bisa jadi tanda ada sesuatu ,health,0.95,health,True,ollama_enhanced
+drkevinmak,7668333249504251154,Kalau kamu sering keram saat tidur ga? Coba komen dan jangan lupa tambahkan magnesium rutin untuk me,health,0.95,health,True,ollama_enhanced
+drkevinmak,7600727329047956754,Replying to @momo kalau kamu udah rutin makan makanan ini buat keputihan belom? #keputihan #rekomend,health,0.95,health,True,ollama_enhanced
+drkevinmak,7667223576428186898,"Please jangan abaikan gejala2 ini ya! Buanyak banget yang ujung2 nya kecolongan, kalau kamu paling s",health,0.95,health,True,ollama_enhanced
+drkevinmak,7666849220871130386,Kalau kamu ada tanda2 yang mana nih? Coba komen dibawah ya 🫡 #infokesehatan #vitaminb12 #kesemutan #,health,0.95,health,True,ollama_enhanced
+drkevinmak,7596231024904834322,Vitamin D3 membantu penyerapan kalsium untuk tulang dan gigi yang kuat. Vitamin K2 membantu mengarah,health,0.95,health,True,ollama_enhanced
+drkevinmak,7598010669388123410,"Aku sering jemuran, masih perlu vitamin D nggak?” Jawabannya: bisa iya, bisa nggak. Karena vitamin D",health,0.95,health,True,ollama_enhanced
+drkevinmak,7638534392360553746,"Blind ranking vitamin buat bantu kualitas tidur, menurut kamu mana yang paling worth it? Coba komen ",health,0.95,health,True,ollama_enhanced
+drkevinmak,7652257918779198738,"Kalian yang baru lari bentar tapi udah sering cedera? 🏃‍♂️ Selain latihan dan recovery yang tepat, j",health,0.95,health,True,ollama_enhanced
+drkevinmak,7626039347975884039,"Sering cepet capek, gampang flu, atau rambut mulai rontok? Banyak orang langsung minum vitamin… tapi",health,0.95,health,True,ollama_enhanced
+drkevinmak,7646364453918838034,Usia 25 tahun tapi masih sering tidur mangap? Jangan dianggap sepele. Karena tidur mangap bisa menja,health,0.95,health,True,ollama_enhanced
+drkevinmak,7597427585961807122,Bantu keluhan keputihan kamu dengan rutin probiotik 1-2 hari sekali ya! Jangan diantepin karena past,health,0.95,health,True,ollama_enhanced
+drkevinmak,7626260623319469319,"“Mata udah ngantuk… tapi pikiran nggak berhenti Badan capek, tapi otak masih ‘on’. Kadang bukan over",health,0.95,health,True,ollama_enhanced
+drkevinmak,7668521223537691922,"Kaum jompo, plis… Bukan kopi solusinya kalau kamu sering migrain. Jangan cuma diakalin pakai kafein ",health,0.95,health,True,ollama_enhanced
+drkevinmak,7618391669913783570,"Sakit haid sering dianggap “lebay” Padahal buat banyak wanita, nyerinya bisa bener-bener mengganggu ",health,0.95,health,True,ollama_enhanced
+drkevinmak,7620114400501976328,Replying to @seojoonn_8 Umur 18 masih bisa nambah tinggi ga? Ini pertanyaan yang sering banget muncu,health,0.95,health,True,ollama_enhanced
+drkevinmak,7675634497290816786,"Buat kamu yang sering lari, jangan cuma fokus latihan dan makan. Pastikan kebutuhan magnesium juga t",health,0.95,health,True,ollama_enhanced
+drkevinmak,7628262920190741767,"Luka kecil sering diremehkan, padahal kalau dibiarkan bisa jadi luka besar dan lama sembuh. Jangan t",health,0.95,health,True,ollama_enhanced
+drkevinmak,7642527056118451464,Hp aku dimana ya Hp kok tdi di tas ga ada ya? Buat kamu yang sering ngomong gini ke temen pasangan a,health,0.85,health,True,ollama_enhanced
+drkevinmak,7595544808161053970,Kalau kamu tim astaxanhin atau glutathione? Atau jangan2 udah dua2 nya nih? #infokesehatan #astaxant,health,0.95,health,True,ollama_enhanced
+drkevinmak,7668572882980670728,Kalau kamu biasa bawa vitamin apa saat travelling? #vitamin #rekomendasivitamin #vitaminpemula #dosi,health,0.95,not_health,False,ollama_enhanced
+drkevinmak,7631100649756757266,"Cepet capek, susah fokus… banyak yang kira cuma kurang tidur atau kebanyakan kerja 😵‍💫 Padahal bisa ",health,0.95,health,True,ollama_enhanced
+drkevinmak,7604822591093837064,Replying to @Kikoo 🧊 kalau kamu udah rutin minum magnesium glycinate? Coba spill pengalaman kamu dib,health,0.95,health,True,ollama_enhanced
+drkevinmak,7592092873735032072,Hayo udah berapa resep MPASI yang udah kamu ikutin? 🥶 #infokesehatan #mpasi #dokter #probiotik #proe,health,0.95,health,True,ollama_enhanced
+drkevinmak,7631595770063473927,Replying to @user6266264743800 Kalau minum magnesium malah bikin sembelit… kemungkinan kamu salah pi,health,0.95,health,True,ollama_enhanced
+drkevinmak,7627129495513910546,"Semakin dewasa, ternyata yang kita lawan bukan orang lain… tapi pikiran sendiri. Overthinking soal m",health,0.95,health,True,ollama_enhanced
+drkevinmak,7599661696671583495,Kalau kamu masih sering keputihan ga sih? Coba spill pengalaman kamu di komen ya ✅ #infokesehatan #k,health,0.95,health,True,ollama_enhanced
+drkevinmak,7601426603155000594,Muka kusam pas puasa? Sering disangka salah skincare… padahal masalahnya dari dalam. Skincare pentin,health,0.95,health,True,ollama_enhanced
+drkevinmak,7677972703801822482,"Buat kamu yang nggak mau ribet cari Vitamin D3 dan K2 terpisah, bisa pilih D3K2 dalam satu produk. L",health,0.95,health,True,ollama_enhanced
+drkevinmak,7614384577645268242,Kalau kamu udah rutin minum magnesium jenis apa nih? Coba komen dong ✅ #magnesium #overthinking #ins,health,0.95,health,True,ollama_enhanced
+drkevinmak,7634094779818593554,"Replying to @mahesa Udah capek seharian, tapi pas mau tidur otak masih ‘meeting’? 😵‍💫 Bisa jadi buka",health,0.95,health,True,ollama_enhanced
+drkevinmak,7628221405292776722,Kalau kamu punya tanda2 ini ga? Semoga rejeki taun ini lancar selalu dan berlimpah ya aminn!! #infok,health,0.85,not_health,False,ollama_enhanced
+drkevinmak,7677974633685077256,Remaja butuh vitamin apa? Salah satu yang penting diperhatikan adalah vitamin D. Vitamin D3 berperan,health,0.95,health,True,ollama_enhanced
+drkevinmak,7594733232348843282,"Kalau kamu sering keputihan tiap hari ga sih? Coba komen pengalaman kamu dibawah, jangan lupa follow",health,0.95,health,True,ollama_enhanced
+drkevinmak,7668520978540006663,"Buat kamu yang sering nyeri kepala sampai terasa ketarik begini, jangan diabaikan ya. Plis tonton sa",health,0.95,health,True,ollama_enhanced
+drkevinmak,7598911369731165448,Replying to @Rista Safitri K Jangan salah lagi minum probiotik ❌ Karena probiotik itu bukan asal min,health,0.95,health,True,ollama_enhanced
+drkevinmak,7664387335143886087,"Sering lupa, apalagi kalau sudah jadi ibu? Bisa jadi bukan cuma karena sibuk, tapi tubuhmu sedang ke",health,0.95,health,True,ollama_enhanced
+drkevinmak,7673149526911307026,"Rambut rontok? Jangan asal pilih vitamin ya! Cari tahu dulu penyebabnya, baru pilih vitaminnya. Shar",health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7664566116483747089,#stitch with @kakgektik demikian sekilas ingfo 👍,not_health,0.85,health,False,ollama_enhanced
+ikhsanqthii,7674823033097374996,😭😭😭,not_health,0.0,not_health,True,no_caption_learned
+ikhsanqthii,7680151185113763092,Hospital Play-Play Eps. 05 | Kucek Mata Bikin Silinder??,health,0.85,not_health,False,ollama_enhanced
+ikhsanqthii,7605260625496788244,Jadi begitulah info setelah saya telaah… kayaknya varietas yg biasa dibuat makan “edamame”juga sama ,not_health,0.85,health,False,ollama_enhanced
+ikhsanqthii,7665983224971054357,Hospital Play-Play Eps.05 | Pusing karena kebanyakan kerja 🙏,health,0.7,not_health,False,ollama_enhanced
+ikhsanqthii,7618169787897711873,Dan hati-hati2 biasanya serangan jantung mulai banyak pas lebaran 🫠🫠🫠,health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7677002948806724865,Obat cacing 👍 jgn lupa,health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7674227101460860180,Sebuah ilmu yang bermanfaat dari @Ayman Alatas,health,0.85,health,True,ollama_enhanced
+ikhsanqthii,7629383768851205396,Demikian sekilas info 👍,health,0.8,health,True,ollama_enhanced
+ikhsanqthii,7655920520289946901,😊,not_health,0.0,not_health,True,no_caption_learned
+ikhsanqthii,7649617178324454677,Demikian sekilas ingfo 👍👍,health,0.7,health,True,ollama_enhanced
+ikhsanqthii,7613742843504495892,Kalian yang ngekos oke kan guyss?,not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7676502319248297237,"jadi begitulah penyebab ""stress eating"".... jangan lupa dikelola stress nya",health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7591393457260956948,Benerin biji mata lo @ netizen STOP NGETAG GUE 🫵,not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7617238224552889620,Mindset menurut gue,health,0.65,health,True,ollama_enhanced
+ikhsanqthii,7646320970860465429,Food Vlogger 😎😎,not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7675646419214077204,Replying to @roti.goreng,health,0.7,health,True,ollama_enhanced
+ikhsanqthii,7663837453156896021,Jujur setiap keluar kota pasti ngeker tempat makan apa yg ada pns-nya. Gatau knp pasti valid itu ena,not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7622728890800262421,"Kalian boleh menghina idol kami, tapi jangan kami 💜🫶 Ucap netizen tiktok, bukan gueeee 🙏",not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7602098051376745749,Jadi demikian sekilas info 🙏,health,0.8,health,True,ollama_enhanced
+ikhsanqthii,7665348170565553424,"Yang gak terlihat tuh belum tentu gak terjadi yaa guysss!! Di mulut, bakteri tetap aktif 24/7. Makan",health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7673759077301767444,Yang satu motoriknya jelek banget @Ayman Alatas yang satu motoriknya terlalu over @Doklip✨ | Alip Hi,not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7676113285267197205,Buat yang badannya sering gampang drop 🙏,health,0.85,health,True,ollama_enhanced
+ikhsanqthii,7652949141139524885,Jangan lupaa ikutannn 🤣🤣🤣,not_health,0.85,not_health,True,ollama_enhanced
+ikhsanqthii,7624157641656241429,Aku doain semoga kalian semua yg udah nonton video ini bisa segera diundang ke tanah suci ya… aamiin,not_health,0.95,not_health,True,ollama_enhanced
+ikhsanqthii,7665500934675418389,Siapa yang udah pernah kena ambeien? 😅,health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7657793069416287508,Buat temen2 perempuan diluar sana selalu aware ya dengan pola/siklus mens kalian. Ini udah dijelasin,health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7664562741671202065,Saya siap turun mendengar aspirasi masyarakat 🙏,not_health,0.85,not_health,True,ollama_enhanced
+ikhsanqthii,7610978814306356500,#stitch with @Jihan Baiq demikian sekilas ingfo 🙏 maap gangguannye banyak dalam mengedukasi kali ini,health,0.7,health,True,ollama_enhanced
+ikhsanqthii,7666743705662999825,Replying to @Szaey demikian sekilas ingfo,health,0.8,health,True,ollama_enhanced
+ikhsanqthii,7593571923716492561,Bawaanya mesti prduktif mulu… capek 😪,not_health,0.85,not_health,True,ollama_enhanced
+ikhsanqthii,7600694364729347348,Jadi begitu ya guys.. Semoga penjelasan dari dr @Gagah Buana Putra MD Sp. 🫀 juga bisa meluruskan 👍 d,health,0.95,health,True,ollama_enhanced
+ikhsanqthii,7608596282789186837,😒😒😒😌,not_health,0.0,not_health,True,no_caption_learned
+ikhsanqthii,7644003826986454293,Tolong dipelajari karena kita gak tau kapan ini akan dipakaii 👍👍👍,health,0.85,health,True,ollama_enhanced
+ikhsanqthii,7663709753767415060,Replying to @Zifana inilah alesan kenapa ngucek mata bisa bikin silinder 👍,not_health,0.95,health,False,ollama_enhanced
+ikhsanqthii,7655632067161607425,Replying to @callmen002 klarifikesyen 🙏🙏🙏,health,0.8,not_health,False,ollama_enhanced
+drrichardlee,7618213779058265362,DOWNLOAD 27: ISLAM CUMA SATU?! KENAPA BANYAK ALIRAN?! MANA YANG HARUS DI IKUTI?! Managed by Admin,not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7618082074196675858,"Menjelang berakhirnya Ramadhan, kami mengucapkan terima kasih kepada penonton setia Download yang se",not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7611416872050838804,NAH LOH!! SORE INI DOWNLOAD PASTI RIBUT!! BANYAK NAMA DISEBUT DISINI!?,not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7678539435155131669,"Semoga semua masalah ini segera berakhir dengan kebaikan, masih dalam rangka anniversarry @klinik_ke",not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7594035593504443668,❤️❤️,not_health,0.5,not_health,True,no_caption_learned
+drrichardlee,7674614159316864277,"Nahan rindu demi Anniversary Athena ke-13. Jujur deg-degan karena biasanya suami yang live, tapi dem",not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7655290786564590868,"Tak bs berkata2, cm di indonesia beli bukan dplatform resmi bisa jadi pidana.. org yg beli barang pa",not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7613727670551022869,DOWNLOAD 15: DEMO ITU DOSA?! GOLONGAN INI DIHARAMKAN CIUM BAU SURGA?!,not_health,0.95,not_health,True,ollama_enhanced
+drrichardlee,7671485278556654856,Ibu jaksa aja bingung 😅 Post by admin,not_health,0.95,not_health,True,ollama_enhanced
+dr.ziee,7601024859497385234,Mungkin kamu nggak pernah kepikiran kalo hal sesimpel ini itu habit buruk yang bikin sakit. Tips aku,health,0.95,health,True,ollama_enhanced
+dr.ziee,7674140945390079239,Coba ngetes pengetahuan beberapa orang soal plak gigi. Ternyata masih banyak yang ketuker antara pla,health,0.95,health,True,ollama_enhanced
+dr.ziee,7673419551169711378,"Eksperimen ini memang bukan representasi langsung kondisi kulit manusia, tapi bisa jadi gambaran bah",health,0.95,health,True,ollama_enhanced
+dr.ziee,7663440162407468296,#stitch with @Dr. Meenal | Dermatologist Azelaic acid itu salah satu ingredient yang menarik secara ,health,0.95,health,True,ollama_enhanced
+dr.ziee,7679279638023130375,"Contekan singkat buat yang punya masalah-masalah diatas ini. Stretchmark, callus, ketiak gelap, dll ",health,0.95,health,True,ollama_enhanced
+dr.ziee,7666037061480238343,Campuran sabun + pasta gigi + baking soda memang bisa membuat air flush lebih berbusa dan sedikit le,not_health,0.85,health,False,ollama_enhanced
+dr.ziee,7618144227205123349,"Satu “misteri” yang dialamin sama banyak cewek Indonesia, tapi sebenernya ini bisa diatasin dan cara",not_health,0.85,health,False,ollama_enhanced
+dr.ziee,7608477737392573704,"Kenapa niacinamide 10% di satu orang works banget, tapi di kamu biasa aja? Karena di atas 5%, efekny",health,0.95,health,True,ollama_enhanced
+gelarsramdhani,7657397788333985042,Membalas @chiwonk.rjm gigi bolong atau berlubang apakah harus segera ditambal?,health,0.95,health,True,ollama_enhanced
+gelarsramdhani,7635618975199628551,Tugas utama menjadi petugas haji Indonesia adalah melayani tamu Allah (jemaah haji) sekaligus mengha,not_health,0.95,not_health,True,ollama_enhanced
+gelarsramdhani,7633324956398537991,Komunikasi efektif adalah komunikasi dua arah yang saling mengerti dan memahami. Agar benar-benar di,not_health,0.95,not_health,True,ollama_enhanced
+gelarsramdhani,7638852306091560199,Ibadah haji adalah ibadah fisik. Dibutuhkan tubuh yang sehat dan kuat agar ibadah berjalan optimal. ,health,0.95,health,True,ollama_enhanced
+gelarsramdhani,7636883288845552904,Jemaah Haji Kloter KJT 06 Majalengka Jawa Barat Telah Tiba di Mekkah #haji #mekkah #madinah #jemaahh,not_health,0.95,not_health,True,ollama_enhanced
+gelarsramdhani,7663693779324374279,Membalas @majakuning sakit gigi bisa menyebabkan migrain sakit kepala?,health,0.95,health,True,ollama_enhanced
+gelarsramdhani,7643209098141420818,Membantu memperbaiki koper jemaah haji Indonesia asal Majalengka yang rusak #haji #jemaahhaji #petug,not_health,0.95,not_health,True,ollama_enhanced
+gelarsramdhani,7634948514191002888,"Kesehatan gigi dan mulut merupakan bagian penting yang tidak terpisahkan dari kesehatan secara umum,",health,0.95,health,True,ollama_enhanced
+gelarsramdhani,7652319072784272647,Bagaimana cara menjadi dokter gigi? Dalam video ini saya menjelaskan jalur pendidikan yang perlu dit,not_health,0.85,health,False,ollama_enhanced
+gelarsramdhani,7590592735845879048,"Terima kasih semuanya, panjang umur kebaikan #majalengka #aceh",not_health,0.95,not_health,True,ollama_enhanced
+roozzaak,7614775004412218644,Membalas @Ifah Nurhalimah #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7612866950485560597,Membalas @Nila Faulis Nasa #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7616184783646821652,Membalas @NolasAR #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7599272308649348359,Membalas @iita✨ #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7614462994377870612,Membalas @RA_racingteam Zinc Lactate dari @Nutrisi Anak Indonesia adalah salah satu suplementasi yan,health,0.95,health,True,ollama_enhanced
+roozzaak,7626904997007035669,Membalas @Nisa🦋 #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7651818203475086613,#stitch dengan @AMAT MEDAN YG LAGI VIRAL NAIK #fyp #fypシ #DokterGemoy #edukasi,health,0.95,health,True,ollama_enhanced
+roozzaak,7669608732212382996,#stitch dengan @mom&dedek khanza #fyp #fypシ #DokterGemoy #edukasi,health,0.95,health,True,ollama_enhanced
+roozzaak,7658084679702088980,Membalas @Mersyhanda Tidak boleh kalau kata orang orang jadul bu 🤣 #fyp #fypシ #DokterGemoy #edukasi ,health,0.95,health,True,ollama_enhanced
+roozzaak,7608948619474963733,#stitch dengan @detik.com #fyp #fypシ #DokterGemoy #edukasi,health,0.95,health,True,ollama_enhanced
+roozzaak,7608175036612054293,Membalas @Leogirlsss❤️ #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7608174639042284821,Membalas @keong racun🐌 #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7642281992431734037,Membalas @dewycaca966 #fyp #fypシ #DokterGemoy #vitaminD #vitamind3,health,0.85,health,True,ollama_enhanced
+roozzaak,7601330037119323412,Membalas @Shinta #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7611350430005611797,Membalas @fitri mulia #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7622251444946750741,Membalas @Choirul #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7625826753960873237,Membalas @Febbi Sianiparr Pudan #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7613618111371087124,Membalas @Kina🐍 #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7664783195560267029,Membalas @Al haddad #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7598032844371332359,Membalas @loopy #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7663307510069103892,Membalas @firna｡.｡:∞♡*♥ #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7633231686901468437,Membalas @binor #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7650770358563392789,#CapCut Fighter Milenial Sini Kumpul 🤣🥹🔥,not_health,0.85,not_health,True,ollama_enhanced
+roozzaak,7599887523099184404,Membalas @kepiting 🦀 #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7651828595115052309,Membalas @ayuwidyawati46 #fyp #fypシ #DokterGemoy #kassa #kasalidahbayi,health,0.85,health,True,ollama_enhanced
+roozzaak,7679709947545914644,Membalas @♋chici🦀🌊 #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7619176500042009877,Membalas @Nurjana #fyp #fypシ #DokterGemoy #cessa #transpulminbaby,health,0.95,health,True,ollama_enhanced
+roozzaak,7637328883246845204,Membalas @Chii🍀 #fyp #fypシ #DokterGemoy #channamix #kapsulikangabus,health,0.85,health,True,ollama_enhanced
+roozzaak,7651412520032308500,Membalas @AI ROSMAYA #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7608863221616856341,Membalas @Kapuchiri96 #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.85,health,True,ollama_enhanced
+roozzaak,7622985677805751572,Membalas @Mrs. Mora #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7632920798059171093,Membalas @Gian zolla #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.85,health,True,ollama_enhanced
+roozzaak,7617305669217193236,"Membalas @𝐡𝐚𝐥𝐥𝐨, 𝐢𝐧𝐢 𝐫𝐚𝐢𝐢 #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3",health,0.95,health,True,ollama_enhanced
+roozzaak,7617677204171787540,Membalas @Adamsolehstore Vitamin D penting untun menunjang tumbuh kembang khususnya tinggi badan. Ja,health,0.95,health,True,ollama_enhanced
+roozzaak,7647726693704027413,Membalas @Re•yna.NL #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7625830887032229140,Membalas @Nita kucing #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.85,health,True,ollama_enhanced
+roozzaak,7607982697381776660,Membalas @syut #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.85,health,True,ollama_enhanced
+roozzaak,7674411896811867412,#stitch dengan @Reyshaka Lipiyan Abizar #fyp #fypシ #DokterGemoy #edukasi,health,0.95,health,True,ollama_enhanced
+roozzaak,7609192506256837908,Membalas @d #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok,health,0.95,health,True,ollama_enhanced
+roozzaak,7632120113466199316,Membalas @. #fyp #fypシ #DokterGemoy #calmingcream #calmingbabycream,health,0.85,health,True,ollama_enhanced
+roozzaak,7625585341549858069,Membalas @Mama Ryu👶 #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7617307053068995860,Membalas @Ika Septia #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3,health,0.95,health,True,ollama_enhanced
+roozzaak,7654110801141288213,Membalas @sgmygel #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7624868038810160405,Membalas @rarisanz #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7617311021363088660,Membalas @Imas setianingrum #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+roozzaak,7638554704858893588,Membalas @yun93 #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan,health,0.95,health,True,ollama_enhanced
+tirtacipeng,7613248769391332628,Siapa yg kalo nyuci ga kering trs bau penguukk? Pastikan deterjen kalian ada Indoor Drying Technolog,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7636396183501507860,Lari santai di Edinburgh pake @Gumi Sport,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7665742083717614869,"Hari ini tidak lari pagi, karena kerjaan dari pagi padat banget. Pulang kerja, otak capek, kita lamp",health,0.85,not_health,False,ollama_enhanced
+tirtacipeng,7675924973638143252,Kegiatan bapak2 absurd nan gabut sebelum ke toko.,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7677460126520970516,Rutinitas latian bapak2 35 tahun. Gerakannya basic2 aja dan itu2 aja. yg penting konsisten.,health,0.85,not_health,False,ollama_enhanced
+tirtacipeng,7595197312930958610,Kegiatan sore2 manusia ber-privilege 🫶🫶🫶 • • • • Nb: konten ini cuma guyonan belaka,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7627125250324647189,Mengenai reaksi alergi. Masih bersama dengan tirta klimis.,health,0.95,health,True,ollama_enhanced
+tirtacipeng,7597372665162190098,El kecu! Siapa el kecu di tongkronganmu? Kalo di tempat saya itu @den_den,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7639350529004490005,Serba serbi boyoken,health,0.85,health,True,ollama_enhanced
+tirtacipeng,7671553651021761813,Tonton video ini buat kalian yang rambutnya rusak. Joooss bonvie @Bonvie Haircare,not_health,0.95,health,False,ollama_enhanced
+tirtacipeng,7674975122414931220,Harapan kami untuk bangsa ini.,not_health,0.85,not_health,True,ollama_enhanced
+tirtacipeng,7656639695815740692,Olahraga buat sehat dan bugar,health,0.95,health,True,ollama_enhanced
+tirtacipeng,7673783229266234645,#onthisday,not_health,0.85,health,False,ollama_enhanced
+tirtacipeng,7643696595078368532,"Sekali2 ngajar di kelas 1 sd. Ini kebagian jadwal ngajarin hidup sehat, makan sehat dan olahraga ke ",health,0.95,not_health,False,ollama_enhanced
+tirtacipeng,7610875899600325908,Celana compression 2in1 anti blister dari @Whittaker Official mereka juga baru launching tshirt runn,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7651880938359590165,Penjelasan superficial (singkat dan sekilas) soal penyakit autoimun.,health,0.95,health,True,ollama_enhanced
+tirtacipeng,7637888957690301717,Recap game liverpool selama aku di Inggris Menang vs palace Kalah vs manutd Imbang vs chelsea. Next ,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7678524985136254229,Sinusitis,health,0.95,health,True,ollama_enhanced
+tirtacipeng,7621398739583880469,"Cowok cowok yang kulitnya mbladus, tonton video ini!",not_health,0.95,health,False,ollama_enhanced
+tirtacipeng,7644111837977513237,Martabax,health,0.85,health,True,ollama_enhanced
+tirtacipeng,7624791252923469076,Brifieng kucing part sekian.,not_health,0.95,not_health,True,ollama_enhanced
+tirtacipeng,7593608940236115207,"Fans liverpool tapi kerja di basecamp lawan, salut @Diskopantera",not_health,0.95,not_health,True,ollama_enhanced
+aymanalts,7609598754357792018,"#stitch with @dr.arfiani.forensik jadi aku, Kak Arfi dan @dr. Aditya tuh sudah bersahabat lama bange",not_health,0.85,not_health,True,ollama_enhanced
+aymanalts,7666387052602182919,#stitch with 7665686886597266706,not_health,0.85,not_health,True,ollama_enhanced
+aymanalts,7667530387144330514,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7625948104398802183,#stitch with 7625421992526662919,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7619219704263068946,#stitch with @Ary A. | Hair & General Health,health,0.8,health,True,ollama_enhanced
+aymanalts,7633683112114834696,Shift Jaga kali ini membahas apakah lari bikin cepat tua?,health,0.85,health,True,ollama_enhanced
+aymanalts,7675388762720980242,#stitch with 7660836255466294535,not_health,0.85,not_health,True,ollama_enhanced
+aymanalts,7596186717464546578,#stitch with @Lutviatunsukses,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7601464858688720135,#stitch with @Pantau diet daddy,health,0.8,health,True,ollama_enhanced
+aymanalts,7668233839747140882,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7669803055637859602,,not_health,0.0,health,False,no_caption_learned
+aymanalts,7678582860739005704,Replying to @𝓬𝓾𝓾𝓹𝓳𝓪𝔃,health,0.85,health,True,ollama_enhanced
+aymanalts,7672575352924835090,,not_health,0.0,health,False,no_caption_learned
+aymanalts,7629015007891590407,Jangan sampe kalian makin memperparah kulitnya anak kalian sendiri karena salah rawatnya!#bodylotion,health,0.95,health,True,ollama_enhanced
+aymanalts,7600385948559428882,"Susu tinggi kalsium itu baik untuk mendukung kesehatan tulang, tidak hanya untuk anak2, tapi untuk o",health,0.95,health,True,ollama_enhanced
+aymanalts,7675674630610259208,#stitch with 7675334268968652053 rekomendasi aku,health,0.7,not_health,False,ollama_enhanced
+aymanalts,7680219303685180679,#stitch with 7679821666767392020,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7646315462753799432,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7637056260113845522,#stitch with 7636455806224944391,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7627020088838737160,#stitch with 7610024972345707796,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7592256919205596434,"#stitch with @Ikhsanqthii, MD",health,0.8,not_health,False,ollama_enhanced
+aymanalts,7647357385807252743,#stitch with 7646582562466385172,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7660896303785889042,"Dalam memilih skincare, harus diperhatiin ya formulanya, jadi kita bisa tau hasilnya nanti beneran k",not_health,0.95,health,False,ollama_enhanced
+aymanalts,7660783258849791250,#stitch with 7660298050786643220,not_health,0.85,not_health,True,ollama_enhanced
+aymanalts,7666717386950675730,Tips milih sunscreen #skincare #tipsandtricks,health,0.85,health,True,ollama_enhanced
+aymanalts,7660056043833019655,#stitch with 7659703239478136082,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7597455485712747794,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7666836345477729544,,not_health,0.0,health,False,no_caption_learned
+aymanalts,7659053726908288263,#stitch with 7657395416731831570,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7630434970196036882,#stitch with 7628874616282352914,not_health,0.85,not_health,True,ollama_enhanced
+aymanalts,7666720997784947976,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7658134089626635527,"In this situation udah banyak banget macemnya, coba deh komen kalian ada yang ngerti ga ini inovasi ",not_health,0.95,not_health,True,ollama_enhanced
+aymanalts,7629211703665904904,#stitch with 7628932964294085908,not_health,0.85,not_health,True,ollama_enhanced
+aymanalts,7620279635191926024,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7674597443714977042,UVC ya namanya #CapCut,not_health,0.85,health,False,ollama_enhanced
+aymanalts,7673139922190093586,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7675758019015216391,#stitch with 7675334268968652053 rekomendasi aku,health,0.7,not_health,False,ollama_enhanced
+aymanalts,7629587891261426951,#stitch with 7628414532771122445 19 tahun tinggal bareng Jidah dan masih akan terus sama jidah,not_health,0.95,not_health,True,ollama_enhanced
+aymanalts,7667153868240719112,,not_health,0.0,not_health,True,no_caption_learned
+aymanalts,7661552275625757959,#stitch with 7659795297815645453,not_health,0.85,health,False,ollama_enhanced
+itsdoktermuda,7641056930395360532,Pernah ketemu dokter di daerah kalian yg keilmuan jago dan ketrampilan komunikasi juga baik??,health,0.85,not_health,False,ollama_enhanced
+itsdoktermuda,7673025672243105025,"Ini yang diliat orang gangguan mata (Kalo kamu dokter, pengen ngonten tapi bingung mulainya, ebook “",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7652180882186308884,Kok bisa percaya gula psir keluar dari puser?😭😭,health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7610743102503980308,Kalo kalian cukur bulu “bawah” gimana caranya??? #hairremoval #milkrecipe,not_health,0.85,health,False,ollama_enhanced
+itsdoktermuda,7625464713060650260,"Kenapa Ibu Harus Tetap Semangat Nyusuin 1. ASI itu imun pertama bayi Dari lahir, ASI sudah langsung ",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7668301591694380305,Pernah liat dislokasii?,health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7641828688455060757,Ada yg udah bisa rutin berjemurr? Udah rutin berapa lamaa?? #Blackmores #BioD #VitDCepatDiserapEfekM,health,0.85,health,True,ollama_enhanced
+itsdoktermuda,7604885706208447764,"Secara medis kondisi kayak gini memang ada, termasuk kasus langka, dan perbaikannya sering nggak mud",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7671926492288322817,"Share ke yg suka nyepelein gerdd (Kalo kamu dokter, pengen ngonten tapi bingung mulainya, ebook “Mul",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7605505554378689812,Psikolog & psikiater itu hebat justru karena mereka nggak mungkin bisa kerja sebaik itu kalau diriny,health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7601111913388477717,"Menurut panduan dokter reumatologi, sayur kayak kangkung, bayam, brokoli, sama asparagus itu nggak t",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7607414321005514004,"Keselek : biasanya masih bisa batuk, suara masih keluar, napas masih ada. Ini tubuh lagi berusaha ng",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7594866604085710101,Aerofagia tuh kondisi saat kebanyakan udara ikut ketelen pas makan atau minum. Biasanya kejadian kal,health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7612526580723715349,Punya ceritaa apa kalian saat jadi penunggu di rumah sakit? Jaga kesehatan yaaa,health,0.85,not_health,False,ollama_enhanced
+itsdoktermuda,7608984472767302932,"Buat semua ibu yang tubuhnya pernah dibuka demi lahirnya sebuah kehidupan, Kita mungkin gak akan per",health,0.95,health,True,ollama_enhanced
+itsdoktermuda,7676089730915634433,Sebat lagiii sebat lagii Vid: jr_dian21 (Buat dokter yg mau ngonten bisa klik link bioku yaa),health,0.95,health,True,ollama_enhanced
+bidancynthia,7647859541316554005,"Baru ditaruh kasur, eh nangis Lagi🥹 newborn lagi nyamannya digendong",not_health,0.85,not_health,True,ollama_enhanced
+bidancynthia,7631990085055008021,Laper gatau waktu,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7623365774656146709,"Periksa kehamilan dan Cek Lab di Puskesmas ,udah TM3 periksa ya 2 minggu sekali, bumil” jgn lupa per",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7643035436251729173,Dulu sempet parodi in ini sekarang bener relate ngerasain 😭,not_health,0.85,not_health,True,ollama_enhanced
+bidancynthia,7645283199333043477,"Alhamdulillah hari ke 3 setelah lahiran smpai skrg ASI mulai banyaaak,sampe harus pumping karna penu",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7626992738797653268,Gasabar ketemu gemooy🥰 pengen pakein baju yg lucu” #bajurajutbayi #jumpsuitrajut,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7640713092283780372,Bun selama hamil naik Bb brpa kg?,health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7629372644738993429,"Luka jahitan melahirkan normal , simak sampai habis ya , #ibuhamil #lahirannorma",health,0.95,health,True,ollama_enhanced
+bidancynthia,7671140444222328085,Tapi malah ngantuk EA #bayi2bulan,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7669848057235836180,Paket baju piyama 3 pcs,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7643375909205986581,"Masya Allah ,🥹",not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7618812580735503637,"Ahirnya Naik Juga BB bumil mskipun sedikit ,tpi blm tau nih BBJ gemoy brpa soalnya blm USG lagi ,bum",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7660743967104863508,"Makasih Mama udah bantuin dari Lahiran sampe Ricy mau 2bln, jauh” datang dari Garut - Sumbawa 🫶🏻semo",health,0.85,not_health,False,ollama_enhanced
+bidancynthia,7645917289585364245,Gasabar gemoy bisa duduk 😋 #sofadudukbayi,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7632662508909726997,"Konsultasi kehamilan di 36 week, Deg2an banget #ibuhamil #lahiran #hamil",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7622986660753460500,"Karna kepala udah posisi bawah semoga gemoy konsisten posisinya ,bumil tm3 yuk bantu gemoy cepat tur",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7637404825486937365,Bumil on the move 🚶‍♀️ 🤰 bayi: ‘pelan dikit buu’ 😂 38 week #ibuhamil #hamil,health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7653340443383647508,Akhirnya nemu yang wort it dipake buat bayiku🥹 #Gentlybaby #calmingcream,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7641086475458612500,"Mendekati HPL gerakan gemoy udah ga terlalu aktif , ada yg sama ga sih bun? cuma menggeliat aja, tpi",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7657836724436864277,Perkembangannya udah bisa apa aja bun?,not_health,0.85,not_health,True,ollama_enhanced
+bidancynthia,7661043757923470612,"Lahir berat 2,8 skrg udah makin berat aja klo digendong 🫶🏻ricy bentar lgi imunisasi DPT1 yeeee🧑‍🩰",health,0.95,not_health,False,ollama_enhanced
+bidancynthia,7654611462949752085,Alhamdulillah punya ibu yang sejalan dengan anaknya gada drama2 ini itu ini itu 😂,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7677913862556912917,"Membalas @less.sugar kalo lagi menyusui takut asi jadi seret ,ini pilihannya semoga ga bingung lagi ",health,0.95,health,True,ollama_enhanced
+bidancynthia,7670414126518127892,Diajak main siapa ya🤫,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7656848503439674645,Ya Allah maaf 😭,not_health,0.95,not_health,True,ollama_enhanced
+bidancynthia,7635457612242341141,"Kontraksi masih belum intens, Jalan jongkok dlm kondisi perut kenceng” nyeri misvi rasanyaaa ah mant",health,0.95,health,True,ollama_enhanced
+bidancynthia,7660392948533579029,Kerjaanya bayi pipisss terus sampe boros tisu basah #tisubasahbayi,not_health,0.85,not_health,True,ollama_enhanced
+bidancynthia,7674940469532478740,"Bayi ini 3hari lagi udah 3 bulan ,selesei cuti melahirkan dan ikut kegiatan lagii, kerjasamanya ya n",not_health,0.95,not_health,True,ollama_enhanced
+dokter_ika,7667788864706202887,Ganti kemasan untuk menutupi kesalahan dulu??? Terus yang dulu bagaimana korbannya? dulu isinya Merk,health,0.95,health,True,ollama_enhanced
+dokter_ika,7617730577336257800,"PERCAYA??? Tidak ada bahan yang bisa mengubah warna kulit asli kamu, suplemen antioksidan membantu m",not_health,0.85,health,False,ollama_enhanced
+dokter_ika,7596898485010517266,#belajarbersamadrika #edukasidokterika #stoppenyalahgunaanobatkeras #reputasibrandsangatpenting #pub,health,0.95,not_health,False,ollama_enhanced
+dokter_ika,7613977074486824210,Jangan menormalisasi Marketing Overclaim❗️ Apalagi yang mengandung bahan berberbahaya untuk pemutih ,health,0.95,health,True,ollama_enhanced
+dokter_ika,7661130437334502664,"Sayangnya, visual seperti itu dapat membentuk persepsi bahwa kulit putih adalah bukti kolagen bekerj",health,0.95,health,True,ollama_enhanced
+dokter_ika,7598723678221667592,Replying to @Raina karim Saat sudah kenal kulitmu akan lebih mudah merawatnya kan? 🤗❤️ Semangat jaga,health,0.85,not_health,False,ollama_enhanced
+dokter_ika,7614401468350663944,#journeyoflife #belajarbersamadrika #edukasidokterika #jagakulitmu #skincarebersamaDricha,health,0.95,not_health,False,ollama_enhanced
+dokter_ika,7653467320077061383,Chapel in the house ❤️ #ThankyouGOD,not_health,0.95,not_health,True,ollama_enhanced
+dokter_ika,7613337804944313608,Jadi jangan percaya iklan2 pemutih ya guys #belajarbersamadrika #edukasidokterika #jagakulitmu #cint,health,0.95,health,True,ollama_enhanced
+dokter_ika,7665716931210661138,Replying to @Deoll Semangat rawat kulitnya #LoveYourSkin❤️ #belajarbersamadrika #Edukasidrika,health,0.85,health,True,ollama_enhanced
+dokter_ika,7614788077671746823,Replying to @Dini sari Ini hal yang menyusahkan para MUA!!! Hati-hati produk perawatan kulit Ilegal ,health,0.95,health,True,ollama_enhanced
+dokter_ika,7663273426303356168,Tetap jaga keseimbangan kulit kamu #belajarbersamadrika #Edukasidrika #purging #SkinBarrier,health,0.85,health,True,ollama_enhanced
+dokter_ika,7675958774246558983,Lebih pakai logika aja ya kalau ada iklan seperti ini #belajarbersamadrika #Edukasidrika #jagakulitm,health,0.85,health,True,ollama_enhanced
+dokter_ika,7658147280922414344,"#duet with @🪭👛🧚mami Boru kalit 🧚👛🪭 #Stitch Semangat pulihkan kembali ya ibu, gunakan produk yang nya",health,0.85,health,True,ollama_enhanced
+dokter_ika,7663446562667777298,Replying to @A. ekspektasinya apa dengan HB dosting? #hbdosting #belajarbersamadrika #Edukasidrika,health,0.85,health,True,ollama_enhanced
+dokter_ika,7601433491808455954,"Begini kira-kira kondisnya, betul para korban krim penyalahgunaan obat keras? #stoppenyalahgunaanoba",health,0.95,health,True,ollama_enhanced
+dokter_ika,7600926567363136775,"Ingat negara kita beriklim TROPIS, Salah satu penyebab sulitnya penanganan Melasma atau hiperpigment",health,0.95,health,True,ollama_enhanced
+dokter_ika,7677525089323076872,Replying to @Devi Lestari #belajarbersamadrika #Edukasidrika #sunscreentips,health,0.85,health,True,ollama_enhanced
+dokter_ika,7615254949240491271,Para pejuang jerawat.. Semangat 🤗💪 #acnefighter #pejuangjerawat #belajarbersamadrika #edukasidokteri,health,0.95,health,True,ollama_enhanced
+dokter_ika,7592629513629076754,Jaga skin barrier kamu #belajarbersamadrika #edukasidokterika #jagakulitmu #totoljerawat,health,0.95,health,True,ollama_enhanced
+dokter_ika,7612139695534918919,"Replying to @Halim OlshopKalteng Ini mengandung obat keras, di Indonesia, kandungan ini tidak boleh ",health,0.95,health,True,ollama_enhanced
+dokter_ika,7593986727543393554,Krim racikan yang terlihat “ampuh” sebenarnya sedang bekerja MERUSAK bukan memperbaikinya… #belajarb,health,0.95,health,True,ollama_enhanced
+dokter_ika,7601110114854030610,#belajarbersamadrika #edukasidokterika #stoppenyalahgunaanobatkeras #jagakulitmu,health,0.95,health,True,ollama_enhanced
+dokter_ika,7664094492076608786,#belajarbersamadrika #Edukasidrika #stoppenyalahgunaanobatkeras #StopMerkuri #waspadakrimberbahaya,health,0.95,health,True,ollama_enhanced
+dokter_ika,7678333070948257042,Aturan penggunaan HB?? Kok diatur-atur? emang ada bahan apa? #belajarbersamadrika #Edukasidrika #Sto,health,0.95,health,True,ollama_enhanced
+dokter_ika,7613034913968803079,Enaknya punya temen tampang jutek 😅 #NoOverclaim #NoAbalAbal,not_health,0.85,not_health,True,ollama_enhanced
+dokter_ika,7670474460583038215,"Replying to @el🦭 Kalau udah ketagihan mau dilepas malah galau, padahal kalau ga dilepas buat perkara",health,0.95,health,True,ollama_enhanced
+dokter_ika,7663854317073337618,Terima kasih buat semua yang bertemu hari ini ❤️❤️❤️ 🤗 #drichabestie #DrichaJakarta #belajarbersamad,health,0.95,not_health,False,ollama_enhanced
+dokter_ika,7609110719124081928,"Replying to @Adindafikri🦋 Kenyataan pahit, Tapi ini Faktanya… #belajarbersamadrika #jagakulitmu #edu",health,0.95,health,True,ollama_enhanced
+dokter_ika,7606273300230130951,"Replying to @zansshann✨💤 Yang udah pada pinter semaga kasih tau orang-orang terdekat ya, jauh-jauh d",health,0.95,health,True,ollama_enhanced
+dokter_ika,7601350126132677896,Kadang kesabaran butuh kepastian kan? #belajarbersamadrika #edukasidokterika,health,0.85,not_health,False,ollama_enhanced
+dokter_ika,7668309512197098760,#belajarbersamadrika #Edukasidrika #publicwarningBPOM #stoppenyalahgunaanobatkeras #StopMerkuri,health,0.95,health,True,ollama_enhanced
+dokter_ika,7598843950560234770,"Obat Steroid BUKAN untuk pemutih kulit, penggemuk badan!!! Berbahaya jika disalahgunakan #belajarber",health,0.95,health,True,ollama_enhanced
+dokter_ika,7592089187277376786,Atau kalian pernah tenukan ada yang lengket krimnya dengan merk yang sama? #belajarbersamadrika #edu,health,0.95,health,True,ollama_enhanced
+dokter_ika,7622116919310552327,Kalau sudah nakals sulit bertobat!!! #belajarbersamadrika #edukasidrika #jagakulitmu #stoptoksikkrim,health,0.85,health,True,ollama_enhanced
+dokter_ika,7664430124204330248,Alasan kenapa Pemilihan Basic Skincare TEPAT mempengaruhi kesehatan kulit kamu 👍🏻 #belajarbersamadri,health,0.95,health,True,ollama_enhanced
+dokter_ika,7624779137760202002,Replying to @🫀babypro⁰⁵🫀 Pelaku-pelaku ini melakukan berbagai cara termasuk memanipulasi kemasan ber,health,0.95,health,True,ollama_enhanced
+dokter_ika,7627084860410137864,"Banyak kasus yang saya temui, flek justru muncul karena:kulit sering iritasi, peradangan kulit, skin",health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7617784394413067540,"Banyak perempuan ngalamin ini… tapi sering dianggap “normal”. 👀. Gatal, keputihan agak bau, atau ngg",health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7676869342478535954,Untuk para bunda vaksin hpv amannnnnnn bangettttt #anakbunda#vaksinhpv#gratis#fyppppp,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7671293282466401543,remaja yang sudah hubungan intim layaknya suami istri harus hati2 yaa #GentlyFeminineWash #pHBalance,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7661617036409277704,umur masi muda banget sudah hamil tinggal bareng sama pacarnya #janganditiruyaadekadek#fyp,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7607104264225279252,bercak butih dimulut rahim akan jd awal mula kanker cervix jika tidak diobati #dokterobgynpedalaman#,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7671982810739002642,jangan smpai ibu anda begini sudah menopuse gemuk hipertensi diabetes #janganjangan#kankerendometriu,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7672375694835338514,Tuhan akan memberi segalanya sesuai kelayakan HambaNYA! belajar jadi manusia yang ber Husnuzon pada ,not_health,0.85,not_health,True,ollama_enhanced
+dokteramiraobgyn,7639648699857014034,siapa para bu da yang belum pernah vaksin hpv #dokterkandunganbatulicin#vaksinhpv#fyp @dokter_kandun,health,0.95,not_health,False,ollama_enhanced
+dokteramiraobgyn,7638666131733040392,apakah dirumah anda ada perempuan menopouse yang hidup bersama anda dan tiba2 keluar darah dari jala,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7603356511447895316,ayo segera pap smear sebelum kanker cervix menyerang #dokterobgynpedalaman#papua#fyp,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7618809614326402325,hubungan sex sejak pacaran kutil kelamin di usia 22 tahun #dokterobgynpedalaman#papuapride #fyp,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7616022924125916437,lepas kb suntik haid langsung memanjang normal gak sih?#fyp#,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7637540746828008722,untuk para suami yang suka maksa istrinya lahir normal setelah secar #janganpaksaistri#bekassecar#fy,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7591814936058137877,test pack positif jangan lupa usg #dokterobgynpedalaman#papua#fyp,health,0.95,health,True,ollama_enhanced
+dokteramiraobgyn,7619547669207207188,"Ibuku yang selalu berlinangan airmata ketika mendoakan anak2nya, Hatinya rapuh bukan karna ia lemah ",not_health,0.85,not_health,True,ollama_enhanced
+dokter.harmonospanak,7635485955146714389,Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M,health,0.85,not_health,False,ollama_enhanced
+dokter.harmonospanak,7616211717369908500,,not_health,0.0,health,False,no_caption_learned
+dokter.harmonospanak,7647352582100307221,Alamat : lokasidari klenteng Mojosari 200 meterke utara arah Krian. Depan SMAN MOJOSARI telp.WA. 081,not_health,0.95,not_health,True,ollama_enhanced
+dokter.harmonospanak,7640273279244143892,Alamat ustad Imam Syofiidusun Pasinan Krajan RT 38 RW 10Desa Sekargadung kec. Punggingkab. Mojokerto,not_health,0.95,not_health,True,ollama_enhanced
+dokter.harmonospanak,7616534044385348884,,not_health,0.0,not_health,True,no_caption_learned
+dokter.harmonospanak,7627730393227103509,Memang sulit cari bakso yg asli daging sapi tanpa campuran daging ayam. Tentu rasanya lebih enak dan,not_health,0.85,not_health,True,ollama_enhanced
+dokter.harmonospanak,7655904479480401173,Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M,health,0.95,not_health,False,ollama_enhanced
+dokter.harmonospanak,7618510444709367060,,not_health,0.0,health,False,no_caption_learned
+dokter.harmonospanak,7610703641179098389,,not_health,0.0,health,False,no_caption_learned
+dokter.harmonospanak,7673328070152949012,Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M,health,0.95,health,True,ollama_enhanced
+dokter.harmonospanak,7626535848154123541,"konsultasi peyakit anak gratisgabung grup WA...link di profil bio saya. Hari SENIN , RABU , JUM'AT j",health,0.95,not_health,False,ollama_enhanced
+dokter.harmonospanak,7625467242297265428,Membalas @amndashfira,health,0.85,not_health,False,ollama_enhanced
+dokter.harmonospanak,7624282816443960597,dr.Harmono PD Sp.A buka konsultasi gratis di grup WA...link di profil bio saya,health,0.85,not_health,False,ollama_enhanced
+dokter.harmonospanak,7618722700579589396,,not_health,0.0,health,False,no_caption_learned
+dokter.harmonospanak,7611580607289642261,,not_health,0.0,not_health,True,no_caption_learned
+dokter.harmonospanak,7651905153750076693,Google Map tulis :Fellyta Fruit & Frozen Food,not_health,0.95,not_health,True,ollama_enhanced
+dokter.harmonospanak,7649418156854889748,Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M,health,0.85,health,True,ollama_enhanced
+dokter.harmonospanak,7641637911921806612,Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M,health,0.85,health,True,ollama_enhanced
+doktermatahendra,7658245432966958344,"Apakah katarak bisa dicegah? Proses penuaan merupakan penyebab tersering katarak, sehingga seiring b",health,0.95,health,True,ollama_enhanced
+doktermatahendra,7669311896641670418,"Dulu sering dimarahi orang tua: ""Jangan baca di tempat gelap, nanti minus nambah!""Fakta atau mitos? ",health,0.95,health,True,ollama_enhanced
+doktermatahendra,7648670357812956424,It is a great honor for our institution @EyeQu LASIK & Eye Center to welcome and serve our very firs,health,0.95,health,True,ollama_enhanced
+doktermatahendra,7611544467203525906,Sering Main Gadget? Jangan Abaikan Golden Rule 20 20 20 👀 Kerja depan layar berjam jam atau mengguna,health,0.95,health,True,ollama_enhanced
+doktermatahendra,7605784602812206354,Pisang enak & gampang didapatkan di Indonesia—tapi apakah dia bermanfaat buat mata? Jawabannya: Iya—,health,0.95,health,True,ollama_enhanced
+doktermatahendra,7677140151973334280,Mata minus tinggi bisa bikin retina lepas? 👁️👓 Ya Fakta. Mata minus tinggi dapat meningkatkan risiko,health,0.95,health,True,ollama_enhanced
+doktermatahendra,7648129197747096840,Fakta atau Mitos: Begadang bikin minus cepat naik? 🤔🛏️👀 Fakta: - Kurang tidur terkait dengan risiko ,health,0.95,health,True,ollama_enhanced
+doktermatahendra,7624079527257558290,"Mengapa pakai obat tetes mata malah terasa perih? 👁️💧Banyak pasien bingung dan khawatir,“Dok, kenapa",health,0.95,health,True,ollama_enhanced
+doktermatahendra,7592616715201154322,Masih percaya bintitan itu gara-gara suka ngintip orang mandi? 😂🙈 Mari kita luruskan faktanya secara,health,0.95,health,True,ollama_enhanced
+doktermatahendra,7679741529761516808,"“Seperti mendapat mukjizat… seperti mendapatkan hidup yang baru.” 🥰✨. Sebuah kalimat sederhana, teta",health,0.95,health,True,ollama_enhanced
+giapratamamd,7593650567835094290,"PENGLIHATAN BARU. Saya mau berbagi penglihatan, agar harapan di rumah rumah kembali menyala. Saya ma",health,0.95,health,True,ollama_enhanced
+giapratamamd,7591006210325777684,Jempol Copot Podcast Radityadika dan dr. Gia Pratama. part 6.,health,0.95,health,True,ollama_enhanced
+giapratamamd,7591013738296249621,Tentang Tekanan Darah Tinggi. Podcast Radityadika dan dr. Gia Pratama. part 8.,health,0.95,health,True,ollama_enhanced
+giapratamamd,7613974686149430548,"Cintaku ada di tasbihmu, Cintamu ada di tasbihku, Sampai akhirnya kita bersatu. --------------------",not_health,0.95,not_health,True,ollama_enhanced
+giapratamamd,7655214845423308053,Shaf Pertama,health,0.95,not_health,False,ollama_enhanced
+giapratamamd,7661090184003407124,"Rasanya penuh syukur. Bagi saya, ini lebih dari kolaborasi dengan sebuah brand. Ini adalah pertemuan",health,0.95,not_health,False,ollama_enhanced
+giapratamamd,7626355491878210836,"Tubuh kita punya sistem detoks sendiri, utamanya melalui hati dan ginjal. Hanya sebagian kecil lewat",health,0.95,health,True,ollama_enhanced
+giapratamamd,7594350601484438802,"Banyak orang merasa “usus kotor”, padahal istilah itu keliru. Yang biasanya kamu rasakan sebenarnya ",health,0.95,health,True,ollama_enhanced
+giapratamamd,7671883856487697684,"Ini adalah mesenterium. Dulu, struktur ini hanya dianggap sebagai lipatan jaringan yang menggantungk",health,0.95,health,True,ollama_enhanced
+giapratamamd,7625106533055040789,Ini adalah separuh Otak Manusia. Otak manusia dewasa rata-rata punya sekitar 86 miliar neuron. Pada ,health,0.95,health,True,ollama_enhanced
+giapratamamd,7654795428893920533,Seminar Nasional Univ.PGRI Adi Buana Surabaya,health,0.85,not_health,False,ollama_enhanced
+giapratamamd,7591077236019662101,LALAT IJO PARKIR MUNDUR. Podcast Radityadika dan dr. Gia Pratama. part 12.,health,0.85,health,True,ollama_enhanced
+aliphildan,7636984785692298514,kemana plis tinggal sehari lagiiikk ✨,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7667491760213544212,Tau gak kenapa dar*h bisa naik ke selang infus? 🩸💉Salah satu penyebabnya adalah posisi kantong infus,health,0.95,health,True,ollama_enhanced
+aliphildan,7638904762225691922,pentingnya kita cari yg sefrekuensi🤗✨,not_health,0.85,not_health,True,ollama_enhanced
+aliphildan,7674965027702689045,Pada ikutan lomba apa gaisss hari ini?✨🇮🇩,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7675730369848560917,Satu2nya lomba yg bisa aku ikutin✨😛 #fakesituation⚠,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7606649445224140039,#MasyaAllahTabarakallah,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7610897855192059143,"siapa sangka… @Ikhsanqthii, MD",health,0.95,not_health,False,ollama_enhanced
+aliphildan,7616668101781818632,alhamdulillah masyaAllah🤗,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7671933875718802708,Replying to @Doklip normal & Sume’eh aku tetep makan sehatt yaaach✨,health,0.85,not_health,False,ollama_enhanced
+aliphildan,7652361220913302791,Ntah apaa….,not_health,0.85,not_health,True,ollama_enhanced
+aliphildan,7599543540674284808,"dikasih penjelasan panjang bingung, dikasih intinya aja malah nyerang 🤡 ✨ mohon izin defib dok🙏🏻",health,0.85,health,True,ollama_enhanced
+aliphildan,7643075217866132757,Semaleman gabisa berenti ketawa wkwkwk HBD YA SUFF!! @Bang ucup ✨👨🏽‍🦲,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7612584629958135058,luar biasa semangat ibadahnya jamaah disini😭🤲🏻✨,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7594746154454142215,"pantesan gaji kecil, ternyata pahalanya besar🥹🤲🏻 terima kasih kadam atas penjelasannya @Kadam Sidik ",not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7632933860258434324,kalo setahun ngekos bajunya ga dicuci sebulan(?)✨🦶🏻,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7671188878472236309,"Yg nanya doklip dokter apa, aku dokter spesial yaah✨🤸🏻‍♂️",health,0.85,not_health,False,ollama_enhanced
+aliphildan,7622156977099066642,"Innalillahi wa innailaihi rojiun, stop konspirasi2 ngawur‼️ plis banget jangan terpengaruh sama omon",health,0.95,health,True,ollama_enhanced
+aliphildan,7673001068409801991,"Kita lagi ngetes motoriknya kak ayman yaach✨🥹 #SaLiMan @Ayman Alatas @Ikhsanqthii, MD",not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7633644206245907730,vaksin F3 nya jangan lupa yaa pawrents💉😉,health,0.95,not_health,False,ollama_enhanced
+aliphildan,7604816011224812808,day 1 jadi warga jakarta✨😚,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7639678457814764808,siap mengaum @Acid 🔮,not_health,0.95,not_health,True,ollama_enhanced
+aliphildan,7661888877879233812,"#bismillahchan💜 Kenapa lokasi tempat penyuntikkan itu beda-beda, ada yang di tangan, di paha, bahkan",health,0.95,not_health,False,ollama_enhanced
+aliphildan,7609417831460965650,pertemanan ini sukanya yg dadak2an!!!!😒 #ymma,not_health,0.95,not_health,True,ollama_enhanced
+dokternadiyah,7660181322752658709,"Tanda Persalinan Sudah Dekat, Apa Saja? 👶✨Menjelang hari persalinan, tubuh ibu biasanya mulai member",health,0.95,health,True,ollama_enhanced
+dokternadiyah,7590964030274112789,Info teman diet 🙌🏻 #stevia #pemanisalami #tipssehat,health,0.85,health,True,ollama_enhanced
+dokternadiyah,7609006418871536917,Tiatii yaa !Makanan/minuman ini punya resiko timbul kista 😰#edukasikesehatan #kesehatanwanita #perem,health,0.95,health,True,ollama_enhanced
+dokternadiyah,7654236273602792725,[Waspada keput!han pada Bumil]Banyak Bumil mengira semua keput!han saat hamil adalah hal yang normal,health,0.95,health,True,ollama_enhanced
+dokternadiyah,7624125119123737877,#GRWM Update seperintilan simpel perempuan buat tampil cantik 😉#perempuan #cantik #happy #eyeshadow,not_health,0.95,health,False,ollama_enhanced
+dokternadiyah,7609709890843462932,"Replying to @Dr. dr. Nadiyah, Sp.OG Lebih baik mencegah sebelum parah 🙌🏻Semangat sehat ✨#edukasikese",health,0.95,health,True,ollama_enhanced
+dokternadiyah,7651253213965913365,Replying to @erta Ingin area miss V dan lipatan tampak lebih cerah? Yuk! Kenali dulu penyebabnya!War,health,0.95,health,True,ollama_enhanced
+dokternadiyah,7664620707447557397,Kapan ya gerakan sikecil mulai terasa saat di dalam perut?#pregnant #bumilhappy #edukasibumil #creat,health,0.95,health,True,ollama_enhanced
+dokternadiyah,7613062343395757333,Demam seperti apa yang mengharuskan bumil periksa ke dokter ? #edukasikesehatan #bumildemam #tipsbum,health,0.95,health,True,ollama_enhanced
+dokternadiyah,7591913994948988181,"Usia bertambah, masa menopause rentan ini itu 🥲 #habarlic #habatussauda #edukasikesehatan #tipssehat",health,0.95,health,True,ollama_enhanced
+wishdrboyke,7636366143229299975,3 hal yg membuat kamu dapat nyoba banyak variasi gaya sama pasangan saat usia tua. PENASARAN apa saj,health,0.85,health,True,ollama_enhanced
+wishdrboyke,7616246841360911634,"Cuma butuh 3 detik untuk proteksi area kewanitaan seharian! ​Gak perlu ribet, cukup semprot Wish Int",health,0.95,health,True,ollama_enhanced
+wishdrboyke,7669690824354974984,Ciri-ciri menopause mulai terasa padahal umur masih di bawah 40-an? Jangan diabaikan! 🩺⚠️ ​Banyak wa,health,0.95,health,True,ollama_enhanced
+wishdrboyke,7668531161731239176,"Si mungil pengen performanya tetap mantap dan stamina makin prima? Terbongkar, ini dia rahasia terse",health,0.95,health,True,ollama_enhanced
+wishdrboyke,7615620569865669895,Waspada! Area sensitif bisa jadi sarang bakteri kalau cuma dibersihkan pakai tisu. Ternyata pengguna,health,0.95,health,True,ollama_enhanced
+wishdrboyke,7670072778351004935,Banyak yang Gak Tahu! 'Darah Tinggi' Bisa Bikin Momen Mesra Jadi Ambrul Adul! 😳💥 Pernah merasa perfo,health,0.95,health,True,ollama_enhanced
+drgfira,7642113254675844360,Gapapa kan? 🥹 #dentist #dentistlife,not_health,0.95,not_health,True,ollama_enhanced
+drgfira,7651979420063763730,Hayoo mama tim yang ngebolehin anak masih minum susu atau engga nih kalau sudah sikat gigi? 😌 #fyp,health,0.85,health,True,ollama_enhanced
+drgfira,7634883664827993352,"Meskipun sempet merasa salah jurusan, tapi ternyata aku bisa menyelesaikannya 🥹 #dentist #dentistlif",not_health,0.95,not_health,True,ollama_enhanced
+jamilatussadiyah,7596190101231783189,Kelas breastfeeding and newborn care @bumilpamil.id,health,0.95,not_health,False,ollama_enhanced
+jamilatussadiyah,7647875152566406408,Tips untuk puting flat Saat menyusui,health,0.95,health,True,ollama_enhanced
+jamilatussadiyah,7607801725809872148,"Teknik mengedan efektif🥰 Mengedan sesuai dengan refleks alami, nafas perut dan rilekskan otot dasar ",health,0.95,health,True,ollama_enhanced
+jamilatussadiyah,7624850088442989832,Cara merawat tali pusat supaya ga infeksi❤️🫶🏻,health,0.95,health,True,ollama_enhanced
+dionharyadi,7636665111297494293,Saya coba jelasin sedikit kenapa perutnya bisa membesar ya.Salah satunya penyebabnya karena kista in,health,0.95,health,True,ollama_enhanced
+dionharyadi,7652166515881446677,Bukan mau sombong tapi negara saya udah berdiri 80 tahun 🙏,not_health,0.85,not_health,True,ollama_enhanced
+dionharyadi,7615561248171625748,Ayo Mas2/Bapak2 cuci mukanya gimana? Udah rutin belum? Jangan males ya.#Kahffacewash #Kahf #BenerBar,health,0.95,health,True,ollama_enhanced
+dionharyadi,7678219410523639061,He he heProblem negara lain begini ya ternyata hmmmm,health,0.85,not_health,False,ollama_enhanced
+dionharyadi,7614110541904334100,"Minum manis boleh aja, asalkan..Tahu kebutuhanmu dan tahu kegunaan minumannya. Sekarang lagi demen @",health,0.85,health,True,ollama_enhanced
+dionharyadi,7666460814026624277,Mie ayam 🙏,not_health,0.95,health,False,ollama_enhanced
+dionharyadi,7680134017307512085,Obesitas bukan sekadar masalah porsi makan. Kadang masalahnya adalah rasa kenyang yang tidak pernah ,health,0.95,health,True,ollama_enhanced
+dokter.reni.anak,7605560395117448469,"🦟DBD itu nyata, tiap tahun kasusnya tidak pernah “0” alias selalu ada.❗️Tapi tidak semua orang mampu",health,0.95,health,True,ollama_enhanced
+dokter.reni.anak,7595417388322049287,"✨Anak anak terutama balita rentan terkena HFMD (Hand and Foot Mouth Disease), bahkan bisa kena lebih",health,0.95,health,True,ollama_enhanced
+dr.deamaulidia,7613740320240438536,Ide THR unik untuk anak-anak? 🎁✨ Bukan cuma amplop… tapi pengalaman yang bikin mereka lompat kegiran,not_health,0.95,not_health,True,ollama_enhanced
+dr.deamaulidia,7667912191030480146,"Terakhir kali main 15 tahun yang lalu, seru juga ya ternyata main drum lagi #drum #fukaimori #inuyas",not_health,0.95,not_health,True,ollama_enhanced
+dr.deamaulidia,7609319201244728584,Playground tanpa batas waktu yang bersih luas dan mainannya banyak banget di @FRUITCITY Indonesia CB,not_health,0.95,not_health,True,ollama_enhanced
+dr.deamaulidia,7638251084321983762,"Bayi nyusu lama bukan selalu berarti ASI-nya kurang, Bun 🤍 Kadang bayi memang sedang mencari nyaman…",health,0.95,health,True,ollama_enhanced
+spesialist.kesehatan,7605090807636299009,Cek kesehatan ginjal tanpa bantuan alat… #ginjal #tipssehat #gagalginjal #gagalginjalkronis #spesial,health,0.95,not_health,False,ollama_enhanced
+doktergigitantri,7665536254238346516,Loose teeth aren’t always because of cavities.Sometimes it’s the tartar that’s been there for way to,health,0.95,health,True,ollama_enhanced
+farhanzubedi,7607442834995678484,,not_health,0.0,health,False,no_caption_learned
+doktervito,7608836327005588757,Nah tes diri sendiri ya bisa kan? 👍🏻😄,health,0.65,not_health,False,ollama_enhanced
+doktervito,7598095366671633685,Ada bahan alami yang sering diremehkan seperti kunyit yang ternyata punya peran untuk kesehatan jant,health,0.95,health,True,ollama_enhanced
+doktervito,7632234494241541396,Mana yang lebih baik untuk kesehatan jantung: jalan kaki atau angkat beban? 🤔Banyak orang berpikir h,health,0.95,health,True,ollama_enhanced
+doktervito,7649622490985008405,"Sudah diingatkan berkali-kali, tapi tetap merokok?Menurut dr. Gia dan Dr. dr. Vito A. Damay, SpJP(K)",health,0.95,health,True,ollama_enhanced
+doktervito,7636291295257922837,"Ada seribu lebih video edukasi di DRV channel, perlu niat dan sediakan waktu untuk belajar menyayang",health,0.95,health,True,ollama_enhanced
+doktervito,7596095950360186133,,health,0.38235294117647056,health,True,no_caption_learned
+doktervito,7650472492125097236,Sumbatan Jantung sering kali berawal dari kebiasaan yang kita lakukan setiap hari. Dibahas langsung ,health,0.95,health,True,ollama_enhanced
+doktervito,7673362154434825493,“Urat varises ini sebenarnya mengalir ke mana?” Banyak yang mengira varises hanya urat yang muncul d,health,0.95,health,True,ollama_enhanced
+doktervito,7669740152771611924,Cepat capek dan mudah sesak bukan selalu karena usia atau berat badan. Bisa jadi itu tanda hipertens,health,0.95,health,True,ollama_enhanced
+doktervito,7649243205229399316,"Karena yang terpenting bukan sekadar membuka sumbatan, tapi memastikan tindakan yang dilakukan meman",health,0.95,health,True,ollama_enhanced
+doktervito,7633268455822691604,Banyak yang takut olahraga berlebihan bahaya buat jantung. Padahal… kebanyakan dari kita justru kura,health,0.95,health,True,ollama_enhanced
+doktervito,7642950270019718421,Jadi pertanyaannya bukan cuma soal pemasukan negara.Tapi: apakah yang didapat sebanding dengan dampa,health,0.95,health,True,ollama_enhanced
+jiemiardian,7622966155677928725,Gangguan bipolar diperkirakan terjadi pada 37 juta orang di seluruh dunia. Itu kira-kira satu dari 2,health,0.95,health,True,ollama_enhanced
+jiemiardian,7610237170514726165,"Takut tidak disukai bisa datang karena kekhawatiran akan penerimaan. Di satu sisi, benar penolakan m",not_health,0.85,health,False,ollama_enhanced
+jiemiardian,7661461597650488597,"""Saya kan cuma depresi, bukan korupsi. Kenapa harus ditutupi?"" Sebagai psikiater yang juga berjuang ",health,0.95,health,True,ollama_enhanced
+jiemiardian,7655633626876448020,“Kenapa gak langsung pergi aja sih?”Pertanyaan ini sering muncul saat ada kasus kekerasan dalam hubu,health,0.95,health,True,ollama_enhanced
+jiemiardian,7667120069889199380,"Mana sebelumnya rambutnya dicat pirang, terus begitu ketahuan balik item rambutnya si Hye Ri. Macam ",not_health,0.95,health,False,ollama_enhanced
+jiemiardian,7593681632264064276,"Ketika trauma telah diproses, bukan berarti semua masalah selesai. Seringkali, malah muncul perasaan",health,0.95,health,True,ollama_enhanced
+jiemiardian,7676041360176106772,Memori kita bukanlah rekaman yang selalu akurat. Ini lebih seperti buku catatan yang bisa diubah isi,health,0.95,health,True,ollama_enhanced
+jiemiardian,7633346004011584789,Bagaimana menurutmu? Apakah kematian pakar dalam bidang medik ini terutama juga dipengaruhi oleh med,health,0.95,health,True,ollama_enhanced
+jiemiardian,7610586057448377620,"Ada banyak tanda seseorang belum pulih, yang diceritakan di video ini hanya sebagian kecilnya saja. ",health,0.95,health,True,ollama_enhanced
+jiemiardian,7608871798637169940,"Terkadang kita perlu menerima sebelum bisa berubah. Sama seperti seorang anak, untuk berkembang, dia",health,0.85,health,True,ollama_enhanced
+jiemiardian,7652283252098518293,"""Otak Reptil"" ternyata cuma mitos?! 🧠 Shock banget pas tahu fakta neurobiologi ini! 👇 Banyak yang ng",health,0.95,health,True,ollama_enhanced
+jiemiardian,7599606997654244629,"Ada Pola, Ada Masalah? Pola-pola dalam masalah kita sehari-hari bisa jadi pertanda bahwa kita berkon",not_health,0.85,health,False,ollama_enhanced
+jiemiardian,7659331504299953429,Kenapa sesi konsul kamu sering terasa “kurang”?Sering nggak sih pulang dari sesi psikolog atau psiki,health,0.95,health,True,ollama_enhanced
+jiemiardian,7673047967086955796,"Kemarin adalah hari pertama saya kembali menggeluti Martial Arts, dan rasanya seperti kehidupan—penu",not_health,0.85,health,False,ollama_enhanced
+jiemiardian,7635091901342944533,Karena banyak orang ketika sedang baik baik saja malah berpikir “kayaknya enggak perlu konsultasi de,health,0.95,health,True,ollama_enhanced
+nadialaydrus,7664560273193274644,Stop nunggu sunscreen bikin glowing seminggu. Karena manfaat paling besarnya itu bukan yang langsung,health,0.95,health,True,ollama_enhanced
+nadialaydrus,7635985845006503189,Ga olahraga = mempercepat kem4t1an,health,0.95,health,True,ollama_enhanced
+nadialaydrus,7637875221915061511,"Yang masih nyepelein makanan manis, ga aware sama gejala, dan sepelein lemak berlebih, liat nih 🥹",health,0.95,health,True,ollama_enhanced
+nadialaydrus,7663767681404816661,Definisi beauty is pain 🥹✌🏻,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7678982597824826644,Baca apa sih gue 🥲,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7667935802973785364,"Nah loh, kamu masih ada yang suka salah ga nih waktunya?",not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7652682393496669460,Here’s to growing wiser without rushing the visible part. 🕊️,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7615622664429800725,"Kamu suka ngerasa ""nyeri-nyeri"" gak nih? Jangan anggep sepele loh! #serunyabelajar #edukasikesehatan",health,0.95,health,True,ollama_enhanced
+nadialaydrus,7649729161946385685,Mari kita makan skincare ❤️,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7635587775835688213,"Pencarian TV baru, karena TV lama udh uzur 🥹",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7646027703291874581,AAAAA KAYLA's FIRST PIANO PERFORMANCE 😍😍😍 gimana menurut kalian?,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7629283803042794772,Berasa balik ke era 2012 🥹😭,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7664183567768964372,,not_health,0.2610619469026549,not_health,True,no_caption_learned
+nadialaydrus,7667889661875948820,Best banget ngadain birthday di @Youreka World 😍😍 dan lagi makanannya dari @baksotujuhpemuda and min,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7626374364996439317,Kuku kamu warnanya apa hayo?,not_health,0.95,health,False,ollama_enhanced
+nadialaydrus,7669335047551405333,"Udah bisa unboxing sendiri guys, aku gabut disini ✌🏻😭",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7659001856529714452,"Tanda tanda liver kamu ada masalah, ada yang ngalamin ga nih?",health,0.95,health,True,ollama_enhanced
+nadialaydrus,7649327205331373333,Udah beda jaman euy,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7619265142806564117,Selamat lebaran 😍❤️,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7633793188716743943,"Aku percaya anti-aging harus berbasis data klinis, bukan sekadar klaim marketing.That’s why I recomm",health,0.95,not_health,False,ollama_enhanced
+nadialaydrus,7650115354249137428,Lagian kenapa harus barengan si?,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7641581776841821460,Eh gajadi dns.. HAHAHAH,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7631552067437514005,Kamu tidur berapa jam nih sehari?,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7592237277653388562,"Kalau ke Osaka, wajib banget cobain ini sih, serius, worth it POLLL!! #omurice #osaka #kuliner #japa",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7673805852968586516,"Skincare tuh nggak harus makin banyak, makin mahal, atau makin viral. Kadang kulit justru butuh kita",health,0.85,health,True,ollama_enhanced
+nadialaydrus,7631132107674242324,"Seru juga ih ternyata ngajar anak2 ini, ganti profesi apa ya? 😝✌🏻",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7644549944925474069,I know......,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7656838296185720085,Ibu ✅ dokter ✅ master of anti aging and aesthetic medicine ✅ diploma american academy of aesthetic m,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7640347435226713364,"First time ke Nuanu, bagus bgt ternyata 🥹🥹🫶🏻",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7658287636091915541,"Di tengah aktivitas yang padat, aku belajar bahwa menjaga tubuh tetap fit itu soal konsistensi, buka",health,0.85,health,True,ollama_enhanced
+nadialaydrus,7664577356203330836,Kulit terasa keset setelah cuci muka bukan berarti lebih bersih. 👀 Justru cleanser yang terlalu kera,health,0.95,health,True,ollama_enhanced
+nadialaydrus,7665652349444115733,Selanjutnya bagaimana? 🥹😭,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7657167257147067668,Dracula itu fiksi. Tapi gusi berdarah yang dianggap normal? Itu horor yang nyata. #gumvestment #Peps,health,0.85,health,True,ollama_enhanced
+nadialaydrus,7624862268190182677,"Jangan mikir jorok, gue lagi bikin mangkok.",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7656094509670878485,Bayarannya mahal ini bos. 💰💸,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7618163833395252500,Pada janjian apa gimana sih?,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7605603766322121992,Kamu bisa semuanya atau engga hayo? 🤭 #edukasikesehatan #serunyabelajar #fyp,health,0.85,health,True,ollama_enhanced
+nadialaydrus,7678642543726202132,Ada yang ngalamin?,health,0.85,not_health,False,ollama_enhanced
+nadialaydrus,7641439593258159381,Naik gunung karena patah hati ❌ Naik gunung karena jatuh cinta ✅ #btrultra2026,health,0.85,not_health,False,ollama_enhanced
+nadialaydrus,7631526081954172180,Kamu punya salah satu atau 33nya nih?,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7628934990973193480,berapa dah tuh 😅✌🏻,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7673863582160866580,Stop banding2in diri kalian di sosial media ya ❤️,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7641211496126745864,Merapat! untuk tau skincare yang tepat untuk wajah kamu👋🏻@celimax.global #celimax #celimaxretinalsho,health,0.85,health,True,ollama_enhanced
+nadialaydrus,7664976693219708181,Nih rekomendasi skincare sesuai masalah kulit kalian 😘✌🏻,health,0.85,health,True,ollama_enhanced
+nadialaydrus,7633003359691197717,LARI DI KOTA TERPANAS NOMER 3 DI INDONESIA!! Ada yang bisa nebak dimana??,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7599268931693513991,"Kebiasaan yang bikin organ kamu cepet rusak, kamu yang mana nih? #serunyabelajar #edukasikesehatan #",health,0.95,health,True,ollama_enhanced
+nadialaydrus,7621159944074693909,GERGAJI UNTUK MEMUDAHKAN PERSALINAN?? WHATT??? #serunyabelajar #edukasikesehatan #fyp,health,0.95,health,True,ollama_enhanced
+nadialaydrus,7673505666727677204,Udah ya jangan tagih2 lagi. Ni aku bocorin.,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7637462080819383572,Day 2 bakalan masih gini gak ya? 😂,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7668215414790524180,💧 1. Minum air putih sebelum ngopiBantu rehidrasi tubuh setelah semalaman tidur.🐟 2. Rutin konsumsi ,health,0.95,health,True,ollama_enhanced
+nadialaydrus,7629240031575690517,"Stop melihat perempuan itu sebagai objek, kita juga manusia 🥰🙏🏻",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7644180338377313557,Hadeeeehhh... STOP YA! TIDUR YUK TIDUR!! @_ifanprtama20,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7611119407225441556,Know your worth. ❤️,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7654880120158604565,MANGGA 200 DOLLAR?? Mangga apa nih? Aku kena scam ga sih?,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7660102621386181908,Sekolah dulu yuk 6tahun + 1 tahun iship + 4 tahun spesialis. 🥰,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7622644885761363221,Part 3. Bukan Furab 💜,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7616749582483000597,Coba sekarang cek punggung tangan kamu dan buktiin seberapa haus kulit kamu? #ByeKulitHaus @NIVEA Of,health,0.85,health,True,ollama_enhanced
+nadialaydrus,7668685894655921429,Ya ngga si?,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7662356059234848020,"Ga semua kebutuhan air itu sama ya, kebutuhan itu bisa meningkat tergantung aktivitas dan kondisi tu",health,0.95,health,True,ollama_enhanced
+nadialaydrus,7654235346947198229,Stop kejar kulit putih. Mulai kejar kulit sehat ✨Karena healthy skin will always glow differently 🤍@,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7657836005881318677,Salah satu cara ngemute cewe kalo lagi gossip 🤣🙏🏻,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7616642996485836052,Nomer 1 tetep moneyyyy...,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7634463866109332757,Ya jangan heran kalo kebanyakan main hp nunduk gini 🥹,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7594795569785097490,Kalau ketagihan gimana nih? 🤣✌🏻 #omakase #food #kuliner #fyp,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7654930586477415700,PDRN lagi viral… tapi apakah semua PDRN skincare itu sama? 👀✨ Karena glass skin bukan cuma soal ikut,not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7666359536462122261,Cinta segitiga itu apa sih? 😜,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7673121400999169301,Sedikit contekan (lagi). Save duku ya biar ga lupa 😘❤️,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7663421780236750101,Dark chocolate 85% = temen PMS 🥹✌🏻,health,0.85,not_health,False,ollama_enhanced
+nadialaydrus,7600323096448453896,Kulit menua secara diam diam karena kalian skip skincare yang satu ini! @Hanasui Official #edukasike,health,0.95,not_health,False,ollama_enhanced
+nadialaydrus,7667540244727745812,SUMPAH TERNYATA ENAK! 10/10! Boleh banget ni si recreate 😍❤️,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7633763106253999380,"HM ke-4 aku, tapi sedih .... ☹️",not_health,0.85,not_health,True,ollama_enhanced
+nadialaydrus,7623027541443562772,Part 4. Apa itu roblox dan ff? Plis jelasin.,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7649343081732754708,"Yuk biar salah, jangan lupa share yaw.",not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7624769920122899732,Urip iku urup. 🤍,not_health,0.95,not_health,True,ollama_enhanced
+nadialaydrus,7664938469017275669,Sakit guys,health,0.85,not_health,False,ollama_enhanced
+nadialaydrus,7664922437615652116,"Ketiban duit keknya ga sakit deh, ketiban susu sakit banget euy..",not_health,0.95,not_health,True,ollama_enhanced
+doktermedok,7635495823001849109,Monggo buat Para Mommy & Calon Mommy 🙌🏻 Penanganan & Rehabilitasi buat Mommy Wrist (Tenosynovitis De,health,0.95,health,True,ollama_enhanced
+doktermedok,7649017856360910100,Rutinitas setiap sebelum atau setelah praktek 🔥 Monggo bisa banget dicobain “Exercise Snack” kaya gi,health,0.85,health,True,ollama_enhanced
+doktermedok,7631947681291635988,"Bahayanya MAGER : Kalau uda mager, bikin makin mager 🫠",not_health,0.95,health,False,ollama_enhanced
+doktermedok,7594838795531455764,Posisi Tidur & Bantal buat Bumil supaya enda gampang sakit encok atau boyok 🫶🏻*area kepala-leher tet,health,0.95,health,True,ollama_enhanced
+doktermedok,7627671907835333909,HIIT (High Intesity Interval Training) Bodyweight Exercise Low Impact 🔥Menunya :40 detik gerak latih,health,0.95,health,True,ollama_enhanced
+doktermedok,7676304324682681621,Sharing session tentang Sport Medicine dan Pentingnya UV Protection selama olahraga outdoor bareng P,health,0.95,not_health,False,ollama_enhanced
+doktermedok,7600041640908131604,Latihan buat kamu yang pundaknya kuerasss kaya papan 🥹 Latihan sing rajin lho ya,health,0.85,health,True,ollama_enhanced
+doktermedok,7641567993910005012,Fascia Hydrodissection buat Myofascia Pain Syndrome Upper Back (terutama area belikat) 🔥 WAJIB rutin,health,0.95,health,True,ollama_enhanced
+doktermedok,7665116783124204820,"Yok pasti sempet, cuma 1 menit doang 🔥 Bangun tidur ➡️ doa ➡️ stretching ➡️ mandi, sarapan ➡️ lanjut",health,0.95,health,True,ollama_enhanced
+doktermedok,7618785133331614997,Single Leg Calf Raise Test 🔥Tes buat cek kekuatan dan kebugaran “jantung kedua” (Otot Betis) Cara la,health,0.95,health,True,ollama_enhanced
+doktermedok,7591308351544380693,Kinesiotapping buat Bumil Ini tujuannya untuk bantu menyangga dan “menarik” perut ke atasCara pasang,health,0.95,health,True,ollama_enhanced
+doktermedok,7628255665386999061,“Ritual” Wajib sebelum tidur : Hip Mobility Stretch ✅Mungkin banyak yang belum ngeuh tapi Otot dan S,health,0.95,health,True,ollama_enhanced
+doktermedok,7670147955084709140,Latihan Mandiri buat Sakit Panggul luar 🔥 Buat diagnosa pasti harus cek dokter ya,health,0.95,health,True,ollama_enhanced
+doktermedok,7632288001460325653,Dekompresi Mandiri buat HNP Cervical (Saraf Kejepit area Leher) 🙌🏻 Ini penting banget buat dilakukan,health,0.95,health,True,ollama_enhanced
+doktermedok,7616720448365137173,Latihan Mandiri buat Cervicogenic Headache 🔥Ini adalah sakit kepala yang penyebabnya gara-gara masal,health,0.95,health,True,ollama_enhanced
+doktermedok,7616367615425940757,"Posisi penting buat Bumil Trimester 3 : Knee to Chest PositionBisa dirutinin setiap hari, 2x sehari ",health,0.95,health,True,ollama_enhanced
+doktermedok,7617849342350724373,"Strength Training supaya Lutut “Kuat” 💪🏻Jangan cuma otot Quadricep aja yang dilatih, otot-otot lain ",health,0.95,health,True,ollama_enhanced
+doktermedok,7636761094945590548,Supinator Hydrodissection & Release Exercise 🔥 Otot + Fascia yang paling sering lengket atau tegang ,health,0.95,health,True,ollama_enhanced
+doktermedok,7644872625637920021,Curcol dikit tentang Perawatan Rambut & Kulit Kepala Junjun 🩵 Monggo yang barusan jadi Papa atau Mam,not_health,0.85,health,False,ollama_enhanced
+doktermedok,7654216964503555348,Prinsip Penanganan Rehabilitasi “Rounded Shoulder” (Postur Bongkok) 🔥 Note : - Untuk diagnosa lebih ,health,0.95,health,True,ollama_enhanced
+doktermedok,7666064280759897364,"Latihan yang Aman buat Penguatan Lutut, Panggul, Pantat, dan Paha sambil posisi berbaring 🔥 Latihan ",health,0.95,health,True,ollama_enhanced
+doktermedok,7610789479607160084,Latihan yang bisa dilakukan sambil “Mager” 😳 atau buat yang lagi BedrestTujuannya ya supaya otot-sen,health,0.95,health,True,ollama_enhanced
+doktermedok,7614130141580791060,USG Guided Knee Joint Aspiration (Sedot Cairan Radang di Lutut pakai USG)Gejala paling sering kalau ,health,0.95,health,True,ollama_enhanced
+doktermedok,7619145005181013269,Fascia Hydrodissection buat Myofascia Pain Syndrome Upper Back 🔥Tindakan ini bisa buat nyeri di area,health,0.95,health,True,ollama_enhanced
+doktermedok,7662734872569597204,"Rehabilitasi untuk Frozen Shoulder 🔥 Note Penting : - Latihan Mandiri bisa dilakukan 3 set, 2-3x seh",health,0.95,health,True,ollama_enhanced
+doktermedok,7624162493807693077,"Penyebab paling sering dari Sakit Kepala, Leher, Pundak Belikat 🙌🏻Jangan langsung mikirnya gara-gara",health,0.95,health,True,ollama_enhanced
+doktermedok,7602630301080177941,"2 Cara supaya Bahu “Aman” (engga sakit, engga radang, engga robek) 🙌🏻",health,0.95,health,True,ollama_enhanced
+doktermedok,7624497654529002772,"Kneel to Squat Challenge Test 🔥 “Fun Challenge Test”, yang bisa lakuin ini katanya Body Age 20tahuna",not_health,0.85,health,False,ollama_enhanced
+doktermedok,7645878983111789845,"3 Gerakan Stretching buat yang sering Sakit Belikat, Punggung, sampai Belakang Bahu + Ketiak 🔥 Serin",health,0.95,health,True,ollama_enhanced
+doktermedok,7603378179998223636,Stretching buat kamu yang selangkangannya sakit 🙌🏻*Sakit selangkangan bisa gara-gara tegang dan kaku,health,0.95,health,True,ollama_enhanced
+doktermedok,7599667847035489557,"Buat para pejuang Low Back Pain ➡️ Jangan males atau skip latihan CORE, supaya enda gampang kambuh 🙌",health,0.95,health,True,ollama_enhanced
+doktermedok,7634148462157729045,"Abis Olahraga, jangan cuma leyeh-leyeh atau langsung nongkrong WAJIB Cooling Down + Stretching sek 🔥",health,0.95,health,True,ollama_enhanced
+doktermedok,7635105207948545301,Full Body Hybrid Workout : EMOM 25 minute (artinya latihan selama 25 menit dan setiap 1 menit ganti ,health,0.95,health,True,ollama_enhanced
+doktermedok,7598186075273776404,Monggo bisa buat Bumil Trimester 1-3 🫶🏻,health,0.95,health,True,ollama_enhanced
+doktermedok,7667197050211061012,Latihan buat sakit bagian pantat / area tulang ekor setelah duduk lama 🔥 Jangan lupa diagnosa pasti ,health,0.95,health,True,ollama_enhanced
+doktermedok,7676106110838869269,Latihan mandiri buat “Release” Otot SCM (Sternocleidomastoideus) 🔥 Lakkukan kedua sisi,health,0.95,health,True,ollama_enhanced
+doktermedok,7675339214455754004,"Wrist, Hand, Finger Mobility 🔥 Dirutinin setiap 1-2 jam sekali supaya engga gampang sakit Trigger Th",health,0.95,health,True,ollama_enhanced
+doktermedok,7675709778647174420,Reminder buat Para Runner 🔥 Otot area Core-Lower Body lainnya yang belum disebutin di video (Iliopso,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7651440715150511368,"Membalas @@piyus.home 🏡🌻 Konsumsi madu Zymuno mengandung 5 bahan alami , info lengkap cek keranjang.",health,0.85,not_health,False,ollama_enhanced
+dr.saddam_ismail,7679377433258102036,"Kalau memilih suplemen, jangan hanya melihat 1 kandungan di bagian depan kemasan. Coba cek juga daft",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7631027963194068232,"Mitos atau fakta sih kalau lagi mau bersin tapi sengaja ditahan, katanya bisa bikin gendang telinga ",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7603265221251058952,Celana jeans yang terlalu ketat dapat menekan testis ke tubuh dan memerangkap panas. Suhu panas ini ,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7607296824566680840,"Jangan dicabut! Uban dini tanda sel pigmen butuh dukungan nutrisi. Dukung ""pabrik warna"" rambutmu le",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7601391326340336916,Jangan lupa ya calon ayah dan bunda penihi Vitamin D3 4000 IU. #vitamind3 #d34000iu #suplemen #nutri,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7650731980694375688,"Membalas @Umma iffah Suplemen Vitamin D3 4000 IU bantu memelihara kesehatan tulang secara umum, info",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7603592384089279751,"Kuku tipis dan rambut rontok itu ""saudara kembar"". Kalau satu bermasalah, tandanya struktur tubuh bu",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7633264286277602581,"Bener gak sih kalau habis makan makanan yang terlalu pedas, katanya perut bisa langsung terasa panas",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7634373390899481877,"Bener gak sih kalau lagi enak-enaknya makan es krim atau minum air es yang sangat dingin, tiba-tiba ",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7633335192236657940,Nah siapa yang muncul di beranda akhir akhir ini ? #ReaksiDokter #BahayaRacun #EdukasiKesehatan #Fak,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7624082993879010561,Udah nemu cara gampang buat konsisten tiap hari? Langsung klik keranjang buat temani kebiasaan barum,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7650020273575529735,Membalas @MasRyan Suplemen Vitamin D3 4000 IU cocok untuk bantu memelihara kesehatan tulang dan gigi,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7621106748354465045,Siapa nih yang belum tau cara minum madu + kelapa #maduzenoora #airkelapa #dayatahantubuh #madumurni,health,0.85,not_health,False,ollama_enhanced
+dr.saddam_ismail,7628062758310890768,Mitos atau fakta sih kalau lagi sedih terus makan cokelat katanya bisa bikin kita jadi lebih happy? ,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7614359667275336976,"D3 membantu penyerapan kalsium, sedangkan K2 membantu menempatkan kalsium di bagian yang tepat. Ini ",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7651430359757884692,Ini namanya selang kateter dialisis untuk tindakan hemodialisis. Tahu fungsi selang ini buat pasien ,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7628065008559164689,"Bener gak sih kalau habis makan nanas katanya lidah jadi terasa gatal, kebas, atau perih? #edukasike",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7625863312873426193,Sudah tahu belum apa sih yang terjadi pada otak saat kita kurang tidur ? #edukasikesehatan #kurangti,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7632165611870686471,Mendingan kebiasaan iseng ngagetin orang distop aja nggak sih? #ReaksiDokter #KesehatanJantung #Eduk,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7651436850728504583,"Membalas @Yuliamadu Zymuno gunakan sesuai anjuran pakai ya, info lengkap cek keranjang. #maduzymuno ",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7615877879477341447,"Vitamin D tidak hanya berkaitan dengan tulang, tetapi juga berperan dalam berbagai proses yang memba",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7646680081871424776,"Membalas @sukai_StoreWah seneng banget ya dengernya, info lengkap cek keranjang. #pemulihanfisik #ik",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7636629822030007560,"Bener gak sih kalau ada orang yang sakit gigi, lubangnya didiamkan bertahun-tahun, tiba-tiba malah k",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7643725390661422356,Pernah lihat korban kecelakaan langsung dikasih minum? #ReaksiDokter #PertolonganPertama #EdukasiKes,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7628076754984258832,Mitos atau fakta sih kalau lagi banyak mikir atau ngerjain tugas berat katanya bikin kita jadi lebih,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7637011607029173512,"Mitos atau fakta sih kalau tangan atau kaki tiba-tiba kesemutan, katanya itu tandanya aliran darah k",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7625846593777896705,Kalo kamu tidur jam berapa ni? #ReaksiDokter #WaktuTidur #EdukasiKesehatan #KualitasTidur #FaktaMedi,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7657053220878994695,"Bukan cuma soal urusan finansial, nutrisi untuk persendian juga investasi jangka panjang yang sangat",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7640012274161208597,Siapa yang pernah nyeri leher saat bangun tidurs? #ReaksiDokter #SalahBantal #nyerileher #sakitleher,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7642922936294280469,Jangan ya bersihin karang gigi sendiri di rumah? #ReaksiDokter #KesehatanGigi #EdukasiKesehatan #Fak,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7607299178414312712,Jangan biarkan rambut cuma tumbuh halus. Dukung akarnya biar bisa produksi rambut yang tebal dan kua,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7603593116133674248,"Perawatan dari luar saja rasanya belum cukup? Mungkin ""pabrik"" sel di dalam tubuhmu yang kurang baha",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7625853327913340177,Ada ga ni yang ketiaknya wangi? #ReaksiDokter #EdukasiKesehatan #BauBadan #KesehatanKulit #TipsKeseh,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7645162859030236424,"Membalas @teh Oim🌺 Sudah tau belum Suplemen D3 dan K2 untuk apa, info lengkap cek keranjang. #vitami",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7673396240297512200,"Seiring bertambahnya usia, penjagaan sendi harus ekstra. Jaga gaya hidup aktif dan lengkapi asupan n",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7640009144191159572,Kulit gampang bentol kalau tergores? #ReaksiDokter #KesehatanKulit #EdukasiKesehatan #FaktaMedis #In,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7677507859738807559,Sering ragu minum suplemen bentuk kapsul lunak karena penasaran bahannya dari apa? Yuk kita bedah ko,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7672679613469969672,"Setiap hari lutut menahan beban aktivitas. Hindari angkat barang terlalu berat, gunakan alas kaki em",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7593640878539803912,Es krim bukan penyebab radang amandel. Radang disebabkan oleh infeksi virus atau bakteri. Suhu dingi,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7594020455988628744,madu akasia #madumurni #maduakasia #madu #maduzenoora #zenoora,not_health,0.35,not_health,True,ollama_enhanced
+dr.saddam_ismail,7627384647722290433,"Review Nutrimax Diagard ekstrak pare dan brotowali , info lengkap cek keranjang #vitamin #kesehatan ",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7615545430599945480,Banyak orang tidak sadar kalau aktivitas harian membuat tubuh kurang mendapatkan vitamin D. Ini penj,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7609158186821602577,Jangan bangga jadi remaja jompo lho. Gaya hidup yang sering di dalam ruangan bisa bikin tubuh kurang,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7647342614055881991,"Membalas @Maynasa.sby Suplemen Rillus bantu memelihara kesehatan fungsi pencernaan harian, info leng",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7645608688459320583,"Siapa nih yang udah konsumsi juga ?, info lengkap cek keranjang. #suplemencollagen #kesehatankulit #",health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7658566834085498133,Penampilan luar yang maksimal tentu harus diimbangi pondasi tubuh yang kuat untuk bergerak. Seimbang,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7609176084604570897,Jangan abaikan rasa tidak nyaman di mulut! Itu tanda area mulut dan tenggorokanmu butuh dukungan nut,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7609142075182845200,Sudah makan dan istirahat cukup tapi tetap lemas? Bisa jadi proses pembentukan energi di tubuhmu bel,health,0.95,health,True,ollama_enhanced
+dr.saddam_ismail,7609164382823632145,Pernah gak sih denger fenomena air kencing di kerubungi semut ? Kira kira kenapa ya #edukasikesehata,health,0.95,health,True,ollama_enhanced
+nisaobgyn,7670858061946359060,"Bunsay, udah tau belum kapan waktu yang tepat untuk vaksin selama hamil? Jangan sampai kelewat ya, k",health,0.95,health,True,ollama_enhanced
+nisaobgyn,7665292425501494549,"How’s life as an OBGYN? Dari kurang tidur, harus stand by terus, dan sering ditelpon dokter jaga ata",health,0.85,not_health,False,ollama_enhanced
+ekidarehanf,7603306762745154834,"jangan ke the bund please, jauh mendingan north bund shanghai",not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7660005656769989908,worth it kah parfum lokal 300 ribu dijual lagi dengan harga digoreng sampe 1.7 juta?,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7602569467918290194,menurut kalian keren ga liftnya? #china #shanghai #northbund,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7614667235201781013,"pertama kali ikut race lari langsung hujan berjam-jam nonstop, startnya delay 40 menit, pas lari lew",not_health,0.85,not_health,True,ollama_enhanced
+ekidarehanf,7623747560561233172,oh ini yang namanya christmas market?,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7629248357743054100,menurut kalian istilah2 saat hamil bikin bingung ga? kira2 apalagi singkatan/istilah terkait hamil y,health,0.95,health,True,ollama_enhanced
+ekidarehanf,7619267767342058773,ga pernah se-eskalator-phobic ini wkwk,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7679005102975536405,menurut kalian mitos atau fakta makan durian/buah lai bikin sakit darah tinggi? #setauekida #kaliman,health,0.85,not_health,False,ollama_enhanced
+ekidarehanf,7602136175339408661,"ngapain makan bebek peking jauh2 di PIK, mending yang deket aja di Beijing",not_health,0.85,not_health,True,ollama_enhanced
+ekidarehanf,7653405698419707156,alhamdulillah hari ini diberi kesempatan jadi pembicara tentang isu kesehatan masa kini serta pengem,health,0.95,not_health,False,ollama_enhanced
+ekidarehanf,7666761983156440341,perlu ga sih buat pijat setiap hari? secara umumnya kalau hanya untuk pegal2 jadi berlebihan kalau p,health,0.85,health,True,ollama_enhanced
+ekidarehanf,7647046876394556692,"in this economy barang2 bagus kayak sikat gigi elektrik yang bisa dicharge, waterproof tahan air, me",not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7650811015302483221,ion magnesium membantu otot berelaksasi dan ion kalium mengatur sinyal saraf agar otot tidak berkont,health,0.95,health,True,ollama_enhanced
+ekidarehanf,7663785560779001109,"ga semua perut buncit atau mual2 artinya hamil ya, tanda pasti hamil ketika sudah ada denyut jantung",health,0.95,health,True,ollama_enhanced
+ekidarehanf,7621491662535019784,lukisan tercantik di dunia nyata versi aku,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7628912205353782549,"sengatan tawon bisa berakibat fatal, salah satu penanganan pertamanya dengan memberikan kompres suhu",health,0.95,health,True,ollama_enhanced
+ekidarehanf,7645980634464193813,kayaknya aku cocok makan makanan sehat vietnam,health,0.85,not_health,False,ollama_enhanced
+ekidarehanf,7627430174572743957,terapi gelombang kejut atau sering awam kira “laser” bisa digunakan untuk disfungsi ereksi tertentu ,health,0.95,health,True,ollama_enhanced
+ekidarehanf,7660821854063463701,makan malem bikin gendut ga sih? apa bikin kambuh GERD? #setauekida,health,0.85,not_health,False,ollama_enhanced
+ekidarehanf,7604052411522616594,"tron at night, keliatannya cepet padahal masih santai dan ga serem tapi keren, berani coba? #videole",not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7646363025192013077,pantesan orang jerman dingin2 karena saljunya dingin,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7632999325865659668,"siapa yang punya vertigo, tau kah kalau penyebab paling sering vertigo karena masalah di telinga bag",health,0.95,not_health,False,ollama_enhanced
+ekidarehanf,7625206801662807317,badan tinggi dan kurus tiba2 gelembung parunya pecah dan sesak napas?! bahkan jika parah perlu dekom,health,0.95,health,True,ollama_enhanced
+ekidarehanf,7624400805809949972,cara mengatasi furap alias sakit kurap pada kulit gatal dengan pake krim antijamur dioles sampe … (a,health,0.95,health,True,ollama_enhanced
+ekidarehanf,7612583007127391508,mumpung di china sekalian cobain seharian jadi raja dan ratu china btw aku dpt tiket xuyan immersive,not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7610373617297132821,"ke china buat liburan NO, ke china buat belanja online taobao YES",not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7645605319850347796,"nangis bayi itu adalah cara komunikasi dia ketika ia merasa tidak nyaman entah karena lelah ngantuk,",health,0.85,health,True,ollama_enhanced
+ekidarehanf,7612210629713218836,menurut kalian janggal ga kalau 12 tahun udah jadi bapak?,not_health,0.95,health,False,ollama_enhanced
+ekidarehanf,7623028036744711444,ada yang tau ini negara apa?,not_health,0.85,not_health,True,ollama_enhanced
+ekidarehanf,7647095828531678485,investasi kaum jompo kayak aku apalagi suka nunduk daripada sakit leher malah jadi pusing mending se,health,0.85,not_health,False,ollama_enhanced
+ekidarehanf,7638541833676672276,siapa sangka treatment di korea lebih murah? @daybeau_ina,health,0.85,not_health,False,ollama_enhanced
+ekidarehanf,7607021398178991380,"sumpah seru banget gausah jauh2 ke swiss ternyata di beijing ada toboggan juga, pada berani cobain? ",not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7656370889864383765,menurut kalian pembuluh darah keliatan jelas gini jadi keren/serem/gampang di infus? #setauekida,health,0.85,health,True,ollama_enhanced
+ekidarehanf,7669358037332790548,"yang lagi pengen berhenti ngerokok tapi udah kecanduan dan susah, bisa konsultasi ke dokter ya, bias",health,0.95,health,True,ollama_enhanced
+ekidarehanf,7618545965858966805,"wah ga cuma film frozen yang terinspirasi desa ini, negara china bahkan bikin replikanya 100% di kot",not_health,0.95,not_health,True,ollama_enhanced
+ekidarehanf,7658969241785240852,sejak kapan kalian baru tau ada kanker ganas yang sekilas mirip tahi lalat? #setauekida,health,0.85,health,True,ollama_enhanced
+meta.hanindita,7626277016622337298,,health,0.5,health,True,no_caption_learned
+meta.hanindita,7592910235489160455,"Katanya, MPASI tuh ga perlu ditambah bumbu apa-apa (misalnya bawang merah, gula, garam dll) karena t",health,0.95,health,True,ollama_enhanced
+meta.hanindita,7604080770516356370,Buibu pakbapak baru (eh yang lama juga kadang masih sih😁) seringkali panik begitu bayinya gumoh. Apa,health,0.95,health,True,ollama_enhanced
+meta.hanindita,7641157845811023111,,health,0.5,health,True,no_caption_learned
+reisabrotoasmoro,7648242023534742804,Come Over hidden track 👀 #ARIRANG #BTSArirang #btsvinyl #army,not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7599943039825792277,"Stretching, smiling, feeling good ✨ @Ramania Putri Brotoasmoro #pilates #momanddaughter #pilatesrefo",health,0.3,not_health,False,ollama_enhanced
+reisabrotoasmoro,7599627784692010261,"Celebrating love, family, and new beginnings 🤍 @Ramania Putri Brotoasmoro Congratulations Naufal & L",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7636327303521357077,"Kondisi lambung yang sensitif tetap perlu dukungan dari dalam, salah satunya dengan menjaga keseimba",health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7605925459066375445,Salah satu penyebab utama sariawan adalah ketidakseimbangan bakteri baik di dalam mulut. Probiotik k,health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7672948359258197268,"Fase newborn memang penuh tantangan. Selain memastikan kebutuhan nutrisi Si Kecil terpenuhi, kesehat",health,0.95,not_health,False,ollama_enhanced
+reisabrotoasmoro,7612983022266354965,"Hai Lovely People, kita masak-masak lagi yuk. Bisa jadi lauk sahur maupun buka puasa, dan bisa jadi ",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7662416249309121813,"Just a day full of fun, laughter, and family 🎮✨ #familytime #games #happymoments",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7630710122322496789,"Lovely people, Kenapa hubungan toxic bisa terus terulang?” Terkadang jawabannya tidak sesederhana ya",not_health,0.85,health,False,ollama_enhanced
+reisabrotoasmoro,7631874308394077461,"Banyak orang sudah rutin konsumsi probiotik, tapi tanpa sadar ada kebiasaan yang membuat manfaatnya ",health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7615168709463723284,"Backyard BBQ Iftar vibes ✨ Finally bisa kumpul santai, makan enak, dan quality time bareng teman-tem",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7623996003347320084,"Happy birthday, @Brisia Jodie sayang 🤍🎂 Wishing you lots of love, laughter, and beautiful moments ah",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7620994159553465620,"Happy Birthday @satriyodaniswarabrotoasmoro May your days be filled with laughter, adventure, and al",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7601111914357247253,"Stop numpuk tumbler sembarangan ❌ Pakai storage akrilik biar koleksi tumbler kamu rapi, aman, dan ke",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7644756945169157396,"Minum es teh manis saat cuaca panas memang paling menggoda. Tapi kalau terlalu sering dikonsumsi, ka",health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7655670578694819092,"Music, candles, and quality time with Ania 🤍 @Ramania Putri Brotoasmoro Sometimes the best moments a",not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7602873051705019668,Siapa nih Moms yang suka ngelengkapin barang-barang dapur yang simple tapi kepake banget? 🙋🏻‍♀️ Aku ,not_health,0.95,not_health,True,ollama_enhanced
+reisabrotoasmoro,7613358696663502100,Sering dengar kan kalau anak batuk diberikan campuran kecap dan jeruk nipis? Ini bukan sekedar mitos,health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7671452623534312724,"Tahun ajaran baru dimulai, aktivitas anak juga makin padat. Selain membiasakan pola makan yang baik,",health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7644819083241819413,"Jawabannya boleh ya Moms, selama pilih probiotik yang memang diformulasikan khusus untuk bayi. Karen",health,0.95,health,True,ollama_enhanced
+reisabrotoasmoro,7595409670630640916,"Lovely People, rokok yang sudah jelas memiliki banyak dampak negatif bagi kesehatan bisa beredar sec",health,0.95,health,True,ollama_enhanced
+guru.bidan.wulan,7650693529160666389,Benar dan salah yang biasa dilakukan moms di rumah 😊🥹 #gurubidanwulan #CapCut,not_health,0.95,health,False,ollama_enhanced
+guru.bidan.wulan,7667072565554187540,Syapa bilang capek???? 🤭🥹 #fyp #gurubidanwulan,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7655937735886245141,Cemilqn jadul ku 😍 #fyp #snackajisan #snackjadul,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7592933044303006994,Terima kasih SMP 2 Sungguminasa ❤️ #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7657760575157521684,Pasta gigi andalan abang dan adek 😍 #fyp #pastagigianak #ipeelu,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7633293490612653320,Dilarang kepo #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7666645103426981141,Demo EKSKUL MEGREZ #fyp #gurubidanwulan #smkkesehatanterpadumegarezkymakassar #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7649681371014761748,Sukak banget soflensnya 🥹❤️ #fyp #soflensrekomendasi,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7677936388725132565,Rainduuu #CapCut #fyp #gurubidanwulan,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7648084507551108373,Makasih semuanya nak ❤️ #03juni2026 #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7642160586557721877,Pagiiiii,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7637379800780360981,Cream Lou haruuummm banget #LOU #LOUteloncream #teloncream #calmingcream #bayitidur,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7643388740412525844,Ditunggu yah 😍 #fyppppppppppppppppppppppp #smkkesehatanterpadumegarezkymakassar,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7676666841279843605,Alhamdulillah perjuangan tidak sia2 #fyp #gurubidanwulan #17agustuscore #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7646983490235305237,MBG 🤭,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7596612666949504264,Kulkas seribu pintuku mulai mencair 🫣💦 #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7650479430548131090,Sepakat #gurubidanwulan,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7592086785165888786,Doain aja yah 🤭 #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7645649866617621781,Sukak telon Lotion 😍 #lotionviral #lotionLOU #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7646322581926169876,Apa lagi pengalaman kalean guys 🤣🤭 #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7631469307591019796,Lula Land 🥰 #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7590978518461304071,Praktek lahiran 2023 #fyppppppppppppppppppppppp,health,0.85,not_health,False,ollama_enhanced
+guru.bidan.wulan,7608893453186944263,Gampang dibawah kemana mana 😍 #saniline #sanilineinnerfit #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7650072254147005717,Bidan Area #fyppppppppppppppppppppppp #gurubidanwulan,not_health,0.85,not_health,True,ollama_enhanced
+guru.bidan.wulan,7641087973198548244,Adakah yang sama 🤷‍♀️ #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7649333021199437076,Pahaaammm??? #fyp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7673503160803036437,Alhamdulillah seminar selesai #fyp #gurubidanwulan,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7675686795002137876,Tariiikkkk #fyp #17agustuscore #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7653364102558977300,Pentas seni TK @Sekolah Islam bina insanii #tk #pentasseni #penamatantk #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7593916765218802952,Ayo ke Puskesmas bun 🥰 #fyppppppppppppppppppppppp #gurubidanwulan,not_health,0.95,health,False,ollama_enhanced
+guru.bidan.wulan,7640037871759510804,Sepakat #fyppppppppppppppppppppppp #gurubidanwulan,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7595104434321984786,Hayyo suami sayapa tuh 🫣 #fyppppppppppppppppppppppp #gurubidanwulan,not_health,0.95,health,False,ollama_enhanced
+guru.bidan.wulan,7595402265091902728,Mending masukin ditempatnya aja yah guys 🤭🥰 #fyppppppppppppppppppppppp #gurubidanwulan,not_health,0.95,health,False,ollama_enhanced
+guru.bidan.wulan,7667778805431291156,CKG sekolah #smkkesehatanterpadumegarezkymakassar #gurubidanwulan #ckg #fyp #CapCut,not_health,0.75,not_health,True,ollama_enhanced
+guru.bidan.wulan,7614065332864486663,Bidan bisa bahasa Arab juga lohhh #fyppppppppppppppppppppppp #kontenedukasi #gurubidanwulan,not_health,0.75,not_health,True,ollama_enhanced
+guru.bidan.wulan,7663291047681854741,Ada aja gebrakannya 🤣🫣 #gurubidanwulan #fyp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7608024521789984007,Hibur diri dulsss #fyppppppppppppppppppppppp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7646646981426728213,Cemilan akuuhh 😍 #kuemochiyounly,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7676831086818675989,Semarak merdekaaa 🇮🇩 #fyp #gurubidanwulan #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7637718582662548757,Belajar penggunaan APAR yuks #fyppppppppppppppppppppppp #apar #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7606306635618880776,STOP MEROKOK demi kesehatan dirimu dan orang lain 🚭 #fyppppppppppppppppppppppp #smkkesehatanterpadum,health,0.95,health,True,ollama_enhanced
+guru.bidan.wulan,7599930824280116487,Kalau kalian dikubur juga yah ari2nya?? #fyppppppppppppppppppppppp,not_health,0.95,health,False,ollama_enhanced
+guru.bidan.wulan,7655504211651611924,Maanntaaap nak #fyp,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7636528383278599445,#padahariini,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7664541683081563413,Parfum 50an kuhhh #parfumviral #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7677838659982347540,Semangat bu bidan #fyp #gurubidanwulan #smkkesehatanterpadumegarezkymakassar,not_health,0.75,not_health,True,ollama_enhanced
+guru.bidan.wulan,7660100352103976213,Perdana dan agak tegang tapi alhamdulillah sudah copot 😊🤕,health,0.95,not_health,False,ollama_enhanced
+guru.bidan.wulan,7637325443691040021,Tidak semua 🫣 #fyppppppppppppppppppppppp #gurubidan,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7617781259623828756,Akhirnya pulang kampung #fyppppppppppppppppppppppp #pulangkampung,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7616549548386831637,Libur telah tiba yeaaah #fyppppppppppppppppppppppp #mudik,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7671099579089145108,Harus bisa #fyp #CapCut,not_health,0.95,not_health,True,ollama_enhanced
+guru.bidan.wulan,7679248492384029972,Murid introvet itu sekarang menjadi seoorang ekstrovet #fyp #gurubidanwulan,not_health,0.95,not_health,True,ollama_enhanced
+dr.mariojohan,7616673947425180948,Fun fact Ramadhan ! Kulit lebih gampang kering saat puasa karena kehilangan air seharian.Trik simpel,health,0.95,not_health,False,ollama_enhanced
+dr.mariojohan,7605197522138615060,Wajib tonton video ini ! Biar lu tau Faktanya #skin,health,0.95,health,True,ollama_enhanced
+dr.mariojohan,7680115332400303381,"#stitch with @Feedmedsos hah? Gimana? Kolom komentar terbuka, waktu dan tempat dipersilahkan deh…",not_health,0.85,not_health,True,ollama_enhanced
+dr.mariojohan,7608138703931788565,SEMUA ORANG HARUS DENGER INI ! Share supaya penanganan yang salah gak terjadi di kamu atau keluarga ,health,0.95,health,True,ollama_enhanced
+dr.mariojohan,7601103177098153236,Aku sering ingetin : Jangan sembarangan pegang pipi anak karena tangan yang kebersihannya tidak dike,health,0.95,health,True,ollama_enhanced
+dr.mariojohan,7671518292648955157,Ada berita kasus wanita 23 tahun sembelit. Sekali masuk toilet bisa sampai 2 jam! Ternyata karena al,health,0.95,health,True,ollama_enhanced
+dr.mariojohan,7680134760643022100,"Hayoo, siapa di sini yang suka pakein produk ke si kecil tapi belum pernah baca penelitiannya? 👀 Jan",health,0.85,health,True,ollama_enhanced
+dokterprasadja,7630633892948544775,"Kurang tidur itu bukan “biasa”—itu bom waktu. Otak melambat, mood berantakan, hormon kacau, risiko p",health,0.95,health,True,ollama_enhanced
+dokterprasadja,7634461166303071495,"Tidur bareng pendengkur = kualitas tidur hancur diam-diam 😴❌ Sering kebangun, jantung ikut stres, sa",health,0.95,health,True,ollama_enhanced
+dokterprasadja,7601704150560181511,"Ngorok bukan soal suara. Secara medis, ini tanda henti nafas saat tidur (sleep apnea). Data menunjuk",health,1.0,health,True,ollama_enhanced
+dokterprasadja,7614315883762076936,Ngorok sering dianggap “cuma ganggu pasangan”. Padahal bisa jadi tanda sleep apnea yang berdampak ke,health,0.95,health,True,ollama_enhanced
+drluckyspa,7598062935818358023,Membalas @julayeeeee15_ Jadi ga mau nasi?,not_health,0.95,health,False,ollama_enhanced
+drluckyspa,7677567520403983637,"Semoga ngga ada lagi ibu-ibu yang kemakan hacks yang belum ada bukti penelitiannya yaa, pakai cara y",health,0.85,not_health,False,ollama_enhanced
+drluckyspa,7657176744234962196,"Udah pernah cek kode di bawah galon air minum di rumah? Kelihatannya sepele, tapi air diminum setiap",health,0.95,health,True,ollama_enhanced
+drluckyspa,7676459076062055701,Membalas @milano_putra apa itu pneumonia?,health,0.95,health,True,ollama_enhanced
+drluckyspa,7610430121593310482,"Hati-hati ya bu, jangan sampai kurang stimulasi sama anak! Sesimple pakein skincare ke anak boleh ba",not_health,0.85,health,False,ollama_enhanced
+drluckyspa,7613513436777024775,Sensori bukan cuma taktil! Jangan lupa vestibuler juga yaa,health,0.85,health,True,ollama_enhanced
+drluckyspa,7600316138693725460,"Catet ya, lemak itu bagus untuk anak buat ningkatin BB dan dukung otak anak. Tapi apakah semua lemak",health,0.95,health,True,ollama_enhanced
+fauzaannibras,7676040894927228181,mana kadang beda lg cerita 2”nya 🙏😭 #dokter #doktergenz,health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7618415184549252373,"day 1 mutualan di wa 🗿, tipis” dlu #dokter #doktergenz",not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7594846345865776405,kena realita gaji isip kaget sekeluarga dia 😭#dokter #doktergenz,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7631032643563359509,makasih @nurse.bono atas tamparan kehidupannya 😭#dokter #doktergenz,health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7674186877758508309,"beres praktik yg ditanya, “brp kg bawang yg udh kamu obatin?” 🗿#dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7667139133332114708,"🥚🐣🍳 kl bisa nuntut, udh kena pencemaran nama baik luu 🗿#dokter #doktergenz",not_health,0.95,not_health,True,ollama_enhanced
+fauzaannibras,7641159885131877652,"senin yg mengenaskan 🙏😭, apalagi yg gk punya ayang 🗿#dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7644506072950033685,"kalo dapet yg lucu, bagus, dan murah? ya bonus kyk ini 😊🤙#dokter #doktergenz",not_health,0.95,not_health,True,ollama_enhanced
+fauzaannibras,7624844054047657236,tertulis dengan jelas kebahagiaan ku 🙏🫶🏻#dokter #doktergenz,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7620735823285194004,#stitch with 7619380704090197268 sumpah kasur healthy emg sengaruh itu 😭🙏,health,0.75,not_health,False,ollama_enhanced
+fauzaannibras,7643020404558171413,"pgnnya nyumput, badan segede ini nyumput dimana tp 🙏😭 #dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7622494972196998420,yaa barangkali idup lagi kan? 🗿#dokter #doktergenz,health,0.75,not_health,False,ollama_enhanced
+fauzaannibras,7673442561154911509,ga sia2 nonton podcast dr tirta sm dr rara 1 jam 🗿 #usmileid #usmileJadiLebihBaik #solusiGigiPutih @,health,0.85,health,True,ollama_enhanced
+fauzaannibras,7648582537891040532,gua yg 3rb perpasien bingung kok org” gampang bgt dapet duityak? mana pd gabersyukur lg 🥹🙏#dokter #d,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7645936974238371092,"semua masalah hidupnya gua tau, kecuali kapan dia lahir 🙏🗿",not_health,0.95,not_health,True,ollama_enhanced
+fauzaannibras,7628427561684536597,inilah knp kita ga prnh ikut april mop 🙏🗿#dokter #doktergenz,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7668996145389063444,lagian nenek mana yg umur 60 taun msh pargoy 🗿😭#dokter #doktergenz,health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7609587103000759572,"pake scrub aja pd ga prcaya gua dokter, apalagi ga pake, disangka apa?😭#dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7671222041005247764,"mengedukasi pasien ga ngopi, saat sedang ngopi 🙏🥰🗿#dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7623346081467763989,kl ga ikut takut ketinggalan gosip juga 🙏🗿 #dokter #doktergenz,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7595545330104421652,"gak enak bgt hidup, kl kita ga bisa nikmatin makanan dan minuman viral 😭. coba pake pasta gigi yg bi",health,0.95,health,True,ollama_enhanced
+fauzaannibras,7657128024646896916,"Urus muka tuh wajib, tapi badan? wajib diperhatiin jg dong 👌🏻🙌🏻😤#dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7617865404345502996,ditengah guncangan pe pe apa.. ttp lah menjaga kesehatan utk masa tua wahai gen z @Royal Bio Offic #,health,0.95,not_health,False,ollama_enhanced
+fauzaannibras,7653037468597374229,gaji? ga keliatan🧐,not_health,0.95,not_health,True,ollama_enhanced
+fauzaannibras,7629922753944096020,wkwk sekalian mikir ini knapa yaa 🤔🫣🤫 #dokter #doktergenz,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7602552322752908564,"buka demi km, tapi demi ada borang yg harus dikerjakan…#dokter #doktergenz #internship",not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7593559883031661845,"rasanya ga gen z klo belum ikut panutan kita @Jodiiin 🙏, 2026 gua mulai dari salon daily utk masalah",not_health,0.95,not_health,True,ollama_enhanced
+fauzaannibras,7672709199410760980,kirim ke pacar kalian yg lg haid 🩸🥹/ yg punya pacar namanya yoga tolong tag 🗿#dokter #doktergenz,health,0.85,health,True,ollama_enhanced
+fauzaannibras,7613330976298585364,"kao pacar lu masih bingung dan males, suruh pake #thipankfacialwash ga ribet lg #thipankskin #growup",not_health,0.95,health,False,ollama_enhanced
+fauzaannibras,7644135962209307924,"maaf pose ku ya cmn ini 👍, 👍👍, 👊#dokter #doktergenz",not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7638945316200287508,seumuran gua udh ada yg anak 2 malah 😭 tp gpp asal persiapannya matang 👍🤙 #asibooster #MomUungOHTSta,not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7654890508459953429,menyesuaikan first impression sgt berpengaruh pada saat konsultasi 🤝🤓 #dokter #doktergenz,health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7673079545536351509,ada yg ngerasa haid nya makin nyeri? mungkin krn 5 hal ini 🗿🤔#dokter #doktergenz,health,0.95,not_health,False,ollama_enhanced
+fauzaannibras,7658600816290368789,"selagi masuk poli umum antri aja disini mah, asal dtg lbh pagi pasti lbh cepet 🤣. krn klo km lama di",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7627066799779171604,"Usia 2-4 tahun itu golden age. Kalau dibiarin, berat susah naik, atau pertumbhan nya ga sesuai usia.",health,0.95,not_health,False,ollama_enhanced
+fauzaannibras,7645244510016163093,"yg laen pada males igd, ntah knp kita sedih pergi dari IGD rs ini 😔🥲#dokter #doktergenz",health,0.75,not_health,False,ollama_enhanced
+fauzaannibras,7640049509493476628,"kadang jd tmn gosip, belajar, love hate relationship 🙏🥰 #dokter #doktergenz",not_health,0.85,not_health,True,ollama_enhanced
+fauzaannibras,7668177138863901973,bahas gigi sensitif yg umum bgt terjadi 🥶🥲#dokter #doktergenz #gigi,health,0.85,health,True,ollama_enhanced
+fauzaannibras,7613959261281864981,"berangkat saya pakk, nyawit gua nih 😬 #dokter #doktergenz",health,0.85,not_health,False,ollama_enhanced
+fauzaannibras,7590940021771848980,cung yg dari sma udh kena gerd 🫵🏻😭#dokter #doktergenz,health,0.85,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7680032699406421255,Ada yang pernah kenal dengan seseorang yang alami siklus ini? #narcissisticabuse #npd #thetruthabout,not_health,0.95,health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7624777291893083410,Selengkapnya di YT dr Vivi Syarif - Psikiater #psikiater #edukasi #toxicrelationship,health,0.85,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7590305649616047368,Saatnya pegang kendali ya! #2026 #newyear #psikiater,health,0.85,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7649953023137041682,"Alhamdulillah verified, makasih Tiktok 🤗 #psikiater #mentalhealth #edukasikesehatanmental",health,0.95,not_health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7642140121696832776,"Replying to @your friend from somewhere tetap lanjut obat, selama hamil dipertimbangkan tanpa obat s",health,0.95,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7623774142457826567,First time swimming with my doctor's coat on. Kinda nervous 😄 @mnijungkook @hobipower help 😂😂 #btsar,not_health,0.85,not_health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7598969485436947719,Yang udah nonton komen yaaa #drakor #canthislovebetranslated? #attachmentstyle,not_health,0.95,not_health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7592120144579792136,Terima kasih sudah mengingatkan saya mengapa saya memilih jalur profesi ini. Terima kasih 🙏🙏🙏 Tag se,health,0.95,not_health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7598767606635433224,"#stitch with @Inilah.com Ga heran sih, cuma ga terdeteksi aja! #psikiater #kesehatanmental #kejiwaan",health,0.95,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7645689688358915346,Replying to @Shazzwear Biosocial Theory - Marsha Linehan #bpd #borderlinepersonalitydisorder #psikia,health,0.95,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7672615084308581640,"Sibuk dengan ""penderitaan"" diri sendiri kadang membuat kita sulit jadi berempati. Yuk asah lagi empa",health,0.95,health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7676638709487389959,"Prinsipnya, gangguan kepribadian narsisiatik bisa dialami oleh pria maupun wanita, hanya ada yg geja",not_health,0.85,health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7657084036493430034,Pre order now https://linktr.ee/POTheTruthAboutNPD #npd #npdawareness #psikiater,health,0.85,not_health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7620678843480755463,"""If you are depressed you are living in the past. If you are anxious you are living in the future. I",health,0.95,not_health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7662904444597587218,Terima kasih Haaland sudah mewakili😄 sering terjadi di ruang praktik 😁 #jokes #meme #mentalhealth,health,0.35,not_health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7621160298623356167,Pusing banget mikirin dunia. Ga dipikirin tapi kepikiran juga. 🙄 #worldpeace #perang #personalopinio,not_health,0.95,not_health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7655305578704686354,"Hati2 dalam berelasi ya gaess, stay safe 🫶 kalau mau saya bahas red flags mengenali pola manipulatif",not_health,0.85,health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7595393736796949767,"Replying to @moms_alyna Hati2, selalu dampingi anak dg aktivitasnya yaa #gameonline #predatoranak #c",not_health,0.95,health,False,ollama_enhanced
+dr.zulvia.syarif.spkj,7622305668170665224,"Their posters are all over my bedroom walls! 😍 Xiellennials, show me your 90s idols! Tag me! 😍 #90s ",not_health,0.95,not_health,True,ollama_enhanced
+dr.zulvia.syarif.spkj,7663679617416301831,Favorit kalian lukisan yang mana? #psikiater #anakberkebutuhankhusus #kesehatanmental,health,0.85,not_health,False,ollama_enhanced
+putriemje,7648889477108223253,Ngga jadi kritik lah,not_health,0.85,not_health,True,ollama_enhanced
+putriemje,7606943679961386260,"LatePost #DieteticStudy, sebenernya hospital internshipnya udh kelar dari desember tapi baru sempet ",not_health,0.85,not_health,True,ollama_enhanced
+putriemje,7607805822764190997,"Udah tau belum kalo februari juga merupakan bulan vitamin A, btw kalo mau beli bukunya linknya ada d",health,0.85,not_health,False,ollama_enhanced
+putriemje,7647153245265186069,"Sejauh ini, ini mic favorit aku buat ngonten pake Hp",not_health,0.95,not_health,True,ollama_enhanced
+putriemje,7627445782341340437,Banyak yang bilang UPF itu “bahaya”.Tapi bahaya di sini bukan berarti kayak racun yang sekali makan ,health,0.95,health,True,ollama_enhanced
+putriemje,7671141420454989077,"Sebagai ahli gizi, aku senang menemukan buku yang menyampaikan ilmu gizi dengan bahasa yang sederhan",health,0.85,not_health,False,ollama_enhanced
+putriemje,7645540127447551252,"Daging kurban favoritmu biasanya dimasak jadi apa? 🍲 Kalau aku, salah satu favoritnya adalah Soto Ba",health,0.75,not_health,False,ollama_enhanced
+putriemje,7625940467187780885,Let’s make strawberry milk 🍓🥛,not_health,0.95,not_health,True,ollama_enhanced
+drhans_spesialisanak,7612136868901162248,Anak terlihat anteng saat pegang gadget. Tapi efeknya bisa tidak langsung terlihat. Paparan layar be,health,0.95,health,True,ollama_enhanced
+drhans_spesialisanak,7642965591891922183,"Kalau Bunda merasa si kecil menunjukkan tanda-tanda pencernaan sensitif, penting untuk memperhatikan",health,0.95,health,True,ollama_enhanced
+drhans_spesialisanak,7592623335024921874,Rambut Bayi Rontok Terus? Jangan Panik Dulu Sebelum Tahu Ini! 😱Rambut bayi 0-6 bulan rontok itu waja,health,0.95,health,True,ollama_enhanced
+drhans_spesialisanak,7597250621917465863,Kelihatan sehat belum tentu cukup vitaminnya. Sering flu atau susah tidur bisa jadi tanda kurang vit,health,0.95,health,True,ollama_enhanced
+drhans_spesialisanak,7643744983299804423,Jadi dokter anak itu penuh tantangan. Salah satunya adalah gimana caranya buat anak2 merasa nyaman m,health,0.95,not_health,False,ollama_enhanced
+drhans_spesialisanak,7664817424021130514,"Red Flags: Kapan Anak Harus Dibawa ke IGD? 🚨 Saat Si Kecil demam atau batuk, wajar jika Moms merasa ",health,0.95,health,True,ollama_enhanced
+drhans_spesialisanak,7654874804348144914,"Sebagai dokter spesialis anak, salah satu keluhan yang paling sering saya temui adalah kulit anak ya",health,0.95,health,True,ollama_enhanced
+zickyneuro,7677575762181917972,"COWOK TAPI PILATES Pilates itu bukan cuma buat cewek. Cowok juga butuh core kuat, badan lebih fleksi",health,0.95,health,True,ollama_enhanced
+zickyneuro,7611100555498458389,PENYEBAB SAKIT KEPALA DI BULAN RAMADHAN !Kunjungan pasien karena sakit kepala lebih sering terjadi p,health,0.95,health,True,ollama_enhanced
+zickyneuro,7654162354804034836,PERNAH NGERASA ADA GEMPA TAPI LOE DOANG YANG NGERASA ? VERTIGO banyak yang sering denger istilah ini,health,0.95,health,True,ollama_enhanced
+zickyneuro,7666649863769328916,"KESURUPAN : Antara Iman dan Ilmu Kedokteran Sebagai seorang Muslim, gue meyakini adanya alam gaib. I",health,0.95,health,True,ollama_enhanced
+dr.ndreamon,7662926012329643285,"Cuaca panas bikin mood makin buruk, sampai keinginan hidup menipis? Apakah ini berlebihan? Ternyata,",health,0.95,health,True,ollama_enhanced
+dr.ndreamon,7655496932315401493,Diajak ngomong saya diam… Ditanya-tanya saya juga diam… Tapi hari ini saya akan jawab: apa itu phubb,health,0.95,health,True,ollama_enhanced
+dr.ndreamon,7634369756488912148,Pembatas bukunya kok begini?,health,0.85,not_health,False,ollama_enhanced
+dr.ndreamon,7659254951612402965,Musik metal buruk buat kesehatan mental? Kata siapa? Riset yang ada malah menunjukkan hal yang unik:,health,0.95,health,True,ollama_enhanced
+dr.ndreamon,7644549398034173204,"Saya pemalu, jadi saya nggak pede ngomong… jadi begini saja ya.",not_health,0.85,health,False,ollama_enhanced

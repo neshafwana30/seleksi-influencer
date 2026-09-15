@@ -126,6 +126,7 @@ ipython_config.py
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
+credentialstiktok.txt
 
 # Celery stuff
 celerybeat-schedule
@@ -216,3 +217,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+tiktok_browser_profile/
+tiktok_cookies_raw.json
+tiktok_cookies.json
+credentials.py
