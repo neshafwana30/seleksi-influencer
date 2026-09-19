@@ -1,61 +1,65 @@
 ======================================================================
-TEST MODEL - ACCURACY REPORT
+TEST MODEL - ACCURACY REPORT (70/30 SPLIT)
 ======================================================================
 
-Generated: 2026-09-10T12:31:17.673615
+Generated: 2026-09-19T00:00:53.804977
 
-OVERALL METRICS (Test Set - 40%)
+OVERALL METRICS (Test Set - 30%)
 ----------------------------------------------------------------------
-Total videos: 818
-Accuracy: 81.3%
-Precision: 80.9%
-Recall: 88.3%
-F1-Score: 84.5%
+Total videos: 619
+Accuracy: 82.9%
+Precision: 83.3%
+Recall: 88.8%
+F1-Score: 86.0%
+
+Confusion Matrix:
+  True Positives:  325
+  False Positives: 65
+  True Negatives:  188
+  False Negatives: 41
 
 PER-INFLUENCER ACCURACY
 ----------------------------------------------------------------------
-@aliphildan: 78.3%
-@aymanalts: 57.5%
-@bidancynthia: 64.3%
-@dionharyadi: 71.4%
-@dokter.harmonospanak: 50.0%
-@dokter.reni.anak: 100.0%
-@dokter_ika: 84.2%
-@dokteramiraobgyn: 93.3%
-@doktergigitantri: 100.0%
-@doktermatahendra: 100.0%
-@doktermedok: 89.5%
-@dokternadiyah: 90.0%
-@dokterprasadja: 100.0%
-@doktervito: 91.7%
-@dr.deamaulidia: 100.0%
-@dr.mariojohan: 85.7%
-@dr.ndreamon: 60.0%
-@dr.saddam_ismail: 96.0%
-@dr.ziee: 75.0%
-@dr.zulvia.syarif.spkj: 50.0%
-@drgfira: 100.0%
-@drhans_spesialisanak: 85.7%
-@drkevinmak: 95.0%
-@drluckyspa: 57.1%
-@drrichardlee: 100.0%
-@ekidarehanf: 77.8%
-@farhanzubedi: 0.0%
-@fauzaannibras: 52.5%
-@gelarsramdhani: 90.0%
-@giapratamamd: 75.0%
-@guru.bidan.wulan: 86.5%
-@ikhsanqthii: 83.3%
-@itsdoktermuda: 81.2%
-@jamilatussadiyah: 75.0%
-@jiemiardian: 73.3%
-@meta.hanindita: 100.0%
-@nadialaydrus: 90.8%
-@nisaobgyn: 50.0%
-@putriemje: 62.5%
-@reisabrotoasmoro: 85.7%
-@roozzaak: 100.0%
-@spesialist.kesehatan: 0.0%
-@tirtacipeng: 72.7%
-@wishdrboyke: 100.0%
-@zickyneuro: 100.0%
+@aliphildan: 70.6% (12/17 correct)
+@aymanalts: 56.7% (17/30 correct)
+@bidancynthia: 66.7% (14/21 correct)
+@dionharyadi: 60.0% (3/5 correct)
+@dokter.harmonospanak: 50.0% (7/14 correct)
+@dokter.reni.anak: 100.0% (2/2 correct)
+@dokter_ika: 93.1% (27/29 correct)
+@dokteramiraobgyn: 91.7% (11/12 correct)
+@doktermatahendra: 100.0% (8/8 correct)
+@doktermedok: 93.1% (27/29 correct)
+@dokternadiyah: 87.5% (7/8 correct)
+@dokterprasadja: 100.0% (3/3 correct)
+@doktervito: 100.0% (9/9 correct)
+@dr.deamaulidia: 100.0% (3/3 correct)
+@dr.mariojohan: 100.0% (5/5 correct)
+@dr.ndreamon: 50.0% (2/4 correct)
+@dr.saddam_ismail: 97.3% (36/37 correct)
+@dr.ziee: 83.3% (5/6 correct)
+@dr.zulvia.syarif.spkj: 46.7% (7/15 correct)
+@drgfira: 100.0% (3/3 correct)
+@drhans_spesialisanak: 83.3% (5/6 correct)
+@drkevinmak: 93.3% (28/30 correct)
+@drluckyspa: 80.0% (4/5 correct)
+@drrichardlee: 100.0% (7/7 correct)
+@ekidarehanf: 77.8% (21/27 correct)
+@fauzaannibras: 60.0% (18/30 correct)
+@gelarsramdhani: 85.7% (6/7 correct)
+@giapratamamd: 77.8% (7/9 correct)
+@guru.bidan.wulan: 84.6% (33/39 correct)
+@ikhsanqthii: 89.3% (25/28 correct)
+@itsdoktermuda: 91.7% (11/12 correct)
+@jamilatussadiyah: 100.0% (3/3 correct)
+@jiemiardian: 63.6% (7/11 correct)
+@meta.hanindita: 100.0% (3/3 correct)
+@nadialaydrus: 89.5% (51/57 correct)
+@nisaobgyn: 50.0% (1/2 correct)
+@putriemje: 83.3% (5/6 correct)
+@reisabrotoasmoro: 87.5% (14/16 correct)
+@roozzaak: 100.0% (35/35 correct)
+@spesialist.kesehatan: 0.0% (0/1 correct)
+@tirtacipeng: 76.5% (13/17 correct)
+@wishdrboyke: 100.0% (5/5 correct)
+@zickyneuro: 100.0% (3/3 correct)

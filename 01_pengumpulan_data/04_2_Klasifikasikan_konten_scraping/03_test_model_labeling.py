@@ -1,24 +1,18 @@
 """
 03_TEST_MODEL_LABELING.py
 =========================
-Training & Testing dengan 70/30 split dari labeled_videos.csv (ADVANCED PATTERNS)
+Training & Testing dengan 70/30 split dari labeled_videos.csv (SIMPLE VERSION)
 
-STEP 1: Load & split 70/30 per influencer (stratified)
-STEP 2: Learn ADVANCED influencer characteristics dari train set (70%)
+STEP 1: Load & split 70/30 per influencer (stratified, edge case handling)
+STEP 2: Learn influencer characteristics dari train set (70%)
 STEP 3: Save learned patterns ke JSON (reusable untuk classifier)
 STEP 4: Classify test set (30%) pakai learned patterns + Ollama
 STEP 5: Evaluate results & save reports
 
-ADVANCED PATTERNS YANG DI-EXTRACT:
-  - Content style (emoji, hashtag, caption length)
-  - Medical indicators (keywords, medical terms frequency)
-  - Error patterns & misclassification insights
-  - Profile summary untuk classifier guidance
-
 Output:
   - hasil_03/train_set.csv
   - hasil_03/test_set.csv
-  - hasil_03/learned_patterns.json  ← ADVANCED: lebih detailed
+  - hasil_03/learned_patterns.json
   - hasil_03/accuracy_report.csv
   - hasil_03/accuracy_summary.txt
 
@@ -33,9 +27,10 @@ import json
 import time
 import logging
 import sys
+import numpy as np
 from datetime import datetime
 from pathlib import Path
-from collections import defaultdict, Counter
+from collections import defaultdict
 from config import OUTPUT_LABELED_VIDEOS, validate_paths
 
 # ============================================================================
@@ -59,10 +54,10 @@ LEARNED_PATTERNS = HASIL_DIR / "learned_patterns.json"
 ACCURACY_REPORT = HASIL_DIR / "accuracy_report.csv"
 ACCURACY_SUMMARY = HASIL_DIR / "accuracy_summary.txt"
 
-TRAIN_SPLIT_RATIO = 0.7  # ⬆️ Updated: 70% train, 30% test
+TRAIN_SPLIT_RATIO = 0.7  # 70% train, 30% test
 
 # ============================================================================
-# 🌡️ CPU THROTTLING CONFIG -- biar laptop gak overheat
+# 🌡️ CPU THROTTLING CONFIG
 # ============================================================================
 
 OLLAMA_NUM_THREAD = 6
@@ -71,149 +66,63 @@ COOLDOWN_EVERY_N_VIDEOS = 750
 COOLDOWN_DURATION = 30
 
 # ============================================================================
-# HELPER FUNCTIONS - EXTRACT ADVANCED PATTERNS
+# HELPERS
 # ============================================================================
 
-def extract_keywords(texts, top_n=10):
-    """Extract top keywords dari list of texts"""
-    texts = [str(t).lower() for t in texts if pd.notna(t) and len(str(t)) > 0]
-    if not texts:
-        return []
-    
-    # Split ke words, filter short words
-    all_words = []
-    for text in texts:
-        words = re.findall(r'\b[a-zა-ჯ]{3,}\b', text)  # >3 chars, skip stopwords simple
-        all_words.extend(words)
-    
-    # Get top keywords
-    word_counts = Counter(all_words)
-    return [(word, count) for word, count in word_counts.most_common(top_n)]
+def convert_numpy_types(obj):
+    """Convert numpy types to Python native types untuk JSON serialization"""
+    if isinstance(obj, dict):
+        return {key: convert_numpy_types(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types(item) for item in obj]
+    elif isinstance(obj, (np.integer, np.floating)):
+        return obj.item()
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif hasattr(obj, 'item'):
+        try:
+            return obj.item()
+        except:
+            return obj
+    return obj
 
-def count_medical_terms(texts):
-    """Count posts yang mention medical terms"""
-    medical_keywords = [
-        'dokter', 'kesehatan', 'penyakit', 'gejala', 'obat', 'medis', 
-        'kesehatan mental', 'diet', 'nutrisi', 'olahraga', 'fitness',
-        'psikolog', 'bidan', 'perawat', 'operasi', 'terapi',
-        'kesehatan reproduksi', 'kehamilan', 'menstruasi', 'kesehatan pria',
-        'kesehatan wanita', 'stress', 'trauma', 'parenting', 'kulit'
-    ]
+def analyze_caption_characteristics(caption):
+    """Analyze karakteristik caption yang bisa membantu understand errors"""
+    caption_str = str(caption).lower() if pd.notna(caption) else ""
     
-    texts = [str(t).lower() for t in texts if pd.notna(t)]
-    if not texts:
-        return 0
+    # Caption length
+    length = len(caption_str)
     
-    count = 0
-    for text in texts:
-        if any(term in text for term in medical_keywords):
-            count += 1
+    # Check untuk medical/health related terms
+    medical_keywords = ['dokter', 'kesehatan', 'obat', 'penyakit', 'gejala', 'medis', 
+                       'kesehatan mental', 'diet', 'nutrisi', 'olahraga', 'fitness',
+                       'psikolog', 'bidan', 'perawat', 'operasi', 'terapi', 'resep']
+    has_medical_terms = any(term in caption_str for term in medical_keywords)
+    medical_term_count = sum(caption_str.count(term) for term in medical_keywords)
     
-    return count / len(texts) * 100
-
-def analyze_caption_style(texts):
-    """Analyze style indicators dari captions"""
-    texts = [str(t) for t in texts if pd.notna(t) and len(str(t)) > 0]
-    if not texts:
-        return {
-            'emoji_frequency': 0,
-            'hashtag_frequency': 0,
-            'avg_caption_length': 0,
-            'has_question_pct': 0,
-            'has_cta_pct': 0
-        }
+    # Check untuk non-health related terms
+    non_health_keywords = ['fashion', 'makeup', 'skincare', 'estetika', 'cantik', 'glow',
+                          'ootd', 'styling', 'trending', 'viral', 'challenge', 'haul']
+    has_non_health_terms = any(term in caption_str for term in non_health_keywords)
     
-    emoji_count = sum(1 for t in texts if re.search(r'[😀-🙏🏻]', t))
-    hashtag_count = sum(1 for t in texts if re.search(r'#\w+', t))
-    question_count = sum(1 for t in texts if '?' in t)
-    cta_count = sum(1 for t in texts if any(cta in t.lower() for cta in ['yuk', 'coba', 'lihat', 'tonton', 'follow', 'subscribe']))
-    
-    avg_length = sum(len(t) for t in texts) / len(texts)
+    # Check untuk ambiguous terms (bisa health atau non-health)
+    ambiguous_keywords = ['kulit', 'kecantikan', 'diet', 'sehat', 'kurus', 'gemuk', 'berat badan']
+    ambiguous_term_count = sum(caption_str.count(term) for term in ambiguous_keywords)
     
     return {
-        'emoji_frequency': emoji_count / len(texts) * 100,
-        'hashtag_frequency': hashtag_count / len(texts) * 100,
-        'avg_caption_length': round(avg_length, 1),
-        'has_question_pct': question_count / len(texts) * 100,
-        'has_cta_pct': cta_count / len(texts) * 100
+        'length': length,
+        'has_medical_terms': has_medical_terms,
+        'medical_term_count': medical_term_count,
+        'has_non_health_terms': has_non_health_terms,
+        'ambiguous_term_count': ambiguous_term_count
     }
-
-def generate_profile_summary(username, inf_data, learnings_base):
-    """Generate human-readable profile summary"""
-    health_pct = learnings_base['health_pct']
-    style = learnings_base.get('content_style', {})
-    medical = learnings_base.get('medical_indicators', {})
-    
-    # Determine posting style
-    if style.get('emoji_frequency', 0) > 40:
-        style_desc = "casual, emoji-heavy"
-    elif style.get('emoji_frequency', 0) > 20:
-        style_desc = "conversational"
-    else:
-        style_desc = "formal"
-    
-    # Health focus
-    if health_pct > 75:
-        focus = "Strong medical/health focus"
-    elif health_pct > 50:
-        focus = "Balanced health and lifestyle"
-    else:
-        focus = "Mostly non-health content"
-    
-    # Activity pattern
-    avg_len = style.get('avg_caption_length', 0)
-    if avg_len > 200:
-        activity = "Detailed, long-form captions"
-    elif avg_len > 100:
-        activity = "Medium-length captions"
-    else:
-        activity = "Short, snappy captions"
-    
-    summary = f"{focus}. Posts {style_desc}. {activity}."
-    if medical.get('medical_terms_frequency', 0) > 30:
-        summary += " Uses medical terminology frequently."
-    
-    return summary
-
-def analyze_errors_from_predictions(predictions_df):
-    """Analyze error patterns dari test predictions"""
-    errors = {
-        'false_positives': [],
-        'false_negatives': [],
-        'fn_count': 0,
-        'fp_count': 0,
-    }
-    
-    fp_mask = (predictions_df['predicted_label'] == 'health') & (predictions_df['actual_label'] == 'not_health')
-    fn_mask = (predictions_df['predicted_label'] == 'not_health') & (predictions_df['actual_label'] == 'health')
-    
-    errors['fp_count'] = fp_mask.sum()
-    errors['fn_count'] = fn_mask.sum()
-    
-    # Get sample FPs & FNs
-    fp_samples = predictions_df[fp_mask][['description', 'predicted_confidence']].head(3)
-    fn_samples = predictions_df[fn_mask][['description', 'predicted_confidence']].head(3)
-    
-    if len(fp_samples) > 0:
-        errors['false_positives'] = [
-            {"caption": row['description'][:80], "confidence": row['predicted_confidence']} 
-            for _, row in fp_samples.iterrows()
-        ]
-    
-    if len(fn_samples) > 0:
-        errors['false_negatives'] = [
-            {"caption": row['description'][:80], "confidence": row['predicted_confidence']} 
-            for _, row in fn_samples.iterrows()
-        ]
-    
-    return errors
 
 # ============================================================================
-# VALIDATION: Ensure semua influencer punya training + test data
+# STEP 1: LOAD & SPLIT (dengan validation & edge case handling)
 # ============================================================================
 
 def validate_split(train_df, test_df, original_df):
-    """Validate bahwa influencer dengan ≥2 videos punya training AND test data"""
+    """Validate bahwa VALID influencers punya training AND test data"""
     logger.info("\n" + "="*70)
     logger.info("VALIDATION: Checking split integrity")
     logger.info("="*70)
@@ -222,85 +131,63 @@ def validate_split(train_df, test_df, original_df):
     train_influencers = set(train_df['username'].unique())
     test_influencers = set(test_df['username'].unique())
     
-    # Identify influencers dengan <2 videos (SKIPPED)
+    # Identify skipped influencers (<2 videos)
     skipped_influencers = []
     for username in original_influencers:
         if len(original_df[original_df['username'] == username]) < 2:
             skipped_influencers.append(username)
     
-    # Valid influencers = yang punya ≥2 videos
     valid_influencers = original_influencers - set(skipped_influencers)
     
-    # Check 1: Semua VALID influencer ada di training
+    # Check: all valid influencers in train
     missing_in_train = valid_influencers - train_influencers
     if missing_in_train:
-        logger.error(f"❌ {len(missing_in_train)} influencer TIDAK punya training data: {missing_in_train}")
+        logger.error(f"❌ {len(missing_in_train)} influencer missing from TRAIN: {missing_in_train}")
         return False
     
-    # Check 2: Semua VALID influencer ada di test
+    # Check: all valid influencers in test
     missing_in_test = valid_influencers - test_influencers
     if missing_in_test:
-        logger.error(f"❌ {len(missing_in_test)} influencer TIDAK punya test data: {missing_in_test}")
+        logger.error(f"❌ {len(missing_in_test)} influencer missing from TEST: {missing_in_test}")
         return False
     
-    # Check 3: Per-influencer split details dengan minimum threshold
     logger.info(f"\n📋 Per-Influencer Split Details:\n")
     logger.info(f"{'Influencer':<20} {'Total':<8} {'Train':<8} {'Test':<8} {'Status':<15}")
     logger.info("-" * 70)
     
     all_valid = True
-    warn_count = 0
-    
     for username in sorted(original_influencers):
         total = len(original_df[original_df['username'] == username])
         
-        # SKIPPED: <2 videos
         if total < 2:
-            logger.info(f"{username:<20} {total:<8} {'SKIP':<8} {'SKIP':<8} {'❌ SKIPPED':<15}")
+            logger.info(f"{username:<20} {total:<8} {'SKIP':<8} {'SKIP':<8} {'⚠️  <2 videos':<15}")
             continue
         
         train_count = len(train_df[train_df['username'] == username])
         test_count = len(test_df[test_df['username'] == username])
         
-        # Validation rules:
-        # - Minimum 1 di training, 1 di test (hard requirement)
-        # - Warn jika < 3 di salah satu (untuk robustness)
         status = "✓ OK"
-        
         if train_count == 0 or test_count == 0:
             status = "❌ FAIL"
             all_valid = False
-        elif train_count < 3 or test_count < 3:
-            status = "⚠️  WARN"
-            warn_count += 1
         
         logger.info(f"{username:<20} {total:<8} {train_count:<8} {test_count:<8} {status:<15}")
     
     logger.info("-" * 70)
     
     if not all_valid:
-        logger.error("\n❌ VALIDATION FAILED! Some influencers missing train or test data.")
         return False
     
     logger.info(f"\n✅ VALIDATION PASSED!")
-    logger.info(f"   ✓ {len(valid_influencers)} influencers have BOTH training AND test data")
+    logger.info(f"   ✓ {len(valid_influencers)} influencers have BOTH train AND test data")
     if len(skipped_influencers) > 0:
-        logger.info(f"   ⚠️  {len(skipped_influencers)} influencer(s) SKIPPED (have <2 videos)")
-        logger.info(f"      Skipped: {', '.join(sorted(skipped_influencers))}")
-    if warn_count > 0:
-        logger.info(f"   ⚠️  {warn_count} influencer(s) have <3 videos in train or test (small sample)")
-    logger.info(f"   Total split: {len(train_df)} train + {len(test_df)} test = {len(train_df) + len(test_df)} used")
-    logger.info(f"              ({len(original_df)} original - {len(skipped_influencers)} skipped)")
+        logger.info(f"   ⚠️  {len(skipped_influencers)} influencer(s) skipped (<2 videos)")
+    logger.info(f"   Total: {len(train_df)} train + {len(test_df)} test = {len(train_df) + len(test_df)} used")
     
     return True
 
-# ============================================================================
-# STEP 1: LOAD & SPLIT
-# ============================================================================
-
 def load_and_split():
-    """Load labeled_videos.csv dan split 70/30 per influencer (stratified)
-    ⚡ GUARANTEE: Semua 45 influencer punya training + test data"""
+    """Load labeled_videos.csv dan split 70/30 per influencer (stratified)"""
     logger.info("\n" + "="*70)
     logger.info("STEP 1: LOAD & SPLIT DATA (70/30 - STRATIFIED PER INFLUENCER)")
     logger.info("="*70)
@@ -312,75 +199,48 @@ def load_and_split():
     df = pd.read_csv(OUTPUT_LABELED_VIDEOS)
     df['video_id'] = df['video_id'].astype(str)
     
-    # Filter: hanya ambil yang sudah dilabel
     df_labeled = df[(df['manual_label'].notna()) & (df['manual_label'] != '')].copy()
     
-    logger.info(f"\n✅ Loaded {len(df_labeled)} labeled videos (dari {len(df)} total)")
+    logger.info(f"\n✅ Loaded {len(df_labeled)} labeled videos")
     logger.info(f"   Influencers: {df_labeled['username'].nunique()}")
     logger.info(f"   Health: {(df_labeled['manual_label'] == 'health').sum()} ({(df_labeled['manual_label'] == 'health').mean()*100:.1f}%)")
     logger.info(f"   Non-health: {(df_labeled['manual_label'] == 'not_health').sum()} ({(df_labeled['manual_label'] == 'not_health').mean()*100:.1f}%)")
     
-    # Split 70/30 per influencer (STRATIFIED - setiap influencer punya training + test)
     logger.info(f"\n🔄 Performing stratified 70/30 split PER INFLUENCER...")
     logger.info(f"   ⚠️  Handling edge cases: minimum 1 train + 1 test per influencer\n")
     
     train_dfs = []
     test_dfs = []
-    split_details = []
+    skipped_count = 0
     
     for username in sorted(df_labeled['username'].unique()):
         inf_data = df_labeled[df_labeled['username'] == username]
         n = len(inf_data)
         
-        # EDGE CASE HANDLING: Ensure minimum 1 train + 1 test
-        # Jika n < 2, ini impossible (skip atau warn)
-        # Jika n == 2, minimum: 1 train, 1 test
-        # Jika n > 2, gunakan 70/30 split
-        
+        # Edge case: <2 videos
         if n < 2:
-            logger.warning(f"   ⚠️  @{username}: hanya {n} video (skipped - need ≥2)")
-            continue  # Skip influencer dengan <2 videos
+            logger.warning(f"   ⚠️  @{username}: hanya {n} video (skipped)")
+            skipped_count += 1
+            continue
         
-        # Calculate split index dengan rounding UP untuk train (prefer more training)
-        # Gunakan ceil untuk ensure train selalu ≥1
-        import math
-        split_idx = max(1, int(n * TRAIN_SPLIT_RATIO))  # At least 1 untuk train
-        
-        # Sanity check: pastikan test juga minimal 1
+        # Ensure minimum 1 train + 1 test
+        split_idx = max(1, int(n * TRAIN_SPLIT_RATIO))
         if split_idx >= n:
-            split_idx = n - 1  # Ensure at least 1 untuk test
+            split_idx = n - 1
         
-        # Shuffle dengan random_state=42 buat reproducibility
         inf_data_shuffled = inf_data.sample(frac=1, random_state=42)
-        
-        train_part = inf_data_shuffled.iloc[:split_idx]
-        test_part = inf_data_shuffled.iloc[split_idx:]
-        
-        train_dfs.append(train_part)
-        test_dfs.append(test_part)
-        
-        split_details.append({
-            'username': username,
-            'total': n,
-            'train': len(train_part),
-            'test': len(test_part)
-        })
+        train_dfs.append(inf_data_shuffled.iloc[:split_idx])
+        test_dfs.append(inf_data_shuffled.iloc[split_idx:])
     
     train_df = pd.concat(train_dfs, ignore_index=True) if train_dfs else pd.DataFrame()
     test_df = pd.concat(test_dfs, ignore_index=True) if test_dfs else pd.DataFrame()
     
-    # Log split details untuk transparency
-    n_skipped = len(df_labeled['username'].unique()) - len(split_details)
-    if n_skipped > 0:
-        logger.warning(f"\n⚠️  SKIPPED {n_skipped} influencer(s) dengan <2 videos")
-        skipped_influencers = set(df_labeled['username'].unique()) - {d['username'] for d in split_details}
-        for inf in skipped_influencers:
-            n_videos = len(df_labeled[df_labeled['username'] == inf])
-            logger.warning(f"     @{inf}: {n_videos} video(s) → need ≥2 for train/test split")
+    if skipped_count > 0:
+        logger.warning(f"\n⚠️  SKIPPED {skipped_count} influencer(s) dengan <2 videos")
     
-    # VALIDATE bahwa semua 45 influencer punya training + test data
+    # VALIDATE
     if not validate_split(train_df, test_df, df_labeled):
-        logger.error("❌ Split validation FAILED! Cannot proceed.")
+        logger.error("❌ Split validation FAILED!")
         return None, None
     
     train_df.to_csv(TRAIN_SET, index=False)
@@ -393,120 +253,134 @@ def load_and_split():
     return train_df, test_df
 
 # ============================================================================
-# STEP 2: LEARN ADVANCED INFLUENCER PATTERNS
+# STEP 2: LEARN INFLUENCER PATTERNS (SIMPLE)
 # ============================================================================
 
-def learn_advanced_patterns(train_df):
-    """Analyze train set, learn ADVANCED influencer characteristics (only for valid influencers)"""
+def learn_patterns(train_df):
+    """Analyze train set, learn influencer characteristics (SIMPLE VERSION)"""
     logger.info("\n" + "="*70)
-    logger.info("STEP 2: LEARN ADVANCED INFLUENCER CHARACTERISTICS")
+    logger.info("STEP 2: LEARN INFLUENCER CHARACTERISTICS")
     logger.info("="*70)
-    
-    n_influencers = train_df['username'].nunique()
-    logger.info(f"\nLearning patterns dari {n_influencers} influencers in training set...")
     
     learnings = defaultdict(dict)
     
     for username in train_df['username'].unique():
         inf_data = train_df[train_df['username'] == username]
-        health_data = inf_data[inf_data['manual_label'] == 'health']
-        non_health_data = inf_data[inf_data['manual_label'] == 'not_health']
         
-        # BASIC STATS
-        health_count = len(health_data)
+        health_count = (inf_data['manual_label'] == 'health').sum()
         health_pct = health_count / len(inf_data) * 100
         
         no_caption = inf_data['description'].fillna('').str.len() < 5
         no_caption_pct = no_caption.sum() / len(inf_data) * 100
         
-        # ADVANCED PATTERNS
-        health_captions = health_data['description']
-        non_health_captions = non_health_data['description']
-        
-        # 1. CONTENT STYLE
-        health_style = analyze_caption_style(health_captions)
-        non_health_style = analyze_caption_style(non_health_captions)
-        
-        # 2. KEYWORDS
-        health_keywords = extract_keywords(health_captions, top_n=8)
-        non_health_keywords = extract_keywords(non_health_captions, top_n=5)
-        
-        # 3. MEDICAL INDICATORS
-        health_medical_pct = count_medical_terms(health_captions)
-        non_health_medical_pct = count_medical_terms(non_health_captions)
-        
-        # SAMPLES
-        health_samples = health_data['description'].head(3).tolist()
-        non_health_samples = non_health_data['description'].head(3).tolist()
+        health_samples = inf_data[inf_data['manual_label'] == 'health']['description'].head(3).tolist()
+        non_health_samples = inf_data[inf_data['manual_label'] == 'not_health']['description'].head(3).tolist()
         
         learnings[username] = {
             'health_pct': health_pct,
             'no_caption_pct': no_caption_pct,
-            'total_videos': len(inf_data),
-            
-            # Content style
-            'content_style': {
-                'health_emoji_freq': round(health_style.get('emoji_frequency', 0), 1),
-                'health_hashtag_freq': round(health_style.get('hashtag_frequency', 0), 1),
-                'health_avg_caption_length': health_style.get('avg_caption_length', 0),
-                'health_question_pct': round(health_style.get('has_question_pct', 0), 1),
-                'health_cta_pct': round(health_style.get('has_cta_pct', 0), 1),
-                'non_health_avg_caption_length': non_health_style.get('avg_caption_length', 0),
-            },
-            
-            # Medical indicators
-            'medical_indicators': {
-                'health_medical_terms_freq': round(health_medical_pct, 1),
-                'non_health_medical_terms_freq': round(non_health_medical_pct, 1),
-            },
-            
-            # Keywords
-            'health_keywords': [{"keyword": kw[0], "count": kw[1]} for kw in health_keywords],
-            'non_health_keywords': [{"keyword": kw[0], "count": kw[1]} for kw in non_health_keywords],
-            
-            # Samples (for reference)
             'health_samples': [str(s)[:100] for s in health_samples if pd.notna(s)],
             'non_health_samples': [str(s)[:100] for s in non_health_samples if pd.notna(s)]
         }
     
-    logger.info(f"\n✅ Analyzed {len(learnings)} influencers with ADVANCED patterns:\n")
+    logger.info(f"\n✅ Analyzed {len(learnings)} influencers:\n")
     
-    for username in sorted(learnings.keys(), key=lambda x: learnings[x]['health_pct'], reverse=True):
-        info = learnings[username]
-        logger.info(f"@{username}: {info['health_pct']:.1f}% health | emoji:{info['content_style']['health_emoji_freq']:.0f}% | "
-                   f"medical:{info['medical_indicators']['health_medical_terms_freq']:.0f}%")
+    for username, info in sorted(learnings.items(), key=lambda x: x[1]['health_pct'], reverse=True):
+        logger.info(f"@{username}: {info['health_pct']:.1f}% health, {info['no_caption_pct']:.1f}% no caption")
     
     return learnings
 
 # ============================================================================
-# HELPER: Convert numpy types to Python native types
+# STEP 3: SAVE LEARNED PATTERNS
 # ============================================================================
 
-def convert_numpy_types(obj):
-    """Convert numpy types to Python native types untuk JSON serialization"""
-    import numpy as np
+def generate_influencer_insights(username, per_inf_errors):
+    """Generate human-readable insights tentang error pattern per influencer"""
+    fn_list = per_inf_errors['false_negatives']
+    fp_list = per_inf_errors['false_positives']
     
-    if isinstance(obj, dict):
-        return {key: convert_numpy_types(value) for key, value in obj.items()}
-    elif isinstance(obj, list):
-        return [convert_numpy_types(item) for item in obj]
-    elif isinstance(obj, (np.integer, np.floating)):
-        return obj.item()  # Convert numpy scalar to Python native type
-    elif isinstance(obj, np.ndarray):
-        return obj.tolist()
-    elif hasattr(obj, 'item'):  # Fallback for other numpy types
-        try:
-            return obj.item()
-        except:
-            return obj
-    return obj
+    fn_count = len(fn_list)
+    fp_count = len(fp_list)
+    
+    insights = []
+    
+    # Analyze False Negatives
+    if fn_count > 0:
+        fn_avg_length = sum(e['caption_length'] for e in fn_list) / fn_count
+        fn_no_caption = sum(1 for e in fn_list if e['caption_length'] < 5)
+        fn_short_caption = sum(1 for e in fn_list if 5 <= e['caption_length'] < 50)
+        fn_low_medical = sum(1 for e in fn_list if e['medical_term_count'] == 0)
+        fn_ambiguous = sum(1 for e in fn_list if e['ambiguous_term_count'] > 0)
+        
+        if fn_no_caption > 0:
+            insights.append(f"Caption kosong/sangat pendek ({fn_no_caption}x) susah diklasifikasi")
+        elif fn_short_caption > fn_count * 0.5:
+            insights.append(f"Caption terlalu minim ({fn_avg_length:.0f} chars rata-rata) kurang informasi")
+        
+        if fn_low_medical > fn_count * 0.6:
+            insights.append(f"Konten health tapi medical terms kurang jelas ({fn_low_medical}x)")
+        
+        if fn_ambiguous > fn_count * 0.5:
+            insights.append(f"Banyak ambiguous terms yang membingungkan klasifikasi ({fn_ambiguous}x)")
+    
+    # Analyze False Positives
+    if fp_count > 0:
+        fp_avg_length = sum(e['caption_length'] for e in fp_list) / fp_count
+        fp_misleading = sum(1 for e in fp_list if e['has_medical_terms'] and e.get('has_non_health_terms', False))
+        fp_ambiguous = sum(1 for e in fp_list if e['ambiguous_term_count'] > 1)
+        fp_medical_only = sum(1 for e in fp_list if e['medical_term_count'] > 0 and not e.get('has_non_health_terms', False))
+        
+        if fp_misleading > fp_count * 0.5:
+            insights.append(f"Caption yang mencampur health + non-health (diet, makeup) ({fp_misleading}x)")
+        
+        if fp_ambiguous > fp_count * 0.5:
+            insights.append(f"Ambiguous keywords seperti diet/kulit yang bisa health atau fashion ({fp_ambiguous}x)")
+        
+        if fp_medical_only > 0 and fp_misleading == 0:
+            insights.append(f"Caption punya medical terms tapi context sebenarnya non-health ({fp_medical_only}x)")
+    
+    # Compare FN vs FP
+    if fn_count > fp_count * 2:
+        insights.append("Model terlalu konservatif: banyak FN > FP")
+    elif fp_count > fn_count * 2:
+        insights.append("Model terlalu agresif: banyak FP > FN")
+    
+    return insights if insights else ["Klasifikasi akurat untuk creator ini"]
 
-# ============================================================================
-# STEP 3: SAVE ADVANCED LEARNED PATTERNS
-# ============================================================================
 
-def save_learned_patterns(learnings, summary, per_inf, predictions_df):
-    """Save learned patterns ke JSON dengan ADVANCED details"""
+def save_learned_patterns(learnings, summary, per_inf, errors, predictions_df):
+    """Save learned patterns + per-influencer error analysis ke JSON"""
+    
+    # Global error analysis
+    fn_list = errors['global']['false_negatives']
+    fp_list = errors['global']['false_positives']
+    
+    fn_analysis = {
+        'count': len(fn_list),
+        'avg_caption_length': sum(e['caption_length'] for e in fn_list) / len(fn_list) if fn_list else 0,
+        'avg_medical_terms': sum(e['medical_term_count'] for e in fn_list) / len(fn_list) if fn_list else 0,
+        'avg_ambiguous_terms': sum(e['ambiguous_term_count'] for e in fn_list) / len(fn_list) if fn_list else 0,
+        'short_caption_count': sum(1 for e in fn_list if e['caption_length'] < 80),
+        'low_confidence_count': sum(1 for e in fn_list if e['confidence'] < 0.5),
+        'examples': fn_list[:3]
+    }
+    
+    fp_analysis = {
+        'count': len(fp_list),
+        'avg_caption_length': sum(e['caption_length'] for e in fp_list) / len(fp_list) if fp_list else 0,
+        'avg_medical_terms': sum(e['medical_term_count'] for e in fp_list) / len(fp_list) if fp_list else 0,
+        'avg_ambiguous_terms': sum(e['ambiguous_term_count'] for e in fp_list) / len(fp_list) if fp_list else 0,
+        'misleading_keywords_count': sum(1 for e in fp_list if e['has_medical_terms'] and e.get('has_non_health_terms', False)),
+        'examples': fp_list[:3]
+    }
+    
+    # Generate global insights
+    global_insights = []
+    if fn_analysis['count'] > fp_analysis['count'] * 2:
+        global_insights.append("Model terlalu konservatif (predict not_health padahal health)")
+    elif fp_analysis['count'] > fn_analysis['count'] * 2:
+        global_insights.append("Model terlalu agresif (predict health padahal not_health)")
+    
     patterns_data = {
         "metadata": {
             "created_at": datetime.now().isoformat(),
@@ -517,116 +391,74 @@ def save_learned_patterns(learnings, summary, per_inf, predictions_df):
             "overall_recall": summary['recall'],
             "overall_f1": summary['f1'],
         },
+        "global_error_analysis": {
+            "false_negatives": fn_analysis,
+            "false_positives": fp_analysis,
+            "insights": global_insights
+        },
         "influencers": {}
     }
     
+    # Per-influencer analysis
     for username, info in learnings.items():
         inf_metrics = per_inf.get(username, {})
+        per_inf_errors = errors['per_influencer'].get(username, {'false_negatives': [], 'false_positives': []})
         
-        # Analyze errors untuk influencer ini
-        inf_predictions = predictions_df[predictions_df['username'] == username]
-        inf_errors = analyze_errors_from_predictions(inf_predictions)
-        
-        # Generate summary
-        profile_summary = generate_profile_summary(username, None, info)
+        # Generate per-influencer insights
+        inf_insights = generate_influencer_insights(username, per_inf_errors)
         
         patterns_data["influencers"][username] = {
-            "profile_summary": profile_summary,
-            
-            "basic_stats": {
-                "health_percentage": round(info['health_pct'], 1),
-                "no_caption_percentage": round(info['no_caption_pct'], 1),
-                "total_videos_analyzed": info['total_videos'],
-            },
-            
-            "test_performance": {
-                "accuracy": round(inf_metrics.get('accuracy', 0), 1),
-                "correct_predictions": inf_metrics.get('correct', 0),
-                "total_test_videos": inf_metrics.get('count', 0),
-            },
-            
-            "content_style": {
-                "health_posts": {
-                    "emoji_frequency": info['content_style']['health_emoji_freq'],
-                    "hashtag_frequency": info['content_style']['health_hashtag_freq'],
-                    "avg_caption_length": info['content_style']['health_avg_caption_length'],
-                    "has_question_pct": info['content_style']['health_question_pct'],
-                    "has_cta_pct": info['content_style']['health_cta_pct'],
-                },
-                "non_health_posts": {
-                    "avg_caption_length": info['content_style']['non_health_avg_caption_length'],
-                }
-            },
-            
-            "medical_indicators": {
-                "health_posts_with_medical_terms": info['medical_indicators']['health_medical_terms_freq'],
-                "non_health_posts_with_medical_terms": info['medical_indicators']['non_health_medical_terms_freq'],
-            },
-            
-            "top_health_keywords": info['health_keywords'],
-            "top_non_health_keywords": info['non_health_keywords'],
-            
-            "classification_errors": {
-                "false_positives": inf_errors['fp_count'],
-                "false_negatives": inf_errors['fn_count'],
-                "sample_false_positives": inf_errors['false_positives'],
-                "sample_false_negatives": inf_errors['false_negatives'],
-            },
-            
-            "classifier_guidance": generate_classifier_guidance(username, info, inf_metrics, inf_errors),
-            
-            "samples": {
-                "health_samples": info['health_samples'],
-                "non_health_samples": info['non_health_samples']
+            "health_percentage": round(info['health_pct'], 1),
+            "no_caption_percentage": round(info['no_caption_pct'], 1),
+            "accuracy": round(inf_metrics.get('accuracy', 0), 1),
+            "health_samples": info['health_samples'],
+            "non_health_samples": info['non_health_samples'],
+            "error_insights": inf_insights,
+            "error_analysis": {
+                "false_negatives_count": len(per_inf_errors['false_negatives']),
+                "false_positives_count": len(per_inf_errors['false_positives']),
+                "examples_fn": per_inf_errors['false_negatives'][:2],
+                "examples_fp": per_inf_errors['false_positives'][:2]
             }
         }
     
-    # Convert numpy types to Python native types before JSON dump
+    # Convert numpy types
     patterns_data = convert_numpy_types(patterns_data)
     
     with open(LEARNED_PATTERNS, 'w', encoding='utf-8') as f:
         json.dump(patterns_data, f, ensure_ascii=False, indent=2)
     
-    logger.info(f"\n✅ Advanced learned patterns saved: hasil_03/{LEARNED_PATTERNS.name}")
-
-def generate_classifier_guidance(username, info, metrics, errors):
-    """Generate guidance untuk classifier based on patterns"""
-    guidance = []
+    logger.info(f"\n✅ Learned patterns saved: hasil_03/{LEARNED_PATTERNS.name}")
     
-    # Health indicator guidance
-    health_pct = info['health_pct']
-    if health_pct > 75:
-        guidance.append("High confidence for health-related posts - this creator focuses on health content")
-    elif health_pct < 30:
-        guidance.append("Be cautious of false positives - this creator rarely posts health content")
+    # Log per-influencer insights
+    logger.info(f"\n📊 PER-INFLUENCER ERROR INSIGHTS:")
+    for username in sorted(learnings.keys()):
+        per_inf_errors = errors['per_influencer'].get(username, {'false_negatives': [], 'false_positives': []})
+        insights = generate_influencer_insights(username, per_inf_errors)
+        logger.info(f"\n@{username}:")
+        for insight in insights:
+            logger.info(f"  • {insight}")
     
-    # Style guidance
-    emoji_freq = info['content_style']['health_emoji_freq']
-    if emoji_freq > 50:
-        guidance.append("Posts are casual & emoji-heavy - don't overweight emoji as health indicator")
+    # Log global error summary
+    logger.info(f"\n📊 GLOBAL ERROR ANALYSIS:")
+    logger.info(f"   False Negatives: {fn_analysis['count']}")
+    if fn_analysis['count'] > 0:
+        logger.info(f"     - Avg caption length: {fn_analysis['avg_caption_length']:.0f} chars")
+        logger.info(f"     - Short captions (<80 chars): {fn_analysis['short_caption_count']}")
     
-    # Medical term guidance
-    med_freq = info['medical_indicators']['health_medical_terms_freq']
-    if med_freq > 50:
-        guidance.append("Strong medical terminology in health posts - medical terms are reliable indicator")
-    
-    # Error guidance
-    if errors['fp_count'] > errors['fn_count']:
-        guidance.append(f"Watch for false positives ({errors['fp_count']}x) - review non-health samples carefully")
-    elif errors['fn_count'] > errors['fp_count']:
-        guidance.append(f"Watch for false negatives ({errors['fn_count']}x) - some health posts might be subtle")
-    
-    return guidance if guidance else ["No specific guidance"]
+    logger.info(f"   False Positives: {fp_analysis['count']}")
+    if fp_analysis['count'] > 0:
+        logger.info(f"     - Misleading keywords: {fp_analysis['misleading_keywords_count']}")
+        logger.info(f"     - Avg ambiguous terms: {fp_analysis['avg_ambiguous_terms']:.1f}")
 
 # ============================================================================
 # STEP 4: BUILD ENHANCED PROMPT
 # ============================================================================
 
 def build_enhanced_prompt(description, username, learnings):
-    """Build prompt pakai learned patterns (lebih detailed sekarang)"""
+    """Build prompt pakai learned patterns"""
     inf_info = learnings.get(username, {})
     health_pct = inf_info.get('health_pct', 50)
-    medical_freq = inf_info.get('medical_indicators', {}).get('health_medical_terms_freq', 0)
     
     base_prompt = """Kamu adalah sistem klasifikasi akademik untuk penelitian tugas akhir tentang kategorisasi konten edukasi kesehatan di TikTok Indonesia. Tugasmu murni melabeli data, bukan mendiskusikan isinya.
 
@@ -644,19 +476,12 @@ BUKAN kesehatan:
 ✗ Vlog harian tanpa unsur medis
 ✗ Hiburan murni, gaming, teknologi, finansial, travel non-kesehatan"""
     
-    # Learned context
-    if health_pct > 75:
-        base_prompt += f"\n\n💡 CREATOR PATTERN: @{username} biasanya upload konten kesehatan ({health_pct:.0f}%). Tingkatkan confidence untuk posts yang berhubungan kesehatan."
+    if health_pct > 70:
+        base_prompt += f"\n\n💡 KONTEKS: @{username} biasanya upload konten kesehatan ({health_pct:.0f}%)."
     elif health_pct < 30:
-        base_prompt += f"\n\n💡 CREATOR PATTERN: @{username} jarang upload kesehatan ({health_pct:.0f}%). HATI-HATI false positive - jangan overinterpret medical mentions."
+        base_prompt += f"\n\n💡 KONTEKS: @{username} jarang upload konten kesehatan ({health_pct:.0f}%). Hati-hati jangan false positive."
     else:
-        base_prompt += f"\n\n💡 CREATOR PATTERN: @{username} posting balanced ({health_pct:.0f}% health). Evaluate carefully."
-    
-    # Medical indicator hint
-    if medical_freq > 60:
-        base_prompt += f" ⚕️ Medical terms sangat sering dalam posts creator - gunakan sebagai strong signal."
-    elif medical_freq < 20:
-        base_prompt += f" ⚕️ Medical terms jarang - jangan rely heavy pada medical keywords untuk classifier."
+        base_prompt += f"\n\n💡 KONTEKS: @{username} upload balanced health & non-health ({health_pct:.0f}%)."
     
     base_prompt += f"""
 
@@ -691,12 +516,19 @@ def parse_response(response_text):
         return False, 0.5
 
 def classify_test_set(test_df, learnings):
-    """Classify test set dengan CPU throttling"""
+    """Classify test set pakai learned patterns + Ollama (dengan per-influencer error tracking)"""
     logger.info("\n" + "="*70)
     logger.info("STEP 3: CLASSIFY TEST SET (30%)")
     logger.info("="*70)
     
     predictions = []
+    errors = {
+        'global': {
+            'false_negatives': [],
+            'false_positives': []
+        },
+        'per_influencer': defaultdict(lambda: {'false_negatives': [], 'false_positives': []})
+    }
     total = len(test_df)
     
     n_need_ollama = (test_df['description'].fillna('').str.len() >= 5).sum()
@@ -708,23 +540,24 @@ def classify_test_set(test_df, learnings):
     logger.info(f"   Jeda antar video: {DELAY_BETWEEN_REQUESTS}s")
     logger.info(f"   Cooldown break: {COOLDOWN_DURATION}s tiap {COOLDOWN_EVERY_N_VIDEOS} video")
     logger.info(f"\nClassifying {total} videos ({n_need_ollama} butuh Ollama)...")
-    logger.info(f"⏱️  Estimasi waktu: ~{est_minutes:.0f} menit (lebih lama dari sebelumnya, tapi lebih adem)\n")
+    logger.info(f"⏱️  Estimasi waktu: ~{est_minutes:.0f} menit\n")
     
     ollama_call_count = 0
     
     for idx, row in test_df.iterrows():
         description = str(row['description']).strip()[:800] if pd.notna(row['description']) else ""
+        actual_label = row['manual_label']
+        username = row['username']
         
         if len(description) < 5:
             # No caption: gunakan influencer pattern
-            username = row['username']
             inf_pct = learnings.get(username, {}).get('health_pct', 50)
             is_health = inf_pct > 50
             confidence = abs(inf_pct - 50) / 100
             method = 'no_caption_learned'
         else:
             try:
-                prompt = build_enhanced_prompt(description, row['username'], learnings)
+                prompt = build_enhanced_prompt(description, username, learnings)
                 response = ollama.generate(
                     model='qwen2.5:7b',
                     prompt=prompt,
@@ -739,12 +572,10 @@ def classify_test_set(test_df, learnings):
                 method = 'ollama_enhanced'
                 ollama_call_count += 1
 
-                # Jeda WAJIB tiap habis manggil Ollama
                 time.sleep(DELAY_BETWEEN_REQUESTS)
 
-                # Cooldown break lebih panjang tiap N video
                 if ollama_call_count % COOLDOWN_EVERY_N_VIDEOS == 0:
-                    logger.info(f"   🧊 Cooldown break {COOLDOWN_DURATION}s (habis {ollama_call_count} video, biar CPU adem)...")
+                    logger.info(f"   🧊 Cooldown break {COOLDOWN_DURATION}s...")
                     time.sleep(COOLDOWN_DURATION)
 
             except Exception as e:
@@ -753,28 +584,55 @@ def classify_test_set(test_df, learnings):
                 confidence = 0.5
                 method = 'error'
         
+        predicted_label = 'health' if is_health else 'not_health'
+        is_correct = (is_health and actual_label == 'health') or (not is_health and actual_label == 'not_health')
+        
         predictions.append({
-            'username': row['username'],
+            'username': username,
             'video_id': row['video_id'],
             'description': description[:100],
-            'predicted_label': 'health' if is_health else 'not_health',
+            'predicted_label': predicted_label,
             'predicted_confidence': confidence,
-            'actual_label': row['manual_label'],
-            'correct': (is_health and row['manual_label'] == 'health') or (not is_health and row['manual_label'] == 'not_health'),
+            'actual_label': actual_label,
+            'correct': is_correct,
             'method': method
         })
+        
+        # Track errors untuk analysis
+        if not is_correct:
+            caption_chars = analyze_caption_characteristics(description)
+            
+            error_entry = {
+                'caption': description[:150],
+                'confidence': confidence,
+                'caption_length': caption_chars['length'],
+                'has_medical_terms': caption_chars['has_medical_terms'],
+                'medical_term_count': caption_chars['medical_term_count'],
+                'ambiguous_term_count': caption_chars['ambiguous_term_count']
+            }
+            
+            if actual_label == 'health' and predicted_label == 'not_health':
+                # False Negative
+                errors['global']['false_negatives'].append(error_entry)
+                errors['per_influencer'][username]['false_negatives'].append(error_entry)
+            
+            elif actual_label == 'not_health' and predicted_label == 'health':
+                # False Positive
+                error_entry['has_non_health_terms'] = caption_chars['has_non_health_terms']
+                errors['global']['false_positives'].append(error_entry)
+                errors['per_influencer'][username]['false_positives'].append(error_entry)
         
         if (idx + 1) % 20 == 0:
             logger.info(f"  Progress: {idx + 1}/{total} videos")
     
-    return pd.DataFrame(predictions)
+    return pd.DataFrame(predictions), errors
 
 # ============================================================================
 # STEP 6: EVALUATE
 # ============================================================================
 
 def evaluate(predictions_df):
-    """Calculate metrics & validate semua influencer punya test data"""
+    """Calculate metrics"""
     logger.info("\n" + "="*70)
     logger.info("STEP 4: EVALUATE RESULTS")
     logger.info("="*70)
@@ -803,42 +661,29 @@ def evaluate(predictions_df):
     }
     
     per_inf = {}
-    for username in sorted(predictions_df['username'].unique()):
+    for username in predictions_df['username'].unique():
         inf_pred = predictions_df[predictions_df['username'] == username]
-        health_actual = (inf_pred['actual_label'] == 'health').sum()
-        non_health_actual = (inf_pred['actual_label'] == 'not_health').sum()
-        
         per_inf[username] = {
             'count': len(inf_pred),
             'accuracy': inf_pred['correct'].mean() * 100,
-            'correct': inf_pred['correct'].sum(),
-            'health_count': health_actual,
-            'non_health_count': non_health_actual
+            'correct': inf_pred['correct'].sum()
         }
     
-    logger.info(f"\n✅ OVERALL RESULTS (Test Set - 30%):")
+    logger.info(f"\n✅ RESULTS (Test Set - 30%):")
     logger.info(f"   Accuracy: {accuracy:.1f}%")
     logger.info(f"   Precision: {precision:.1f}%")
     logger.info(f"   Recall: {recall:.1f}%")
     logger.info(f"   F1-Score: {f1:.1f}%")
-    logger.info(f"   Total test videos: {len(predictions_df)}")
     
-    # Per-influencer detailed report
-    logger.info(f"\n📊 PER-INFLUENCER TEST DATA & ACCURACY:")
-    logger.info(f"{'Influencer':<20} {'Test Vids':<12} {'Health/Non':<15} {'Accuracy':<12}")
-    logger.info("-" * 70)
+    logger.info(f"\n   Confusion Matrix:")
+    logger.info(f"     True Positives (correct health): {tp}")
+    logger.info(f"     False Positives (wrong health): {fp}")
+    logger.info(f"     True Negatives (correct not-health): {tn}")
+    logger.info(f"     False Negatives (missed health): {fn}")
     
+    logger.info(f"\n📊 PER-INFLUENCER:")
     for username in sorted(per_inf.keys()):
-        info = per_inf[username]
-        test_count = info['count']
-        health_count = info['health_count']
-        non_health_count = info['non_health_count']
-        accuracy_pct = info['accuracy']
-        
-        logger.info(f"{username:<20} {test_count:<12} {health_count}/{non_health_count:<13} {accuracy_pct:>6.1f}%")
-    
-    logger.info("-" * 70)
-    logger.info(f"{'TOTAL':<20} {len(predictions_df):<12} ✓ ALL {len(per_inf)} influencers have test data")
+        logger.info(f"   @{username}: {per_inf[username]['accuracy']:.1f}%")
     
     return summary, per_inf, predictions_df
 
@@ -869,7 +714,7 @@ def save_results(summary, per_inf, predictions_df):
         f.write(f"Recall: {summary['recall']:.1f}%\n")
         f.write(f"F1-Score: {summary['f1']:.1f}%\n\n")
         
-        f.write(f"Confusion Matrix:\n")
+        f.write("Confusion Matrix:\n")
         f.write(f"  True Positives:  {summary['tp']}\n")
         f.write(f"  False Positives: {summary['fp']}\n")
         f.write(f"  True Negatives:  {summary['tn']}\n")
@@ -883,7 +728,7 @@ def save_results(summary, per_inf, predictions_df):
     
     logger.info(f"✅ Summary: hasil_03/{ACCURACY_SUMMARY.name}")
     logger.info("\n" + "="*70)
-    logger.info("✅ DONE! Advanced patterns saved untuk classifier")
+    logger.info("✅ DONE!")
     logger.info("="*70 + "\n")
 
 # ============================================================================
@@ -904,10 +749,10 @@ def main():
     if train_df is None:
         return False
     
-    learnings = learn_advanced_patterns(train_df)
-    predictions_df = classify_test_set(test_df, learnings)
+    learnings = learn_patterns(train_df)
+    predictions_df, errors = classify_test_set(test_df, learnings)
     summary, per_inf, predictions_df = evaluate(predictions_df)
-    save_learned_patterns(learnings, summary, per_inf, predictions_df)
+    save_learned_patterns(learnings, summary, per_inf, errors, predictions_df)
     save_results(summary, per_inf, predictions_df)
     
     return True
