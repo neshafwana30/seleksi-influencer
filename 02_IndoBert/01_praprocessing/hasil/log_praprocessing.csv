@@ -1,0 +1,7 @@
+langkah,sebelum,sesudah,dibuang,total_awal,total_dibersihkan,total_akhir
+0. Data mentah,27073,27073,0,27073,0,27073
+1. Komentar kosong,27073,27073,0,27073,0,27073
+"2. Hapus URL/mention, jadi kosong",27073,26955,118,27073,118,26955
+3. Duplikat (video+akun+teks sama),26955,26662,293,27073,411,26662
+4. Tanpa huruf (emoji/tanda baca saja),26662,25659,1003,27073,1414,25659
+5. Kurang dari 2 kata,25659,24589,1070,27073,2484,24589

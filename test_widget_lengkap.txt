@@ -1,0 +1,40 @@
+Example 1 | token=54 | widget: Positive 0.6969 | jumlah probabilitas: TIDAK 1.0 (jumlah=1.0603, kemungkinan typo di widget)
+   [asli] lokal Positive 0.7290 | label OK | skor BEDA | Negative=0.2650, Neutral=0.0060, Positive=0.7290
+   [NFKC] lokal Positive 0.7290 | label OK | skor BEDA | Negative=0.2650, Neutral=0.0060, Positive=0.7290
+   [spasi_rapi] lokal Positive 0.7290 | label OK | skor BEDA | Negative=0.2650, Neutral=0.0060, Positive=0.7290
+
+Example 2 | token=36 | widget: Negative 0.971 | jumlah probabilitas: TIDAK 1.0 (jumlah=1.1135, kemungkinan typo di widget)
+   [asli] lokal Negative 0.9710 | label OK | skor OK | Negative=0.9710, Neutral=0.0165, Positive=0.0126
+   [NFKC] lokal Negative 0.9710 | label OK | skor OK | Negative=0.9710, Neutral=0.0165, Positive=0.0126
+   [spasi_rapi] lokal Negative 0.9710 | label OK | skor OK | Negative=0.9710, Neutral=0.0165, Positive=0.0126
+
+Example 3 | token=26 | widget: Negative 0.6457 | jumlah probabilitas: OK
+   [asli] lokal Negative 0.6457 | label OK | skor OK | Negative=0.6457, Neutral=0.0480, Positive=0.3063
+   [NFKC] lokal Negative 0.6457 | label OK | skor OK | Negative=0.6457, Neutral=0.0480, Positive=0.3063
+   [spasi_rapi] lokal Negative 0.6457 | label OK | skor OK | Negative=0.6457, Neutral=0.0480, Positive=0.3063
+
+Example 4 | token=20 | widget: Neutral 0.6973 | jumlah probabilitas: OK
+   [asli] lokal Neutral 0.6643 | label OK | skor BEDA | Negative=0.0616, Neutral=0.6643, Positive=0.2742
+   [NFKC] lokal Neutral 0.6643 | label OK | skor BEDA | Negative=0.0616, Neutral=0.6643, Positive=0.2742
+   [spasi_rapi] lokal Neutral 0.6643 | label OK | skor BEDA | Negative=0.0616, Neutral=0.6643, Positive=0.2742
+
+Example 5 | token=17 | widget: Negative 0.9852 | jumlah probabilitas: OK
+   [asli] lokal Negative 0.9852 | label OK | skor OK | Negative=0.9852, Neutral=0.0116, Positive=0.0032
+   [NFKC] lokal Negative 0.9852 | label OK | skor OK | Negative=0.9852, Neutral=0.0116, Positive=0.0032
+   [spasi_rapi] lokal Negative 0.9852 | label OK | skor OK | Negative=0.9852, Neutral=0.0116, Positive=0.0032
+
+Example 6 | token=37 | widget: Neutral 0.9932 | jumlah probabilitas: OK
+   [asli] lokal Neutral 0.9932 | label OK | skor OK | Negative=0.0005, Neutral=0.9932, Positive=0.0063
+   [NFKC] lokal Neutral 0.9932 | label OK | skor OK | Negative=0.0005, Neutral=0.9932, Positive=0.0063
+   [spasi_rapi] lokal Neutral 0.9932 | label OK | skor OK | Negative=0.0005, Neutral=0.9932, Positive=0.0063
+
+Example 7 | token=63 | widget: Negative 0.5531 | jumlah probabilitas: OK
+   [asli] lokal Negative 0.6612 | label OK | skor BEDA | Negative=0.6612, Neutral=0.3352, Positive=0.0036
+   [NFKC] lokal Negative 0.6612 | label OK | skor BEDA | Negative=0.6612, Neutral=0.3352, Positive=0.0036
+   [spasi_rapi] lokal Negative 0.6612 | label OK | skor BEDA | Negative=0.6612, Neutral=0.3352, Positive=0.0036
+
+RINGKASAN (varian asli)
+Label cocok : 7/7
+Skor cocok  : 4/7 (toleransi 0.01)
+Model       : Aardiiiiy/indobertweet-base-Indonesian-sentiment-analysis
+max_length  : 512

@@ -1,27 +1,17 @@
 """
-07_SCRAPE_COMMENTS_2AKUN.py
-============================
-Scrape komentar TikTok pakai 2 AKUN & 2 BROWSER PARALEL biar 2x lebih cepat.
+07_SCRAPE_COMMENTS_2AKUN_FINAL.py
+==================================
+✅ FINAL VERSION dengan proper tracking:
+1. Baca dari to_scrape.csv (generated dari generate_scrape_list.py)
+2. Filter video yang belum di-scrape (scraped=False)
+3. Setelah selesai process video, update to_scrape.csv: scraped=True + timestamp
+4. 2 worker paralel, shared lock buat tulis CSV
 
-Perubahan dari versi single-browser:
-1. MAX_COMMENTS_PER_VIDEO = 100, MIN target = 50 (dulu sampai 200+)
-2. MAX_VIDEOS_PER_INFLUENCER = 20 (skip video influencer yang sama kalau udah 20)
-3. 2 WORKER PARALEL — masing-masing pakai akun/cookies & profile browser SENDIRI,
-   dan masing-masing pegang SET INFLUENCER YANG BEDA (gak overlap sama sekali,
-   jadi gak ada race condition di level video/influencer)
-4. Shared file-write lock biar CSV gak korup pas 2 worker nulis bersamaan
-
-SETUP YANG DIBUTUHKAN:
-- 2 file cookies terpisah (dari 2 akun TikTok BEDA):
-    01_pengumpulan_data/00_akun_playwright/tiktok_cookies_akun1.json
-    01_pengumpulan_data/00_akun_playwright/tiktok_cookies_akun2.json
-- 2 folder browser profile terpisah (akan dibuat otomatis kalau belum ada):
-    01_pengumpulan_data/04_2_Klasifikasikan_konten_scraping/tiktok_browser_profile_akun1
-    01_pengumpulan_data/04_2_Klasifikasikan_konten_scraping/tiktok_browser_profile_akun2
-
-⚠️  CATATAN RISIKO: 2 akun jalan barengan itu jauh lebih aman daripada 1 akun
-    dipakai di 2 browser sekaligus (yang bisa keliatan mencurigakan buat TikTok).
-    Tetap disarankan akun-akun ini bukan akun utama/pribadi.
+Resume logic:
+- Load to_scrape.csv di awal -> ambil rows yang scraped=False
+- Pas selesai scrape, langsung update row di to_scrape.csv -> scraped=True
+- Run berikutnya, load ulang to_scrape.csv -> rows yang True sudah ter-skip
+- Semua status tracking jelas di 1 file CSV
 """
 
 import asyncio
@@ -42,10 +32,11 @@ from playwright.async_api import async_playwright
 # ============================================================
 # KONFIGURASI PATH
 # ============================================================
-ROOT_DIR = r"01_pengumpulan_data/05_scrap_komentar"
+ROOT_DIR = r"01_pengumpulan_data/04_2_Klasifikasikan_konten_scraping"
 DATA_DIR = Path(ROOT_DIR)
 
-INPUT_HEALTH_CSV = DATA_DIR / "health_videos.csv"
+# ⭐ NEW: Baca dari to_scrape.csv (bukan health_videos.csv)
+TO_SCRAPE_CSV = Path(r"01_pengumpulan_data/05_scrap_komentar/to_scrape_pengganti.csv")
 
 OUTPUT_BASE_DIR = Path(r"01_pengumpulan_data/05_scrap_komentar")
 OUTPUT_DIR = OUTPUT_BASE_DIR / "hasil_07_comments"
@@ -53,9 +44,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_COMMENTS = OUTPUT_DIR / "comments.csv"
 OUTPUT_COMMENTS_STATS = OUTPUT_DIR / "comments_stats.csv"
 
-# ⭐ 2 SET profile & cookies — satu per akun
-AKUN_DIR = DATA_DIR.parent / "00_akun_playwright"
-FINAL_COOKIE_DIR = AKUN_DIR / "final_cookie"   # ⭐ hasil dari convert_and_apply_cookies.py
+FINAL_COOKIE_DIR = DATA_DIR.parent / "00_akun_playwright" / "final_cookie"
 PROFILE_DIR_1 = DATA_DIR / "tiktok_browser_profile_akun1"
 PROFILE_DIR_2 = DATA_DIR / "tiktok_browser_profile_akun2"
 COOKIES_FILE_1 = FINAL_COOKIE_DIR / "tiktok_cookies_akun1.json"
@@ -64,12 +53,8 @@ COOKIES_FILE_2 = FINAL_COOKIE_DIR / "tiktok_cookies_akun2.json"
 WARNING_MP3 = DATA_DIR.parent / "03_videoid_perakun" / "warning.mp3"
 
 print(f"📁 Path configuration:")
-print(f"   Input CSV: {INPUT_HEALTH_CSV}")
+print(f"   Input CSV: {TO_SCRAPE_CSV}")
 print(f"   Output: {OUTPUT_DIR}")
-print(f"   Profile akun 1: {PROFILE_DIR_1}")
-print(f"   Profile akun 2: {PROFILE_DIR_2}")
-print(f"   Cookies akun 1: {COOKIES_FILE_1}")
-print(f"   Cookies akun 2: {COOKIES_FILE_2}")
 
 COMMENT_FIELDS = [
     "username", "video_id", "comment_id", "commenter_username",
@@ -89,11 +74,10 @@ DELAY_BETWEEN_VIDEO = (10, 30)
 DELAY_BETWEEN_SCROLL = (2, 4)
 DELAY_EVERY_N_VIDEOS = 25
 DELAY_AFTER_N_VIDEOS = (20, 60)
-
-MAX_COMMENTS_PER_VIDEO = 100        # ⭐ Cap atas
-MIN_COMMENTS_TARGET = 50            # ⭐ Target minimal sebelum berhenti (kalau videonya punya banyak komentar)
-MAX_VIDEOS_PER_INFLUENCER = 20      # ⭐ Max video per akun/influencer
-MAX_SCROLL_ATTEMPTS = 40            # ⭐ Cukup buat capai ~100 komentar, gak perlu scroll ratusan kali
+MAX_COMMENTS_PER_VIDEO = 100
+MIN_COMMENTS_TARGET = 50
+MAX_VIDEOS_PER_INFLUENCER = 20
+MAX_SCROLL_ATTEMPTS = 40
 
 NETWORK_STATS_WAIT_TIMEOUT = 8.0
 NETWORK_STATS_POLL_INTERVAL = 0.25
@@ -103,7 +87,6 @@ REALISTIC_UA = (
     "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 )
 
-# ⭐ Lock global buat nulis file CSV — dibagi ke 2 worker biar gak race condition
 FILE_LOCK = asyncio.Lock()
 
 # ============================================================
@@ -116,8 +99,6 @@ try:
     if TELEGRAM_ENABLED:
         print(f"✅ Telegram alert ENABLED")
 except ImportError:
-    TELEGRAM_BOT_TOKEN = None
-    TELEGRAM_CHAT_ID = None
     TELEGRAM_ENABLED = False
     print(f"⚠️  Telegram alert DISABLED")
 
@@ -129,8 +110,8 @@ def send_telegram_alert(message: str):
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
         payload = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
         requests.post(url, json=payload, timeout=10)
-    except Exception as e:
-        print(f"   ⚠️ Telegram error: {e}")
+    except Exception:
+        pass
 
 
 def play_warning():
@@ -154,7 +135,7 @@ def stop_warning():
 
 
 # ============================================================
-# HELPER: LOAD COOKIES
+# HELPER: LOAD DATA
 # ============================================================
 def load_cookies_from_json(cookies_path: Path, label=""):
     if not cookies_path.exists():
@@ -170,50 +151,27 @@ def load_cookies_from_json(cookies_path: Path, label=""):
         return None
 
 
-# ============================================================
-# HELPER: LOAD DATA
-# ============================================================
-def load_health_videos():
+def load_to_scrape_videos():
+    """Load to_scrape.csv, filter hanya yang scraped=False."""
     videos = []
-    if not INPUT_HEALTH_CSV.exists():
-        print(f"❌ {INPUT_HEALTH_CSV} tidak ditemukan!")
+    if not TO_SCRAPE_CSV.exists():
+        print(f"❌ {TO_SCRAPE_CSV} tidak ditemukan!")
+        print(f"   Run: python generate_scrape_list.py dulu")
         return videos
 
-    with open(INPUT_HEALTH_CSV, "r", encoding="utf-8", newline="") as f:
+    with open(TO_SCRAPE_CSV, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
+            # Filter: ambil cuma yang belum scraped
+            if row.get("scraped", "False").lower() != "false":
+                continue
             videos.append(row)
 
-    print(f"✅ Loaded {len(videos)} health videos")
+    print(f"✅ Loaded {len(videos)} pending videos dari to_scrape.csv")
     return videos
 
 
-def load_existing_comments():
-    if not OUTPUT_COMMENTS.exists():
-        return set()
-    scraped = set()
-    with open(OUTPUT_COMMENTS, "r", encoding="utf-8", newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            key = (row["username"], row["video_id"], row["comment_id"])
-            scraped.add(key)
-    return scraped
-
-
-def load_existing_stats():
-    if not OUTPUT_COMMENTS_STATS.exists():
-        return {}
-    stats = {}
-    with open(OUTPUT_COMMENTS_STATS, "r", encoding="utf-8", newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            key = (row["username"], row["video_id"])
-            stats[key] = row
-    return stats
-
-
 async def append_comment_rows_locked(rows):
-    """Append comments ke CSV, dilindungi lock biar aman dipanggil dari 2 worker."""
     if not rows:
         return
     async with FILE_LOCK:
@@ -227,7 +185,7 @@ async def append_comment_rows_locked(rows):
             os.fsync(f.fileno())
 
 
-async def append_stats_row_locked(row):
+async def write_stats_row_locked(row):
     async with FILE_LOCK:
         file_exists = OUTPUT_COMMENTS_STATS.exists()
         with open(OUTPUT_COMMENTS_STATS, "a", encoding="utf-8", newline="") as f:
@@ -239,6 +197,33 @@ async def append_stats_row_locked(row):
             os.fsync(f.fileno())
 
 
+async def update_to_scrape_csv_locked(username: str, video_id: str, now_timestamp: str):
+    """Update row di to_scrape.csv: set scraped=True dan timestamp."""
+    async with FILE_LOCK:
+        # Baca semua rows
+        rows = []
+        with open(TO_SCRAPE_CSV, "r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                rows.append(row)
+
+        # Update row yang match
+        for row in rows:
+            if row.get("username") == username and row.get("video_id") == video_id:
+                row["scraped"] = "True"
+                row["scraped_at"] = now_timestamp
+                break
+
+        # Tulis ulang semua rows
+        with open(TO_SCRAPE_CSV, "w", encoding="utf-8", newline="") as f:
+            if rows:
+                writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+                writer.writeheader()
+                writer.writerows(rows)
+                f.flush()
+                os.fsync(f.fileno())
+
+
 # ============================================================
 # NETWORK RESPONSE CAPTURE - COMMENTS
 # ============================================================
@@ -246,7 +231,6 @@ def find_comments_blocks(obj, _depth=0):
     results = []
     if _depth > 15:
         return results
-
     if isinstance(obj, dict):
         comments_list = (
             obj.get("comments") or obj.get("Items") or obj.get("items")
@@ -263,7 +247,6 @@ def find_comments_blocks(obj, _depth=0):
                     likes = stats.get("diggCount") or 0
                     replies = stats.get("replyCount") or 0
                     create_time = comment.get("createTime") or ""
-
                     if comment_id and text:
                         results.append({
                             "comment_id": str(comment_id),
@@ -272,18 +255,14 @@ def find_comments_blocks(obj, _depth=0):
                             "likes": str(likes),
                             "replies": str(replies),
                             "create_time": str(create_time),
-                            "is_reply": False,
                         })
                 except Exception:
                     continue
-
         for value in obj.values():
             results.extend(find_comments_blocks(value, _depth + 1))
-
     elif isinstance(obj, list):
         for item in obj:
             results.extend(find_comments_blocks(item, _depth + 1))
-
     return results
 
 
@@ -314,10 +293,7 @@ def parse_count_string(text):
 
 
 async def get_expected_comment_count(page):
-    selectors = [
-        '[data-e2e="comment-count"]',
-        'strong[data-e2e="comment-count"]',
-    ]
+    selectors = ['[data-e2e="comment-count"]', 'strong[data-e2e="comment-count"]']
     for sel in selectors:
         try:
             elem = await page.query_selector(sel)
@@ -331,43 +307,29 @@ async def get_expected_comment_count(page):
     return 0
 
 
-# ============================================================
-# EXPAND "VIEW X REPLIES" BUTTONS
-# ============================================================
 def is_view_replies_button_text(text):
     if not text:
         return False
     t = text.strip().lower()
-
     if t in ("reply", "balas", "membalas", "respond"):
         return False
     if "hide" in t or "sembunyikan" in t:
         return False
-
     has_number_and_repl = bool(re.search(r'\d+\s*(repl|balasan)', t))
     has_view_repl = ("view" in t and "repl" in t)
     has_lihat_balasan = ("lihat" in t and "balasan" in t)
-
     return has_number_and_repl or has_view_repl or has_lihat_balasan
 
 
 async def expand_visible_reply_buttons(page, verbose=True, max_clicks=3):
     clicked = 0
-    candidates_checked = 0
-    matched_texts = 0
-
     selector_patterns = [
         '[class*="TUXButton-label"]',
         'p[class*="TUXButton-label"]',
         'span[class*="TUXButton-label"]',
         'div[class*="TUXButton-label"]',
-        'button:has-text("repl")',
-        'button:has-text("balasan")',
-        '[role="button"]:has-text("repl")',
     ]
-
     seen_positions = set()
-
     for pattern in selector_patterns:
         if clicked >= max_clicks:
             break
@@ -375,54 +337,35 @@ async def expand_visible_reply_buttons(page, verbose=True, max_clicks=3):
             elems = await page.query_selector_all(pattern)
         except Exception:
             continue
-
         for elem in elems:
             if clicked >= max_clicks:
                 break
-            candidates_checked += 1
             try:
                 if not await elem.is_visible():
                     continue
-
                 text = (await elem.text_content() or "").strip()
-                if not text:
+                if not text or not is_view_replies_button_text(text):
                     continue
-
-                if not is_view_replies_button_text(text):
-                    continue
-
-                matched_texts += 1
-
                 box = await elem.bounding_box()
                 pos_key = (round(box["x"]), round(box["y"])) if box else None
                 if pos_key and pos_key in seen_positions:
                     continue
                 if pos_key:
                     seen_positions.add(pos_key)
-
-                click_success = False
                 try:
                     await elem.scroll_into_view_if_needed(timeout=2000)
                     await elem.click(timeout=3000)
-                    click_success = True
+                    clicked += 1
                 except Exception:
                     try:
                         await elem.evaluate("el => el.click()")
-                        click_success = True
+                        clicked += 1
                     except Exception:
                         pass
-
-                if click_success:
-                    clicked += 1
+                if clicked > 0:
                     await asyncio.sleep(random.uniform(0.5, 1))
-
             except Exception:
                 continue
-
-    if verbose:
-        print(f"      🔍 Reply-button scan: {candidates_checked} candidates, "
-              f"{matched_texts} matched, {clicked} di-klik")
-
     return clicked
 
 
@@ -447,9 +390,6 @@ def make_comments_response_listener(comments_cache):
     return on_response
 
 
-# ============================================================
-# EXTRACT REPLIES FROM DOM
-# ============================================================
 async def extract_replies_from_dom_simple(page, comment_container):
     try:
         await asyncio.sleep(0.5)
@@ -473,7 +413,6 @@ async def extract_replies_from_dom_simple(page, comment_container):
                             username = await username_elem.text_content() if username_elem else ""
                             likes_elem = await reply_elem.query_selector('[data-e2e="comment-like-count"]')
                             likes = await likes_elem.text_content() if likes_elem else "0"
-
                             if reply_text and len(reply_text) > 3:
                                 all_replies.append({
                                     "text": reply_text.strip(),
@@ -485,8 +424,7 @@ async def extract_replies_from_dom_simple(page, comment_container):
             except Exception:
                 continue
         return all_replies
-    except Exception as e:
-        print(f"      ⚠️ Error extracting replies: {str(e)[:50]}")
+    except Exception:
         return []
 
 
@@ -552,9 +490,6 @@ async def get_scroll_diagnostics(elem):
         return 0, 0
 
 
-# ============================================================
-# CAPTCHA CHECK — SELECTOR-ONLY (no content scanning — no false positives!)
-# ============================================================
 CAPTCHA_QUICK_SELECTORS = [
     'img[alt="Captcha" i]',
     'img[alt*="captcha" i]',
@@ -566,8 +501,6 @@ CAPTCHA_QUICK_SELECTORS = [
     'div[class^="cap-"]',
     'div[class*=" cap-"]',
     'iframe[src*="captcha"]',
-    '.TUXModal:has-text("captcha")',
-    '.TUXModal:has-text("Captcha")',
 ]
 
 
@@ -586,21 +519,14 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label="", worker_
     blocker_selectors = [
         'text="Log in to TikTok"',
         '[data-e2e="login-modal"]',
-        'div[role="dialog"]:has-text("Log in")',
-        'div[role="dialog"]:has-text("Continue with")',
         'text="Drag the slider"',
         'text="Drag the slider to fit the puzzle"',
         '[id*="captcha"]',
         '[class*="captcha"]',
-        '[class*="Captcha"]',
         'iframe[src*="captcha"]',
         'img[alt="Captcha" i]',
-        'img[alt*="captcha" i]',
-        '.TUXModal:has-text("captcha")',
-        '.TUXModal:has-text("Captcha")',
         'div[class^="cap-"]',
         'div[class*=" cap-"]',
-        'button:has-text("Verify")',
     ]
 
     ALERT_REPEAT_EVERY = 30
@@ -611,24 +537,21 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label="", worker_
 
     while asyncio.get_event_loop().time() - start < timeout:
         found = False
-        matched_selector = None
-
         for sel in blocker_selectors:
             try:
                 elem = await page.query_selector(sel)
                 if elem and await elem.is_visible():
                     found = True
-                    matched_selector = sel
                     break
             except Exception:
                 continue
 
         if not found:
             if was_found:
-                print(f"   ✅ [{worker_label}] Captcha/login wall hilang, lanjut.")
+                print(f"   ✅ [{worker_label}] Captcha/login wall hilang")
                 stop_warning()
                 if alert_sent:
-                    send_telegram_alert(f"✅ [{worker_label}] Captcha solved! Lanjut scraping! 🚀\n{context_label}")
+                    send_telegram_alert(f"✅ [{worker_label}] Captcha solved!\n{context_label}")
                 await asyncio.sleep(random.uniform(2, 4))
             return True
 
@@ -636,45 +559,34 @@ async def wait_for_login_wall_clear(page, timeout=600, context_label="", worker_
         remaining = int(timeout - (now - start))
 
         if not was_found:
-            print(f"\n{'=' * 70}")
-            print(f"   🔒 [{worker_label}] CAPTCHA / LOGIN WALL TERDETEKSI !!!")
-            print(f"   📍 Selector matched: {matched_selector}")
-            print(f"   ⏰ Timeout dalam {remaining} detik")
-            print(f"{'=' * 70}")
+            print(f"\n   🔒 [{worker_label}] CAPTCHA TERDETEKSI !!!")
             play_warning()
 
         if last_alert_at is None or (now - last_alert_at) >= ALERT_REPEAT_EVERY:
-            send_telegram_alert(
-                f"⚠️ [{worker_label}] CAPTCHA DETECTED!\n{context_label}\n"
-                f"⏳ Sisa waktu: {remaining}s\nSolve manual di browser worker ini!"
-            )
+            send_telegram_alert(f"⚠️ [{worker_label}] CAPTCHA DETECTED!\n{context_label}")
             alert_sent = True
             last_alert_at = now
 
         was_found = True
-        print(f"   ⏳ [{worker_label}] Waiting untuk solve... ({remaining}s)", end="\r")
+        print(f"   ⏳ [{worker_label}] Waiting... ({remaining}s)", end="\r")
         await asyncio.sleep(3)
 
-    print(f"\n   ❌ [{worker_label}] TIMEOUT - Captcha gak di-solve!")
+    print(f"\n   ❌ [{worker_label}] TIMEOUT!")
     stop_warning()
-    send_telegram_alert(f"❌ [{worker_label}] CAPTCHA TIMEOUT!\n{context_label}\nWorker ini dihentikan.")
-    raise Exception(f"[{worker_label}] Captcha/login wall gak di-solve dalam {timeout}s.")
+    raise Exception(f"[{worker_label}] Captcha timeout")
 
 
 async def pause_for_manual_captcha_solve(page, timeout=600, context_label="", worker_label=""):
-    print(f"\n{'=' * 70}")
-    print(f"   🔒 [{worker_label}] CAPTCHA TERDETEKSI DI TENGAH PROSES!!!")
-    print(f"{'=' * 70}")
+    print(f"\n   🔒 [{worker_label}] CAPTCHA DI TENGAH PROSES!!!")
     play_warning()
-    send_telegram_alert(f"⚠️ [{worker_label}] CAPTCHA (mid-process)!\n{context_label}\nSolve manual sekarang!")
+    send_telegram_alert(f"⚠️ [{worker_label}] CAPTCHA (mid-process)!\n{context_label}")
 
     start = asyncio.get_event_loop().time()
     while asyncio.get_event_loop().time() - start < timeout:
         found, _ = await quick_captcha_check(page)
         if not found:
-            print(f"   ✅ [{worker_label}] Captcha solved! Lanjut...")
+            print(f"   ✅ [{worker_label}] Captcha solved!")
             stop_warning()
-            send_telegram_alert(f"✅ [{worker_label}] Captcha solved!\n{context_label}")
             await asyncio.sleep(random.uniform(2, 4))
             return True
         remaining = int(timeout - (asyncio.get_event_loop().time() - start))
@@ -683,41 +595,7 @@ async def pause_for_manual_captcha_solve(page, timeout=600, context_label="", wo
 
     print(f"\n   ❌ [{worker_label}] TIMEOUT!")
     stop_warning()
-    raise Exception(f"[{worker_label}] Captcha timeout di tengah proses")
-
-
-# ============================================================
-# IP / WAF BLOCK DETECTION
-# ============================================================
-async def check_ip_blocked(page):
-    try:
-        content = await page.content()
-        indicators = [
-            "Access to www.tiktok.com was denied",
-            "You don't have authorization to view this page",
-            "HTTP ERROR 403",
-        ]
-        for indicator in indicators:
-            if indicator in content:
-                return True
-    except Exception:
-        pass
-    return False
-
-
-async def handle_ip_block(page, context_label="", cooldown_minutes=45, worker_label=""):
-    print(f"\n{'=' * 70}")
-    print(f"   🚫 [{worker_label}] IP/SESSION KE-BLOCK (HTTP 403)!")
-    print(f"   😴 PAUSE {cooldown_minutes} menit...")
-    print(f"{'=' * 70}")
-    play_warning()
-    send_telegram_alert(
-        f"🚫 [{worker_label}] IP/SESSION BLOCKED (HTTP 403)!\n{context_label}\n"
-        f"Worker ini PAUSE {cooldown_minutes} menit."
-    )
-    stop_warning()
-    await asyncio.sleep(cooldown_minutes * 60)
-    print(f"\n   ⏰ [{worker_label}] Cooldown selesai, mencoba lagi...")
+    raise Exception(f"[{worker_label}] Captcha timeout")
 
 
 # ============================================================
@@ -725,7 +603,6 @@ async def handle_ip_block(page, context_label="", cooldown_minutes=45, worker_la
 # ============================================================
 async def scrape_comments_from_video(page, username, video_id, comments_cache, worker_label=""):
     video_url = f"https://www.tiktok.com/@{username}/video/{video_id}"
-
     print(f"\n   🎥 [{worker_label}] Scrape: {video_id[:10]}...")
 
     try:
@@ -734,21 +611,6 @@ async def scrape_comments_from_video(page, username, video_id, comments_cache, w
     except Exception as e:
         print(f"      ❌ [{worker_label}] Gagal navigate: {e}")
         return None
-
-    max_block_retries = 3
-    for retry in range(max_block_retries):
-        is_blocked = await check_ip_blocked(page)
-        if not is_blocked:
-            break
-        await handle_ip_block(page, context_label=f"Video {video_id[:10]}", worker_label=worker_label)
-        try:
-            await page.goto(video_url, wait_until="load", timeout=30000)
-            await asyncio.sleep(random.uniform(2, 3))
-        except Exception as e:
-            print(f"      ❌ [{worker_label}] Gagal navigate setelah cooldown: {e}")
-            return None
-    else:
-        raise Exception(f"[{worker_label}] Masih ke-block setelah {max_block_retries}x retry")
 
     comments_cache.clear()
 
@@ -790,20 +652,17 @@ async def scrape_comments_from_video(page, username, video_id, comments_cache, w
 
     expected_count = await get_expected_comment_count(page)
 
-    # ⭐ Target: minimal MIN_COMMENTS_TARGET (50), maksimal MAX_COMMENTS_PER_VIDEO (100)
     if expected_count > 0:
         target_count = min(MAX_COMMENTS_PER_VIDEO, max(MIN_COMMENTS_TARGET, int(expected_count * 0.5)))
-        print(f"      🎯 [{worker_label}] Target: {target_count} (video punya {expected_count} total)")
+        print(f"      🎯 [{worker_label}] Target: {target_count}")
     else:
         target_count = MIN_COMMENTS_TARGET
-        print(f"      ⚠️ [{worker_label}] Gak bisa detect count, target default: {target_count}")
 
     comment_container = None
     container_selectors = [
         '[data-e2e="comment-list"]',
         '[data-testid="comment-list-container"]',
         '[class*="CommentList"]',
-        'div[class*="DraftCommentPanel"]',
     ]
 
     for sel in container_selectors:
@@ -816,46 +675,14 @@ async def scrape_comments_from_video(page, username, video_id, comments_cache, w
             continue
 
     if not comment_container:
-        is_captcha, matched_sel = await quick_captcha_check(page)
-        if is_captcha:
-            try:
-                await pause_for_manual_captcha_solve(
-                    page, timeout=600, context_label=f"Video {video_id[:10]}", worker_label=worker_label
-                )
-            except Exception:
-                return None
-            for sel in container_selectors:
-                try:
-                    container = await page.query_selector(sel)
-                    if container and await container.is_visible():
-                        comment_container = container
-                        break
-                except Exception:
-                    continue
+        return {"total_comments_loaded": 0, "total_comments_available": 0, "comments": [], "replies": [], "expected_comment_count": expected_count}
 
-    if not comment_container:
-        await page.evaluate("window.scrollBy(0, 500)")
-        await asyncio.sleep(1)
-        for sel in container_selectors:
-            try:
-                container = await page.query_selector(sel)
-                if container and await container.is_visible():
-                    comment_container = container
-                    break
-            except Exception:
-                continue
-
-        if not comment_container:
-            return {"total_comments_loaded": 0, "total_comments_available": 0, "comments": [], "replies": [], "expected_comment_count": expected_count}
-
-    print(f"      📜 [{worker_label}] Scrolling comments...")
+    print(f"      📜 [{worker_label}] Scrolling...")
 
     scroll_target = await find_actual_scroll_target(page, comment_container)
 
     no_new_streak = 0
     prev_count = 0
-    no_new_streak_limit = 12
-    min_scroll_before_stop = 8
 
     for scroll_attempt in range(MAX_SCROLL_ATTEMPTS):
         wheel_ok = await wheel_scroll_element(page, scroll_target, delta_y=random.randint(500, 800))
@@ -865,15 +692,10 @@ async def scrape_comments_from_video(page, username, video_id, comments_cache, w
         await asyncio.sleep(random.uniform(*DELAY_BETWEEN_SCROLL))
 
         if scroll_attempt % 3 == 0:
-            is_captcha, matched_sel = await quick_captcha_check(page)
+            is_captcha, _ = await quick_captcha_check(page)
             if is_captcha:
-                print(f"\n      🔒 [{worker_label}] CAPTCHA saat scroll ke-{scroll_attempt + 1}!")
                 try:
-                    await pause_for_manual_captcha_solve(
-                        page, timeout=600,
-                        context_label=f"Video {video_id[:10]} (scroll {scroll_attempt + 1})",
-                        worker_label=worker_label
-                    )
+                    await pause_for_manual_captcha_solve(page, timeout=600, context_label=f"Video {video_id[:10]}", worker_label=worker_label)
                 except Exception:
                     break
                 no_new_streak = 0
@@ -895,19 +717,18 @@ async def scrape_comments_from_video(page, username, video_id, comments_cache, w
             print(f"      ↻ [{worker_label}] {scroll_attempt + 1}x scroll, {current_count} comments...")
 
         if current_count >= target_count:
-            print(f"      ✅ [{worker_label}] Target tercapai: {current_count}/{target_count}")
+            print(f"      ✅ [{worker_label}] Target: {current_count}/{target_count}")
             break
 
         if current_count >= MAX_COMMENTS_PER_VIDEO:
-            print(f"      ✅ [{worker_label}] Max reached: {current_count}")
+            print(f"      ✅ [{worker_label}] Max: {current_count}")
             break
 
-        if no_new_streak >= no_new_streak_limit and scroll_attempt >= min_scroll_before_stop:
-            print(f"      🔚 [{worker_label}] No new comments x{no_new_streak}, stop di {current_count}")
+        if no_new_streak >= 12 and scroll_attempt >= 8:
+            print(f"      🔚 [{worker_label}] Stop at {current_count}")
             break
 
     comments_loaded = count_unique_comments(comments_cache)
-    print(f"      ✅ [{worker_label}] Total {comments_loaded} unique comments")
 
     unique_comments = {}
     for comment in comments_cache:
@@ -935,23 +756,16 @@ async def scrape_comments_from_video(page, username, video_id, comments_cache, w
 # ============================================================
 # PROCESS VIDEO DAN SAVE COMMENTS
 # ============================================================
-async def process_video_comments(page, username, video_id, existing_comments, comments_cache, worker_label=""):
-    video_comments = [c for c in existing_comments if c[0] == username and c[1] == video_id]
-    if video_comments:
-        print(f"      ⏭️  [{worker_label}] Video {video_id[:10]} sudah ada {len(video_comments)} comments")
-        return 0
-
+async def process_video_comments(page, username, video_id, comments_cache, worker_label=""):
     result = await scrape_comments_from_video(page, username, video_id, comments_cache, worker_label=worker_label)
 
     if not result or not result["comments"]:
-        print(f"      ⚠️ [{worker_label}] Gak ada comments ter-load")
+        print(f"      ⚠️ [{worker_label}] Gak ada comments")
         return 0
 
+    # Save comments
     rows = []
     for comment_data in result["comments"][:MAX_COMMENTS_PER_VIDEO]:
-        key = (username, video_id, comment_data.get("comment_id"))
-        if key in existing_comments:
-            continue
         rows.append({
             "username": username,
             "video_id": video_id,
@@ -963,19 +777,16 @@ async def process_video_comments(page, username, video_id, existing_comments, co
             "timestamp": comment_data.get("create_time", ""),
             "scraped_at": datetime.now().isoformat(),
         })
-        existing_comments.add(key)
 
     if rows:
         await append_comment_rows_locked(rows)
         print(f"      💾 [{worker_label}] Saved {len(rows)} comments")
 
+    # Save replies
     reply_rows = []
     if result.get("replies"):
         for idx, reply_data in enumerate(result["replies"]):
             reply_id = f"reply_{video_id}_{idx}"
-            key = (username, video_id, reply_id)
-            if key in existing_comments:
-                continue
             reply_rows.append({
                 "username": username,
                 "video_id": video_id,
@@ -987,17 +798,17 @@ async def process_video_comments(page, username, video_id, existing_comments, co
                 "timestamp": "",
                 "scraped_at": datetime.now().isoformat(),
             })
-            existing_comments.add(key)
 
     if reply_rows:
         await append_comment_rows_locked(reply_rows)
         print(f"      💾 [{worker_label}] Saved {len(reply_rows)} replies")
 
+    # Update stats
     expected = result.get("expected_comment_count", 0)
     total_scraped = len(rows) + len(reply_rows)
     coverage_pct = round((total_scraped / expected * 100), 1) if expected > 0 else ""
 
-    await append_stats_row_locked({
+    await write_stats_row_locked({
         "username": username,
         "video_id": video_id,
         "total_comments_loaded": result["total_comments_loaded"],
@@ -1008,16 +819,21 @@ async def process_video_comments(page, username, video_id, existing_comments, co
         "scraped_at": datetime.now().isoformat(),
     })
 
+    # ⭐ UPDATE to_scrape.csv: mark as scraped
+    now_timestamp = datetime.now().isoformat()
+    await update_to_scrape_csv_locked(username, video_id, now_timestamp)
+    print(f"      ✅ [{worker_label}] Marked as scraped in to_scrape.csv")
+
     return total_scraped
 
 
 # ============================================================
-# WORKER — 1 BROWSER, 1 AKUN, LIST VIDEO SENDIRI
+# WORKER
 # ============================================================
-async def run_worker(p, worker_label, profile_dir, cookies_path, video_list, existing_comments):
+async def run_worker(p, worker_label, profile_dir, cookies_path, video_list):
     cookies = load_cookies_from_json(cookies_path, label=worker_label)
     if not cookies:
-        print(f"❌ [{worker_label}] No cookies, worker ini SKIP.")
+        print(f"❌ [{worker_label}] No cookies")
         return 0
 
     profile_dir.mkdir(parents=True, exist_ok=True)
@@ -1041,14 +857,8 @@ async def run_worker(p, worker_label, profile_dir, cookies_path, video_list, exi
     try:
         await page.goto("https://www.tiktok.com", wait_until="load", timeout=30000)
         await asyncio.sleep(2)
-        profile_button = await page.query_selector('[data-e2e="header-profile"]')
-        if profile_button:
-            print(f"✅ [{worker_label}] LOGGED IN")
-        else:
-            print(f"⚠️  [{worker_label}] Might not be logged in, continuing...")
-        await asyncio.sleep(2)
-    except Exception as e:
-        print(f"⚠️  [{worker_label}] Error verifying login: {e}")
+    except Exception:
+        pass
 
     comments_cache = []
     page.on("response", make_comments_response_listener(comments_cache))
@@ -1061,22 +871,21 @@ async def run_worker(p, worker_label, profile_dir, cookies_path, video_list, exi
             video_id = video_data.get("video_id")
 
             print(f"\n{'=' * 60}")
-            print(f"[{worker_label}] [{idx}/{len(video_list)}] @{username} - {video_id[:10]}")
+            print(f"[{worker_label}] [{idx}/{len(video_list)}] @{username}")
             print(f"{'=' * 60}")
 
             try:
                 n_comments = await process_video_comments(
-                    page, username, video_id, existing_comments, comments_cache, worker_label=worker_label
+                    page, username, video_id, comments_cache, worker_label=worker_label
                 )
                 total_scraped += n_comments
 
                 if idx % DELAY_EVERY_N_VIDEOS == 0:
                     long_delay = random.uniform(*DELAY_AFTER_N_VIDEOS)
-                    print(f"\n   🌙 [{worker_label}] Jeda {long_delay:.0f}s (cooldown)...")
+                    print(f"\n   🌙 [{worker_label}] Cooldown {long_delay:.0f}s...")
                     await asyncio.sleep(long_delay)
                 else:
                     delay = random.uniform(*DELAY_BETWEEN_VIDEO)
-                    print(f"   ⏳ [{worker_label}] Jeda {delay:.0f}s")
                     await asyncio.sleep(delay)
 
             except Exception as e:
@@ -1086,7 +895,7 @@ async def run_worker(p, worker_label, profile_dir, cookies_path, video_list, exi
     finally:
         await context.close()
 
-    print(f"\n✅ [{worker_label}] SELESAI. Total scraped: {total_scraped}")
+    print(f"\n✅ [{worker_label}] SELESAI: {total_scraped} comments")
     return total_scraped
 
 
@@ -1094,89 +903,44 @@ async def run_worker(p, worker_label, profile_dir, cookies_path, video_list, exi
 # MAIN
 # ============================================================
 async def main():
-    health_videos = load_health_videos()
-    if not health_videos:
-        print("❌ Gak ada health videos untuk di-scrape")
+    videos = load_to_scrape_videos()
+    if not videos:
+        print("❌ Gak ada video pending")
         return
-
-    existing_comments = load_existing_comments()
-    existing_stats = load_existing_stats()
-
-    # Filter videos yang belum discrape
-    pending = []
-    for video_data in health_videos:
-        username = video_data.get("username")
-        video_id = video_data.get("video_id")
-        key = (username, video_id)
-        if key not in existing_stats:
-            pending.append(video_data)
-
-    # ⭐ CAP max 20 video per influencer
-    count_per_influencer = defaultdict(int)
-    to_process = []
-    for video_data in pending:
-        username = video_data.get("username")
-        if count_per_influencer[username] >= MAX_VIDEOS_PER_INFLUENCER:
-            continue
-        count_per_influencer[username] += 1
-        to_process.append(video_data)
 
     print(f"\n📊 Summary:")
-    print(f"   Total health videos: {len(health_videos)}")
-    print(f"   Pending (belum discrape): {len(pending)}")
-    print(f"   Setelah cap {MAX_VIDEOS_PER_INFLUENCER}/influencer: {len(to_process)}")
-    print(f"   Jumlah influencer terlibat: {len(count_per_influencer)}")
+    print(f"   Total pending: {len(videos)}")
 
-    if not to_process:
-        print("✅ Semua videos (dalam cap) sudah di-scrape")
-        return
+    # Split ke 2 worker per influencer
+    influencer_videos = defaultdict(list)
+    for v in videos:
+        influencer_videos[v.get("username")].append(v)
 
-    # ⭐ Split video list JADI 2, per-influencer (gak ada influencer yang sama
-    # dikerjain 2 worker sekaligus — biar gak ada race condition & gak keliatan
-    # aneh 1 influencer diakses dari 2 sesi/akun barengan)
-    influencer_list = list(count_per_influencer.keys())
+    influencer_list = list(influencer_videos.keys())
     random.shuffle(influencer_list)
     half = len(influencer_list) // 2
     influencers_worker1 = set(influencer_list[:half])
     influencers_worker2 = set(influencer_list[half:])
 
-    videos_worker1 = [v for v in to_process if v.get("username") in influencers_worker1]
-    videos_worker2 = [v for v in to_process if v.get("username") in influencers_worker2]
+    videos_worker1 = [v for v in videos if v.get("username") in influencers_worker1]
+    videos_worker2 = [v for v in videos if v.get("username") in influencers_worker2]
 
-    print(f"\n📦 Split:")
-    print(f"   Worker 1 (akun 1): {len(videos_worker1)} video dari {len(influencers_worker1)} influencer")
-    print(f"   Worker 2 (akun 2): {len(videos_worker2)} video dari {len(influencers_worker2)} influencer")
+    print(f"   Worker 1: {len(videos_worker1)} videos")
+    print(f"   Worker 2: {len(videos_worker2)} videos")
 
-    send_telegram_alert(
-        f"🚀 Mulai scrape 2 WORKER PARALEL\n"
-        f"Worker 1: {len(videos_worker1)} video\n"
-        f"Worker 2: {len(videos_worker2)} video\n"
-        f"Waktu: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-    )
+    send_telegram_alert(f"🚀 Scraping mulai\nWorker 1: {len(videos_worker1)}\nWorker 2: {len(videos_worker2)}")
 
     async with async_playwright() as p:
         results = await asyncio.gather(
-            run_worker(p, "WORKER-1", PROFILE_DIR_1, COOKIES_FILE_1, videos_worker1, existing_comments),
-            run_worker(p, "WORKER-2", PROFILE_DIR_2, COOKIES_FILE_2, videos_worker2, existing_comments),
+            run_worker(p, "WORKER-1", PROFILE_DIR_1, COOKIES_FILE_1, videos_worker1),
+            run_worker(p, "WORKER-2", PROFILE_DIR_2, COOKIES_FILE_2, videos_worker2),
             return_exceptions=True,
         )
 
-    total = 0
-    for i, r in enumerate(results, start=1):
-        if isinstance(r, Exception):
-            print(f"❌ Worker-{i} error: {r}")
-        else:
-            total += r
+    total = sum(r for r in results if not isinstance(r, Exception))
 
-    print(f"\n\n✅ SEMUA WORKER SELESAI")
-    print(f"   Total comments scraped: {total}")
-    print(f"   Output: {OUTPUT_COMMENTS}")
-
-    send_telegram_alert(
-        f"✅ Scrape comments selesai (2 worker)!\n"
-        f"Total comments: {total}\n"
-        f"Waktu: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-    )
+    print(f"\n✅ SELESAI: {total} total comments")
+    send_telegram_alert(f"✅ Scraping selesai!\nTotal: {total} comments")
 
 
 if __name__ == "__main__":
