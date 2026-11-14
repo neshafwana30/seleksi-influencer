@@ -1,0 +1,521 @@
+row_num,comment_id,original_text,variant_num,paraphrase_text,label_final,label_name,catatan_skema
+0,,Lak jareku meneng o ae wes mending mas,1,mending diem aja sih kalo kata aku mas,negatif,negatif,3 kelas & binary
+0,,Lak jareku meneng o ae wes mending mas,2,"udah meneng aja lah mas, mending gitu",negatif,negatif,3 kelas & binary
+0,,Lak jareku meneng o ae wes mending mas,3,menurutku ya udahan aja diemin wae mas,negatif,negatif,3 kelas & binary
+0,,Lak jareku meneng o ae wes mending mas,4,aku sih mending meneng ae daripada rame-rame mas,negatif,negatif,3 kelas & binary
+0,,Lak jareku meneng o ae wes mending mas,5,"udah ah mas, diem aja kayaknya lebih baik",negatif,negatif,3 kelas & binary
+7,,"udh gausah olahraga gitu bub8d pasti ujung² nya sc juga, soal nya kan bidan pasti tau resiko lahiran normal pasti pada gamau lahiran normal maunya sc😭",1,"ga usah repot olahraga segala deh bub, ujung-ujungnya sc jg kok, bidan pasti udah tau resiko lahiran normal makanya pada maunya sc😭",negatif,negatif,3 kelas & binary
+7,,"udh gausah olahraga gitu bub8d pasti ujung² nya sc juga, soal nya kan bidan pasti tau resiko lahiran normal pasti pada gamau lahiran normal maunya sc😭",2,"mending ga olahraga² gitu bub, toh ujungnya sc juga, bidan kan paham resiko lahiran normal jd pasti condongnya ke sc😭",negatif,negatif,3 kelas & binary
+7,,"udh gausah olahraga gitu bub8d pasti ujung² nya sc juga, soal nya kan bidan pasti tau resiko lahiran normal pasti pada gamau lahiran normal maunya sc😭",3,"buat apa olahraga kalo ujung2nya sc juga sih, bidan jg pasti ngerti resiko normal makanya disaranin sc😭",negatif,negatif,3 kelas & binary
+7,,"udh gausah olahraga gitu bub8d pasti ujung² nya sc juga, soal nya kan bidan pasti tau resiko lahiran normal pasti pada gamau lahiran normal maunya sc😭",4,"percuma olahraga segitu rajin bub, tetep aja ujungnya sc, bidan tau resiko lahiran normal jd maunya sc😭",negatif,negatif,3 kelas & binary
+7,,"udh gausah olahraga gitu bub8d pasti ujung² nya sc juga, soal nya kan bidan pasti tau resiko lahiran normal pasti pada gamau lahiran normal maunya sc😭",5,"ga perlu sampe olahraga gitu bub, toh kesudahannya sc, bidan pun ngerti resiko normal makanya arahnya sc😭",negatif,negatif,3 kelas & binary
+9,,praktek ya praktekkk,1,praktekin aja dong jangan cuma omong,negatif,negatif,3 kelas & binary
+9,,praktek ya praktekkk,2,mending praktek beneran deh,negatif,negatif,3 kelas & binary
+9,,praktek ya praktekkk,3,kalo bisa ya langsung dipraktekin,negatif,negatif,3 kelas & binary
+9,,praktek ya praktekkk,4,harusnya dipraktekin bukan cuma dibahas,negatif,negatif,3 kelas & binary
+9,,praktek ya praktekkk,5,coba dipraktekin dulu sih,negatif,negatif,3 kelas & binary
+12,,tapi dia sebarkan keburukan hospital Malaysia,1,tapi kan dia nyebarin hal buruk soal rumah sakit Malaysia,negatif,negatif,3 kelas & binary
+12,,tapi dia sebarkan keburukan hospital Malaysia,2,dia kan udah nyebarin keburukan rs di Malaysia tuh,negatif,negatif,3 kelas & binary
+12,,tapi dia sebarkan keburukan hospital Malaysia,3,padahal dia nyebarin cerita jelek soal hospital Malaysia,negatif,negatif,3 kelas & binary
+12,,tapi dia sebarkan keburukan hospital Malaysia,4,tapi dia itu nyebarin reputasi buruk hospital Malaysia,negatif,negatif,3 kelas & binary
+12,,tapi dia sebarkan keburukan hospital Malaysia,5,dia malah nyebarin keburukan pihak rumah sakit Malaysia,negatif,negatif,3 kelas & binary
+13,,"ngapain kopi disalahkan,, yg bahaya itu makanan bergula..kalau kopi free gula / pkai gula tropika masih aman lah",1,"kopi kok disalahin,, yg bahaya kan makanan yg bergula.. kalo kopi tanpa gula atau pake gula tropika masih aman",negatif,negatif,3 kelas & binary
+13,,"ngapain kopi disalahkan,, yg bahaya itu makanan bergula..kalau kopi free gula / pkai gula tropika masih aman lah",2,"ngapain nyalahin kopi, yg berbahaya tuh makanan manis.. kopi tanpa gula/gula tropika kan masih oke",negatif,negatif,3 kelas & binary
+13,,"ngapain kopi disalahkan,, yg bahaya itu makanan bergula..kalau kopi free gula / pkai gula tropika masih aman lah",3,"kopi ga salah kali,, yg bermasalah itu makanan bergula.. kopi free gula atau gula tropika masih aman sih",negatif,negatif,3 kelas & binary
+13,,"ngapain kopi disalahkan,, yg bahaya itu makanan bergula..kalau kopi free gula / pkai gula tropika masih aman lah",4,"harusnya bukan kopi yg disalahin, makanan bergula yg bahaya.. kopi tanpa gula/gula tropika masih aman",negatif,negatif,3 kelas & binary
+13,,"ngapain kopi disalahkan,, yg bahaya itu makanan bergula..kalau kopi free gula / pkai gula tropika masih aman lah",5,"kopinya ga perlu disalahin,, yg bahaya kan makanan manis.. pake kopi free gula/gula tropika masih aman lah",negatif,negatif,3 kelas & binary
+17,,aku udh nglakuin itu jd mkin begkak dn sakit saat digerakan 😭,1,udah aku coba malah jadi makin bengkak sama sakit pas digerakin😭,negatif,negatif,3 kelas & binary
+17,,aku udh nglakuin itu jd mkin begkak dn sakit saat digerakan 😭,2,aku praktekin itu tapi malah tambah bengkak dan sakit kalo digerakkan😭,negatif,negatif,3 kelas & binary
+17,,aku udh nglakuin itu jd mkin begkak dn sakit saat digerakan 😭,3,"pas udah dicoba, jadinya makin bengkak dan nyeri waktu digerakan😭",negatif,negatif,3 kelas & binary
+17,,aku udh nglakuin itu jd mkin begkak dn sakit saat digerakan 😭,4,aku lakuin itu eh malah makin bengkak sama sakit pas gerak😭,negatif,negatif,3 kelas & binary
+17,,aku udh nglakuin itu jd mkin begkak dn sakit saat digerakan 😭,5,udah kulakukan tapi hasilnya makin bengkak dan sakit saat digerakin😭,negatif,negatif,3 kelas & binary
+24,,"dok, aq pusing liat dokter mondar mandir smbil jelasin, ditambah lg sma editan'y😭",1,"dok aku jadi pusing liat dokter jalan muter-muter sambil ngejelasin, ditambah editannya lagi😭",negatif,negatif,3 kelas & binary
+24,,"dok, aq pusing liat dokter mondar mandir smbil jelasin, ditambah lg sma editan'y😭",2,"aduh dok, pusing liatin dokternya mondar-mandir pas jelasin, apalagi editannya😭",negatif,negatif,3 kelas & binary
+24,,"dok, aq pusing liat dokter mondar mandir smbil jelasin, ditambah lg sma editan'y😭",3,"dok liat dokternya bolak-balik sambil jelasin aja udah bikin pusing, plus editannya😭",negatif,negatif,3 kelas & binary
+24,,"dok, aq pusing liat dokter mondar mandir smbil jelasin, ditambah lg sma editan'y😭",4,"pusing aku dok liat dokter jalan-jalan terus pas nerangin, ditambah lagi editnya😭",negatif,negatif,3 kelas & binary
+24,,"dok, aq pusing liat dokter mondar mandir smbil jelasin, ditambah lg sma editan'y😭",5,"dok aku pusing ngeliat dokternya gerak muter-muter waktu jelasin, apalagi sama editannya😭",negatif,negatif,3 kelas & binary
+25,,ga berlaku bagi bayi saya dok,1,kalo bayi saya sih ga berlaku dok,negatif,negatif,3 kelas & binary
+25,,ga berlaku bagi bayi saya dok,2,buat bayi saya ga ngaruh tuh dok,negatif,negatif,3 kelas & binary
+25,,ga berlaku bagi bayi saya dok,3,ga kepake buat bayi saya dok,negatif,negatif,3 kelas & binary
+25,,ga berlaku bagi bayi saya dok,4,ke bayi saya hal itu ga berlaku dok,negatif,negatif,3 kelas & binary
+25,,ga berlaku bagi bayi saya dok,5,bayi saya sih ga kena efeknya dok,negatif,negatif,3 kelas & binary
+26,,nanya ke dokter tirta aja,1,coba nanya dokter tirta aja langsung,negatif,negatif,3 kelas & binary
+26,,nanya ke dokter tirta aja,2,mending tanya ke dokter tirta deh,negatif,negatif,3 kelas & binary
+26,,nanya ke dokter tirta aja,3,tanyain aja ke dokter tirta,negatif,negatif,3 kelas & binary
+26,,nanya ke dokter tirta aja,4,langsung nanya dokter tirta aja kali,negatif,negatif,3 kelas & binary
+26,,nanya ke dokter tirta aja,5,nanya aja sama dokter tirta ya,negatif,negatif,3 kelas & binary
+30,,ga lucu,1,ga kocak sih ini,negatif,negatif,3 kelas & binary
+30,,ga lucu,2,menurutku ga funny,negatif,negatif,3 kelas & binary
+30,,ga lucu,3,ga ada lucunya deh,negatif,negatif,3 kelas & binary
+30,,ga lucu,4,garing sih ini mah,negatif,negatif,3 kelas & binary
+30,,ga lucu,5,ga seru ini jokesnya,negatif,negatif,3 kelas & binary
+35,,Di marahin kan,1,nanti dimarahin loh,negatif,negatif,3 kelas & binary
+35,,Di marahin kan,2,kan jadinya kena marah,negatif,negatif,3 kelas & binary
+35,,Di marahin kan,3,bisa-bisa dimarahin tuh,negatif,negatif,3 kelas & binary
+35,,Di marahin kan,4,ujung-ujungnya dimarahin kan,negatif,negatif,3 kelas & binary
+35,,Di marahin kan,5,ya kena marah lah jadinya,negatif,negatif,3 kelas & binary
+55,,kwatir anakku lihat vt ini😭😭,1,khawatir banget kalo anakku liat video ini😭😭,negatif,negatif,3 kelas & binary
+55,,kwatir anakku lihat vt ini😭😭,2,aku takut anakku nonton vt ini😭😭,negatif,negatif,3 kelas & binary
+55,,kwatir anakku lihat vt ini😭😭,3,kepikiran kalo anakku sampe liat konten ini😭😭,negatif,negatif,3 kelas & binary
+55,,kwatir anakku lihat vt ini😭😭,4,cemas aku kalo anakku ikutan liat vt ini😭😭,negatif,negatif,3 kelas & binary
+55,,kwatir anakku lihat vt ini😭😭,5,was-was nih kalo anakku kebetulan liat video ini😭😭,negatif,negatif,3 kelas & binary
+60,,Mahal bgtt ya ka,1,harganya mahal banget ya ka,negatif,negatif,3 kelas & binary
+60,,Mahal bgtt ya ka,2,ini mahal amat ya kak,negatif,negatif,3 kelas & binary
+60,,Mahal bgtt ya ka,3,kok mahal bgt ya ka,negatif,negatif,3 kelas & binary
+60,,Mahal bgtt ya ka,4,wah pricey banget ya ka,negatif,negatif,3 kelas & binary
+60,,Mahal bgtt ya ka,5,muahal banget ternyata ya kak,negatif,negatif,3 kelas & binary
+64,,ky ga meyakinkan gt dok😭,1,kayak kurang yakin gitu dok😭,negatif,negatif,3 kelas & binary
+64,,ky ga meyakinkan gt dok😭,2,rasanya ga convincing gitu dok😭,negatif,negatif,3 kelas & binary
+64,,ky ga meyakinkan gt dok😭,3,keliatan ga meyakinkan deh dok😭,negatif,negatif,3 kelas & binary
+64,,ky ga meyakinkan gt dok😭,4,agak ragu-ragu gitu kesannya dok😭,negatif,negatif,3 kelas & binary
+64,,ky ga meyakinkan gt dok😭,5,ga begitu bikin percaya gitu dok😭,negatif,negatif,3 kelas & binary
+67,,saya ga percaya Dnegan putih itu yang jelas kita hanya ngejar warna asli kulit saya,1,"saya ga percaya sama klaim putih itu, yg jelas kita cuma ngejar warna kulit asli kita",negatif,negatif,3 kelas & binary
+67,,saya ga percaya Dnegan putih itu yang jelas kita hanya ngejar warna asli kulit saya,2,"ga yakin aku sama yg putih itu, intinya kita cuma pengen kulit sesuai warna asli",negatif,negatif,3 kelas & binary
+67,,saya ga percaya Dnegan putih itu yang jelas kita hanya ngejar warna asli kulit saya,3,"saya sih ragu sama putihnya, yg penting kan ngejar warna kulit asli kita",negatif,negatif,3 kelas & binary
+67,,saya ga percaya Dnegan putih itu yang jelas kita hanya ngejar warna asli kulit saya,4,"ga percaya saya soal putih itu, toh tujuannya cuma balik ke warna kulit asli",negatif,negatif,3 kelas & binary
+67,,saya ga percaya Dnegan putih itu yang jelas kita hanya ngejar warna asli kulit saya,5,"saya kurang yakin dgn klaim putih itu, intinya mah ngejar warna kulit asli aja",negatif,negatif,3 kelas & binary
+72,,ya pak dokter tidak seru😂😂😁,1,pak dokter ga seru deh ya😂😂😁,negatif,negatif,3 kelas & binary
+72,,ya pak dokter tidak seru😂😂😁,2,waduh dokternya kurang seru ya😂😂😁,negatif,negatif,3 kelas & binary
+72,,ya pak dokter tidak seru😂😂😁,3,ya ampun pak dokter ga asik😂😂😁,negatif,negatif,3 kelas & binary
+72,,ya pak dokter tidak seru😂😂😁,4,dokternya garing nih😂😂😁,negatif,negatif,3 kelas & binary
+72,,ya pak dokter tidak seru😂😂😁,5,pak dokter ini kurang fun ya😂😂😁,negatif,negatif,3 kelas & binary
+78,,emang dia tau padel itu apa ??,1,dia emang ngerti padel itu apa ya??,negatif,negatif,3 kelas & binary
+78,,emang dia tau padel itu apa ??,2,apa dia ngerti sih padel itu apaan??,negatif,negatif,3 kelas & binary
+78,,emang dia tau padel itu apa ??,3,dia paham ga sih padel itu apa??,negatif,negatif,3 kelas & binary
+78,,emang dia tau padel itu apa ??,4,emang dia tau ga padel itu kayak gimana??,negatif,negatif,3 kelas & binary
+78,,emang dia tau padel itu apa ??,5,dia ngerti beneran ga sih maksud padel itu??,negatif,negatif,3 kelas & binary
+99,,knp harus lewat sih😩lg makan ini,1,kenapa harus muncul pas lagi makan sih😩,negatif,negatif,3 kelas & binary
+99,,knp harus lewat sih😩lg makan ini,2,kok harus lewat waktu pas makan gini😩,negatif,negatif,3 kelas & binary
+99,,knp harus lewat sih😩lg makan ini,3,ganggu bgt lewatnya pas lagi makan😩,negatif,negatif,3 kelas & binary
+99,,knp harus lewat sih😩lg makan ini,4,napa pas lagi makan malah muncul ini😩,negatif,negatif,3 kelas & binary
+99,,knp harus lewat sih😩lg makan ini,5,ya ampun pas makan kok lewat konten ini😩,negatif,negatif,3 kelas & binary
+100,,Dokter saya baru mau beli. Tapi minimal jangan jelasin aja. Minimal rekomendasiin 🙏🏻,1,"saya mau beli dok, tapi jangan cuma jelasin doang, mendingan dikasih rekomendasi juga🙏🏻",negatif,negatif,3 kelas & binary
+100,,Dokter saya baru mau beli. Tapi minimal jangan jelasin aja. Minimal rekomendasiin 🙏🏻,2,"saya niatnya mau beli dok, tolong jangan sekedar jelasin, kasih rekomendasi dong🙏🏻",negatif,negatif,3 kelas & binary
+100,,Dokter saya baru mau beli. Tapi minimal jangan jelasin aja. Minimal rekomendasiin 🙏🏻,3,"mau beli nih dok, tapi minimal ada rekomendasinya, ga cuma penjelasan🙏🏻",negatif,negatif,3 kelas & binary
+100,,Dokter saya baru mau beli. Tapi minimal jangan jelasin aja. Minimal rekomendasiin 🙏🏻,4,"saya tertarik beli dok, cuma minta jangan cuma jelasin aja, kasih saran produknya🙏🏻",negatif,negatif,3 kelas & binary
+100,,Dokter saya baru mau beli. Tapi minimal jangan jelasin aja. Minimal rekomendasiin 🙏🏻,5,"saya mau beli dok, tapi please jangan cuma dijelasin, dikasih rekomendasi juga🙏🏻",negatif,negatif,3 kelas & binary
+104,,Eh dokter gia ternyata juga barisan sakit hati ???🙄🙄🙄,1,ternyata dokter gia juga ikutan barisan sakit hati ya???🙄🙄🙄,negatif,negatif,3 kelas & binary
+104,,Eh dokter gia ternyata juga barisan sakit hati ???🙄🙄🙄,2,lah dokter gia ikut-ikutan sakit hati juga ???🙄🙄🙄,negatif,negatif,3 kelas & binary
+104,,Eh dokter gia ternyata juga barisan sakit hati ???🙄🙄🙄,3,eh ternyata dokter gia termasuk yg sakit hati juga???🙄🙄🙄,negatif,negatif,3 kelas & binary
+104,,Eh dokter gia ternyata juga barisan sakit hati ???🙄🙄🙄,4,dokter gia ternyata ikutan barisan baper juga ya???🙄🙄🙄,negatif,negatif,3 kelas & binary
+104,,Eh dokter gia ternyata juga barisan sakit hati ???🙄🙄🙄,5,wah dokter gia juga masuk golongan sakit hati???🙄🙄🙄,negatif,negatif,3 kelas & binary
+109,,saya gak paham dok,1,saya ga ngerti dok,negatif,negatif,3 kelas & binary
+109,,saya gak paham dok,2,kurang paham aku dok,negatif,negatif,3 kelas & binary
+109,,saya gak paham dok,3,saya masih bingung dok,negatif,negatif,3 kelas & binary
+109,,saya gak paham dok,4,ga nangkep saya dok,negatif,negatif,3 kelas & binary
+109,,saya gak paham dok,5,aku ga paham maksudnya dok,negatif,negatif,3 kelas & binary
+110,,"salah juga, gak ada hubungan ama kolesterol..saya udah pernah bikin video penjelasannya",1,"itu salah, ga ada hubungannya sama kolesterol.. saya sudah pernah bahas di video",negatif,negatif,3 kelas & binary
+110,,"salah juga, gak ada hubungan ama kolesterol..saya udah pernah bikin video penjelasannya",2,"keliru itu, ga nyambung sama kolesterol.. saya udah pernah jelasin lewat video",negatif,negatif,3 kelas & binary
+110,,"salah juga, gak ada hubungan ama kolesterol..saya udah pernah bikin video penjelasannya",3,"ga bener itu, ga ada kaitan sama kolesterol.. udah pernah saya bikin videonya",negatif,negatif,3 kelas & binary
+110,,"salah juga, gak ada hubungan ama kolesterol..saya udah pernah bikin video penjelasannya",4,"itu kurang tepat, ga berhubungan sama kolesterol.. saya udah bikin video penjelasan soal itu",negatif,negatif,3 kelas & binary
+110,,"salah juga, gak ada hubungan ama kolesterol..saya udah pernah bikin video penjelasannya",5,"salah itu, ga ada sangkut pautnya sama kolesterol.. udah pernah dijelasin di video saya",negatif,negatif,3 kelas & binary
+114,,dokter incognito jg ksh tau pake vitacid..jd hrs percaya siapa skrg😭,1,dokter incognito jg nyaranin pake vitacid.. jadi bingung mau percaya siapa😭,negatif,negatif,3 kelas & binary
+114,,dokter incognito jg ksh tau pake vitacid..jd hrs percaya siapa skrg😭,2,dokter incognito juga bilang pake vitacid.. jd harus percaya siapa dong😭,negatif,negatif,3 kelas & binary
+114,,dokter incognito jg ksh tau pake vitacid..jd hrs percaya siapa skrg😭,3,padahal dokter incognito nyaranin vitacid juga.. jadi ga tau mau percaya mana😭,negatif,negatif,3 kelas & binary
+114,,dokter incognito jg ksh tau pake vitacid..jd hrs percaya siapa skrg😭,4,dokter incognito jg ngasih tau pake vitacid.. jadi harus percaya yg mana skrg😭,negatif,negatif,3 kelas & binary
+114,,dokter incognito jg ksh tau pake vitacid..jd hrs percaya siapa skrg😭,5,dokter incognito juga merekomendasikan vitacid.. jd ga jelas mau percaya siapa😭,negatif,negatif,3 kelas & binary
+117,,mahal banget,1,harganya mahal bgt,negatif,negatif,3 kelas & binary
+117,,mahal banget,2,kok mahal amat,negatif,negatif,3 kelas & binary
+117,,mahal banget,3,pricey bgt ini,negatif,negatif,3 kelas & binary
+117,,mahal banget,4,muahal bgt ya,negatif,negatif,3 kelas & binary
+117,,mahal banget,5,mahal parah ini,negatif,negatif,3 kelas & binary
+118,,omongan mu makin kesini makin kesana,1,ucapanmu makin lama makin melebar kemana-mana,negatif,negatif,3 kelas & binary
+118,,omongan mu makin kesini makin kesana,2,omonganmu lama-lama makin ga jelas arahnya,negatif,negatif,3 kelas & binary
+118,,omongan mu makin kesini makin kesana,3,kata-katamu makin ke sini makin ngelantur,negatif,negatif,3 kelas & binary
+118,,omongan mu makin kesini makin kesana,4,ucapanmu lama² makin berubah-ubah arahnya,negatif,negatif,3 kelas & binary
+118,,omongan mu makin kesini makin kesana,5,omonganmu makin lama makin kemana-mana ga konsisten,negatif,negatif,3 kelas & binary
+120,,q dah mo nyerah rasanya ngatasi jerawat,1,aku udah mau nyerah rasanya ngatasin jerawat ini,negatif,negatif,3 kelas & binary
+120,,q dah mo nyerah rasanya ngatasi jerawat,2,rasanya aku udah capek mau give up ngatasin jerawat,negatif,negatif,3 kelas & binary
+120,,q dah mo nyerah rasanya ngatasi jerawat,3,aku hampir nyerah ngadepin jerawat ini,negatif,negatif,3 kelas & binary
+120,,q dah mo nyerah rasanya ngatasi jerawat,4,udah pengen nyerah aja ngatasin jerawat,negatif,negatif,3 kelas & binary
+120,,q dah mo nyerah rasanya ngatasi jerawat,5,capek rasanya mau nyerah ngatasin jerawat ini,negatif,negatif,3 kelas & binary
+122,,vidio ini ril bohongnya,1,video ini beneran bohong banget,negatif,negatif,3 kelas & binary
+122,,vidio ini ril bohongnya,2,ini video bohongan parah,negatif,negatif,3 kelas & binary
+122,,vidio ini ril bohongnya,3,vidionya emang bener-bener palsu,negatif,negatif,3 kelas & binary
+122,,vidio ini ril bohongnya,4,video ini ternyata bohong total,negatif,negatif,3 kelas & binary
+122,,vidio ini ril bohongnya,5,beneran bohong nih videonya,negatif,negatif,3 kelas & binary
+123,,dok dines dimanaaa?biar bisa dihindarin 😭,1,dok tugasnya dimana sih biar bisa dihindarin😭,negatif,negatif,3 kelas & binary
+123,,dok dines dimanaaa?biar bisa dihindarin 😭,2,dok praktek dimana ya biar aku bisa jauhin😭,negatif,negatif,3 kelas & binary
+123,,dok dines dimanaaa?biar bisa dihindarin 😭,3,dines nya dimana dok biar bisa dihindari😭,negatif,negatif,3 kelas & binary
+123,,dok dines dimanaaa?biar bisa dihindarin 😭,4,dok dinas dimana biar aku bisa ngindar😭,negatif,negatif,3 kelas & binary
+123,,dok dines dimanaaa?biar bisa dihindarin 😭,5,dok lokasinya dimana biar bisa dihindarin😭,negatif,negatif,3 kelas & binary
+127,,"lah ngatur ngatur, orang itu makanan nya mengandung protein",1,"kok ngatur-ngatur, padahal makanan itu kan mengandung protein",negatif,negatif,3 kelas & binary
+127,,"lah ngatur ngatur, orang itu makanan nya mengandung protein",2,"lah ngapain diatur-atur, itu makanannya ada proteinnya",negatif,negatif,3 kelas & binary
+127,,"lah ngatur ngatur, orang itu makanan nya mengandung protein",3,"kok sok ngatur, itu makanan kan protein juga",negatif,negatif,3 kelas & binary
+127,,"lah ngatur ngatur, orang itu makanan nya mengandung protein",4,"lah kenapa diatur, makanan itu kan mengandung protein",negatif,negatif,3 kelas & binary
+127,,"lah ngatur ngatur, orang itu makanan nya mengandung protein",5,"ngatur-ngatur aja, padahal makanannya itu protein juga",negatif,negatif,3 kelas & binary
+133,,ko doktif blum speak up,1,kok doktif belum speak up ya,negatif,negatif,3 kelas & binary
+133,,ko doktif blum speak up,2,kenapa doktif belum angkat suara,negatif,negatif,3 kelas & binary
+133,,ko doktif blum speak up,3,napa doktif belum ngomong soal ini,negatif,negatif,3 kelas & binary
+133,,ko doktif blum speak up,4,ko doktif diem aja belum speak up,negatif,negatif,3 kelas & binary
+133,,ko doktif blum speak up,5,kenapa doktif belum buka suara ya,negatif,negatif,3 kelas & binary
+144,,"Jjr dia gw block krn kek mana ya ngejelasinnya, syg makanan sisa tp ga segitunya juga",1,"jujur dia gw block gara-gara cara jelasinnya, sayang makanan sisa sih tapi ga segitunya",negatif,negatif,3 kelas & binary
+144,,"Jjr dia gw block krn kek mana ya ngejelasinnya, syg makanan sisa tp ga segitunya juga",2,"jujur aja gw block dia krn cara ngejelasinnya gimana gitu, sayang makanan ya tapi ga gitu juga",negatif,negatif,3 kelas & binary
+144,,"Jjr dia gw block krn kek mana ya ngejelasinnya, syg makanan sisa tp ga segitunya juga",3,"beneran gw block dia soal cara jelasinnya, sayang makanan sih tp ga perlu segitunya",negatif,negatif,3 kelas & binary
+144,,"Jjr dia gw block krn kek mana ya ngejelasinnya, syg makanan sisa tp ga segitunya juga",4,"jujur gw block dia krn ngejelasinnya aneh, sayang makanan sisa tp ga sampe segitu juga",negatif,negatif,3 kelas & binary
+144,,"Jjr dia gw block krn kek mana ya ngejelasinnya, syg makanan sisa tp ga segitunya juga",5,"jjr gw block dia krn caranya jelasin ga enak, sayang makanan sisa tp ga segitunya amat",negatif,negatif,3 kelas & binary
+148,,"Aku udah minum ini sekali, tapi nggak ngefek 😞",1,udah aku coba minum sekali tapi ga ada efeknya😞,negatif,negatif,3 kelas & binary
+148,,"Aku udah minum ini sekali, tapi nggak ngefek 😞",2,"aku udah minum itu sekali, tapi hasilnya nihil😞",negatif,negatif,3 kelas & binary
+148,,"Aku udah minum ini sekali, tapi nggak ngefek 😞",3,"pernah aku minum ini sekali, tapi ga ngaruh😞",negatif,negatif,3 kelas & binary
+148,,"Aku udah minum ini sekali, tapi nggak ngefek 😞",4,aku coba minum sekali tapi ga berasa efeknya😞,negatif,negatif,3 kelas & binary
+148,,"Aku udah minum ini sekali, tapi nggak ngefek 😞",5,"udah dicoba minum sekali, tapi ga ngefek sama sekali😞",negatif,negatif,3 kelas & binary
+158,,meluruskan kok di tiktok... bukan langsung bilang ke orang nya🥲,1,ngeluruskan kok lewat tiktok... kenapa ga langsung ngomong ke orangnya🥲,negatif,negatif,3 kelas & binary
+158,,meluruskan kok di tiktok... bukan langsung bilang ke orang nya🥲,2,mau benerin kok malah di tiktok... bukannya langsung ke orangnya🥲,negatif,negatif,3 kelas & binary
+158,,meluruskan kok di tiktok... bukan langsung bilang ke orang nya🥲,3,ngeklarifikasi kok lewat tiktok... harusnya langsung bilang ke orangnya🥲,negatif,negatif,3 kelas & binary
+158,,meluruskan kok di tiktok... bukan langsung bilang ke orang nya🥲,4,meluruskan kok di sosmed... kenapa ga langsung ngomong sama orangnya🥲,negatif,negatif,3 kelas & binary
+158,,meluruskan kok di tiktok... bukan langsung bilang ke orang nya🥲,5,mau klarifikasi kok malah di tiktok... bukan langsung ke orangnya🥲,negatif,negatif,3 kelas & binary
+164,,pas dijelasin gini kok jd belibet sih dok,1,kok jadi ribet gini ya dok pas dijelasin,negatif,negatif,3 kelas & binary
+164,,pas dijelasin gini kok jd belibet sih dok,2,pas dijabarin malah jd belibet dok,negatif,negatif,3 kelas & binary
+164,,pas dijelasin gini kok jd belibet sih dok,3,kok pas dijelasin gini jadi ruwet sih dok,negatif,negatif,3 kelas & binary
+164,,pas dijelasin gini kok jd belibet sih dok,4,jadi makin bingung gini dok pas dijelasin,negatif,negatif,3 kelas & binary
+164,,pas dijelasin gini kok jd belibet sih dok,5,pas dijelasin kok malah tambah belibet dok,negatif,negatif,3 kelas & binary
+166,,ini ga sehat dietnya,1,diet ini ga sehat sih,negatif,negatif,3 kelas & binary
+166,,ini ga sehat dietnya,2,cara dietnya ga sehat ini,negatif,negatif,3 kelas & binary
+166,,ini ga sehat dietnya,3,ga sehat nih diet kayak gini,negatif,negatif,3 kelas & binary
+166,,ini ga sehat dietnya,4,diet kaya gini mah ga sehat,negatif,negatif,3 kelas & binary
+166,,ini ga sehat dietnya,5,metode diet ini kurang sehat,negatif,negatif,3 kelas & binary
+169,,"doc,tolong saya pusing..bs lbh simple g jelasin nya..🤣🤣🤣😛😛😛😛",1,"doc tolong, saya jadi pusing.. bisa ga dijelasin lebih simple..🤣🤣🤣😛😛😛😛",negatif,negatif,3 kelas & binary
+169,,"doc,tolong saya pusing..bs lbh simple g jelasin nya..🤣🤣🤣😛😛😛😛",2,doc aku pusing nih.. bisa dong dijelasin yg lebih simpel..🤣🤣🤣😛😛😛😛,negatif,negatif,3 kelas & binary
+169,,"doc,tolong saya pusing..bs lbh simple g jelasin nya..🤣🤣🤣😛😛😛😛",3,"tolong doc, bikin pusing.. bisa dibuat lebih simple ga jelasinnya..🤣🤣🤣😛😛😛😛",negatif,negatif,3 kelas & binary
+169,,"doc,tolong saya pusing..bs lbh simple g jelasin nya..🤣🤣🤣😛😛😛😛",4,doc saya pusing banget.. bisa ga sih dijelasin dgn lebih simple..🤣🤣🤣😛😛😛😛,negatif,negatif,3 kelas & binary
+169,,"doc,tolong saya pusing..bs lbh simple g jelasin nya..🤣🤣🤣😛😛😛😛",5,"doc tolong deh, pusing aku.. mau dijelasin yg lebih sederhana aja..🤣🤣🤣😛😛😛😛",negatif,negatif,3 kelas & binary
+170,,apa dah gunanya ngonten kayak gitu,1,apa sih gunanya bikin konten kaya gitu,negatif,negatif,3 kelas & binary
+170,,apa dah gunanya ngonten kayak gitu,2,buat apa ngonten model begitu,negatif,negatif,3 kelas & binary
+170,,apa dah gunanya ngonten kayak gitu,3,ga ada gunanya bikin konten kayak gitu,negatif,negatif,3 kelas & binary
+170,,apa dah gunanya ngonten kayak gitu,4,apa manfaatnya ngonten kaya gitu coba,negatif,negatif,3 kelas & binary
+170,,apa dah gunanya ngonten kayak gitu,5,ngonten kaya gitu buat apa sih gunanya,negatif,negatif,3 kelas & binary
+171,7648838419078398727,ga ada uang ny dok,1,ga ada duitnya dok,negatif,negatif,3 kelas & binary
+171,7648838419078398727,ga ada uang ny dok,2,uangnya ga ada dok,negatif,negatif,3 kelas & binary
+171,7648838419078398727,ga ada uang ny dok,3,dananya ga cukup dok,negatif,negatif,3 kelas & binary
+171,7648838419078398727,ga ada uang ny dok,4,ga punya uang buat itu dok,negatif,negatif,3 kelas & binary
+171,7648838419078398727,ga ada uang ny dok,5,duitnya kosong dok,negatif,negatif,3 kelas & binary
+172,7676476271757722376,"gw curiga ini, isu buat nutupin isu lain",1,aku curiga ini cuma isu buat nutupin isu lain,negatif,negatif,3 kelas & binary
+172,7676476271757722376,"gw curiga ini, isu buat nutupin isu lain",2,"gw jadi curiga, ini dipake buat alihin isu lain",negatif,negatif,3 kelas & binary
+172,7676476271757722376,"gw curiga ini, isu buat nutupin isu lain",3,"kecurigaan gw, ini sengaja buat nutupin masalah lain",negatif,negatif,3 kelas & binary
+172,7676476271757722376,"gw curiga ini, isu buat nutupin isu lain",4,"gw suspicious, ini kayaknya buat ngalihin isu lain",negatif,negatif,3 kelas & binary
+172,7676476271757722376,"gw curiga ini, isu buat nutupin isu lain",5,"gw ragu, ini jangan-jangan buat nutup-nutupin isu lain",negatif,negatif,3 kelas & binary
+173,7600529993618473749,Asli di aku belum yg mempan buaat nyerahin muka juga😭,1,jujur di aku belum ada yg mempan buat nyerahin muka juga😭,negatif,negatif,3 kelas & binary
+173,7600529993618473749,Asli di aku belum yg mempan buaat nyerahin muka juga😭,2,beneran deh di aku belum ketemu yg ngefek buat muka😭,negatif,negatif,3 kelas & binary
+173,7600529993618473749,Asli di aku belum yg mempan buaat nyerahin muka juga😭,3,asli belum nemu yg berhasil buat muka aku juga😭,negatif,negatif,3 kelas & binary
+173,7600529993618473749,Asli di aku belum yg mempan buaat nyerahin muka juga😭,4,serius di aku belum ada yg mempan ke muka😭,negatif,negatif,3 kelas & binary
+173,7600529993618473749,Asli di aku belum yg mempan buaat nyerahin muka juga😭,5,jujur aja belum ketemu produk yg mempan di muka aku😭,negatif,negatif,3 kelas & binary
+174,7594261619023414024,nooooo!!! kita tak boleh percaya bila dgr sebelah pihak saja.it must be both ways.sejujurnya saya cakap doktor2 malaysia hampir semua terikat dengan etika yg sgt2 ketat!.dan sejujurnya doktor pakar diMalaysia ada tendency utk layan buruk pesakit2 yang sombong dan mengarah mcm boss2 gitu.,1,"jangan dong!! kita ga boleh percaya cuma dengar sepihak aja, harus dari dua sisi. jujur aja, doktor2 malaysia hampir semua terikat etika yg sangat ketat, dan doktor pakar di malaysia emang ada tendency layani buruk pasien yg sombong dan sok bossy.",negatif,negatif,3 kelas & binary
+174,7594261619023414024,nooooo!!! kita tak boleh percaya bila dgr sebelah pihak saja.it must be both ways.sejujurnya saya cakap doktor2 malaysia hampir semua terikat dengan etika yg sgt2 ketat!.dan sejujurnya doktor pakar diMalaysia ada tendency utk layan buruk pesakit2 yang sombong dan mengarah mcm boss2 gitu.,2,"waduh jangan!! ga boleh kita percaya kalo cuma dengar sebelah pihak, harus balance. sejujurnya doktor2 malaysia kebanyakan terikat etika yg ketat sekali, dan emang ada kecenderungan doktor pakar layanin kurang baik pasien yg sombong gitu.",negatif,negatif,3 kelas & binary
+174,7594261619023414024,nooooo!!! kita tak boleh percaya bila dgr sebelah pihak saja.it must be both ways.sejujurnya saya cakap doktor2 malaysia hampir semua terikat dengan etika yg sgt2 ketat!.dan sejujurnya doktor pakar diMalaysia ada tendency utk layan buruk pesakit2 yang sombong dan mengarah mcm boss2 gitu.,3,"yaampun jangan gitu!! kita ga boleh percaya kalo cuma dengar satu sisi, harus dua arah. jujur, doktor2 malaysia hampir semuanya terikat etika yg super ketat, dan doktor pakar di sana memang ada tendensi males ngladenin pasien yg sombong.",negatif,negatif,3 kelas & binary
+174,7594261619023414024,nooooo!!! kita tak boleh percaya bila dgr sebelah pihak saja.it must be both ways.sejujurnya saya cakap doktor2 malaysia hampir semua terikat dengan etika yg sgt2 ketat!.dan sejujurnya doktor pakar diMalaysia ada tendency utk layan buruk pesakit2 yang sombong dan mengarah mcm boss2 gitu.,4,"jangan dulu dong!! ga boleh percaya kalo cuma dengar sepihak, kedua sisi harus didengar. sebenarnya doktor2 malaysia hampir semua terikat sama etika yg sangat ketat, dan doktor pakar disana emang ada yg cenderung layani buruk pasien sombong.",negatif,negatif,3 kelas & binary
+174,7594261619023414024,nooooo!!! kita tak boleh percaya bila dgr sebelah pihak saja.it must be both ways.sejujurnya saya cakap doktor2 malaysia hampir semua terikat dengan etika yg sgt2 ketat!.dan sejujurnya doktor pakar diMalaysia ada tendency utk layan buruk pesakit2 yang sombong dan mengarah mcm boss2 gitu.,5,"aduh jangan gitu!! kita ga boleh percaya kalo cuma dengar dari satu pihak doang, harus adil dua sisi. sejujurnya doktor2 malaysia hampir semua terikat etika yg sangat ketat, dan doktor pakar disana ada tendency layanin kurang baik pasien yg sombong.",negatif,negatif,3 kelas & binary
+175,7656672040262861569,iyaa ka udah muak aku minum itu kalau lagi sakit tapi tak kunjung sembuh😭😭,1,iya ka aku udah bosen minum itu pas sakit tapi ga sembuh-sembuh😭😭,negatif,negatif,3 kelas & binary
+175,7656672040262861569,iyaa ka udah muak aku minum itu kalau lagi sakit tapi tak kunjung sembuh😭😭,2,iyaa udah capek ka minum itu pas sakit tp ga kunjung sembuh😭😭,negatif,negatif,3 kelas & binary
+175,7656672040262861569,iyaa ka udah muak aku minum itu kalau lagi sakit tapi tak kunjung sembuh😭😭,3,"bener ka, aku udah jenuh minum itu kalo sakit tp ga sembuh2😭😭",negatif,negatif,3 kelas & binary
+175,7656672040262861569,iyaa ka udah muak aku minum itu kalau lagi sakit tapi tak kunjung sembuh😭😭,4,"iya ka, muak aku minum itu waktu sakit tapi ga sembuh jg😭😭",negatif,negatif,3 kelas & binary
+175,7656672040262861569,iyaa ka udah muak aku minum itu kalau lagi sakit tapi tak kunjung sembuh😭😭,5,"iyaa ka, aku udah bosen banget minum itu pas sakit tp ga sembuh2😭😭",negatif,negatif,3 kelas & binary
+176,7603677733507711752,Tapi aku ga percaya 😭😭,1,tapi aku ga yakin sih😭😭,negatif,negatif,3 kelas & binary
+176,7603677733507711752,Tapi aku ga percaya 😭😭,2,aku kurang percaya deh😭😭,negatif,negatif,3 kelas & binary
+176,7603677733507711752,Tapi aku ga percaya 😭😭,3,tapi ragu aku sama itu😭😭,negatif,negatif,3 kelas & binary
+176,7603677733507711752,Tapi aku ga percaya 😭😭,4,tapi aku ga believe 😭😭,negatif,negatif,3 kelas & binary
+176,7603677733507711752,Tapi aku ga percaya 😭😭,5,aku ga percaya sih sama itu😭😭,negatif,negatif,3 kelas & binary
+177,7595560633481184020,ya ampun dok😩😩😩 pusing dengernya,1,ya ampun dok😩😩😩 pusing banget dengernya,negatif,negatif,3 kelas & binary
+177,7595560633481184020,ya ampun dok😩😩😩 pusing dengernya,2,aduh dok😩😩😩 bikin pusing dengernya,negatif,negatif,3 kelas & binary
+177,7595560633481184020,ya ampun dok😩😩😩 pusing dengernya,3,ya ampun dok😩😩😩 pusing kepala dengernya,negatif,negatif,3 kelas & binary
+177,7595560633481184020,ya ampun dok😩😩😩 pusing dengernya,4,ya Allah dok😩😩😩 pusing aku dengernya,negatif,negatif,3 kelas & binary
+177,7595560633481184020,ya ampun dok😩😩😩 pusing dengernya,5,aduh dok😩😩😩 denger itu bikin pusing,negatif,negatif,3 kelas & binary
+178,7607850038747906824,gamau berobat sama dokter ini😭,1,ga mau deh berobat ke dokter ini😭,negatif,negatif,3 kelas & binary
+178,7607850038747906824,gamau berobat sama dokter ini😭,2,ga sudi berobat sama dokter ini😭,negatif,negatif,3 kelas & binary
+178,7607850038747906824,gamau berobat sama dokter ini😭,3,males berobat ke dokter ini😭,negatif,negatif,3 kelas & binary
+178,7607850038747906824,gamau berobat sama dokter ini😭,4,ga minat berobat sama dokter ini😭,negatif,negatif,3 kelas & binary
+178,7607850038747906824,gamau berobat sama dokter ini😭,5,ga pengen berobat ke dokter ini😭,negatif,negatif,3 kelas & binary
+179,7679321748353925908,makin parah dokk😫😫,1,makin memburuk dokk😫😫,negatif,negatif,3 kelas & binary
+179,7679321748353925908,makin parah dokk😫😫,2,tambah parah aja dokk😫😫,negatif,negatif,3 kelas & binary
+179,7679321748353925908,makin parah dokk😫😫,3,makin worse dokk😫😫,negatif,negatif,3 kelas & binary
+179,7679321748353925908,makin parah dokk😫😫,4,kian parah nih dokk😫😫,negatif,negatif,3 kelas & binary
+179,7679321748353925908,makin parah dokk😫😫,5,makin makin parah dokk😫😫,negatif,negatif,3 kelas & binary
+180,7595426795379114770,Saya x percaya cerita anda. Sila bukti kan..which hospital?? Jika benar..Sila saman !!,1,"saya tidak percaya cerita anda. tolong buktikan.. hospital mana?? kalau benar, saman saja!!",negatif,negatif,3 kelas & binary
+180,7595426795379114770,Saya x percaya cerita anda. Sila bukti kan..which hospital?? Jika benar..Sila saman !!,2,"saya ga percaya dgn cerita anda, buktikan dong.. rumah sakit yg mana?? kalau beneran, tuntut aja!!",negatif,negatif,3 kelas & binary
+180,7595426795379114770,Saya x percaya cerita anda. Sila bukti kan..which hospital?? Jika benar..Sila saman !!,3,"saya kurang percaya cerita anda, coba buktikan.. hospital apa itu?? kalau bener, lakukan tuntutan!!",negatif,negatif,3 kelas & binary
+180,7595426795379114770,Saya x percaya cerita anda. Sila bukti kan..which hospital?? Jika benar..Sila saman !!,4,"saya ga yakin sama cerita anda, buktikan lah.. hospital mana itu?? kalau bener, tuntut saja!!",negatif,negatif,3 kelas & binary
+180,7595426795379114770,Saya x percaya cerita anda. Sila bukti kan..which hospital?? Jika benar..Sila saman !!,5,"saya ragu sama cerita anda, mohon dibuktikan.. hospital apa itu?? kalau terbukti, saman aja!!",negatif,negatif,3 kelas & binary
+181,7670715815994278664,"gk percaya ah, dokternya aja di infus petakilan😭",1,"ga percaya deh, dokternya sendiri diinfus suka gerak-gerak😭",negatif,negatif,3 kelas & binary
+181,7670715815994278664,"gk percaya ah, dokternya aja di infus petakilan😭",2,"ga yakin ah, dokternya aja pas diinfus masih petakilan😭",negatif,negatif,3 kelas & binary
+181,7670715815994278664,"gk percaya ah, dokternya aja di infus petakilan😭",3,"ga percaya sih, dokternya diinfus tapi tetap aktif gerak😭",negatif,negatif,3 kelas & binary
+181,7670715815994278664,"gk percaya ah, dokternya aja di infus petakilan😭",4,"ga believe ah, dokternya diinfus aja masih petakilan😭",negatif,negatif,3 kelas & binary
+181,7670715815994278664,"gk percaya ah, dokternya aja di infus petakilan😭",5,"ga percaya banget, dokternya diinfus pun tetep petakilan😭",negatif,negatif,3 kelas & binary
+182,7597699218312086280,"Tapi yg pakai DRW banyak juga lho dok yang sembuh, mana testinya banyak banget lagi, itu real testi lho mereka, kalau yg sembuh2 dari keluhannya krn DRW gimana itu dok???",1,"tapi yg pake DRW banyak juga dok yg sembuh, testinya aja banyak banget, itu testi asli lho, kalau sembuhnya emang karena DRW gimana dong dok???",negatif,negatif,3 kelas & binary
+182,7597699218312086280,"Tapi yg pakai DRW banyak juga lho dok yang sembuh, mana testinya banyak banget lagi, itu real testi lho mereka, kalau yg sembuh2 dari keluhannya krn DRW gimana itu dok???",2,"tapi kan banyak jg dok yg pake DRW terus sembuh, testinya banyak bgt, itu testi real lho, kalau sembuh dari DRW gimana penjelasannya dok???",negatif,negatif,3 kelas & binary
+182,7597699218312086280,"Tapi yg pakai DRW banyak juga lho dok yang sembuh, mana testinya banyak banget lagi, itu real testi lho mereka, kalau yg sembuh2 dari keluhannya krn DRW gimana itu dok???",3,"tapi dok, yg pake DRW banyak jg yg sembuh, testinya aja banyak banget, itu testi asli, gimana kalau sembuhnya emang krn DRW dok???",negatif,negatif,3 kelas & binary
+182,7597699218312086280,"Tapi yg pakai DRW banyak juga lho dok yang sembuh, mana testinya banyak banget lagi, itu real testi lho mereka, kalau yg sembuh2 dari keluhannya krn DRW gimana itu dok???",4,"tapi yg pake DRW kan banyak jg yg sembuh dok, testinya banyak banget, itu testi nyata lho, gimana kalau penyebab sembuhnya DRW dok???",negatif,negatif,3 kelas & binary
+182,7597699218312086280,"Tapi yg pakai DRW banyak juga lho dok yang sembuh, mana testinya banyak banget lagi, itu real testi lho mereka, kalau yg sembuh2 dari keluhannya krn DRW gimana itu dok???",5,"tapi dok, buktinya banyak yg pake DRW sembuh, testinya banyak sekali, itu testi real, gimana dong kalau sembuhnya karena DRW dok???",negatif,negatif,3 kelas & binary
+183,7593956890192364309,"bagi je tau doktor dan hospital mana, biar pihal berkuasa disana senang buat kerja. kes macam ni jangan tinggal diam",1,"kasih tau aja doktor dan hospital mana, biar pihak berkuasa disana enak buat tindak. kasus kaya ini jangan dibiarin",negatif,negatif,3 kelas & binary
+183,7593956890192364309,"bagi je tau doktor dan hospital mana, biar pihal berkuasa disana senang buat kerja. kes macam ni jangan tinggal diam",2,"kasih tahu saja doktor sama hospital yg mana, biar pihak berwenang disana bisa bertindak. kasus macam ini jangan didiamkan",negatif,negatif,3 kelas & binary
+183,7593956890192364309,"bagi je tau doktor dan hospital mana, biar pihal berkuasa disana senang buat kerja. kes macam ni jangan tinggal diam",3,"beritahu saja doktor dan rumah sakit mana, biar pihak berkuasa disana gampang bertindak. kasus begini jangan dibiarkan",negatif,negatif,3 kelas & binary
+183,7593956890192364309,"bagi je tau doktor dan hospital mana, biar pihal berkuasa disana senang buat kerja. kes macam ni jangan tinggal diam",4,"sebutkan saja doktor sama hospitalnya, biar pihak berwenang bisa mudah bertindak. kasus seperti ini jangan diamkan",negatif,negatif,3 kelas & binary
+183,7593956890192364309,"bagi je tau doktor dan hospital mana, biar pihal berkuasa disana senang buat kerja. kes macam ni jangan tinggal diam",5,"kasih tau aja nama doktor dan hospitalnya, biar yg berkuasa disana bisa tindak lanjutin. kasus kaya gini jangan tinggal diam",negatif,negatif,3 kelas & binary
+184,7672001817995395848,tapi dok. gak cocok untuk orang yang darah rendah,1,"tapi dok, ini ga cocok buat yg darah rendah",negatif,negatif,3 kelas & binary
+184,7672001817995395848,tapi dok. gak cocok untuk orang yang darah rendah,2,"tapi dok, kurang pas buat orang berdarah rendah",negatif,negatif,3 kelas & binary
+184,7672001817995395848,tapi dok. gak cocok untuk orang yang darah rendah,3,"tapi dok, ga sesuai buat yg punya darah rendah",negatif,negatif,3 kelas & binary
+184,7672001817995395848,tapi dok. gak cocok untuk orang yang darah rendah,4,"tapi dok, ga cocok sih buat org darah rendah",negatif,negatif,3 kelas & binary
+184,7672001817995395848,tapi dok. gak cocok untuk orang yang darah rendah,5,"tapi dok, ini ga sesuai buat yg darahnya rendah",negatif,negatif,3 kelas & binary
+185,7607860113286120213,dok udah dok pasiennya pada takutt😭,1,dok udah pada takut tuh pasiennya😭,negatif,negatif,3 kelas & binary
+185,7607860113286120213,dok udah dok pasiennya pada takutt😭,2,"dok, pasiennya udah ketakutan semua😭",negatif,negatif,3 kelas & binary
+185,7607860113286120213,dok udah dok pasiennya pada takutt😭,3,"dok udah dok, pasien pada takut😭",negatif,negatif,3 kelas & binary
+185,7607860113286120213,dok udah dok pasiennya pada takutt😭,4,dok pasiennya pada ngeri dok😭,negatif,negatif,3 kelas & binary
+185,7607860113286120213,dok udah dok pasiennya pada takutt😭,5,dok udah pasiennya pada takut semua😭,negatif,negatif,3 kelas & binary
+186,7592719393744208648,"gak suka banget kalo ada yang bilang ""harus pake bla bla biar mukanya glowing"" tapi gak dijelasin tipe kulit dia apa.",1,"ga suka banget kalo ada yg bilang ""harus pake ini itu biar glowing"" tapi ga dijelasin dulu tipe kulitnya apa.",negatif,negatif,3 kelas & binary
+186,7592719393744208648,"gak suka banget kalo ada yang bilang ""harus pake bla bla biar mukanya glowing"" tapi gak dijelasin tipe kulit dia apa.",2,"sebel bgt kalo ada yg ngomong ""wajib pake bla bla biar glowing"" tanpa jelasin tipe kulit dulu.",negatif,negatif,3 kelas & binary
+186,7592719393744208648,"gak suka banget kalo ada yang bilang ""harus pake bla bla biar mukanya glowing"" tapi gak dijelasin tipe kulit dia apa.",3,"males bgt denger yg bilang ""harus pake bla bla biar mukanya glowing"" tp ga jelasin tipe kulitnya.",negatif,negatif,3 kelas & binary
+186,7592719393744208648,"gak suka banget kalo ada yang bilang ""harus pake bla bla biar mukanya glowing"" tapi gak dijelasin tipe kulit dia apa.",4,"ga suka deh kalo ada yg nyaranin ""pake ini biar glowing"" tp ga dijelasin dulu tipe kulit orangnya.",negatif,negatif,3 kelas & binary
+186,7592719393744208648,"gak suka banget kalo ada yang bilang ""harus pake bla bla biar mukanya glowing"" tapi gak dijelasin tipe kulit dia apa.",5,"kurang suka kalo ada yg bilang ""harus pake bla bla biar glowing"" tanpa ngejelasin tipe kulit dulu.",negatif,negatif,3 kelas & binary
+187,7650054778660619016,baru ngobrol konsul aja dah kerasa dompet dok...,1,baru konsultasi aja udah kerasa di dompet dok...,negatif,negatif,3 kelas & binary
+187,7650054778660619016,baru ngobrol konsul aja dah kerasa dompet dok...,2,baru ngobrol konsul doang udah bikin dompet tipis dok...,negatif,negatif,3 kelas & binary
+187,7650054778660619016,baru ngobrol konsul aja dah kerasa dompet dok...,3,konsul doang aja dompet udah kerasa dok...,negatif,negatif,3 kelas & binary
+187,7650054778660619016,baru ngobrol konsul aja dah kerasa dompet dok...,4,baru konsul aja dompet udah mulai menipis dok...,negatif,negatif,3 kelas & binary
+187,7650054778660619016,baru ngobrol konsul aja dah kerasa dompet dok...,5,ngobrol konsul sedikit aja dompet udah berasa dok...,negatif,negatif,3 kelas & binary
+188,7597701265947050772,"samaa kak, emang agak cerahan dikit tapi kalo glowing enggaaa kok dan aman aman aja aku pake, tp sekrng jujur kecewaaa😭",1,"sama kak, emang agak cerah dikit tp kalo glowing engga, dan aman² aja dipake, tapi sekarang jujur kecewa😭",negatif,negatif,3 kelas & binary
+188,7597701265947050772,"samaa kak, emang agak cerahan dikit tapi kalo glowing enggaaa kok dan aman aman aja aku pake, tp sekrng jujur kecewaaa😭",2,"samaan kak, emang sedikit cerahan tp ga sampe glowing, aman² aja sih pakenya, tp skrg jujur kecewa😭",negatif,negatif,3 kelas & binary
+188,7597701265947050772,"samaa kak, emang agak cerahan dikit tapi kalo glowing enggaaa kok dan aman aman aja aku pake, tp sekrng jujur kecewaaa😭",3,"sama kak, cerahnya emang dikit tp ga glowing, aman dipake, tapi sekarang jujur aku kecewa😭",negatif,negatif,3 kelas & binary
+188,7597701265947050772,"samaa kak, emang agak cerahan dikit tapi kalo glowing enggaaa kok dan aman aman aja aku pake, tp sekrng jujur kecewaaa😭",4,"samaa kak, agak cerah sih tp ga sampe glowing, aman² selama dipake, tp skrg jujur kecewa bgt😭",negatif,negatif,3 kelas & binary
+188,7597701265947050772,"samaa kak, emang agak cerahan dikit tapi kalo glowing enggaaa kok dan aman aman aja aku pake, tp sekrng jujur kecewaaa😭",5,"sama kak, emang jadi agak cerah tp ga glowing, aman dipake, tapi sekarang jujur aja kecewa😭",negatif,negatif,3 kelas & binary
+189,7625616696229004033,takut gak mempan ya kak😭,1,khawatir ga ngefek ya kak😭,negatif,negatif,3 kelas & binary
+189,7625616696229004033,takut gak mempan ya kak😭,2,takutnya ga berhasil ya kak😭,negatif,negatif,3 kelas & binary
+189,7625616696229004033,takut gak mempan ya kak😭,3,cemas kalo ga mempan ya kak😭,negatif,negatif,3 kelas & binary
+189,7625616696229004033,takut gak mempan ya kak😭,4,was-was kalo ga ngaruh ya kak😭,negatif,negatif,3 kelas & binary
+189,7625616696229004033,takut gak mempan ya kak😭,5,takut percuma ya kak😭,negatif,negatif,3 kelas & binary
+190,7595574529292976903,mual dok liat konten ini😳,1,mual aku liat konten ini dok😳,negatif,negatif,3 kelas & binary
+190,7595574529292976903,mual dok liat konten ini😳,2,jadi mual dok liat kontennya😳,negatif,negatif,3 kelas & binary
+190,7595574529292976903,mual dok liat konten ini😳,3,aku mual liat video ini dok😳,negatif,negatif,3 kelas & binary
+190,7595574529292976903,mual dok liat konten ini😳,4,bikin mual dok konten ini😳,negatif,negatif,3 kelas & binary
+190,7595574529292976903,mual dok liat konten ini😳,5,mual banget liat konten ini dok😳,negatif,negatif,3 kelas & binary
+191,7609964895014683400,"Dokternya aja sakit, gimana kita mau sembuh kalo sakit 😭",1,"dokternya sendiri sakit, gimana kita bisa sembuh kalo sakit 😭",negatif,negatif,3 kelas & binary
+191,7609964895014683400,"Dokternya aja sakit, gimana kita mau sembuh kalo sakit 😭",2,"lha dokternya aja sakit, gimana kita mau sembuh pas sakit😭",negatif,negatif,3 kelas & binary
+191,7609964895014683400,"Dokternya aja sakit, gimana kita mau sembuh kalo sakit 😭",3,"dokternya sakit aja, gimana kita yg sakit bisa sembuh😭",negatif,negatif,3 kelas & binary
+191,7609964895014683400,"Dokternya aja sakit, gimana kita mau sembuh kalo sakit 😭",4,"dokter sendiri sakit, gimana kita yg sakit mau sembuh😭",negatif,negatif,3 kelas & binary
+191,7609964895014683400,"Dokternya aja sakit, gimana kita mau sembuh kalo sakit 😭",5,"kalo dokternya sakit aja, gimana kita yg sakit bisa pulih😭",negatif,negatif,3 kelas & binary
+192,7598429317840438023,"kata gw mah pas habis make up berat oke la pakai tu ,tu juga gak setiap hari ,bayangkan kulit wajah di geser° setiap hari apa gak kelupas ,yg ada malah mengundang masalah baru di kulit ,😭",1,"menurut gw sih pas habis makeup berat oke pake itu, tapi ga setiap hari juga, coba bayangin kulit wajah digosok terus setiap hari apa ga kelupas, malah jadi masalah baru di kulit😭",negatif,negatif,3 kelas & binary
+192,7598429317840438023,"kata gw mah pas habis make up berat oke la pakai tu ,tu juga gak setiap hari ,bayangkan kulit wajah di geser° setiap hari apa gak kelupas ,yg ada malah mengundang masalah baru di kulit ,😭",2,"kalo gw sih, abis makeup berat ya oke pake itu, tp ga setiap hari, coba pikir kulit digosok² tiap hari bisa kelupas, malah bikin masalah kulit baru😭",negatif,negatif,3 kelas & binary
+192,7598429317840438023,"kata gw mah pas habis make up berat oke la pakai tu ,tu juga gak setiap hari ,bayangkan kulit wajah di geser° setiap hari apa gak kelupas ,yg ada malah mengundang masalah baru di kulit ,😭",3,"menurutku, selesai makeup berat sih boleh pake itu, tapi ga tiap hari, bayangin aja kulit wajah digeser terus tiap hari bisa kelupas, jadinya masalah baru di kulit😭",negatif,negatif,3 kelas & binary
+192,7598429317840438023,"kata gw mah pas habis make up berat oke la pakai tu ,tu juga gak setiap hari ,bayangkan kulit wajah di geser° setiap hari apa gak kelupas ,yg ada malah mengundang masalah baru di kulit ,😭",4,"kata gw ya, abis makeup berat oke pake itu, tapi jangan tiap hari, bayangin kulit kena gesek terus tiap hari bisa kelupas, malah timbul masalah baru😭",negatif,negatif,3 kelas & binary
+192,7598429317840438023,"kata gw mah pas habis make up berat oke la pakai tu ,tu juga gak setiap hari ,bayangkan kulit wajah di geser° setiap hari apa gak kelupas ,yg ada malah mengundang masalah baru di kulit ,😭",5,"menurut gw sih, pas abis makeup berat oke aja pake itu, tp ga setiap hari, coba bayangin kulit digosok tiap hari pasti kelupas, ujungnya malah masalah baru di kulit😭",negatif,negatif,3 kelas & binary
+193,7607856402673173256,kok bisa ya disumpah dokter😭🫵🏻,1,kok bisa disumpah jadi dokter ya😭🫵🏻,negatif,negatif,3 kelas & binary
+193,7607856402673173256,kok bisa ya disumpah dokter😭🫵🏻,2,gimana bisa ya dia disumpah dokter😭🫵🏻,negatif,negatif,3 kelas & binary
+193,7607856402673173256,kok bisa ya disumpah dokter😭🫵🏻,3,kok bisa sih diambil sumpah dokter😭🫵🏻,negatif,negatif,3 kelas & binary
+193,7607856402673173256,kok bisa ya disumpah dokter😭🫵🏻,4,heran deh kok bisa disumpah dokter😭🫵🏻,negatif,negatif,3 kelas & binary
+193,7607856402673173256,kok bisa ya disumpah dokter😭🫵🏻,5,kok bisa ya sampe disumpah sbg dokter😭🫵🏻,negatif,negatif,3 kelas & binary
+194,7655688222819795719,tapi di apotik aku beli juga ga pake resep dokter di kasih kok aneh nya,1,"tapi di apotik aku beli tanpa resep dokter malah dikasih, aneh kan",negatif,negatif,3 kelas & binary
+194,7655688222819795719,tapi di apotik aku beli juga ga pake resep dokter di kasih kok aneh nya,2,"padahal di apotik aku beli ga bawa resep dokter tetep dikasih, aneh bgt",negatif,negatif,3 kelas & binary
+194,7655688222819795719,tapi di apotik aku beli juga ga pake resep dokter di kasih kok aneh nya,3,"tp di apotik pas aku beli ga pake resep dokter malah dilayani, aneh deh",negatif,negatif,3 kelas & binary
+194,7655688222819795719,tapi di apotik aku beli juga ga pake resep dokter di kasih kok aneh nya,4,"tapi waktu aku beli di apotik ga pake resep dokter kok dikasih juga, aneh",negatif,negatif,3 kelas & binary
+194,7655688222819795719,tapi di apotik aku beli juga ga pake resep dokter di kasih kok aneh nya,5,"padahal aku beli di apotik tanpa resep dokter tetep aja dikasih, aneh ya",negatif,negatif,3 kelas & binary
+195,7643220640736494354,pura pura gak liat 🗿,1,sok ga liat aja 🗿,negatif,negatif,3 kelas & binary
+195,7643220640736494354,pura pura gak liat 🗿,2,pura² ga ngeliat deh🗿,negatif,negatif,3 kelas & binary
+195,7643220640736494354,pura pura gak liat 🗿,3,cuek aja pura² ga liat🗿,negatif,negatif,3 kelas & binary
+195,7643220640736494354,pura pura gak liat 🗿,4,sok² ga ngeliat🗿,negatif,negatif,3 kelas & binary
+195,7643220640736494354,pura pura gak liat 🗿,5,berpura-pura ga liat aja🗿,negatif,negatif,3 kelas & binary
+196,7608020921387385607,Bikin trauma njir😭😭,1,bikin trauma parah njir😭😭,negatif,negatif,3 kelas & binary
+196,7608020921387385607,Bikin trauma njir😭😭,2,trauma bgt gue njir😭😭,negatif,negatif,3 kelas & binary
+196,7608020921387385607,Bikin trauma njir😭😭,3,ngebikin trauma banget njir😭😭,negatif,negatif,3 kelas & binary
+196,7608020921387385607,Bikin trauma njir😭😭,4,trauma jadinya njir😭😭,negatif,negatif,3 kelas & binary
+196,7608020921387385607,Bikin trauma njir😭😭,5,bener bener trauma njir😭😭,negatif,negatif,3 kelas & binary
+197,7595666663900529429,Ga diliat penasaran tp diliat bikin eneg 😭,1,"kalo ga diliat penasaran, tp kalo diliat malah eneg😭",negatif,negatif,3 kelas & binary
+197,7595666663900529429,Ga diliat penasaran tp diliat bikin eneg 😭,2,"ga ditonton bikin kepo, tp ditonton bikin mual😭",negatif,negatif,3 kelas & binary
+197,7595666663900529429,Ga diliat penasaran tp diliat bikin eneg 😭,3,"kalo ga diliat jd curious, tp pas diliat jd eneg😭",negatif,negatif,3 kelas & binary
+197,7595666663900529429,Ga diliat penasaran tp diliat bikin eneg 😭,4,"ga liat jadi kepo, liat malah bikin mual😭",negatif,negatif,3 kelas & binary
+197,7595666663900529429,Ga diliat penasaran tp diliat bikin eneg 😭,5,"ga ditonton penasaran, ditonton malah bikin eneg😭",negatif,negatif,3 kelas & binary
+198,7608060534588982023,Dokter ini praktek dmna? Takut bgt ketemu😭😭,1,dokter ini praktek dimana ya? takut banget ketemu😭😭,negatif,negatif,3 kelas & binary
+198,7608060534588982023,Dokter ini praktek dmna? Takut bgt ketemu😭😭,2,ini dokter praktek dmn sih? serem bgt kalo ketemu😭😭,negatif,negatif,3 kelas & binary
+198,7608060534588982023,Dokter ini praktek dmna? Takut bgt ketemu😭😭,3,dokter ini buka praktek dmn? ngeri bgt kalo ketemu😭😭,negatif,negatif,3 kelas & binary
+198,7608060534588982023,Dokter ini praktek dmna? Takut bgt ketemu😭😭,4,praktek dokternya dimana ya? takut bgt kalo ketemu😭😭,negatif,negatif,3 kelas & binary
+198,7608060534588982023,Dokter ini praktek dmna? Takut bgt ketemu😭😭,5,dokter ini lokasi prakteknya dmn? takut banget ketemuan😭😭,negatif,negatif,3 kelas & binary
+199,7657195153509417749,"anjirr gak kuat dok😭,lewat terus takut spam like dok",1,"anjir ga kuat dok😭, lewat aja takut keseringan like dok",negatif,negatif,3 kelas & binary
+199,7657195153509417749,"anjirr gak kuat dok😭,lewat terus takut spam like dok",2,"anjirr ga tahan dok😭, mau skip takut spam like dok",negatif,negatif,3 kelas & binary
+199,7657195153509417749,"anjirr gak kuat dok😭,lewat terus takut spam like dok",3,"anjir ga kuat liatnya dok😭, lewat terus takut kebanyakan like dok",negatif,negatif,3 kelas & binary
+199,7657195153509417749,"anjirr gak kuat dok😭,lewat terus takut spam like dok",4,"anjirr ga sanggup dok😭, mending lewat takut spam like dok",negatif,negatif,3 kelas & binary
+199,7657195153509417749,"anjirr gak kuat dok😭,lewat terus takut spam like dok",5,"anjir ga kuat bgt dok😭, skip aja takut spam like dok",negatif,negatif,3 kelas & binary
+200,7648627296371131157,MAHAL BGT TAPI,1,tapi mahal banget sih,negatif,negatif,3 kelas & binary
+200,7648627296371131157,MAHAL BGT TAPI,2,mahal amat sih tapi,negatif,negatif,3 kelas & binary
+200,7648627296371131157,MAHAL BGT TAPI,3,kok mahal banget ya tapi,negatif,negatif,3 kelas & binary
+200,7648627296371131157,MAHAL BGT TAPI,4,tapi harganya mahal bgt,negatif,negatif,3 kelas & binary
+200,7648627296371131157,MAHAL BGT TAPI,5,mahal bgt ini tapi,negatif,negatif,3 kelas & binary
+201,7594487698862899986,"yg brcakap ini pun doktor, tak kan dengar sebelah pihak je... hmmm",1,"yg ngomong ini jg doktor, ga mungkin cuma dengar sepihak aja... hmmm",negatif,negatif,3 kelas & binary
+201,7594487698862899986,"yg brcakap ini pun doktor, tak kan dengar sebelah pihak je... hmmm",2,"yg bicara ini jg dokter, pasti ga cuma denger satu sisi... hmmm",negatif,negatif,3 kelas & binary
+201,7594487698862899986,"yg brcakap ini pun doktor, tak kan dengar sebelah pihak je... hmmm",3,"yg bercakap ini jg doktor, ga mungkin dengar sebelah pihak doang... hmmm",negatif,negatif,3 kelas & binary
+201,7594487698862899986,"yg brcakap ini pun doktor, tak kan dengar sebelah pihak je... hmmm",4,"yg ngobrol ini jg doktor, ga akan cuma dengar satu pihak... hmmm",negatif,negatif,3 kelas & binary
+201,7594487698862899986,"yg brcakap ini pun doktor, tak kan dengar sebelah pihak je... hmmm",5,"yg berbicara ini jg doktor, ga mungkin cuma dengar sepihak... hmmm",negatif,negatif,3 kelas & binary
+202,7596018858927047445,Kenapa aku pakai ini dok malah nambah jerawat 😣,1,kok aku pake ini dok malah jerawatnya nambah😣,negatif,negatif,3 kelas & binary
+202,7596018858927047445,Kenapa aku pakai ini dok malah nambah jerawat 😣,2,kenapa ya dok pas aku pake ini jerawat makin banyak😣,negatif,negatif,3 kelas & binary
+202,7596018858927047445,Kenapa aku pakai ini dok malah nambah jerawat 😣,3,"pas aku pake ini dok, jerawat malah tambah dok😣",negatif,negatif,3 kelas & binary
+202,7596018858927047445,Kenapa aku pakai ini dok malah nambah jerawat 😣,4,kenapa dok aku pake ini kok jerawat makin parah😣,negatif,negatif,3 kelas & binary
+202,7596018858927047445,Kenapa aku pakai ini dok malah nambah jerawat 😣,5,aku pake ini dok malah jerawatku nambah banyak😣,negatif,negatif,3 kelas & binary
+203,7603653940266418952,"Ganti nakes 🙂 alasan kesehatan boleh lah, kl perkara, ntik aneh"" lah ntik sayang ga bisa nambah anak lah menyesal lah, itu mah hak pasien, nap nakes nya memaksa standrd moral dia 😀",1,"ganti nakes aja🙂 kalo alasan kesehatan boleh lah, soal nanti dibilang aneh atau sayang ga bisa nambah anak atau nyesel, itu hak pasien, kenapa nakesnya maksain standar moral dia😀",negatif,negatif,3 kelas & binary
+203,7603653940266418952,"Ganti nakes 🙂 alasan kesehatan boleh lah, kl perkara, ntik aneh"" lah ntik sayang ga bisa nambah anak lah menyesal lah, itu mah hak pasien, nap nakes nya memaksa standrd moral dia 😀",2,"mending ganti nakes🙂 alasan kesehatan sih boleh, soal takut aneh atau sayang ga bisa nambah anak atau nyesel, itu hak pasien, knp nakesnya maksain moralnya sendiri😀",negatif,negatif,3 kelas & binary
+203,7603653940266418952,"Ganti nakes 🙂 alasan kesehatan boleh lah, kl perkara, ntik aneh"" lah ntik sayang ga bisa nambah anak lah menyesal lah, itu mah hak pasien, nap nakes nya memaksa standrd moral dia 😀",3,"ganti aja nakesnya🙂 kalo soal kesehatan boleh lah, masalah nanti dibilang aneh, sayang ga bisa nambah anak, nyesel, itu hak pasien, kenapa nakes maksain standar moralnya😀",negatif,negatif,3 kelas & binary
+203,7603653940266418952,"Ganti nakes 🙂 alasan kesehatan boleh lah, kl perkara, ntik aneh"" lah ntik sayang ga bisa nambah anak lah menyesal lah, itu mah hak pasien, nap nakes nya memaksa standrd moral dia 😀",4,"ganti nakes🙂 alasan kesehatan ya boleh, tp soal nanti aneh atau sayang ga nambah anak atau nyesel, itu kan hak pasien, napa nakesnya maksain standar moral dia😀",negatif,negatif,3 kelas & binary
+203,7603653940266418952,"Ganti nakes 🙂 alasan kesehatan boleh lah, kl perkara, ntik aneh"" lah ntik sayang ga bisa nambah anak lah menyesal lah, itu mah hak pasien, nap nakes nya memaksa standrd moral dia 😀",5,"mending diganti nakesnya🙂 kalo alasan kesehatan sih oke, tp soal aneh, sayang ga bisa nambah anak, nyesel, itu hak pasien, kenapa nakes maksain moralnya sendiri😀",negatif,negatif,3 kelas & binary
+204,7655721898781754130,ya minimal ada nyambungnya ama konten lah,1,setidaknya ada hubungannya sama konten dong,negatif,negatif,3 kelas & binary
+204,7655721898781754130,ya minimal ada nyambungnya ama konten lah,2,minimal nyambung dikit sama kontennya lah,negatif,negatif,3 kelas & binary
+204,7655721898781754130,ya minimal ada nyambungnya ama konten lah,3,ya paling ga ada kaitannya sama konten,negatif,negatif,3 kelas & binary
+204,7655721898781754130,ya minimal ada nyambungnya ama konten lah,4,minimal relate lah sama kontennya,negatif,negatif,3 kelas & binary
+204,7655721898781754130,ya minimal ada nyambungnya ama konten lah,5,setidaknya nyambung sama topik kontennya,negatif,negatif,3 kelas & binary
+205,7594463541505458964,kalau betul itu yg berlaku di Malaysia.. kamu boleh buat laporan polis Dan Saman Hospital tersebut.. saya sebagai warganegara Malaysia mahu kamu buktikan...,1,kalau bener itu yg terjadi di Malaysia.. kamu bisa buat laporan polisi dan tuntut hospital itu.. saya sebagai warga Malaysia minta kamu buktikan...,negatif,negatif,3 kelas & binary
+205,7594463541505458964,kalau betul itu yg berlaku di Malaysia.. kamu boleh buat laporan polis Dan Saman Hospital tersebut.. saya sebagai warganegara Malaysia mahu kamu buktikan...,2,kalau itu betul-betul terjadi di Malaysia.. kamu boleh lapor polisi dan saman rumah sakitnya.. saya sebagai warganegara Malaysia mau kamu buktikan...,negatif,negatif,3 kelas & binary
+205,7594463541505458964,kalau betul itu yg berlaku di Malaysia.. kamu boleh buat laporan polis Dan Saman Hospital tersebut.. saya sebagai warganegara Malaysia mahu kamu buktikan...,3,jika itu memang benar terjadi di Malaysia.. kamu bisa buat laporan polis dan tuntut hospital tersebut.. saya sebagai warga Malaysia minta dibuktikan...,negatif,negatif,3 kelas & binary
+205,7594463541505458964,kalau betul itu yg berlaku di Malaysia.. kamu boleh buat laporan polis Dan Saman Hospital tersebut.. saya sebagai warganegara Malaysia mahu kamu buktikan...,4,kalau beneran itu kejadian di Malaysia.. kamu boleh lapor ke polisi dan saman hospitalnya.. saya sebagai warganegara Malaysia mau bukti nyata...,negatif,negatif,3 kelas & binary
+205,7594463541505458964,kalau betul itu yg berlaku di Malaysia.. kamu boleh buat laporan polis Dan Saman Hospital tersebut.. saya sebagai warganegara Malaysia mahu kamu buktikan...,5,kalau itu benar terjadi di Malaysia.. kamu bisa aja lapor polisi dan tuntut hospitalnya.. saya sebagai warga Malaysia mau kamu buktikan itu...,negatif,negatif,3 kelas & binary
+206,7608066911125390101,"takut banget di periksa, tiba2 di ketawain njirre😭😭",1,"takut bgt diperiksa, eh malah ditawain tiba2 njirre😭😭",negatif,negatif,3 kelas & binary
+206,7608066911125390101,"takut banget di periksa, tiba2 di ketawain njirre😭😭",2,"ngeri bgt pas diperiksa, tiba2 malah ditawain njirre😭😭",negatif,negatif,3 kelas & binary
+206,7608066911125390101,"takut banget di periksa, tiba2 di ketawain njirre😭😭",3,"takut parah diperiksa, eh tiba2 ditawain njirre😭😭",negatif,negatif,3 kelas & binary
+206,7608066911125390101,"takut banget di periksa, tiba2 di ketawain njirre😭😭",4,"takut banget pas periksa, malah tiba2 ditawain njirre😭😭",negatif,negatif,3 kelas & binary
+206,7608066911125390101,"takut banget di periksa, tiba2 di ketawain njirre😭😭",5,"serem bgt diperiksa, tiba2 malah ditawain gitu njirre😭😭",negatif,negatif,3 kelas & binary
+207,7652687693230392085,🤣🤣🤣 masih aja ada yg percaya,1,🤣🤣🤣 kok masih ada yg percaya ya,negatif,negatif,3 kelas & binary
+207,7652687693230392085,🤣🤣🤣 masih aja ada yg percaya,2,🤣🤣🤣 masih ada aja org yg percaya,negatif,negatif,3 kelas & binary
+207,7652687693230392085,🤣🤣🤣 masih aja ada yg percaya,3,🤣🤣🤣 kok masih ada yg believe aja,negatif,negatif,3 kelas & binary
+207,7652687693230392085,🤣🤣🤣 masih aja ada yg percaya,4,🤣🤣🤣 masih aja ada yg mau percaya,negatif,negatif,3 kelas & binary
+207,7652687693230392085,🤣🤣🤣 masih aja ada yg percaya,5,🤣🤣🤣 ternyata masih ada yg percaya,negatif,negatif,3 kelas & binary
+208,7607883739469726472,praktik dmn😭tkut diajak ngobrol😭,1,prakteknya dimana😭 takut diajak ngomong😭,negatif,negatif,3 kelas & binary
+208,7607883739469726472,praktik dmn😭tkut diajak ngobrol😭,2,praktik dmn ya😭 ngeri diajak ngobrol😭,negatif,negatif,3 kelas & binary
+208,7607883739469726472,praktik dmn😭tkut diajak ngobrol😭,3,lokasinya dmn😭 takut banget diajak ngobrol😭,negatif,negatif,3 kelas & binary
+208,7607883739469726472,praktik dmn😭tkut diajak ngobrol😭,4,dimana prakteknya😭 serem diajak ngobrol😭,negatif,negatif,3 kelas & binary
+208,7607883739469726472,praktik dmn😭tkut diajak ngobrol😭,5,praktik dimana sih😭 takut kalo diajak ngobrol😭,negatif,negatif,3 kelas & binary
+209,7595195853750485780,aku selesai baca tiap liat si boby berasa mual bgt kepala pusing bener bener kaya lagi liat aura negatif😭,1,"tiap aku liat si boby, abis baca jadi mual bgt kepala pusing, bener² kaya ngeliat aura negatif😭",negatif,negatif,3 kelas & binary
+209,7595195853750485780,aku selesai baca tiap liat si boby berasa mual bgt kepala pusing bener bener kaya lagi liat aura negatif😭,2,"setiap liat boby abis baca, aku berasa mual banget pusing kepala, kaya liat aura negatif bgt😭",negatif,negatif,3 kelas & binary
+209,7595195853750485780,aku selesai baca tiap liat si boby berasa mual bgt kepala pusing bener bener kaya lagi liat aura negatif😭,3,"tiap kali liat boby pas selesai baca, mual bgt kepalaku pusing, kaya beneran liat aura negatif😭",negatif,negatif,3 kelas & binary
+209,7595195853750485780,aku selesai baca tiap liat si boby berasa mual bgt kepala pusing bener bener kaya lagi liat aura negatif😭,4,"abis baca tiap liat si boby aku jadi mual kepala pusing, kaya bener2 liat aura negatif😭",negatif,negatif,3 kelas & binary
+209,7595195853750485780,aku selesai baca tiap liat si boby berasa mual bgt kepala pusing bener bener kaya lagi liat aura negatif😭,5,"setiap liat boby abis baca, rasanya mual bgt kepala pusing, bener kaya liat aura negatif😭",negatif,negatif,3 kelas & binary
+210,7596152664468833042,doktor kat sana pun kaki scam masalahnya.,1,doktor disana juga sering scam masalahnya.,negatif,negatif,3 kelas & binary
+210,7596152664468833042,doktor kat sana pun kaki scam masalahnya.,2,"doktor di sana pun suka scam, itu masalahnya.",negatif,negatif,3 kelas & binary
+210,7596152664468833042,doktor kat sana pun kaki scam masalahnya.,3,"doktor disitu jg kaki scam, itu problemnya.",negatif,negatif,3 kelas & binary
+210,7596152664468833042,doktor kat sana pun kaki scam masalahnya.,4,"doktor disana juga gampang scam, situ masalahnya.",negatif,negatif,3 kelas & binary
+210,7596152664468833042,doktor kat sana pun kaki scam masalahnya.,5,"doktor disitu pun suka scam, itu yg jadi masalah.",negatif,negatif,3 kelas & binary
+211,7629782564035298068,"jangan gitu dok, bagi mereka Jualan Seperti itu laris loh",1,"jangan begitu dok, buat mereka jualan kaya itu laris lho",negatif,negatif,3 kelas & binary
+211,7629782564035298068,"jangan gitu dok, bagi mereka Jualan Seperti itu laris loh",2,"jangan dong dok, bagi mereka jualan kaya gitu laku keras lho",negatif,negatif,3 kelas & binary
+211,7629782564035298068,"jangan gitu dok, bagi mereka Jualan Seperti itu laris loh",3,"jangan gitu dok, buat mereka dagang kaya itu rame peminat lho",negatif,negatif,3 kelas & binary
+211,7629782564035298068,"jangan gitu dok, bagi mereka Jualan Seperti itu laris loh",4,"jangan gitu dong dok, bagi mereka jual kaya itu laris banget lho",negatif,negatif,3 kelas & binary
+211,7629782564035298068,"jangan gitu dok, bagi mereka Jualan Seperti itu laris loh",5,"jangan dok gitu, buat mereka jualan model itu laris lho",negatif,negatif,3 kelas & binary
+212,7601499814925501192,"ni dokter pasti daviena mulu,ngapa njir",1,"dokter ini pasti daviena terus, kenapa sih njir",negatif,negatif,3 kelas & binary
+212,7601499814925501192,"ni dokter pasti daviena mulu,ngapa njir",2,"ni dokter daviena mulu ngomonginnya, kenapa njir",negatif,negatif,3 kelas & binary
+212,7601499814925501192,"ni dokter pasti daviena mulu,ngapa njir",3,"dokter ini selalu daviena aja, ngapain sih njir",negatif,negatif,3 kelas & binary
+212,7601499814925501192,"ni dokter pasti daviena mulu,ngapa njir",4,"ni dokter pasti bahas daviena mulu, napa sih njir",negatif,negatif,3 kelas & binary
+212,7601499814925501192,"ni dokter pasti daviena mulu,ngapa njir",5,"dokter ini daviena-daviena aja terus, kenapa njir",negatif,negatif,3 kelas & binary
+213,7668277095676740372,goblog bgt😭,1,bego banget😭,negatif,negatif,3 kelas & binary
+213,7668277095676740372,goblog bgt😭,2,goblok parah😭,negatif,negatif,3 kelas & binary
+213,7668277095676740372,goblog bgt😭,3,tolol bgt😭,negatif,negatif,3 kelas & binary
+213,7668277095676740372,goblog bgt😭,4,bodoh banget deh😭,negatif,negatif,3 kelas & binary
+213,7668277095676740372,goblog bgt😭,5,goblog parah bgt😭,negatif,negatif,3 kelas & binary
+214,7594034463257461511,duta besar Malaysia di Jakarta tolong bikin laporan polis tentang fitnah ini,1,tolong duta besar Malaysia di Jakarta buat laporan polisi soal fitnah ini,negatif,negatif,3 kelas & binary
+214,7594034463257461511,duta besar Malaysia di Jakarta tolong bikin laporan polis tentang fitnah ini,2,duta besar Malaysia di Jakarta mohon lapor polisi tentang fitnah ini,negatif,negatif,3 kelas & binary
+214,7594034463257461511,duta besar Malaysia di Jakarta tolong bikin laporan polis tentang fitnah ini,3,duta besar Malaysia yg di Jakarta tolong ajukan laporan polisi atas fitnah ini,negatif,negatif,3 kelas & binary
+214,7594034463257461511,duta besar Malaysia di Jakarta tolong bikin laporan polis tentang fitnah ini,4,mohon duta besar Malaysia Jakarta bikin report polisi soal fitnah ini,negatif,negatif,3 kelas & binary
+214,7594034463257461511,duta besar Malaysia di Jakarta tolong bikin laporan polis tentang fitnah ini,5,tolong duta besar Malaysia di Jakarta ajukan laporan polis tentang fitnah ini,negatif,negatif,3 kelas & binary
+215,7595414410274997012,"kita cabar utk report & sebut nama hospital yang dia kena.. hosp swasta di malaysia semua perlu duit dulu , takdenya takde constant atau bayar terus operation. selalunya akan hantar ke hosp kerajaan.",1,"kita tantang buat report & sebut nama hospital yg dia alami.. hospital swasta di malaysia semua perlu bayar dulu, kalo ga ada ya ga ada tindakan atau harus bayar terus operasinya. biasanya dikirim ke hospital pemerintah.",negatif,negatif,3 kelas & binary
+215,7595414410274997012,"kita cabar utk report & sebut nama hospital yang dia kena.. hosp swasta di malaysia semua perlu duit dulu , takdenya takde constant atau bayar terus operation. selalunya akan hantar ke hosp kerajaan.",2,"kita berani tantang report & sebutkan nama hospitalnya.. hosp swasta di malaysia emang perlu duit dulu, kalo ga ada ya ga ada tindakan atau harus terus bayar operasi. biasanya dirujuk ke hosp pemerintah.",negatif,negatif,3 kelas & binary
+215,7595414410274997012,"kita cabar utk report & sebut nama hospital yang dia kena.. hosp swasta di malaysia semua perlu duit dulu , takdenya takde constant atau bayar terus operation. selalunya akan hantar ke hosp kerajaan.",3,"kita tantang aja buat lapor & kasih nama hospital yg dia kena.. hosp privat di malaysia semua butuh bayar duluan, kalo ga punya ya ga ada terus atau harus bayar terus operasinya. biasa dikirim ke hosp negeri.",negatif,negatif,3 kelas & binary
+215,7595414410274997012,"kita cabar utk report & sebut nama hospital yang dia kena.. hosp swasta di malaysia semua perlu duit dulu , takdenya takde constant atau bayar terus operation. selalunya akan hantar ke hosp kerajaan.",4,"kita cabar buat report & sebutin nama hospitalnya.. hosp swasta malaysia emang perlu uang duluan, kalo ga ada ya ga jalan atau bayar terus buat operasi. biasanya dirujuk ke hosp kerajaan.",negatif,negatif,3 kelas & binary
+215,7595414410274997012,"kita cabar utk report & sebut nama hospital yang dia kena.. hosp swasta di malaysia semua perlu duit dulu , takdenya takde constant atau bayar terus operation. selalunya akan hantar ke hosp kerajaan.",5,"kita tantang utk lapor & namain hospital yg dia alami.. hosp swasta di malaysia emang butuh bayar dulu, kalo ga ada duit ya ga ada tindakan atau bayar terus operasinya. biasa dikirim ke hosp pemerintah.",negatif,negatif,3 kelas & binary
+216,7626418492212282120,tergantung bajet dok sy pake kirim dokter jutaan bisa aja ga ada perubahan tuh mahal iy,1,"tergantung budget sih dok, saya pake kirim dokter jutaan tp ga ada perubahan, mahal bgt itu",negatif,negatif,3 kelas & binary
+216,7626418492212282120,tergantung bajet dok sy pake kirim dokter jutaan bisa aja ga ada perubahan tuh mahal iy,2,"itu tergantung bajet dok, saya udah keluar jutaan buat kirim dokter tp ga berubah, mahal bener",negatif,negatif,3 kelas & binary
+216,7626418492212282120,tergantung bajet dok sy pake kirim dokter jutaan bisa aja ga ada perubahan tuh mahal iy,3,"semua tergantung budget dok, saya udah bayar jutaan buat kirim dokter tp ga ada hasil, mahal itu",negatif,negatif,3 kelas & binary
+216,7626418492212282120,tergantung bajet dok sy pake kirim dokter jutaan bisa aja ga ada perubahan tuh mahal iy,4,"tergantung bajet ya dok, saya pake jutaan kirim dokter tp hasilnya nihil, mahal bgt",negatif,negatif,3 kelas & binary
+216,7626418492212282120,tergantung bajet dok sy pake kirim dokter jutaan bisa aja ga ada perubahan tuh mahal iy,5,"tergantung budgetnya dok, saya kirim dokter udah jutaan tp ga ada perubahan, mahal banget itu",negatif,negatif,3 kelas & binary
+217,7633992448415597330,Bisa asalkan yg nanganiny tau Tapiii kl di rs kebnykan di gunting 🙄 atau kurang arahan,1,"bisa aja asal yg nangani ngerti, tapi kalo di rs kebanyakan malah digunting🙄 atau kurang arahan",negatif,negatif,3 kelas & binary
+217,7633992448415597330,Bisa asalkan yg nanganiny tau Tapiii kl di rs kebnykan di gunting 🙄 atau kurang arahan,2,"boleh asalkan yg handle paham, tp kalo di rs kebanyakan kasusnya digunting🙄 atau arahan kurang",negatif,negatif,3 kelas & binary
+217,7633992448415597330,Bisa asalkan yg nanganiny tau Tapiii kl di rs kebnykan di gunting 🙄 atau kurang arahan,3,"bisa sih kalo yg nanganin ngerti, tapi di rs sering banget digunting🙄 atau arahan minim",negatif,negatif,3 kelas & binary
+217,7633992448415597330,Bisa asalkan yg nanganiny tau Tapiii kl di rs kebnykan di gunting 🙄 atau kurang arahan,4,"boleh asal org yg nangani tau caranya, tp di rs kebanyakan digunting🙄 atau kurang diarahin",negatif,negatif,3 kelas & binary
+217,7633992448415597330,Bisa asalkan yg nanganiny tau Tapiii kl di rs kebnykan di gunting 🙄 atau kurang arahan,5,"bisa aja kalo yg handle ngerti, tp di rs kebanyakan malah digunting🙄 atau arahannya kurang",negatif,negatif,3 kelas & binary
+218,7611098278864519943,"kalo dibiarin orang2 cuma liatin, nanti captionnya mirissss orang2 cuma liatin gda nolong🗿",1,"kalo cuma dibiarin orang² liatin doang, nanti captionnya bikin miris org cuma liatin ga nolong🗿",negatif,negatif,3 kelas & binary
+218,7611098278864519943,"kalo dibiarin orang2 cuma liatin, nanti captionnya mirissss orang2 cuma liatin gda nolong🗿",2,"kalo didiemin orang² cuma nonton doang, nanti captionnya nyedihin org cuma liatin ga bantuin🗿",negatif,negatif,3 kelas & binary
+218,7611098278864519943,"kalo dibiarin orang2 cuma liatin, nanti captionnya mirissss orang2 cuma liatin gda nolong🗿",3,"kalo dibiarin cuma dilihatin orang², nanti captionnya miris, org cuma liat ga nolongin🗿",negatif,negatif,3 kelas & binary
+218,7611098278864519943,"kalo dibiarin orang2 cuma liatin, nanti captionnya mirissss orang2 cuma liatin gda nolong🗿",4,"kalo cuma diliatin org² tanpa ditolong, nanti captionnya bikin miris org cuma nonton aja🗿",negatif,negatif,3 kelas & binary
+218,7611098278864519943,"kalo dibiarin orang2 cuma liatin, nanti captionnya mirissss orang2 cuma liatin gda nolong🗿",5,"kalo dibiarin org² cuma liatin doang, nanti captionnya sedih, org cuma liat ga bantu🗿",negatif,negatif,3 kelas & binary
+219,7597771346919965460,"Ada dong kak bukti beli nya, cuma klo mau minta pertanggungjawaban ga akan jg di respon kayak nya huuuu",1,"ada kok kak bukti belinya, tapi kalo minta pertanggungjawaban kayaknya ga akan direspon juga huuuu",negatif,negatif,3 kelas & binary
+219,7597771346919965460,"Ada dong kak bukti beli nya, cuma klo mau minta pertanggungjawaban ga akan jg di respon kayak nya huuuu",2,"bukti belinya ada kak, cuma kalo minta pertanggungjawaban sepertinya ga akan ditanggapi jg huuuu",negatif,negatif,3 kelas & binary
+219,7597771346919965460,"Ada dong kak bukti beli nya, cuma klo mau minta pertanggungjawaban ga akan jg di respon kayak nya huuuu",3,"ada dong kak buktinya, tapi kalo minta tanggung jawab kelihatannya ga bakal direspon huuuu",negatif,negatif,3 kelas & binary
+219,7597771346919965460,"Ada dong kak bukti beli nya, cuma klo mau minta pertanggungjawaban ga akan jg di respon kayak nya huuuu",4,"buktinya ada kak, cuma kalo soal pertanggungjawaban kemungkinan ga bakal ditanggapi jg huuuu",negatif,negatif,3 kelas & binary
+219,7597771346919965460,"Ada dong kak bukti beli nya, cuma klo mau minta pertanggungjawaban ga akan jg di respon kayak nya huuuu",5,"ada kak bukti belinya, tp kalo udah minta pertanggungjawaban kayaknya emang ga akan direspon huuuu",negatif,negatif,3 kelas & binary
+220,7598148927774950145,mukbang yg ada huek huek dok,1,mukbang kok ada huek huek nya dok,negatif,negatif,3 kelas & binary
+220,7598148927774950145,mukbang yg ada huek huek dok,2,ini mukbang tapi ada huek huek dok,negatif,negatif,3 kelas & binary
+220,7598148927774950145,mukbang yg ada huek huek dok,3,mukbang sampe ada huek² nya dok,negatif,negatif,3 kelas & binary
+220,7598148927774950145,mukbang yg ada huek huek dok,4,mukbangnya ada efek huek² dok,negatif,negatif,3 kelas & binary
+220,7598148927774950145,mukbang yg ada huek huek dok,5,mukbang dengan huek huek segala dok,negatif,negatif,3 kelas & binary
+221,7668830811497186055,tapi aku benciiii baunya doookkk🤮,1,tapi aku bener² benci baunya dok🤮,negatif,negatif,3 kelas & binary
+221,7668830811497186055,tapi aku benciiii baunya doookkk🤮,2,tp aku benci banget sama baunya dok🤮,negatif,negatif,3 kelas & binary
+221,7668830811497186055,tapi aku benciiii baunya doookkk🤮,3,aku benci bgt baunya itu dok🤮,negatif,negatif,3 kelas & binary
+221,7668830811497186055,tapi aku benciiii baunya doookkk🤮,4,tapi baunya aku benci banget dok🤮,negatif,negatif,3 kelas & binary
+221,7668830811497186055,tapi aku benciiii baunya doookkk🤮,5,tp aku ga suka sama sekali baunya dok🤮,negatif,negatif,3 kelas & binary
+222,7604687063074702101,"udh skrg jgn mau klo disuruh pasang kb / minum pil kb,, ngeri efek jangka panjangnya",1,"sekarang mendingan jangan mau kalo disuruh pasang kb/minum pil kb,, ngeri efek jangka panjangnya",negatif,negatif,3 kelas & binary
+222,7604687063074702101,"udh skrg jgn mau klo disuruh pasang kb / minum pil kb,, ngeri efek jangka panjangnya",2,"udah deh skrg jgn nurut kalo disuruh pasang kb atau minum pil kb,, serem efek jangka panjangnya",negatif,negatif,3 kelas & binary
+222,7604687063074702101,"udh skrg jgn mau klo disuruh pasang kb / minum pil kb,, ngeri efek jangka panjangnya",3,"mulai sekarang jgn mau kalo diminta pasang kb/pil kb,, ngeri bgt efek jangka panjangnya",negatif,negatif,3 kelas & binary
+222,7604687063074702101,"udh skrg jgn mau klo disuruh pasang kb / minum pil kb,, ngeri efek jangka panjangnya",4,"sekarang jangan deh mau kalo disuruh pasang kb atau pil kb,, ngeri efek panjangnya",negatif,negatif,3 kelas & binary
+222,7604687063074702101,"udh skrg jgn mau klo disuruh pasang kb / minum pil kb,, ngeri efek jangka panjangnya",5,"udah skrg lebih baik jgn mau kalo disuruh kb/pil kb,, ngeri efek jangka panjangnya itu",negatif,negatif,3 kelas & binary
+223,7600069241937986312,Lah katanya aman kak gimana dong,1,"lah katanya aman kak, gimana ini dong",negatif,negatif,3 kelas & binary
+223,7600069241937986312,Lah katanya aman kak gimana dong,2,"katanya aman kak, kok gini gimana dong",negatif,negatif,3 kelas & binary
+223,7600069241937986312,Lah katanya aman kak gimana dong,3,"lah bukannya aman kak, kok gimana ini",negatif,negatif,3 kelas & binary
+223,7600069241937986312,Lah katanya aman kak gimana dong,4,"katanya sih aman kak, ini gimana dong",negatif,negatif,3 kelas & binary
+223,7600069241937986312,Lah katanya aman kak gimana dong,5,"lah kan katanya aman kak, gimana nih",negatif,negatif,3 kelas & binary
+224,7670480735241552660,"Edukasi sih edukasi.. tapi jangan dagangan orang dong.. org cari nafkah!! Pilih contoh yg lain, untuk yg tetap milih makan itu ya konsekuensi yg makan! Itu juga buat nya langsung ke pembeli kok bukan di belakang layar!",1,"edukasi ya edukasi.. tapi jangan nyerang dagangan orang dong.. org kan cari nafkah!! pilih contoh lain, buat yg tetep milih makan itu ya itu konsekuensi dia! lagian buatnya langsung ke pembeli kok, bukan diam² di belakang!",negatif,negatif,3 kelas & binary
+224,7670480735241552660,"Edukasi sih edukasi.. tapi jangan dagangan orang dong.. org cari nafkah!! Pilih contoh yg lain, untuk yg tetap milih makan itu ya konsekuensi yg makan! Itu juga buat nya langsung ke pembeli kok bukan di belakang layar!",2,"edukasi sih boleh.. tapi jangan sampe nyerempet dagangan orang dong.. kan org nyari nafkah!! ambil contoh lain, utk yg tetep pilih makan itu ya resiko sendiri! dan itu dibuat langsung ke pembeli, bukan sembunyi²!",negatif,negatif,3 kelas & binary
+224,7670480735241552660,"Edukasi sih edukasi.. tapi jangan dagangan orang dong.. org cari nafkah!! Pilih contoh yg lain, untuk yg tetap milih makan itu ya konsekuensi yg makan! Itu juga buat nya langsung ke pembeli kok bukan di belakang layar!",3,"oke edukasi.. tapi jangan nyinggung dagangan orang dong.. org cari makan!! pilih aja contoh lain, kalo tetep milih makan itu ya konsekuensinya! toh itu dibuat langsung ke pembeli bukan diam²!",negatif,negatif,3 kelas & binary
+224,7670480735241552660,"Edukasi sih edukasi.. tapi jangan dagangan orang dong.. org cari nafkah!! Pilih contoh yg lain, untuk yg tetap milih makan itu ya konsekuensi yg makan! Itu juga buat nya langsung ke pembeli kok bukan di belakang layar!",4,"edukasi boleh sih.. tapi jangan ganggu dagangan orang dong.. org nyari nafkah!! pakai contoh lain aja, buat yg tetep pilih makan itu ya itu resikonya! lagian dibuat langsung ke pembeli bukan dibelakang!",negatif,negatif,3 kelas & binary
+224,7670480735241552660,"Edukasi sih edukasi.. tapi jangan dagangan orang dong.. org cari nafkah!! Pilih contoh yg lain, untuk yg tetap milih makan itu ya konsekuensi yg makan! Itu juga buat nya langsung ke pembeli kok bukan di belakang layar!",5,"edukasi ya edukasi.. tapi jgn sampe nyerang dagangan org dong.. org nyari makan!! cari contoh lain, kalo masih milih makan itu ya konsekuensi sendiri! apalagi itu dibuat langsung ke pembeli, bukan diam²!",negatif,negatif,3 kelas & binary
+225,7595238140064236308,"kalau berani Kasi bukti ....buat laporan polis,file mahkamah... MEDICAL CENTRE...",1,"kalau berani tunjukin bukti.... buat laporan polisi, ajukan ke mahkamah... medical centre itu...",negatif,negatif,3 kelas & binary
+225,7595238140064236308,"kalau berani Kasi bukti ....buat laporan polis,file mahkamah... MEDICAL CENTRE...",2,"kalau emang berani kasih bukti.... bikin laporan polis, file ke mahkamah... medical centre tersebut...",negatif,negatif,3 kelas & binary
+225,7595238140064236308,"kalau berani Kasi bukti ....buat laporan polis,file mahkamah... MEDICAL CENTRE...",3,"kalau berani sih tunjukkan bukti.... lapor polisi, ajukan mahkamah... medical centre itu...",negatif,negatif,3 kelas & binary
+225,7595238140064236308,"kalau berani Kasi bukti ....buat laporan polis,file mahkamah... MEDICAL CENTRE...",4,"kalau berani kasih bukti nyata.... buat report polis, bawa ke mahkamah... medical centre itu...",negatif,negatif,3 kelas & binary
+225,7595238140064236308,"kalau berani Kasi bukti ....buat laporan polis,file mahkamah... MEDICAL CENTRE...",5,"kalau berani kasi bukti.... lapor ke polis, ajukan file mahkamah... medical centre tersebut...",negatif,negatif,3 kelas & binary
+226,7629684996266312468,dok ganti lagunya jelek,1,"dok lagunya jelek, ganti dong",negatif,negatif,3 kelas & binary
+226,7629684996266312468,dok ganti lagunya jelek,2,"dok tolong ganti lagu, jelek ini",negatif,negatif,3 kelas & binary
+226,7629684996266312468,dok ganti lagunya jelek,3,"lagunya jelek dok, ganti ya",negatif,negatif,3 kelas & binary
+226,7629684996266312468,dok ganti lagunya jelek,4,"dok lagunya ga enak, mohon diganti",negatif,negatif,3 kelas & binary
+226,7629684996266312468,dok ganti lagunya jelek,5,"dok ganti lagu dong, ini jelek",negatif,negatif,3 kelas & binary
+227,7596524061959963412,Mohon pihak hospital saman dorg kalau kenyataan tak betul!,1,tolong pihak hospital tuntut mereka kalau kenyataannya ga benar!,negatif,negatif,3 kelas & binary
+227,7596524061959963412,Mohon pihak hospital saman dorg kalau kenyataan tak betul!,2,mohon hospital tuntut mereka kalau faktanya ga betul!,negatif,negatif,3 kelas & binary
+227,7596524061959963412,Mohon pihak hospital saman dorg kalau kenyataan tak betul!,3,tolong pihak rs saman mereka kalau cerita itu ga bener!,negatif,negatif,3 kelas & binary
+227,7596524061959963412,Mohon pihak hospital saman dorg kalau kenyataan tak betul!,4,mohon hospital tuntut pihak itu kalau faktanya tidak benar!,negatif,negatif,3 kelas & binary
+227,7596524061959963412,Mohon pihak hospital saman dorg kalau kenyataan tak betul!,5,tolong hospital ajukan tuntutan kalau kenyataannya ga betul!,negatif,negatif,3 kelas & binary
+228,7594544205923435284,kotorrr dokkk aduhh😂😂😂,1,kotor banget dok aduh😂😂😂,negatif,negatif,3 kelas & binary
+228,7594544205923435284,kotorrr dokkk aduhh😂😂😂,2,kotor amat dok duh😂😂😂,negatif,negatif,3 kelas & binary
+228,7594544205923435284,kotorrr dokkk aduhh😂😂😂,3,aduh kotor bgt dok😂😂😂,negatif,negatif,3 kelas & binary
+228,7594544205923435284,kotorrr dokkk aduhh😂😂😂,4,dok kotor banget deh aduh😂😂😂,negatif,negatif,3 kelas & binary
+228,7594544205923435284,kotorrr dokkk aduhh😂😂😂,5,aduh dok kotor bener😂😂😂,negatif,negatif,3 kelas & binary
+229,7663118365510484744,serius dok bisa hilangin bekas pih?soalnya udah pake ini itu tetep ga mempan,1,beneran dok bisa hilangin bekas luka? soalnya udah coba ini itu tetep ga ngefek,negatif,negatif,3 kelas & binary
+229,7663118365510484744,serius dok bisa hilangin bekas pih?soalnya udah pake ini itu tetep ga mempan,2,serius nih dok bisa hapus bekasnya? soalnya udah pake macem² tetep ga mempan,negatif,negatif,3 kelas & binary
+229,7663118365510484744,serius dok bisa hilangin bekas pih?soalnya udah pake ini itu tetep ga mempan,3,bener dok bisa ngilangin bekas? soalnya udah coba banyak hal tp tetep ga berhasil,negatif,negatif,3 kelas & binary
+229,7663118365510484744,serius dok bisa hilangin bekas pih?soalnya udah pake ini itu tetep ga mempan,4,serius dok ampuh buat ilangin bekas? soalnya udah pake ini itu tetep ga ngaruh,negatif,negatif,3 kelas & binary
+229,7663118365510484744,serius dok bisa hilangin bekas pih?soalnya udah pake ini itu tetep ga mempan,5,beneran bisa dok hapus bekasnya? soalnya udah dicoba macam² tetep aja ga mempan,negatif,negatif,3 kelas & binary
+230,7663523557566366484,dsavior langsung alergi kulit ini.,1,pakai dsavior langsung bikin alergi kulit ini.,negatif,negatif,3 kelas & binary
+230,7663523557566366484,dsavior langsung alergi kulit ini.,2,dsavior ini langsung nyebabin alergi di kulit.,negatif,negatif,3 kelas & binary
+230,7663523557566366484,dsavior langsung alergi kulit ini.,3,abis pake dsavior kulit jadi langsung alergi.,negatif,negatif,3 kelas & binary
+230,7663523557566366484,dsavior langsung alergi kulit ini.,4,dsavior bikin kulit langsung alergi gini.,negatif,negatif,3 kelas & binary
+230,7663523557566366484,dsavior langsung alergi kulit ini.,5,langsung alergi kulit gara-gara dsavior ini.,negatif,negatif,3 kelas & binary
+231,7623006056758985489,"""yang bahaya bukan ronsennya tapi seberapa seringnya"" eh maafff kalo gua kasar .. yaaaaa berartiiii ronsennya bahayaaa",1,"""yg bahaya bukan ronsennya tapi seberapa sering"" eh sori kalo kata²nya kasar.. jadi berarti ronsennya ya bahaya juga",negatif,negatif,3 kelas & binary
+231,7623006056758985489,"""yang bahaya bukan ronsennya tapi seberapa seringnya"" eh maafff kalo gua kasar .. yaaaaa berartiiii ronsennya bahayaaa",2,"""yg bahaya tuh bukan ronsen tp seberapa sering"" eh maaf kalo agak kasar.. ya berarti ronsennya bahaya jg",negatif,negatif,3 kelas & binary
+231,7623006056758985489,"""yang bahaya bukan ronsennya tapi seberapa seringnya"" eh maafff kalo gua kasar .. yaaaaa berartiiii ronsennya bahayaaa",3,"""bukan ronsennya yg bahaya tp seringnya"" eh maaf kalo kasar ya.. jadi tetep aja ronsennya bahaya",negatif,negatif,3 kelas & binary
+231,7623006056758985489,"""yang bahaya bukan ronsennya tapi seberapa seringnya"" eh maafff kalo gua kasar .. yaaaaa berartiiii ronsennya bahayaaa",4,"""bahaya itu bukan dari ronsen tp dari keseringannya"" eh sori kalo kasar.. ya berarti ronsen tetep bahaya",negatif,negatif,3 kelas & binary
+231,7623006056758985489,"""yang bahaya bukan ronsennya tapi seberapa seringnya"" eh maafff kalo gua kasar .. yaaaaa berartiiii ronsennya bahayaaa",5,"""yg bahaya bukan ronsen tp intensitasnya"" eh maaf ya kalo kasar.. jd intinya ronsen ttp bahaya",negatif,negatif,3 kelas & binary
+232,7656733625597543176,"Mana mungkin bisa efektif utk air kandungan besi, air berkapur, kerak kuning dllbisa tuntas dg satu media, pake ion exchange,??? itu medianya kayak kantong ajaibnya doraemon 😃😃😃",1,"mana mungkin efektif buat air kandungan besi, air berkapur, kerak kuning, dll bisa tuntas cuma dgn satu media, pake ion exchange?? itu medianya kaya kantong ajaib doraemon😃😃😃",negatif,negatif,3 kelas & binary
+232,7656733625597543176,"Mana mungkin bisa efektif utk air kandungan besi, air berkapur, kerak kuning dllbisa tuntas dg satu media, pake ion exchange,??? itu medianya kayak kantong ajaibnya doraemon 😃😃😃",2,"ga mungkin bisa efektif utk air berbesi, air berkapur, kerak kuning dll tuntas pake satu media doang, pake ion exchange?? medianya kaya kantong ajaibnya doraemon😃😃😃",negatif,negatif,3 kelas & binary
+232,7656733625597543176,"Mana mungkin bisa efektif utk air kandungan besi, air berkapur, kerak kuning dllbisa tuntas dg satu media, pake ion exchange,??? itu medianya kayak kantong ajaibnya doraemon 😃😃😃",3,"mustahil efektif utk air kandungan besi, berkapur, kerak kuning dll selesai cuma satu media, pake ion exchange?? itu medianya kaya kantong ajaib doraemon😃😃😃",negatif,negatif,3 kelas & binary
+232,7656733625597543176,"Mana mungkin bisa efektif utk air kandungan besi, air berkapur, kerak kuning dllbisa tuntas dg satu media, pake ion exchange,??? itu medianya kayak kantong ajaibnya doraemon 😃😃😃",4,"mana bisa efektif buat air besi, berkapur, kerak kuning dll tuntas dgn satu media doang, pake ion exchange?? medianya persis kantong ajaib doraemon😃😃😃",negatif,negatif,3 kelas & binary
+232,7656733625597543176,"Mana mungkin bisa efektif utk air kandungan besi, air berkapur, kerak kuning dllbisa tuntas dg satu media, pake ion exchange,??? itu medianya kayak kantong ajaibnya doraemon 😃😃😃",5,"ga mungkin lah efektif utk air kandungan besi, berkapur, kerak kuning dll beres cuma satu media, pake ion exchange?? itu medianya kaya kantong ajaibnya doraemon😃😃😃",negatif,negatif,3 kelas & binary
+233,7594263094596371216,Asal kau tak report polis???,1,asalkan kamu ga lapor polisi???,negatif,negatif,3 kelas & binary
+233,7594263094596371216,Asal kau tak report polis???,2,asal kau ga bikin laporan polis???,negatif,negatif,3 kelas & binary
+233,7594263094596371216,Asal kau tak report polis???,3,yg penting kau ga report ke polisi???,negatif,negatif,3 kelas & binary
+233,7594263094596371216,Asal kau tak report polis???,4,asal kau ga lapor ke polis???,negatif,negatif,3 kelas & binary
+233,7594263094596371216,Asal kau tak report polis???,5,asalkan kamu ga sampai report polisi???,negatif,negatif,3 kelas & binary
+234,7605200700973400840,lewat pas lg makan jirrr 😭,1,lewat pas lagi makan jir😭,negatif,negatif,3 kelas & binary
+234,7605200700973400840,lewat pas lg makan jirrr 😭,2,ganggu bgt lewat pas makan jirr😭,negatif,negatif,3 kelas & binary
+234,7605200700973400840,lewat pas lg makan jirrr 😭,3,kok lewat pas lagi makan jirr😭,negatif,negatif,3 kelas & binary
+234,7605200700973400840,lewat pas lg makan jirrr 😭,4,lewat waktu makan bgt jirr😭,negatif,negatif,3 kelas & binary
+234,7605200700973400840,lewat pas lg makan jirrr 😭,5,pas makan malah lewat jirr😭,negatif,negatif,3 kelas & binary
+235,7613813941562737415,aku makan ko dok tapi bnyk pikiran,1,aku makan kok dok tapi banyak pikiran,negatif,negatif,3 kelas & binary
+235,7613813941562737415,aku makan ko dok tapi bnyk pikiran,2,aku tetep makan dok tp pikiran banyak,negatif,negatif,3 kelas & binary
+235,7613813941562737415,aku makan ko dok tapi bnyk pikiran,3,makan sih dok tapi pikiranku banyak,negatif,negatif,3 kelas & binary
+235,7613813941562737415,aku makan ko dok tapi bnyk pikiran,4,aku makan ko dok tp lagi banyak pikiran,negatif,negatif,3 kelas & binary
+235,7613813941562737415,aku makan ko dok tapi bnyk pikiran,5,makan aja dok tapi pikiranku penuh,negatif,negatif,3 kelas & binary
+236,7595519365681709842,kenapa lwtnya wktu gue lgi makan?,1,kenapa lewatnya pas gue lagi makan?,negatif,negatif,3 kelas & binary
+236,7595519365681709842,kenapa lwtnya wktu gue lgi makan?,2,kok lewatnya waktu gue makan sih?,negatif,negatif,3 kelas & binary
+236,7595519365681709842,kenapa lwtnya wktu gue lgi makan?,3,napa lewat pas gue lagi makan?,negatif,negatif,3 kelas & binary
+236,7595519365681709842,kenapa lwtnya wktu gue lgi makan?,4,kenapa pas gue makan malah lewat?,negatif,negatif,3 kelas & binary
+236,7595519365681709842,kenapa lwtnya wktu gue lgi makan?,5,kok pas lagi makan malah lewat ya?,negatif,negatif,3 kelas & binary
+237,7595804757773337365,gelisah banget nontonnya😭,1,nontonnya bikin gelisah banget😭,negatif,negatif,3 kelas & binary
+237,7595804757773337365,gelisah banget nontonnya😭,2,gelisah bgt pas nonton ini😭,negatif,negatif,3 kelas & binary
+237,7595804757773337365,gelisah banget nontonnya😭,3,nonton ini bikin aku gelisah😭,negatif,negatif,3 kelas & binary
+237,7595804757773337365,gelisah banget nontonnya😭,4,bikin gelisah parah nontonnya😭,negatif,negatif,3 kelas & binary
+237,7595804757773337365,gelisah banget nontonnya😭,5,aku jadi gelisah banget nontonnya😭,negatif,negatif,3 kelas & binary

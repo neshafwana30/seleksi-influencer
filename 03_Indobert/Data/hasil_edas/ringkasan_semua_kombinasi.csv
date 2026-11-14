@@ -1,0 +1,10 @@
+skema,threshold_komentar,jumlah_influencer,top1,top1_AS
+3class,30,37,tirtacipeng,0.7479910605456827
+3class,50,37,tirtacipeng,0.7479910605456827
+3class,100,33,tirtacipeng,1.0
+3class_hanya_positif,30,37,fauzaannibras,0.749397625456921
+3class_hanya_positif,50,37,fauzaannibras,0.749397625456921
+3class_hanya_positif,100,33,tirtacipeng,0.9966847222162584
+binary,30,37,fauzaannibras,0.7952533435202584
+binary,50,37,fauzaannibras,0.7952533435202584
+binary,100,33,tirtacipeng,1.0

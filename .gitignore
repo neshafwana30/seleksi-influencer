@@ -228,6 +228,8 @@ tiktok_browser_profile_akun2
 final_cookie/
 raw_cookie/
 models/
-
+models_context/
+hasil_cv/
+settings.json
 
 config.json

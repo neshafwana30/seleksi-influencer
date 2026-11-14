@@ -1,0 +1,671 @@
+row_num,comment_id,original_text,variant_num,paraphrase_text,label_final,label_name,catatan_skema
+1,,"betul pak, tidak ada harga pastinya, tiap dokter gigi berbeda beda",1,"bener pak, ga ada harga pasti, tiap dokter gigi beda-beda",positif,non-negatif,3 kelas saja
+1,,"betul pak, tidak ada harga pastinya, tiap dokter gigi berbeda beda",2,"iya pak, memang ga ada harga tetap, tiap dokter gigi bervariasi",positif,non-negatif,3 kelas saja
+1,,"betul pak, tidak ada harga pastinya, tiap dokter gigi berbeda beda",3,"setuju pak, harganya ga pasti, beda-beda tiap dokter gigi",positif,non-negatif,3 kelas saja
+1,,"betul pak, tidak ada harga pastinya, tiap dokter gigi berbeda beda",4,"betul pak, harganya emang ga fix, tergantung dokter gigi masing-masing",positif,non-negatif,3 kelas saja
+1,,"betul pak, tidak ada harga pastinya, tiap dokter gigi berbeda beda",5,"iya pak, ga ada patokan harga pasti, tiap dokter gigi berbeda",positif,non-negatif,3 kelas saja
+2,,"Terima kasih, dibantu share konten edukasinya yang dianggap bermanfaat ya agar semakin banyak masyarakat yang memperoleh kemanfaatan 🥰🙏",1,"terima kasih, tolong dibantu share konten edukasi yg bermanfaat ini biar makin banyak masyarakat yg terbantu 🥰🙏",positif,non-negatif,3 kelas saja
+2,,"Terima kasih, dibantu share konten edukasinya yang dianggap bermanfaat ya agar semakin banyak masyarakat yang memperoleh kemanfaatan 🥰🙏",2,"makasih, mohon dibantu sebarin konten edukasinya yg bermanfaat biar masyarakat makin banyak yg dapat manfaat 🥰🙏",positif,non-negatif,3 kelas saja
+2,,"Terima kasih, dibantu share konten edukasinya yang dianggap bermanfaat ya agar semakin banyak masyarakat yang memperoleh kemanfaatan 🥰🙏",3,"terima kasih, bantu share ya konten edukasi ini yg bermanfaat biar makin banyak yg merasakan manfaatnya 🥰🙏",positif,non-negatif,3 kelas saja
+2,,"Terima kasih, dibantu share konten edukasinya yang dianggap bermanfaat ya agar semakin banyak masyarakat yang memperoleh kemanfaatan 🥰🙏",4,"makasih banyak, tolong dibantu sebarkan konten edukasi bermanfaat ini biar masyarakat luas kebagian manfaatnya 🥰🙏",positif,non-negatif,3 kelas saja
+2,,"Terima kasih, dibantu share konten edukasinya yang dianggap bermanfaat ya agar semakin banyak masyarakat yang memperoleh kemanfaatan 🥰🙏",5,"terimakasih, mohon bantuannya share konten edukasi ini biar manfaatnya nyampe ke lebih banyak masyarakat 🥰🙏",positif,non-negatif,3 kelas saja
+3,,"Betul, sebaiknya dgn vaksin yg sama dan di RS ready semua ya bu",1,"iya betul, sebaiknya pake vaksin yg sama dan di rs udah tersedia semua ya bu",positif,non-negatif,3 kelas saja
+3,,"Betul, sebaiknya dgn vaksin yg sama dan di RS ready semua ya bu",2,"bener, mendingan dgn vaksin yg sama dan rs udah siap semua ya bu",positif,non-negatif,3 kelas saja
+3,,"Betul, sebaiknya dgn vaksin yg sama dan di RS ready semua ya bu",3,"setuju, sebaiknya vaksinnya yg sama dan rs sudah ready semua ya bu",positif,non-negatif,3 kelas saja
+3,,"Betul, sebaiknya dgn vaksin yg sama dan di RS ready semua ya bu",4,"betul bu, mendingan vaksinnya sama dan di rs udah lengkap semua",positif,non-negatif,3 kelas saja
+3,,"Betul, sebaiknya dgn vaksin yg sama dan di RS ready semua ya bu",5,"iya bu, sebaiknya vaksin yg dipake sama dan rs udah siap sedia semua",positif,non-negatif,3 kelas saja
+4,,"makasi dok, dilakukan",1,"terima kasih dok, akan dilakukan",positif,non-negatif,3 kelas saja
+4,,"makasi dok, dilakukan",2,"makasih dok, nanti dicoba dilakukan",positif,non-negatif,3 kelas saja
+4,,"makasi dok, dilakukan",3,"makasih banyak dok, bakal aku lakukan",positif,non-negatif,3 kelas saja
+4,,"makasi dok, dilakukan",4,"terima kasih dok, oke akan dijalankan",positif,non-negatif,3 kelas saja
+4,,"makasi dok, dilakukan",5,"makasih dok, siap dilakukan ya",positif,non-negatif,3 kelas saja
+5,,"kak dokternya jelasin tentang bahaya jamur pada makanan, mungkin di bangka itu tradisi yaa. dan walaupun itu tradisi tapi disini dijelasin bahayanya menurut medis makan makanan yg sudah ada jamurnya..",1,"kak dokternya ngejelasin bahaya jamur di makanan, mungkin itu tradisi di bangka ya. walaupun tradisi, disini dijelasin bahayanya secara medis kalo makan makanan berjamur..",positif,non-negatif,3 kelas saja
+5,,"kak dokternya jelasin tentang bahaya jamur pada makanan, mungkin di bangka itu tradisi yaa. dan walaupun itu tradisi tapi disini dijelasin bahayanya menurut medis makan makanan yg sudah ada jamurnya..",2,"kak dokternya jelasin soal bahaya jamur pada makanan, kemungkinan di bangka itu memang tradisi. tapi meski tradisi, disini tetap dijelasin bahaya medisnya makan makanan berjamur..",positif,non-negatif,3 kelas saja
+5,,"kak dokternya jelasin tentang bahaya jamur pada makanan, mungkin di bangka itu tradisi yaa. dan walaupun itu tradisi tapi disini dijelasin bahayanya menurut medis makan makanan yg sudah ada jamurnya..",3,"kak, dokternya menjelaskan bahaya jamur di makanan, mungkin itu tradisi di bangka. walau tradisi, disini dijabarin bahaya medisnya makan makanan yg udah berjamur..",positif,non-negatif,3 kelas saja
+5,,"kak dokternya jelasin tentang bahaya jamur pada makanan, mungkin di bangka itu tradisi yaa. dan walaupun itu tradisi tapi disini dijelasin bahayanya menurut medis makan makanan yg sudah ada jamurnya..",4,"kak dokternya ngebahas bahaya jamur pada makanan, bisa jadi itu tradisi di bangka. tapi walaupun tradisi, disini tetap dijelasin resiko medisnya makan makanan berjamur..",positif,non-negatif,3 kelas saja
+5,,"kak dokternya jelasin tentang bahaya jamur pada makanan, mungkin di bangka itu tradisi yaa. dan walaupun itu tradisi tapi disini dijelasin bahayanya menurut medis makan makanan yg sudah ada jamurnya..",5,"kak dokter jelasin ttg bahaya jamur di makanan, mungkin itu tradisi daerah bangka. tapi meski begitu, disini dijelasin bahaya medisnya kalo makan makanan yg sudah jamuran..",positif,non-negatif,3 kelas saja
+6,,"Calon mentri kesehatan,,",1,"bakal calon menteri kesehatan nih,,",positif,non-negatif,3 kelas saja
+6,,"Calon mentri kesehatan,,",2,"ini sih calon menkes,,",positif,non-negatif,3 kelas saja
+6,,"Calon mentri kesehatan,,",3,"cocok jadi calon menteri kesehatan,,",positif,non-negatif,3 kelas saja
+6,,"Calon mentri kesehatan,,",4,"udah kayak calon menkes aja,,",positif,non-negatif,3 kelas saja
+6,,"Calon mentri kesehatan,,",5,"pantes jadi calon menteri kesehatan,,",positif,non-negatif,3 kelas saja
+8,,bersyukur bgt bisa diet sehat dan ngerti ilmunya🥰🥰🥰,1,seneng bgt bisa diet sehat dan paham ilmunya🥰🥰🥰,positif,non-negatif,3 kelas saja
+8,,bersyukur bgt bisa diet sehat dan ngerti ilmunya🥰🥰🥰,2,bersyukur banget bisa jalanin diet sehat sambil ngerti ilmu di baliknya🥰🥰🥰,positif,non-negatif,3 kelas saja
+8,,bersyukur bgt bisa diet sehat dan ngerti ilmunya🥰🥰🥰,3,alhamdulillah bisa diet sehat dan jadi ngerti ilmunya🥰🥰🥰,positif,non-negatif,3 kelas saja
+8,,bersyukur bgt bisa diet sehat dan ngerti ilmunya🥰🥰🥰,4,thankful bgt bisa diet sehat dan paham ilmu dibaliknya🥰🥰🥰,positif,non-negatif,3 kelas saja
+8,,bersyukur bgt bisa diet sehat dan ngerti ilmunya🥰🥰🥰,5,bersyukur sekali bisa diet dgn sehat dan jadi ngerti ilmunya🥰🥰🥰,positif,non-negatif,3 kelas saja
+10,,"pliss dok ttp share kek gini, karna campaign jaman sekarang kocak",1,"please dok terus share konten kaya ini, karena campaign jaman sekarang lucu bgt",positif,non-negatif,3 kelas saja
+10,,"pliss dok ttp share kek gini, karna campaign jaman sekarang kocak",2,"tolong dok tetep share yg kaya gini, soalnya campaign sekarang kocak",positif,non-negatif,3 kelas saja
+10,,"pliss dok ttp share kek gini, karna campaign jaman sekarang kocak",3,"plis dok lanjutin share konten kaya ini, campaign jaman now emang kocak",positif,non-negatif,3 kelas saja
+10,,"pliss dok ttp share kek gini, karna campaign jaman sekarang kocak",4,"mohon dok terus bikin konten kaya gini, campaign sekarang emang lucu",positif,non-negatif,3 kelas saja
+10,,"pliss dok ttp share kek gini, karna campaign jaman sekarang kocak",5,"please dok tetap share hal kaya ini, campaign jaman sekarang emang kocak bgt",positif,non-negatif,3 kelas saja
+11,,"terimakasih,🙏 buat informasi kesehatannya.",1,makasih🙏 buat info kesehatannya,positif,non-negatif,3 kelas saja
+11,,"terimakasih,🙏 buat informasi kesehatannya.",2,terima kasih🙏 atas informasi kesehatan ini,positif,non-negatif,3 kelas saja
+11,,"terimakasih,🙏 buat informasi kesehatannya.",3,makasih banyak🙏 utk informasi kesehatannya,positif,non-negatif,3 kelas saja
+11,,"terimakasih,🙏 buat informasi kesehatannya.",4,terimakasih🙏 buat infonya soal kesehatan,positif,non-negatif,3 kelas saja
+11,,"terimakasih,🙏 buat informasi kesehatannya.",5,makasih🙏 atas infonya ttg kesehatan,positif,non-negatif,3 kelas saja
+14,,"Suka banget pake pasta gigi ini, warnanya bening jg ga ada pewarnanya 😍 ga bikin mulut bau",1,"suka bgt pake pasta gigi ini, bening warnanya dan ga ada pewarna juga😍 ga bikin mulut bau",positif,non-negatif,3 kelas saja
+14,,"Suka banget pake pasta gigi ini, warnanya bening jg ga ada pewarnanya 😍 ga bikin mulut bau",2,"demen banget pasta gigi ini, warnanya jernih tanpa pewarna😍 mulut jg ga bau",positif,non-negatif,3 kelas saja
+14,,"Suka banget pake pasta gigi ini, warnanya bening jg ga ada pewarnanya 😍 ga bikin mulut bau",3,"aku suka bgt pasta gigi ini, bening ga pake pewarna😍 mulut ga jadi bau",positif,non-negatif,3 kelas saja
+14,,"Suka banget pake pasta gigi ini, warnanya bening jg ga ada pewarnanya 😍 ga bikin mulut bau",4,"suka deh pasta gigi ini, warnanya bening tanpa pewarna😍 ga bikin mulut bau juga",positif,non-negatif,3 kelas saja
+14,,"Suka banget pake pasta gigi ini, warnanya bening jg ga ada pewarnanya 😍 ga bikin mulut bau",5,"demen bgt sama pasta gigi ini, bening tanpa pewarna😍 mulut jd ga bau",positif,non-negatif,3 kelas saja
+15,,salep miconazole the best plus ketozonazole juga,1,"salep miconazole paling bagus, plus ketozonazole jg mantap",positif,non-negatif,3 kelas saja
+15,,salep miconazole the best plus ketozonazole juga,2,"miconazole salep terbaik, ketozonazole jg bagus",positif,non-negatif,3 kelas saja
+15,,salep miconazole the best plus ketozonazole juga,3,"salep miconazole emang top, ketozonazole jg ga kalah bagus",positif,non-negatif,3 kelas saja
+15,,salep miconazole the best plus ketozonazole juga,4,"miconazole the best, ketozonazole juga mantap",positif,non-negatif,3 kelas saja
+15,,salep miconazole the best plus ketozonazole juga,5,"salep miconazole paling ampuh, ketozonazole juga oke",positif,non-negatif,3 kelas saja
+16,,asbun bgt ya Allah ngakak😭,1,"asal bunyi bgt ya Allah, ngakak aku😭",positif,non-negatif,3 kelas saja
+16,,asbun bgt ya Allah ngakak😭,2,"ya Allah asbun banget, ngakak parah😭",positif,non-negatif,3 kelas saja
+16,,asbun bgt ya Allah ngakak😭,3,"asbun amat ya Allah, bikin ngakak😭",positif,non-negatif,3 kelas saja
+16,,asbun bgt ya Allah ngakak😭,4,"ya Allah ngomong asbun bgt, aku ngakak😭",positif,non-negatif,3 kelas saja
+16,,asbun bgt ya Allah ngakak😭,5,"asbun parah ya Allah, ngakak sendiri😭",positif,non-negatif,3 kelas saja
+18,,mksh dokter tirta.. sll memberi informasi ttg kesehatan. kita jd tahu bgmn cara menjaga kesehatan,1,makasih dokter tirta.. selalu ngasih info soal kesehatan. jadi tau cara jaga kesehatan,positif,non-negatif,3 kelas saja
+18,,mksh dokter tirta.. sll memberi informasi ttg kesehatan. kita jd tahu bgmn cara menjaga kesehatan,2,terima kasih dokter tirta.. terus ngasih informasi kesehatan. kita jadi ngerti cara jaga kesehatan,positif,non-negatif,3 kelas saja
+18,,mksh dokter tirta.. sll memberi informasi ttg kesehatan. kita jd tahu bgmn cara menjaga kesehatan,3,makasih dokter tirta.. selalu berbagi info kesehatan. kita jadi tau gimana jaga kesehatan,positif,non-negatif,3 kelas saja
+18,,mksh dokter tirta.. sll memberi informasi ttg kesehatan. kita jd tahu bgmn cara menjaga kesehatan,4,mksh dokter tirta.. terus kasih edukasi kesehatan. kita jd ngerti cara menjaga kesehatan,positif,non-negatif,3 kelas saja
+18,,mksh dokter tirta.. sll memberi informasi ttg kesehatan. kita jd tahu bgmn cara menjaga kesehatan,5,terimakasih dokter tirta.. selalu memberi informasi kesehatan terus. kita jd paham cara jaga kesehatan,positif,non-negatif,3 kelas saja
+19,,"nah ini, gua setuju banget. orang yang koar koar minum kopi buat ilangin kantuk, padahal faktanya kopi non sugar itu kandungan kafeinnya lebih banyak dibanding yang pake gula. terus orang yang koar koar minum kopi karna suka, pas dikasih americano malah dilepeh 😭. jadi, suka kopinya atau gulanya? 😹",1,"nah ini, gue setuju bgt. org yg heboh minum kopi buat ngilangin kantuk, padahal faktanya kopi non sugar kafeinnya lebih banyak dibanding yg pake gula. terus org yg heboh minum kopi krn suka, pas dikasih americano malah dilepeh😭. jd suka kopinya atau gulanya?😹",positif,non-negatif,3 kelas saja
+19,,"nah ini, gua setuju banget. orang yang koar koar minum kopi buat ilangin kantuk, padahal faktanya kopi non sugar itu kandungan kafeinnya lebih banyak dibanding yang pake gula. terus orang yang koar koar minum kopi karna suka, pas dikasih americano malah dilepeh 😭. jadi, suka kopinya atau gulanya? 😹",2,"nah bener ini, gw setuju bgt. org yg koar2 minum kopi buat ngusir kantuk, padahal kopi non sugar kafeinnya lbh banyak dr yg pake gula. terus org yg katanya suka kopi, pas dikasih americano malah dilepeh😭. jadi suka kopi apa gulanya?😹",positif,non-negatif,3 kelas saja
+19,,"nah ini, gua setuju banget. orang yang koar koar minum kopi buat ilangin kantuk, padahal faktanya kopi non sugar itu kandungan kafeinnya lebih banyak dibanding yang pake gula. terus orang yang koar koar minum kopi karna suka, pas dikasih americano malah dilepeh 😭. jadi, suka kopinya atau gulanya? 😹",3,"ini setuju gw banget. org yg ribut minum kopi buat ngilangin kantuk, padahal faktanya kopi non sugar kafeinnya lebih banyak dr yg bergula. terus org yg suka kopi, pas dikasih americano malah ga mau😭. jd suka kopinya atau gulanya?😹",positif,non-negatif,3 kelas saja
+19,,"nah ini, gua setuju banget. orang yang koar koar minum kopi buat ilangin kantuk, padahal faktanya kopi non sugar itu kandungan kafeinnya lebih banyak dibanding yang pake gula. terus orang yang koar koar minum kopi karna suka, pas dikasih americano malah dilepeh 😭. jadi, suka kopinya atau gulanya? 😹",4,"setuju bgt nih gw sama ini. org yg koar2 minum kopi buat ngilangin kantuk, padahal faktanya kopi tanpa gula kafeinnya lbh tinggi dr yg bergula. terus pas dikasih americano malah dilepeh😭. jd sebenernya suka kopi atau gulanya?😹",positif,non-negatif,3 kelas saja
+19,,"nah ini, gua setuju banget. orang yang koar koar minum kopi buat ilangin kantuk, padahal faktanya kopi non sugar itu kandungan kafeinnya lebih banyak dibanding yang pake gula. terus orang yang koar koar minum kopi karna suka, pas dikasih americano malah dilepeh 😭. jadi, suka kopinya atau gulanya? 😹",5,"nah ini bener, gw setuju banget. org yg heboh bilang minum kopi buat ilangin kantuk, padahal kopi non sugar kafeinnya lebih tinggi dr yg bergula. terus pas dikasih americano malah ditolak😭. jd suka kopinya apa gulanya sih?😹",positif,non-negatif,3 kelas saja
+20,,soalnya Daviena aku pakek bagus bgt,1,soalnya aku pake daviena bagus bgt hasilnya,positif,non-negatif,3 kelas saja
+20,,soalnya Daviena aku pakek bagus bgt,2,krn daviena yg aku pake bagus banget,positif,non-negatif,3 kelas saja
+20,,soalnya Daviena aku pakek bagus bgt,3,soalnya daviena pas aku pakai bagus bgt,positif,non-negatif,3 kelas saja
+20,,soalnya Daviena aku pakek bagus bgt,4,karna aku pakai daviena hasilnya bagus banget,positif,non-negatif,3 kelas saja
+20,,soalnya Daviena aku pakek bagus bgt,5,soalnya pake daviena hasilnya bagus bgt buat aku,positif,non-negatif,3 kelas saja
+21,,cara ngomong dr gia.. ringan santai enak d dengar,1,cara bicara dr gia santai dan enak didengar,positif,non-negatif,3 kelas saja
+21,,cara ngomong dr gia.. ringan santai enak d dengar,2,"gaya ngomong dr gia ringan, santai, enak dengernya",positif,non-negatif,3 kelas saja
+21,,cara ngomong dr gia.. ringan santai enak d dengar,3,"dr gia ngomongnya ringan santai, enak banget didengar",positif,non-negatif,3 kelas saja
+21,,cara ngomong dr gia.. ringan santai enak d dengar,4,"cara dr gia ngomong tuh ringan dan santai, nyaman didengar",positif,non-negatif,3 kelas saja
+21,,cara ngomong dr gia.. ringan santai enak d dengar,5,"gaya bicara dr gia santai banget, enak bgt didengarnya",positif,non-negatif,3 kelas saja
+22,,"bagus, tergantung tipe kulit nya",1,"bagus sih, tapi tergantung tipe kulit",positif,non-negatif,3 kelas saja
+22,,"bagus, tergantung tipe kulit nya",2,"oke, tapi balik lagi ke tipe kulit",positif,non-negatif,3 kelas saja
+22,,"bagus, tergantung tipe kulit nya",3,"bagus, tergantung jenis kulitnya juga",positif,non-negatif,3 kelas saja
+22,,"bagus, tergantung tipe kulit nya",4,"bagus, cuma ya tergantung tipe kulit masing-masing",positif,non-negatif,3 kelas saja
+22,,"bagus, tergantung tipe kulit nya",5,"bagus, semua balik ke tipe kulit sih",positif,non-negatif,3 kelas saja
+23,,"padahal air putih dingin lebih enak loh. daripada minuman yg manis"""" kaya gitu.",1,"padahal air putih dingin lebih enak lho, daripada minuman manis kaya gitu",positif,non-negatif,3 kelas saja
+23,,"padahal air putih dingin lebih enak loh. daripada minuman yg manis"""" kaya gitu.",2,"padahal minum air putih dingin lebih nikmat, dibanding minuman manis begitu",positif,non-negatif,3 kelas saja
+23,,"padahal air putih dingin lebih enak loh. daripada minuman yg manis"""" kaya gitu.",3,"padahal air putih yg dingin lebih enak, daripada minuman yg manis² gitu",positif,non-negatif,3 kelas saja
+23,,"padahal air putih dingin lebih enak loh. daripada minuman yg manis"""" kaya gitu.",4,"padahal air dingin biasa lebih enak lho, daripada minuman manis kaya itu",positif,non-negatif,3 kelas saja
+23,,"padahal air putih dingin lebih enak loh. daripada minuman yg manis"""" kaya gitu.",5,"padahal air putih dingin itu lebih sedap, dibanding minuman manis kaya gitu",positif,non-negatif,3 kelas saja
+27,,salfok sm dokter nya...ganteeng😂,1,salah fokus sama dokternya...ganteng bgt😂,positif,non-negatif,3 kelas saja
+27,,salfok sm dokter nya...ganteeng😂,2,aku salfok sm dokternya...ganteng parah😂,positif,non-negatif,3 kelas saja
+27,,salfok sm dokter nya...ganteeng😂,3,salfok deh sm dokter nya...ganteng amat😂,positif,non-negatif,3 kelas saja
+27,,salfok sm dokter nya...ganteeng😂,4,jadi salfok sama dokternya...ganteng bener😂,positif,non-negatif,3 kelas saja
+27,,salfok sm dokter nya...ganteeng😂,5,salfok nih sama dokternya...ganteng banget😂,positif,non-negatif,3 kelas saja
+28,,"BENEEER, mau negur itu kadang takut tersinggung dan takut ngamuk😭😭 sering bngt ketemu orng"" begitu di tmpt umum",1,"bener banget, mau negur itu kadang takut org tersinggung dan takut ngamuk😭😭 sering ketemu org begitu di tempat umum",positif,non-negatif,3 kelas saja
+28,,"BENEEER, mau negur itu kadang takut tersinggung dan takut ngamuk😭😭 sering bngt ketemu orng"" begitu di tmpt umum",2,"setuju bgt, mau negur suka takut org tersinggung sama takut ngamuk😭😭 suka banget ketemu org kaya gitu di tmpt umum",positif,non-negatif,3 kelas saja
+28,,"BENEEER, mau negur itu kadang takut tersinggung dan takut ngamuk😭😭 sering bngt ketemu orng"" begitu di tmpt umum",3,"bener bgt, mau negur kadang takut bikin tersinggung org dan takut dimarahin😭😭 sering ketemu org begitu di tmpt umum",positif,non-negatif,3 kelas saja
+28,,"BENEEER, mau negur itu kadang takut tersinggung dan takut ngamuk😭😭 sering bngt ketemu orng"" begitu di tmpt umum",4,"iya bener, mau negur itu takutnya bikin tersinggung dan ngamuk😭😭 sering bgt nemu org kaya gitu di tmpt umum",positif,non-negatif,3 kelas saja
+28,,"BENEEER, mau negur itu kadang takut tersinggung dan takut ngamuk😭😭 sering bngt ketemu orng"" begitu di tmpt umum",5,"bener banget, mau negur suka takut org sakit hati dan ngamuk😭😭 sering ketemu tipe org gitu di tmpt umum",positif,non-negatif,3 kelas saja
+29,,Alhamdulillah sehat selalu dokter,1,alhamdulillah dokter selalu sehat,positif,non-negatif,3 kelas saja
+29,,Alhamdulillah sehat selalu dokter,2,alhamdulillah sehat terus ya dokter,positif,non-negatif,3 kelas saja
+29,,Alhamdulillah sehat selalu dokter,3,alhamdulillah dokternya sehat selalu,positif,non-negatif,3 kelas saja
+29,,Alhamdulillah sehat selalu dokter,4,syukur dokter selalu dalam keadaan sehat,positif,non-negatif,3 kelas saja
+29,,Alhamdulillah sehat selalu dokter,5,alhamdulillah semoga dokter sehat terus,positif,non-negatif,3 kelas saja
+31,,terimakasih dokter gia 🥰,1,makasih dokter gia 🥰,positif,non-negatif,3 kelas saja
+31,,terimakasih dokter gia 🥰,2,terima kasih banyak dokter gia 🥰,positif,non-negatif,3 kelas saja
+31,,terimakasih dokter gia 🥰,3,makasih ya dokter gia 🥰,positif,non-negatif,3 kelas saja
+31,,terimakasih dokter gia 🥰,4,thank you dokter gia 🥰,positif,non-negatif,3 kelas saja
+31,,terimakasih dokter gia 🥰,5,terimakasih byk dokter gia 🥰,positif,non-negatif,3 kelas saja
+32,,gemes denger kk dokter ngomong🥰,1,gemes bgt denger kk dokter ngomong🥰,positif,non-negatif,3 kelas saja
+32,,gemes denger kk dokter ngomong🥰,2,gemesin banget suara kk dokter🥰,positif,non-negatif,3 kelas saja
+32,,gemes denger kk dokter ngomong🥰,3,gemes aku denger kk dokter bicara🥰,positif,non-negatif,3 kelas saja
+32,,gemes denger kk dokter ngomong🥰,4,gemesin bgt pas kk dokter ngomong🥰,positif,non-negatif,3 kelas saja
+32,,gemes denger kk dokter ngomong🥰,5,gemes bener denger kk dokter ngomong🥰,positif,non-negatif,3 kelas saja
+33,,thanks Dokter🙏,1,makasih dokter🙏,positif,non-negatif,3 kelas saja
+33,,thanks Dokter🙏,2,thank you dokter🙏,positif,non-negatif,3 kelas saja
+33,,thanks Dokter🙏,3,terima kasih dokter🙏,positif,non-negatif,3 kelas saja
+33,,thanks Dokter🙏,4,thanks banyak dokter🙏,positif,non-negatif,3 kelas saja
+33,,thanks Dokter🙏,5,makasih banget dokter🙏,positif,non-negatif,3 kelas saja
+34,,"Makasi dok, aku coba dengerin sambil push up juga",1,"terima kasih dok, aku coba sambil push up juga dengerinnya",positif,non-negatif,3 kelas saja
+34,,"Makasi dok, aku coba dengerin sambil push up juga",2,"makasih dok, aku dengerin sambil push up jg",positif,non-negatif,3 kelas saja
+34,,"Makasi dok, aku coba dengerin sambil push up juga",3,"makasi dok, bakal aku coba dengerin pas push up jg",positif,non-negatif,3 kelas saja
+34,,"Makasi dok, aku coba dengerin sambil push up juga",4,"makasih dok, aku coba sambil push up sekalian dengerin",positif,non-negatif,3 kelas saja
+34,,"Makasi dok, aku coba dengerin sambil push up juga",5,"makasi dok, nanti dengerin sambil push up jg aku",positif,non-negatif,3 kelas saja
+36,,"Alhamdulillah terima kasih Bu dokter atas ilmu yg di bagikan,🙏🙏🙏",1,"alhamdulillah makasih bu dokter buat ilmu yg dibagikan,🙏🙏🙏",positif,non-negatif,3 kelas saja
+36,,"Alhamdulillah terima kasih Bu dokter atas ilmu yg di bagikan,🙏🙏🙏",2,"alhamdulillah terima kasih bu dokter atas ilmunya,🙏🙏🙏",positif,non-negatif,3 kelas saja
+36,,"Alhamdulillah terima kasih Bu dokter atas ilmu yg di bagikan,🙏🙏🙏",3,"alhamdulillah makasih banyak bu dokter atas ilmu yg dibagi,🙏🙏🙏",positif,non-negatif,3 kelas saja
+36,,"Alhamdulillah terima kasih Bu dokter atas ilmu yg di bagikan,🙏🙏🙏",4,"alhamdulillah terimakasih bu dokter udah bagiin ilmunya,🙏🙏🙏",positif,non-negatif,3 kelas saja
+36,,"Alhamdulillah terima kasih Bu dokter atas ilmu yg di bagikan,🙏🙏🙏",5,"alhamdulillah makasih bu dokter atas ilmu yg sudah dibagikan,🙏🙏🙏",positif,non-negatif,3 kelas saja
+37,,sehat selalu dok,1,sehat terus ya dok,positif,non-negatif,3 kelas saja
+37,,sehat selalu dok,2,semoga sehat selalu dok,positif,non-negatif,3 kelas saja
+37,,sehat selalu dok,3,sehat selalu ya dokter,positif,non-negatif,3 kelas saja
+37,,sehat selalu dok,4,sehat terus dok,positif,non-negatif,3 kelas saja
+37,,sehat selalu dok,5,semoga dok sehat selalu,positif,non-negatif,3 kelas saja
+38,,cantik banget 🤣🤩🤗🥳🤩🤩🥳,1,cantik bgt deh 🤣🤩🤗🥳🤩🤩🥳,positif,non-negatif,3 kelas saja
+38,,cantik banget 🤣🤩🤗🥳🤩🤩🥳,2,cantik parah 🤣🤩🤗🥳🤩🤩🥳,positif,non-negatif,3 kelas saja
+38,,cantik banget 🤣🤩🤗🥳🤩🤩🥳,3,cantik bener 🤣🤩🤗🥳🤩🤩🥳,positif,non-negatif,3 kelas saja
+38,,cantik banget 🤣🤩🤗🥳🤩🤩🥳,4,cantik amat 🤣🤩🤗🥳🤩🤩🥳,positif,non-negatif,3 kelas saja
+38,,cantik banget 🤣🤩🤗🥳🤩🤩🥳,5,cantik banget deh ini 🤣🤩🤗🥳🤩🤩🥳,positif,non-negatif,3 kelas saja
+39,,"lepaskan.. maafkan...biarkan pergii.. 😁 terima kasih dok, utk pencerahannya 😊",1,lepaskan.. maafkan.. biarkan pergi.. 😁 makasih dok buat pencerahannya 😊,positif,non-negatif,3 kelas saja
+39,,"lepaskan.. maafkan...biarkan pergii.. 😁 terima kasih dok, utk pencerahannya 😊",2,ikhlaskan.. maafkan.. biarkan berlalu.. 😁 terima kasih dok atas pencerahannya 😊,positif,non-negatif,3 kelas saja
+39,,"lepaskan.. maafkan...biarkan pergii.. 😁 terima kasih dok, utk pencerahannya 😊",3,lepasin.. maafin.. biarin pergi.. 😁 makasih dok utk pencerahan ini 😊,positif,non-negatif,3 kelas saja
+39,,"lepaskan.. maafkan...biarkan pergii.. 😁 terima kasih dok, utk pencerahannya 😊",4,lepaskan.. maafkan.. biarkan pergi aja.. 😁 terimakasih dok atas pencerahannya 😊,positif,non-negatif,3 kelas saja
+39,,"lepaskan.. maafkan...biarkan pergii.. 😁 terima kasih dok, utk pencerahannya 😊",5,ikhlaskan.. maafkan.. lepaskan pergi.. 😁 makasih banyak dok buat pencerahannya 😊,positif,non-negatif,3 kelas saja
+40,,"selamat Dok, semangat trus bareng 2 dokter gen Z itu😅",1,"selamat dok, semangat terus bareng dua dokter gen z itu😅",positif,non-negatif,3 kelas saja
+40,,"selamat Dok, semangat trus bareng 2 dokter gen Z itu😅",2,"congrats dok, tetap semangat sama 2 dokter gen z itu😅",positif,non-negatif,3 kelas saja
+40,,"selamat Dok, semangat trus bareng 2 dokter gen Z itu😅",3,"selamat ya dok, semangat trus bersama 2 dokter gen z😅",positif,non-negatif,3 kelas saja
+40,,"selamat Dok, semangat trus bareng 2 dokter gen Z itu😅",4,"selamat dok, semangat selalu sama dua dokter gen z itu😅",positif,non-negatif,3 kelas saja
+40,,"selamat Dok, semangat trus bareng 2 dokter gen Z itu😅",5,"congrats dok, semangat terus bareng duo dokter gen z itu😅",positif,non-negatif,3 kelas saja
+41,,bangeeet dok,1,banget dok,positif,non-negatif,3 kelas saja
+41,,bangeeet dok,2,bener bgt dok,positif,non-negatif,3 kelas saja
+41,,bangeeet dok,3,banget banget dok,positif,non-negatif,3 kelas saja
+41,,bangeeet dok,4,parah bgt dok,positif,non-negatif,3 kelas saja
+41,,bangeeet dok,5,amat bgt dok,positif,non-negatif,3 kelas saja
+42,,bener Bu dokter,1,betul bu dokter,positif,non-negatif,3 kelas saja
+42,,bener Bu dokter,2,iya bener bu dokter,positif,non-negatif,3 kelas saja
+42,,bener Bu dokter,3,bener banget bu dokter,positif,non-negatif,3 kelas saja
+42,,bener Bu dokter,4,setuju bu dokter,positif,non-negatif,3 kelas saja
+42,,bener Bu dokter,5,bener tuh bu dokter,positif,non-negatif,3 kelas saja
+43,,pengen ketemu dokter ini tapi jauhh..,1,mau ketemu dokter ini tp jauh bgt..,positif,non-negatif,3 kelas saja
+43,,pengen ketemu dokter ini tapi jauhh..,2,pengen banget ketemu dokter ini tapi lokasinya jauh..,positif,non-negatif,3 kelas saja
+43,,pengen ketemu dokter ini tapi jauhh..,3,ingin ketemu dokter ini tapi jauh amat..,positif,non-negatif,3 kelas saja
+43,,pengen ketemu dokter ini tapi jauhh..,4,pengen bgt ketemu dokter ini sayangnya jauh..,positif,non-negatif,3 kelas saja
+43,,pengen ketemu dokter ini tapi jauhh..,5,mau ketemu dokter ini tapi jaraknya jauh..,positif,non-negatif,3 kelas saja
+44,,sehat & bahagia selalu dok ❤️,1,sehat dan bahagia terus dok ❤️,positif,non-negatif,3 kelas saja
+44,,sehat & bahagia selalu dok ❤️,2,semoga sehat & bahagia selalu dok ❤️,positif,non-negatif,3 kelas saja
+44,,sehat & bahagia selalu dok ❤️,3,sehat bahagia selalu ya dok ❤️,positif,non-negatif,3 kelas saja
+44,,sehat & bahagia selalu dok ❤️,4,sehat & happy terus dok ❤️,positif,non-negatif,3 kelas saja
+44,,sehat & bahagia selalu dok ❤️,5,semoga sehat dan bahagia terus dok ❤️,positif,non-negatif,3 kelas saja
+45,,matur suwon edukasinya p dokter 🙏,1,terima kasih edukasinya pak dokter 🙏,positif,non-negatif,3 kelas saja
+45,,matur suwon edukasinya p dokter 🙏,2,matur nuwun edukasinya pak dokter 🙏,positif,non-negatif,3 kelas saja
+45,,matur suwon edukasinya p dokter 🙏,3,makasih banyak edukasinya pak dokter 🙏,positif,non-negatif,3 kelas saja
+45,,matur suwon edukasinya p dokter 🙏,4,matur suwon atas edukasinya pak dokter 🙏,positif,non-negatif,3 kelas saja
+45,,matur suwon edukasinya p dokter 🙏,5,terimakasih byk edukasinya pak dokter 🙏,positif,non-negatif,3 kelas saja
+46,,part tergilo tapi kok yo mengedukasi,1,bagian tergila tapi kok ya mengedukasi,positif,non-negatif,3 kelas saja
+46,,part tergilo tapi kok yo mengedukasi,2,part paling gila tapi malah mendidik,positif,non-negatif,3 kelas saja
+46,,part tergilo tapi kok yo mengedukasi,3,bagian paling absurd tapi ternyata mengedukasi,positif,non-negatif,3 kelas saja
+46,,part tergilo tapi kok yo mengedukasi,4,part paling gokil tapi kok tetep mengedukasi,positif,non-negatif,3 kelas saja
+46,,part tergilo tapi kok yo mengedukasi,5,part tergila tapi anehnya mengedukasi juga,positif,non-negatif,3 kelas saja
+47,,dokk suka banget sama alisnyaaaaaaa🥰,1,dok suka bgt sama alisnya🥰,positif,non-negatif,3 kelas saja
+47,,dokk suka banget sama alisnyaaaaaaa🥰,2,aku suka banget alisnya dok🥰,positif,non-negatif,3 kelas saja
+47,,dokk suka banget sama alisnyaaaaaaa🥰,3,dok demen bgt sama alisnya🥰,positif,non-negatif,3 kelas saja
+47,,dokk suka banget sama alisnyaaaaaaa🥰,4,suka parah sama alisnya dok🥰,positif,non-negatif,3 kelas saja
+47,,dokk suka banget sama alisnyaaaaaaa🥰,5,dok gemes bgt sama alisnya🥰,positif,non-negatif,3 kelas saja
+48,,baik dok terimakasih banyak,1,oke dok terima kasih banyak,positif,non-negatif,3 kelas saja
+48,,baik dok terimakasih banyak,2,baik dok makasih banyak ya,positif,non-negatif,3 kelas saja
+48,,baik dok terimakasih banyak,3,"baik dok, terimakasih byk",positif,non-negatif,3 kelas saja
+48,,baik dok terimakasih banyak,4,"oke dok, makasih byk ya",positif,non-negatif,3 kelas saja
+48,,baik dok terimakasih banyak,5,"baik dok, makasih sangat banyak",positif,non-negatif,3 kelas saja
+49,,Salam sehat 💪💪 Thank edukasinya nya ....Dokk 🙏,1,salam sehat 💪💪 makasih edukasinya dok 🙏,positif,non-negatif,3 kelas saja
+49,,Salam sehat 💪💪 Thank edukasinya nya ....Dokk 🙏,2,salam sehat 💪💪 terima kasih edukasinya dok 🙏,positif,non-negatif,3 kelas saja
+49,,Salam sehat 💪💪 Thank edukasinya nya ....Dokk 🙏,3,salam sehat 💪💪 thanks edukasinya ya dok 🙏,positif,non-negatif,3 kelas saja
+49,,Salam sehat 💪💪 Thank edukasinya nya ....Dokk 🙏,4,salam sehat 💪💪 makasih byk edukasinya dok 🙏,positif,non-negatif,3 kelas saja
+49,,Salam sehat 💪💪 Thank edukasinya nya ....Dokk 🙏,5,salam sehat 💪💪 thank you edukasinya dok 🙏,positif,non-negatif,3 kelas saja
+50,,hr ni sy sdh masuk 6 hari berhenti merokok...🥰🥰🥰,1,hari ini saya udah masuk hari ke-6 berhenti merokok...🥰🥰🥰,positif,non-negatif,3 kelas saja
+50,,hr ni sy sdh masuk 6 hari berhenti merokok...🥰🥰🥰,2,hari ini sy sudah 6 hari berhenti ngerokok...🥰🥰🥰,positif,non-negatif,3 kelas saja
+50,,hr ni sy sdh masuk 6 hari berhenti merokok...🥰🥰🥰,3,hari ini udah 6 hari sy stop merokok...🥰🥰🥰,positif,non-negatif,3 kelas saja
+50,,hr ni sy sdh masuk 6 hari berhenti merokok...🥰🥰🥰,4,hr ini sy sdh 6 hari ga ngerokok...🥰🥰🥰,positif,non-negatif,3 kelas saja
+50,,hr ni sy sdh masuk 6 hari berhenti merokok...🥰🥰🥰,5,hari ini masuk hari keenam sy berhenti merokok...🥰🥰🥰,positif,non-negatif,3 kelas saja
+51,,ikut ngakak dok😂😂,1,jadi ikut ngakak dok😂😂,positif,non-negatif,3 kelas saja
+51,,ikut ngakak dok😂😂,2,ikutan ngakak dok😂😂,positif,non-negatif,3 kelas saja
+51,,ikut ngakak dok😂😂,3,ikut ketawa dok😂😂,positif,non-negatif,3 kelas saja
+51,,ikut ngakak dok😂😂,4,aku jg ngakak dok😂😂,positif,non-negatif,3 kelas saja
+51,,ikut ngakak dok😂😂,5,ikutan ketawa dok😂😂,positif,non-negatif,3 kelas saja
+52,,betu2 dok,1,bener² dok,positif,non-negatif,3 kelas saja
+52,,betu2 dok,2,betul bgt dok,positif,non-negatif,3 kelas saja
+52,,betu2 dok,3,bener bener dok,positif,non-negatif,3 kelas saja
+52,,betu2 dok,4,betul banget dok,positif,non-negatif,3 kelas saja
+52,,betu2 dok,5,iya betul dok,positif,non-negatif,3 kelas saja
+53,,Seandainya rekan kerja q se care dr gia pasti seneng banget😢,1,seandainya temen kerjaku se-care dr gia pasti senang banget😢,positif,non-negatif,3 kelas saja
+53,,Seandainya rekan kerja q se care dr gia pasti seneng banget😢,2,kalo aja rekan kerjaku secare dr gia bakal senang bgt😢,positif,non-negatif,3 kelas saja
+53,,Seandainya rekan kerja q se care dr gia pasti seneng banget😢,3,andai rekan kerjaku care kaya dr gia pasti seneng banget😢,positif,non-negatif,3 kelas saja
+53,,Seandainya rekan kerja q se care dr gia pasti seneng banget😢,4,seandainya temen kerja q care seperti dr gia pasti senang bgt😢,positif,non-negatif,3 kelas saja
+53,,Seandainya rekan kerja q se care dr gia pasti seneng banget😢,5,kalo rekan kerjaku secare dr gia aku pasti seneng banget😢,positif,non-negatif,3 kelas saja
+54,,"IHHH KAPAANNN TAYAANGG, CAN'T WAIT 🤍🤍",1,"ihh kapan tayang nih, ga sabar banget 🤍🤍",positif,non-negatif,3 kelas saja
+54,,"IHHH KAPAANNN TAYAANGG, CAN'T WAIT 🤍🤍",2,"ih kapan ya tayangnya, ga sabar nunggu 🤍🤍",positif,non-negatif,3 kelas saja
+54,,"IHHH KAPAANNN TAYAANGG, CAN'T WAIT 🤍🤍",3,"ihh kapan nih tayangnya, can't wait bgt 🤍🤍",positif,non-negatif,3 kelas saja
+54,,"IHHH KAPAANNN TAYAANGG, CAN'T WAIT 🤍🤍",4,"ih kapan tayang, udah ga sabar 🤍🤍",positif,non-negatif,3 kelas saja
+54,,"IHHH KAPAANNN TAYAANGG, CAN'T WAIT 🤍🤍",5,"ihh kapan ya ini tayang, ga tahan nunggu 🤍🤍",positif,non-negatif,3 kelas saja
+56,,segitu aja udah bagus bgt,1,sebanyak itu aja udah bagus banget,positif,non-negatif,3 kelas saja
+56,,segitu aja udah bagus bgt,2,segitu doang udah bagus bgt,positif,non-negatif,3 kelas saja
+56,,segitu aja udah bagus bgt,3,udah bagus banget segitu aja,positif,non-negatif,3 kelas saja
+56,,segitu aja udah bagus bgt,4,cuma segitu aja udah bagus parah,positif,non-negatif,3 kelas saja
+56,,segitu aja udah bagus bgt,5,segitu udah bagus banget sih,positif,non-negatif,3 kelas saja
+57,,nah bener 🤣,1,iya bener 🤣,positif,non-negatif,3 kelas saja
+57,,nah bener 🤣,2,bener tuh 🤣,positif,non-negatif,3 kelas saja
+57,,nah bener 🤣,3,nah betul 🤣,positif,non-negatif,3 kelas saja
+57,,nah bener 🤣,4,setuju bener 🤣,positif,non-negatif,3 kelas saja
+57,,nah bener 🤣,5,nah iya bener 🤣,positif,non-negatif,3 kelas saja
+58,,"setuju rajin STR bikin bdn enak,lari makin kenceng & ga gmpg skt",1,"setuju, rajin str bikin badan enak, lari makin kencang dan ga gampang sakit",positif,non-negatif,3 kelas saja
+58,,"setuju rajin STR bikin bdn enak,lari makin kenceng & ga gmpg skt",2,"bener, rajin str bikin bdn jd enak, larinya makin kenceng dan ga mudah sakit",positif,non-negatif,3 kelas saja
+58,,"setuju rajin STR bikin bdn enak,lari makin kenceng & ga gmpg skt",3,"setuju bgt, rajin str bikin badan nyaman, lari lbh kenceng dan jarang sakit",positif,non-negatif,3 kelas saja
+58,,"setuju rajin STR bikin bdn enak,lari makin kenceng & ga gmpg skt",4,"bener, kalo rajin str badan jd enak, lari makin kencang & ga gampang sakit",positif,non-negatif,3 kelas saja
+58,,"setuju rajin STR bikin bdn enak,lari makin kenceng & ga gmpg skt",5,"setuju, str yg rajin bikin bdn enak, larinya kenceng dan ga mudah sakit",positif,non-negatif,3 kelas saja
+59,,aku udah khatam nonton VT poadcast nya dok...😊 seru dan banyak ilmu yg ku serap 🙏 Barakallah...,1,aku udah selesai nonton semua vt podcastnya dok...😊 seru dan banyak ilmu yg kudapat🙏 barakallah...,positif,non-negatif,3 kelas saja
+59,,aku udah khatam nonton VT poadcast nya dok...😊 seru dan banyak ilmu yg ku serap 🙏 Barakallah...,2,aku udah tamat nonton vt podcast dok...😊 seru bgt dan banyak ilmunya🙏 barakallah...,positif,non-negatif,3 kelas saja
+59,,aku udah khatam nonton VT poadcast nya dok...😊 seru dan banyak ilmu yg ku serap 🙏 Barakallah...,3,aku udah habis nonton vt podcastnya dok...😊 seru dan byk ilmu yg aku ambil🙏 barakallah...,positif,non-negatif,3 kelas saja
+59,,aku udah khatam nonton VT poadcast nya dok...😊 seru dan banyak ilmu yg ku serap 🙏 Barakallah...,4,aku udah kelar nonton semua vt podcast dok...😊 seru dan banyak banget ilmunya🙏 barakallah...,positif,non-negatif,3 kelas saja
+59,,aku udah khatam nonton VT poadcast nya dok...😊 seru dan banyak ilmu yg ku serap 🙏 Barakallah...,5,aku udah selesai semua vt podcastnya dok...😊 seru dan banyak ilmu yg kuambil🙏 barakallah...,positif,non-negatif,3 kelas saja
+61,,dokter gia izinkan aku menjadi tm editor mu biar makin dar der dor hasilnya🙏😁,1,dokter gia izinkan aku jadi tim editor mu biar makin maksimal hasilnya🙏😁,positif,non-negatif,3 kelas saja
+61,,dokter gia izinkan aku menjadi tm editor mu biar makin dar der dor hasilnya🙏😁,2,dokter gia bolehkan aku jadi tim editormu biar hasilnya makin dar der dor🙏😁,positif,non-negatif,3 kelas saja
+61,,dokter gia izinkan aku menjadi tm editor mu biar makin dar der dor hasilnya🙏😁,3,dokter gia izinin aku gabung tim editor biar hasilnya makin keren🙏😁,positif,non-negatif,3 kelas saja
+61,,dokter gia izinkan aku menjadi tm editor mu biar makin dar der dor hasilnya🙏😁,4,dokter gia izinkan aku jd editor timmu biar hasilnya makin mantap🙏😁,positif,non-negatif,3 kelas saja
+61,,dokter gia izinkan aku menjadi tm editor mu biar makin dar der dor hasilnya🙏😁,5,dokter gia bolehin aku jadi tim editormu biar makin dar der dor hasilnya🙏😁,positif,non-negatif,3 kelas saja
+62,,mksi om kata2nya,1,makasih om kata-katanya,positif,non-negatif,3 kelas saja
+62,,mksi om kata2nya,2,terima kasih om buat kata2nya,positif,non-negatif,3 kelas saja
+62,,mksi om kata2nya,3,makasih om atas kata2nya,positif,non-negatif,3 kelas saja
+62,,mksi om kata2nya,4,mksh om kata-katanya ya,positif,non-negatif,3 kelas saja
+62,,mksi om kata2nya,5,makasih banyak om kata2nya,positif,non-negatif,3 kelas saja
+63,,"sehat dn panjang umur buat Bu dokter,krna gak semua dokter mau ngasih tau edukasi seperti ini🙏",1,"sehat dan panjang umur buat bu dokter, karena ga semua dokter mau kasih edukasi kaya ini🙏",positif,non-negatif,3 kelas saja
+63,,"sehat dn panjang umur buat Bu dokter,krna gak semua dokter mau ngasih tau edukasi seperti ini🙏",2,"semoga sehat & panjang umur bu dokter, soalnya ga semua dokter mau berbagi edukasi gini🙏",positif,non-negatif,3 kelas saja
+63,,"sehat dn panjang umur buat Bu dokter,krna gak semua dokter mau ngasih tau edukasi seperti ini🙏",3,"sehat dan panjang umur bu dokter, krn ga semua dokter mau ngasih edukasi seperti ini🙏",positif,non-negatif,3 kelas saja
+63,,"sehat dn panjang umur buat Bu dokter,krna gak semua dokter mau ngasih tau edukasi seperti ini🙏",4,"semoga bu dokter sehat & panjang umur, krn ga semua dokter mau ngasih tau edukasi kaya ini🙏",positif,non-negatif,3 kelas saja
+63,,"sehat dn panjang umur buat Bu dokter,krna gak semua dokter mau ngasih tau edukasi seperti ini🙏",5,"sehat panjang umur buat bu dokter, soalnya jarang dokter yg mau edukasi kaya ini🙏",positif,non-negatif,3 kelas saja
+65,,Maju terus ka skrg banyak dokter yg ga bener dan owner skincare yg jahat bnget,1,"maju terus kak, sekarang banyak dokter yg ga bener dan owner skincare yg jahat bgt",positif,non-negatif,3 kelas saja
+65,,Maju terus ka skrg banyak dokter yg ga bener dan owner skincare yg jahat bnget,2,"lanjut terus kak, skrg banyak dokter yg ga benar dan owner skincare jahat bgt",positif,non-negatif,3 kelas saja
+65,,Maju terus ka skrg banyak dokter yg ga bener dan owner skincare yg jahat bnget,3,"terus maju kak, sekarang byk dokter yg kurang bener dan owner skincare jahat banget",positif,non-negatif,3 kelas saja
+65,,Maju terus ka skrg banyak dokter yg ga bener dan owner skincare yg jahat bnget,4,"maju terus ya kak, skrg byk dokter yg ga bener dan owner skincare yg jahat banget",positif,non-negatif,3 kelas saja
+65,,Maju terus ka skrg banyak dokter yg ga bener dan owner skincare yg jahat bnget,5,"lanjutkan kak, sekarang banyak dokter ga bener dan owner skincare yg jahat bgt",positif,non-negatif,3 kelas saja
+66,,"terima kasih sebelumnya, Dok",1,makasih sebelumnya dok,positif,non-negatif,3 kelas saja
+66,,"terima kasih sebelumnya, Dok",2,terima kasih duluan ya dok,positif,non-negatif,3 kelas saja
+66,,"terima kasih sebelumnya, Dok",3,makasih banyak sebelumnya dok,positif,non-negatif,3 kelas saja
+66,,"terima kasih sebelumnya, Dok",4,terimakasih duluan dok,positif,non-negatif,3 kelas saja
+66,,"terima kasih sebelumnya, Dok",5,makasih duluan ya dok,positif,non-negatif,3 kelas saja
+68,,❤❤❤ Aaa maakasiiii,1,❤❤❤ aaa makasih banget,positif,non-negatif,3 kelas saja
+68,,❤❤❤ Aaa maakasiiii,2,❤❤❤ waah makasih yaa,positif,non-negatif,3 kelas saja
+68,,❤❤❤ Aaa maakasiiii,3,❤❤❤ aaa terima kasih,positif,non-negatif,3 kelas saja
+68,,❤❤❤ Aaa maakasiiii,4,❤❤❤ makasih bangetttt,positif,non-negatif,3 kelas saja
+68,,❤❤❤ Aaa maakasiiii,5,❤❤❤ aaa makasih byk,positif,non-negatif,3 kelas saja
+69,,Mantab dokter amira....🙏Sukses selalu dok...👍,1,mantap dokter amira....🙏 sukses selalu ya dok...👍,positif,non-negatif,3 kelas saja
+69,,Mantab dokter amira....🙏Sukses selalu dok...👍,2,mantab bgt dokter amira....🙏 sukses terus dok...👍,positif,non-negatif,3 kelas saja
+69,,Mantab dokter amira....🙏Sukses selalu dok...👍,3,keren dokter amira....🙏 sukses selalu dok...👍,positif,non-negatif,3 kelas saja
+69,,Mantab dokter amira....🙏Sukses selalu dok...👍,4,mantap dokter amira....🙏 semoga sukses terus dok...👍,positif,non-negatif,3 kelas saja
+69,,Mantab dokter amira....🙏Sukses selalu dok...👍,5,hebat dokter amira....🙏 sukses selalu ya dok...👍,positif,non-negatif,3 kelas saja
+70,,Trm ksh edukasinya dokter🙏,1,terima kasih edukasinya dokter🙏,positif,non-negatif,3 kelas saja
+70,,Trm ksh edukasinya dokter🙏,2,makasih edukasinya dokter🙏,positif,non-negatif,3 kelas saja
+70,,Trm ksh edukasinya dokter🙏,3,trm kasih byk edukasinya dokter🙏,positif,non-negatif,3 kelas saja
+70,,Trm ksh edukasinya dokter🙏,4,terimakasih atas edukasinya dokter🙏,positif,non-negatif,3 kelas saja
+70,,Trm ksh edukasinya dokter🙏,5,makasih byk edukasinya dokter🙏,positif,non-negatif,3 kelas saja
+71,,terimakasih utk semangat nya dokter. .. Alhamdulillah tetap sadar sehat dan hrs bisa berteman dg arv demi anak ....Krn perjalanan masih panjang,1,terima kasih buat semangatnya dokter.. alhamdulillah tetap sadar sehat dan harus bisa berteman dengan arv demi anak.. karena perjalanan masih panjang,positif,non-negatif,3 kelas saja
+71,,terimakasih utk semangat nya dokter. .. Alhamdulillah tetap sadar sehat dan hrs bisa berteman dg arv demi anak ....Krn perjalanan masih panjang,2,makasih atas semangat yg diberikan dokter.. alhamdulillah tetap sadar sehat dan harus bisa berteman sama arv demi anak.. krn perjalanan masih jauh,positif,non-negatif,3 kelas saja
+71,,terimakasih utk semangat nya dokter. .. Alhamdulillah tetap sadar sehat dan hrs bisa berteman dg arv demi anak ....Krn perjalanan masih panjang,3,terimakasih utk semangatnya dokter.. alhamdulillah masih sadar sehat dan harus bisa berteman dgn arv demi anak.. karena jalan masih panjang,positif,non-negatif,3 kelas saja
+71,,terimakasih utk semangat nya dokter. .. Alhamdulillah tetap sadar sehat dan hrs bisa berteman dg arv demi anak ....Krn perjalanan masih panjang,4,makasih buat dukungan semangatnya dokter.. alhamdulillah tetap sadar sehat dan hrs berteman dengan arv demi anak.. krn perjalanan msh panjang,positif,non-negatif,3 kelas saja
+71,,terimakasih utk semangat nya dokter. .. Alhamdulillah tetap sadar sehat dan hrs bisa berteman dg arv demi anak ....Krn perjalanan masih panjang,5,terima kasih semangatnya dokter.. alhamdulillah tetap sadar sehat dan hrs bisa berteman dengan arv demi anak.. krn jalan msh panjang,positif,non-negatif,3 kelas saja
+73,,"2026 ini milik kalian, bersinarlah dua dokter hebat✨",1,"2026 ini milik kalian, bersinar terus dua dokter hebat✨",positif,non-negatif,3 kelas saja
+73,,"2026 ini milik kalian, bersinarlah dua dokter hebat✨",2,"tahun 2026 ini punya kalian, teruslah bersinar dua dokter hebat✨",positif,non-negatif,3 kelas saja
+73,,"2026 ini milik kalian, bersinarlah dua dokter hebat✨",3,"2026 jadi tahun kalian, bersinarlah kalian dua dokter hebat✨",positif,non-negatif,3 kelas saja
+73,,"2026 ini milik kalian, bersinarlah dua dokter hebat✨",4,"tahun ini milik kalian, bersinar terus ya dua dokter hebat✨",positif,non-negatif,3 kelas saja
+73,,"2026 ini milik kalian, bersinarlah dua dokter hebat✨",5,"2026 ini tahun kalian, teruslah bersinar dua dokter hebat ini✨",positif,non-negatif,3 kelas saja
+74,,dokter favorit🥰,1,dokter kesukaanku🥰,positif,non-negatif,3 kelas saja
+74,,dokter favorit🥰,2,dokter paling favorit🥰,positif,non-negatif,3 kelas saja
+74,,dokter favorit🥰,3,dokter favoritku bgt🥰,positif,non-negatif,3 kelas saja
+74,,dokter favorit🥰,4,dokter idola🥰,positif,non-negatif,3 kelas saja
+74,,dokter favorit🥰,5,dokter paling disuka🥰,positif,non-negatif,3 kelas saja
+75,,auranya menkes banget dok,1,auranya kaya menteri kesehatan bgt dok,positif,non-negatif,3 kelas saja
+75,,auranya menkes banget dok,2,aura dok ini bgt menkes,positif,non-negatif,3 kelas saja
+75,,auranya menkes banget dok,3,auranya menkes parah dok,positif,non-negatif,3 kelas saja
+75,,auranya menkes banget dok,4,aura dok udah kaya menkes banget,positif,non-negatif,3 kelas saja
+75,,auranya menkes banget dok,5,auranya kaya menkes bener dok,positif,non-negatif,3 kelas saja
+76,,"kenapa baru sekarang aku nyasar di mari , y Allah dok kamu lucuuuuuuu bgt 😂😂😂😂",1,"kenapa baru sekarang aku nyasar kesini, ya Allah dok kamu lucu banget😂😂😂😂",positif,non-negatif,3 kelas saja
+76,,"kenapa baru sekarang aku nyasar di mari , y Allah dok kamu lucuuuuuuu bgt 😂😂😂😂",2,"kenapa baru sekarang aku ketemu konten ini, ya Allah dok lucu bgt kamu😂😂😂😂",positif,non-negatif,3 kelas saja
+76,,"kenapa baru sekarang aku nyasar di mari , y Allah dok kamu lucuuuuuuu bgt 😂😂😂😂",3,"napa baru skrg aku mampir disini, ya Allah dok kamu lucu parah😂😂😂😂",positif,non-negatif,3 kelas saja
+76,,"kenapa baru sekarang aku nyasar di mari , y Allah dok kamu lucuuuuuuu bgt 😂😂😂😂",4,"kenapa baru sekarang aku nemu disini, ya Allah dok lucu bener kamu😂😂😂😂",positif,non-negatif,3 kelas saja
+76,,"kenapa baru sekarang aku nyasar di mari , y Allah dok kamu lucuuuuuuu bgt 😂😂😂😂",5,"napa baru skrg aku nyasar ke sini, ya Allah dok kamu lucu amat😂😂😂😂",positif,non-negatif,3 kelas saja
+77,,ijin share pak dokter🙏🙏,1,izin share pak dokter🙏🙏,positif,non-negatif,3 kelas saja
+77,,ijin share pak dokter🙏🙏,2,mohon izin share pak dokter🙏🙏,positif,non-negatif,3 kelas saja
+77,,ijin share pak dokter🙏🙏,3,ijin bagiin ya pak dokter🙏🙏,positif,non-negatif,3 kelas saja
+77,,ijin share pak dokter🙏🙏,4,izin share pak dok🙏🙏,positif,non-negatif,3 kelas saja
+77,,ijin share pak dokter🙏🙏,5,minta izin share pak dokter🙏🙏,positif,non-negatif,3 kelas saja
+79,,"Dr, aku memang tidak mengenal kamu dan istri secara dekat. tapi jujur, setiap pesan yang kamu sampaikan itu menenangkan dan bisa ku ambil sisi positifnya nya. dr, kita manusia yang hidup di dunia dan akan terus dalam ujian nya (Allah) , aku cuma bisa doa di hari Jumat ini untk dr dan istri,Allah permudah segala jalan untuk menjemput satunyawa yg akan di titipkan dalam rahim istri mu ya dok aamiin, aku juga doakan dr dan istri sehat selalu dan Allah percayakan saat hari itu datang dan pasti aamiin . sehat selalu dok",1,"dok, aku memang ga kenal kamu dan istri secara dekat, tapi jujur tiap pesan yg kamu sampaikan itu menenangkan dan bisa kuambil sisi positifnya. dok, kita manusia yg hidup di dunia dan akan terus diuji Allah, aku cuma bisa doa hari jumat ini buat dok dan istri, semoga Allah permudah jalan menjemput anak yg dititipkan di rahim istrimu dok aamiin, aku jg doakan dok dan istri sehat selalu dan Allah percayakan saat waktunya datang aamiin. sehat selalu dok",positif,non-negatif,3 kelas saja
+79,,"Dr, aku memang tidak mengenal kamu dan istri secara dekat. tapi jujur, setiap pesan yang kamu sampaikan itu menenangkan dan bisa ku ambil sisi positifnya nya. dr, kita manusia yang hidup di dunia dan akan terus dalam ujian nya (Allah) , aku cuma bisa doa di hari Jumat ini untk dr dan istri,Allah permudah segala jalan untuk menjemput satunyawa yg akan di titipkan dalam rahim istri mu ya dok aamiin, aku juga doakan dr dan istri sehat selalu dan Allah percayakan saat hari itu datang dan pasti aamiin . sehat selalu dok",2,"dr, walaupun aku ga mengenal kamu dan istri secara dekat, tapi jujur setiap pesan yg kamu sampaikan selalu menenangkan dan aku bisa ambil sisi positifnya. dr, kita ini manusia yg hidup di dunia dan akan terus diuji sama Allah, aku cuma bisa doa hari jumat ini utk dr dan istri, semoga Allah mudahkan jalan menyambut anak yg dititipkan dalam rahim istrimu dok aamiin, aku jg doakan dr dan istri sehat selalu dan Allah percayakan saat tiba waktunya aamiin. sehat selalu dok",positif,non-negatif,3 kelas saja
+79,,"Dr, aku memang tidak mengenal kamu dan istri secara dekat. tapi jujur, setiap pesan yang kamu sampaikan itu menenangkan dan bisa ku ambil sisi positifnya nya. dr, kita manusia yang hidup di dunia dan akan terus dalam ujian nya (Allah) , aku cuma bisa doa di hari Jumat ini untk dr dan istri,Allah permudah segala jalan untuk menjemput satunyawa yg akan di titipkan dalam rahim istri mu ya dok aamiin, aku juga doakan dr dan istri sehat selalu dan Allah percayakan saat hari itu datang dan pasti aamiin . sehat selalu dok",3,"dok, meski aku ga kenal kamu dan istri secara dekat, tapi jujur setiap pesan yg disampaikan itu menenangkan dan bisa kuambil sisi positifnya. dok, kita manusia yg hidup di dunia ini dan akan terus diuji Allah, aku cuma bisa doakan di hari jumat ini utk dok dan istri, semoga Allah permudah jalan menjemput anak yg dititipkan di rahim istrimu dok aamiin, aku jg doakan dok dan istri sehat terus dan Allah percayakan saat waktunya tiba aamiin. sehat selalu dok",positif,non-negatif,3 kelas saja
+79,,"Dr, aku memang tidak mengenal kamu dan istri secara dekat. tapi jujur, setiap pesan yang kamu sampaikan itu menenangkan dan bisa ku ambil sisi positifnya nya. dr, kita manusia yang hidup di dunia dan akan terus dalam ujian nya (Allah) , aku cuma bisa doa di hari Jumat ini untk dr dan istri,Allah permudah segala jalan untuk menjemput satunyawa yg akan di titipkan dalam rahim istri mu ya dok aamiin, aku juga doakan dr dan istri sehat selalu dan Allah percayakan saat hari itu datang dan pasti aamiin . sehat selalu dok",4,"dr, walaupun ga kenal kamu dan istri secara dekat, tapi jujur setiap pesan yg kamu sampaikan menenangkan dan aku bisa ambil sisi positifnya. dr, kita manusia yg hidup di dunia dan akan selalu diuji Allah, aku hanya bisa berdoa hari jumat ini utk dr dan istri, semoga Allah mudahkan jalan menyambut anak yg dititipkan di rahim istrimu dok aamiin, aku jg doakan dr dan istri sehat selalu dan Allah percayakan saat waktunya datang aamiin. sehat selalu dok",positif,non-negatif,3 kelas saja
+79,,"Dr, aku memang tidak mengenal kamu dan istri secara dekat. tapi jujur, setiap pesan yang kamu sampaikan itu menenangkan dan bisa ku ambil sisi positifnya nya. dr, kita manusia yang hidup di dunia dan akan terus dalam ujian nya (Allah) , aku cuma bisa doa di hari Jumat ini untk dr dan istri,Allah permudah segala jalan untuk menjemput satunyawa yg akan di titipkan dalam rahim istri mu ya dok aamiin, aku juga doakan dr dan istri sehat selalu dan Allah percayakan saat hari itu datang dan pasti aamiin . sehat selalu dok",5,"dok, meski aku ga kenal kamu dan istri secara dekat, tapi jujur tiap pesan yg disampaikan itu bikin tenang dan aku bisa ambil sisi positifnya. dok, kita ini manusia yg hidup di dunia dan akan terus diuji sama Allah, aku cuma bisa doa di hari jumat ini buat dok dan istri, semoga Allah permudah jalan menyambut anak yg dititipkan dalam rahim istrimu dok aamiin, aku jg doakan dok dan istri sehat selalu dan Allah percayakan saat waktunya tiba aamiin. sehat selalu dok",positif,non-negatif,3 kelas saja
+80,,Aman kakkk itu,1,aman kak itu,positif,non-negatif,3 kelas saja
+80,,Aman kakkk itu,2,aman bgt itu kak,positif,non-negatif,3 kelas saja
+80,,Aman kakkk itu,3,itu aman kok kak,positif,non-negatif,3 kelas saja
+80,,Aman kakkk itu,4,"aman kak, ga masalah",positif,non-negatif,3 kelas saja
+80,,Aman kakkk itu,5,aman aja itu kak,positif,non-negatif,3 kelas saja
+81,,trmksih dok...,1,terima kasih dok...,positif,non-negatif,3 kelas saja
+81,,trmksih dok...,2,makasih dok...,positif,non-negatif,3 kelas saja
+81,,trmksih dok...,3,trm kasih dok...,positif,non-negatif,3 kelas saja
+81,,trmksih dok...,4,makasih banyak dok...,positif,non-negatif,3 kelas saja
+81,,trmksih dok...,5,terimakasih byk dok...,positif,non-negatif,3 kelas saja
+82,,alhamdulillah sudah kembali ke jalan yang benar ya dokk😂😂,1,alhamdulillah udah balik ke jalan yg benar ya dok😂😂,positif,non-negatif,3 kelas saja
+82,,alhamdulillah sudah kembali ke jalan yang benar ya dokk😂😂,2,alhamdulillah sudah kembali ke jalan yg bener dok😂😂,positif,non-negatif,3 kelas saja
+82,,alhamdulillah sudah kembali ke jalan yang benar ya dokk😂😂,3,alhamdulillah akhirnya balik ke jalan yg benar dok😂😂,positif,non-negatif,3 kelas saja
+82,,alhamdulillah sudah kembali ke jalan yang benar ya dokk😂😂,4,alhamdulillah udah kembali ke jalur yg benar dok😂😂,positif,non-negatif,3 kelas saja
+82,,alhamdulillah sudah kembali ke jalan yang benar ya dokk😂😂,5,alhamdulillah sudah balik ke jalan benar ya dok😂😂,positif,non-negatif,3 kelas saja
+83,,waahhhhh kereeenn maa syaa Allah 😍,1,wah keren banget masya Allah😍,positif,non-negatif,3 kelas saja
+83,,waahhhhh kereeenn maa syaa Allah 😍,2,waah keren bgt maa syaa Allah😍,positif,non-negatif,3 kelas saja
+83,,waahhhhh kereeenn maa syaa Allah 😍,3,wahh keren bener masya Allah😍,positif,non-negatif,3 kelas saja
+83,,waahhhhh kereeenn maa syaa Allah 😍,4,waahh keren amat maa syaa Allah😍,positif,non-negatif,3 kelas saja
+83,,waahhhhh kereeenn maa syaa Allah 😍,5,wah keren parah masya Allah😍,positif,non-negatif,3 kelas saja
+84,,bagus semoga bermanfaat,1,"bagus, semoga berguna",positif,non-negatif,3 kelas saja
+84,,bagus semoga bermanfaat,2,"bagus deh, semoga bermanfaat",positif,non-negatif,3 kelas saja
+84,,bagus semoga bermanfaat,3,"bagus, semoga ada manfaatnya",positif,non-negatif,3 kelas saja
+84,,bagus semoga bermanfaat,4,"bagus, mudah2an bermanfaat",positif,non-negatif,3 kelas saja
+84,,bagus semoga bermanfaat,5,"bagus, berharap bermanfaat",positif,non-negatif,3 kelas saja
+85,,"Terimakasih Dok, sangat bermanfaat 👍🏻",1,"terima kasih dok, sangat berguna 👍🏻",positif,non-negatif,3 kelas saja
+85,,"Terimakasih Dok, sangat bermanfaat 👍🏻",2,"makasih dok, sangat bermanfaat 👍🏻",positif,non-negatif,3 kelas saja
+85,,"Terimakasih Dok, sangat bermanfaat 👍🏻",3,"terimakasih dok, bermanfaat bgt 👍🏻",positif,non-negatif,3 kelas saja
+85,,"Terimakasih Dok, sangat bermanfaat 👍🏻",4,"makasih dok, sangat berfaedah 👍🏻",positif,non-negatif,3 kelas saja
+85,,"Terimakasih Dok, sangat bermanfaat 👍🏻",5,"terima kasih dok, bener-bener bermanfaat 👍🏻",positif,non-negatif,3 kelas saja
+86,,"sy kmrn crta SM suami, KLO sy ngefans SM dr Gia😁. smga dr Gia scpty Allah ksh gelar tmbahan selain haji dan dokter yaitu gelar Ayah🤲",1,"saya kmrn cerita sm suami, kalo saya ngefans sama dr gia😁. semoga dr gia secepatnya Allah kasih gelar tambahan selain haji dan dokter yaitu gelar ayah🤲",positif,non-negatif,3 kelas saja
+86,,"sy kmrn crta SM suami, KLO sy ngefans SM dr Gia😁. smga dr Gia scpty Allah ksh gelar tmbahan selain haji dan dokter yaitu gelar Ayah🤲",2,"saya kemarin cerita ke suami, kalo saya ngefans sm dr gia😁. semoga dr gia cepat2 dikasih Allah gelar tambahan selain haji dan dokter, yaitu gelar ayah🤲",positif,non-negatif,3 kelas saja
+86,,"sy kmrn crta SM suami, KLO sy ngefans SM dr Gia😁. smga dr Gia scpty Allah ksh gelar tmbahan selain haji dan dokter yaitu gelar Ayah🤲",3,"sy kmrn crta sm suami kalo sy ngefans sama dr gia😁. semoga dr gia secepatnya dikasih Allah gelar tambahan selain haji dan dokter, yaitu gelar ayah🤲",positif,non-negatif,3 kelas saja
+86,,"sy kmrn crta SM suami, KLO sy ngefans SM dr Gia😁. smga dr Gia scpty Allah ksh gelar tmbahan selain haji dan dokter yaitu gelar Ayah🤲",4,"saya kemarin cerita sama suami, kalo saya ngefans banget sama dr gia😁. semoga dr gia cepat dikasih Allah gelar tambahan selain haji dan dokter, yaitu gelar ayah🤲",positif,non-negatif,3 kelas saja
+86,,"sy kmrn crta SM suami, KLO sy ngefans SM dr Gia😁. smga dr Gia scpty Allah ksh gelar tmbahan selain haji dan dokter yaitu gelar Ayah🤲",5,sy kmrn cerita ke suami kalo sy ngefans sm dr gia😁. semoga dr gia secepatnya dapat gelar tambahan dr Allah selain haji dan dokter yaitu gelar ayah🤲,positif,non-negatif,3 kelas saja
+87,,di malang smpe kapan? dok nongkrong yuk dok 😭🙏,1,di malang sampe kapan dok? nongkrong yuk dok😭🙏,positif,non-negatif,3 kelas saja
+87,,di malang smpe kapan? dok nongkrong yuk dok 😭🙏,2,di malang sampai kapan dok? ayo nongkrong dok😭🙏,positif,non-negatif,3 kelas saja
+87,,di malang smpe kapan? dok nongkrong yuk dok 😭🙏,3,dok di malang smpe kapan? yuk nongkrong dok😭🙏,positif,non-negatif,3 kelas saja
+87,,di malang smpe kapan? dok nongkrong yuk dok 😭🙏,4,di malang sampe kapan ya dok? nongkrong dong dok😭🙏,positif,non-negatif,3 kelas saja
+87,,di malang smpe kapan? dok nongkrong yuk dok 😭🙏,5,dok sampe kapan di malang? nongkrong yuk dok😭🙏,positif,non-negatif,3 kelas saja
+88,,"lucu, follow ah",1,"lucu deh, aku follow ah",positif,non-negatif,3 kelas saja
+88,,"lucu, follow ah",2,"lucu bgt, follow dulu ah",positif,non-negatif,3 kelas saja
+88,,"lucu, follow ah",3,"lucu, langsung follow ah",positif,non-negatif,3 kelas saja
+88,,"lucu, follow ah",4,"lucu nih, follow aja ah",positif,non-negatif,3 kelas saja
+88,,"lucu, follow ah",5,"lucu, aku follow deh",positif,non-negatif,3 kelas saja
+89,,dokter² yg hebat..sehat² ya dokter²🥰,1,dokter-dokter yg hebat.. sehat-sehat ya dokter2🥰,positif,non-negatif,3 kelas saja
+89,,dokter² yg hebat..sehat² ya dokter²🥰,2,dokter² hebat.. semoga sehat selalu dokter²🥰,positif,non-negatif,3 kelas saja
+89,,dokter² yg hebat..sehat² ya dokter²🥰,3,dokter-dokter hebat.. sehat terus ya dokter-dokter🥰,positif,non-negatif,3 kelas saja
+89,,dokter² yg hebat..sehat² ya dokter²🥰,4,dokter² yg keren.. sehat² terus ya🥰,positif,non-negatif,3 kelas saja
+89,,dokter² yg hebat..sehat² ya dokter²🥰,5,dokter-dokter hebat.. semoga sehat selalu🥰,positif,non-negatif,3 kelas saja
+90,,Dr iksan kesayanganku,1,dr iksan tersayang,positif,non-negatif,3 kelas saja
+90,,Dr iksan kesayanganku,2,dr iksan kesayangan aku,positif,non-negatif,3 kelas saja
+90,,Dr iksan kesayanganku,3,dr iksan favoritku,positif,non-negatif,3 kelas saja
+90,,Dr iksan kesayanganku,4,dr iksan sayangku,positif,non-negatif,3 kelas saja
+90,,Dr iksan kesayanganku,5,dr iksan kesayangan banget,positif,non-negatif,3 kelas saja
+91,,"tipe gue bgt ini, hensem, pinter, & plenger melebur jadi satu😌🥰",1,"ini tipe gue banget, ganteng, pintar, dan jenaka jadi satu😌🥰",positif,non-negatif,3 kelas saja
+91,,"tipe gue bgt ini, hensem, pinter, & plenger melebur jadi satu😌🥰",2,"tipe gw bgt nih, ganteng, pinter, lucu melebur jadi satu😌🥰",positif,non-negatif,3 kelas saja
+91,,"tipe gue bgt ini, hensem, pinter, & plenger melebur jadi satu😌🥰",3,"ini tipeku bgt, hensem, pintar, dan kocak jadi satu😌🥰",positif,non-negatif,3 kelas saja
+91,,"tipe gue bgt ini, hensem, pinter, & plenger melebur jadi satu😌🥰",4,"tipe gue banget ini, ganteng, cerdas, & jenaka melebur jd satu😌🥰",positif,non-negatif,3 kelas saja
+91,,"tipe gue bgt ini, hensem, pinter, & plenger melebur jadi satu😌🥰",5,"ini tipe gw bgt, ganteng, pinter, plenger semua ada di dia😌🥰",positif,non-negatif,3 kelas saja
+92,,"makasih dok,, kmrn hari prtama nyoba puasa tp mual sdikit sama ada pusing walaupun alhamdulillah sampe akhir. jd hari kedua nyoba ga puasa dlu d selang seling 🥲🥹",1,"makasih dok,, kemarin hari pertama nyoba puasa tapi mual sedikit sama pusing walau alhamdulillah sampe selesai. jadi hari kedua nyoba ga puasa dulu diselang-seling🥲🥹",positif,non-negatif,3 kelas saja
+92,,"makasih dok,, kmrn hari prtama nyoba puasa tp mual sdikit sama ada pusing walaupun alhamdulillah sampe akhir. jd hari kedua nyoba ga puasa dlu d selang seling 🥲🥹",2,"terima kasih dok,, kmrn hari pertama coba puasa tp mual dikit sama pusing walau alhamdulillah sampe tuntas. jd hari kedua coba ga puasa dulu diselang2🥲🥹",positif,non-negatif,3 kelas saja
+92,,"makasih dok,, kmrn hari prtama nyoba puasa tp mual sdikit sama ada pusing walaupun alhamdulillah sampe akhir. jd hari kedua nyoba ga puasa dlu d selang seling 🥲🥹",3,"makasih dok,, kmrn hari pertama nyoba puasa tp agak mual sama pusing walau alhamdulillah sampe akhir. jd hari kedua coba skip puasa diselang seling🥲🥹",positif,non-negatif,3 kelas saja
+92,,"makasih dok,, kmrn hari prtama nyoba puasa tp mual sdikit sama ada pusing walaupun alhamdulillah sampe akhir. jd hari kedua nyoba ga puasa dlu d selang seling 🥲🥹",4,"makasi dok,, kmrn hari pertama coba puasa tp mual sedikit dan pusing walau alhamdulillah sampe akhir. jd hari kedua coba ga puasa dulu diselingi🥲🥹",positif,non-negatif,3 kelas saja
+92,,"makasih dok,, kmrn hari prtama nyoba puasa tp mual sdikit sama ada pusing walaupun alhamdulillah sampe akhir. jd hari kedua nyoba ga puasa dlu d selang seling 🥲🥹",5,"terimakasih dok,, kemarin hari pertama nyoba puasa tp mual sdikit sama pusing walau alhamdulillah sampai selesai. jd hari kedua nyoba selang seling ga puasa🥲🥹",positif,non-negatif,3 kelas saja
+93,,thank uuu kakk,1,thank you kak,positif,non-negatif,3 kelas saja
+93,,thank uuu kakk,2,makasih kak,positif,non-negatif,3 kelas saja
+93,,thank uuu kakk,3,thanks banget kak,positif,non-negatif,3 kelas saja
+93,,thank uuu kakk,4,makasih byk kak,positif,non-negatif,3 kelas saja
+93,,thank uuu kakk,5,thankyouu kak,positif,non-negatif,3 kelas saja
+94,,aahh dr Amira ketemu lagi dah lama banget .,1,"ah dr amira ketemu lagi, udah lama bgt",positif,non-negatif,3 kelas saja
+94,,aahh dr Amira ketemu lagi dah lama banget .,2,"aah dr amira jumpa lagi, sudah lama sekali",positif,non-negatif,3 kelas saja
+94,,aahh dr Amira ketemu lagi dah lama banget .,3,"ahh ketemu dr amira lagi, lama bgt ga liat",positif,non-negatif,3 kelas saja
+94,,aahh dr Amira ketemu lagi dah lama banget .,4,"aah dr amira ketemu lagi nih, sudah lama bgt",positif,non-negatif,3 kelas saja
+94,,aahh dr Amira ketemu lagi dah lama banget .,5,"ah jumpa lagi dr amira, udah lama banget",positif,non-negatif,3 kelas saja
+95,,Baik terimakasih dok🥰,1,oke makasih dok🥰,positif,non-negatif,3 kelas saja
+95,,Baik terimakasih dok🥰,2,"baik, terima kasih dok🥰",positif,non-negatif,3 kelas saja
+95,,Baik terimakasih dok🥰,3,baik makasih byk dok🥰,positif,non-negatif,3 kelas saja
+95,,Baik terimakasih dok🥰,4,"oke, terimakasih dok🥰",positif,non-negatif,3 kelas saja
+95,,Baik terimakasih dok🥰,5,"baik, makasih dok🥰",positif,non-negatif,3 kelas saja
+96,,akhirnya ada steatment yang bs mengembalikan mood booster ku.. 😁 padahal biasanya less sugar… berati aman.,1,"akhirnya ada statement yg bisa mengembalikan mood booster ku..😁 padahal biasanya less sugar, berarti aman",positif,non-negatif,3 kelas saja
+96,,akhirnya ada steatment yang bs mengembalikan mood booster ku.. 😁 padahal biasanya less sugar… berati aman.,2,"akhirnya ada pernyataan yg bisa balikin mood boosterku..😁 padahal biasanya less sugar, jadi aman",positif,non-negatif,3 kelas saja
+96,,akhirnya ada steatment yang bs mengembalikan mood booster ku.. 😁 padahal biasanya less sugar… berati aman.,3,"akhirnya ada statement yg bisa ngembalikan mood booster ku lg..😁 padahal biasa less sugar, berarti aman",positif,non-negatif,3 kelas saja
+96,,akhirnya ada steatment yang bs mengembalikan mood booster ku.. 😁 padahal biasanya less sugar… berati aman.,4,"akhirnya ada statement yg bikin mood booster ku balik lg..😁 padahal biasanya less sugar, jd aman",positif,non-negatif,3 kelas saja
+96,,akhirnya ada steatment yang bs mengembalikan mood booster ku.. 😁 padahal biasanya less sugar… berati aman.,5,akhirnya ada statement yg mengembalikan mood boosterku..😁 padahal biasanya less sugar berarti aman,positif,non-negatif,3 kelas saja
+97,,wah dulu anakku lulusan FK unisula dook 😍,1,wah anakku dulu lulusan fk unisula juga dok😍,positif,non-negatif,3 kelas saja
+97,,wah dulu anakku lulusan FK unisula dook 😍,2,wah dulu anak saya lulusan fk unisula dok😍,positif,non-negatif,3 kelas saja
+97,,wah dulu anakku lulusan FK unisula dook 😍,3,wah anakku dulu lulus dari fk unisula dok😍,positif,non-negatif,3 kelas saja
+97,,wah dulu anakku lulusan FK unisula dook 😍,4,wah anak saya dulu lulusan fk unisula dok😍,positif,non-negatif,3 kelas saja
+97,,wah dulu anakku lulusan FK unisula dook 😍,5,wah dulu anakku lulusan fk unisula juga lho dok😍,positif,non-negatif,3 kelas saja
+98,,Terimakasih banyak ya bu 🥰🙏🏻 semoga sehat selalu yaa 😇,1,makasih banyak ya bu🥰🙏🏻 semoga sehat selalu ya😇,positif,non-negatif,3 kelas saja
+98,,Terimakasih banyak ya bu 🥰🙏🏻 semoga sehat selalu yaa 😇,2,terima kasih byk bu🥰🙏🏻 semoga sehat terus ya😇,positif,non-negatif,3 kelas saja
+98,,Terimakasih banyak ya bu 🥰🙏🏻 semoga sehat selalu yaa 😇,3,makasih banyak bu🥰🙏🏻 semoga selalu sehat ya😇,positif,non-negatif,3 kelas saja
+98,,Terimakasih banyak ya bu 🥰🙏🏻 semoga sehat selalu yaa 😇,4,terimakasih byk ya bu🥰🙏🏻 semoga sehat selalu😇,positif,non-negatif,3 kelas saja
+98,,Terimakasih banyak ya bu 🥰🙏🏻 semoga sehat selalu yaa 😇,5,makasih bgt ya bu🥰🙏🏻 semoga sehat terus yaa😇,positif,non-negatif,3 kelas saja
+101,,"bener kata dokter ini kk, olan raga rutin dan makan yg sehat bukan cuma minum seperti itu",1,"bener kata dokter ini kak, olahraga rutin dan makan sehat bukan cuma minum aja kaya itu",positif,non-negatif,3 kelas saja
+101,,"bener kata dokter ini kk, olan raga rutin dan makan yg sehat bukan cuma minum seperti itu",2,"betul kata dokter ini kak, olahraga teratur dan makan sehat bukan cuma minum doang",positif,non-negatif,3 kelas saja
+101,,"bener kata dokter ini kk, olan raga rutin dan makan yg sehat bukan cuma minum seperti itu",3,"bener apa kata dokter ini kak, olahraga rutin sama makan sehat bukan cuma minum aja",positif,non-negatif,3 kelas saja
+101,,"bener kata dokter ini kk, olan raga rutin dan makan yg sehat bukan cuma minum seperti itu",4,"setuju kata dokter ini kak, olahraga rutin dan makan sehat bukan sekedar minum kaya itu",positif,non-negatif,3 kelas saja
+101,,"bener kata dokter ini kk, olan raga rutin dan makan yg sehat bukan cuma minum seperti itu",5,"bener omongan dokter ini kak, olahraga rutin dan makan sehat bukan cuma minum doang",positif,non-negatif,3 kelas saja
+102,,hebat dok,1,keren dok,positif,non-negatif,3 kelas saja
+102,,hebat dok,2,mantap dok,positif,non-negatif,3 kelas saja
+102,,hebat dok,3,hebat banget dok,positif,non-negatif,3 kelas saja
+102,,hebat dok,4,luar biasa dok,positif,non-negatif,3 kelas saja
+102,,hebat dok,5,jago dok,positif,non-negatif,3 kelas saja
+103,,sehat selalu dok,1,semoga sehat selalu dok,positif,non-negatif,3 kelas saja
+103,,sehat selalu dok,2,sehat terus ya dok,positif,non-negatif,3 kelas saja
+103,,sehat selalu dok,3,sehat selalu ya dokter,positif,non-negatif,3 kelas saja
+103,,sehat selalu dok,4,sehat terus dok,positif,non-negatif,3 kelas saja
+103,,sehat selalu dok,5,semoga dok sehat selalu,positif,non-negatif,3 kelas saja
+105,,"aku lg nyari sabun muka yg gentle bgt, ini kyknya menarik deh udh masuk kerkun",1,"aku sedang cari sabun muka yg lembut banget, ini kayaknya menarik udah masuk keranjang",positif,non-negatif,3 kelas saja
+105,,"aku lg nyari sabun muka yg gentle bgt, ini kyknya menarik deh udh masuk kerkun",2,"aku lagi nyari sabun muka yg gentle bgt, ini keliatan menarik udah masuk keranjang",positif,non-negatif,3 kelas saja
+105,,"aku lg nyari sabun muka yg gentle bgt, ini kyknya menarik deh udh masuk kerkun",3,"aku lg cari sabun muka yg lembut sekali, ini kelihatan menarik udah masuk cart",positif,non-negatif,3 kelas saja
+105,,"aku lg nyari sabun muka yg gentle bgt, ini kyknya menarik deh udh masuk kerkun",4,"aku lagi nyari sabun muka yg gentle banget, kayaknya ini menarik udah masuk keranjang belanja",positif,non-negatif,3 kelas saja
+105,,"aku lg nyari sabun muka yg gentle bgt, ini kyknya menarik deh udh masuk kerkun",5,"aku sedang cari sabun muka yg lembut bgt, ini menarik nih udah masuk keranjang",positif,non-negatif,3 kelas saja
+106,,"terima kasih infonya Dok,,",1,"makasih infonya dok,,",positif,non-negatif,3 kelas saja
+106,,"terima kasih infonya Dok,,",2,"terimakasih byk infonya dok,,",positif,non-negatif,3 kelas saja
+106,,"terima kasih infonya Dok,,",3,"makasih banyak infonya dok,,",positif,non-negatif,3 kelas saja
+106,,"terima kasih infonya Dok,,",4,"terima kasih atas infonya dok,,",positif,non-negatif,3 kelas saja
+106,,"terima kasih infonya Dok,,",5,"makasih infonya ya dok,,",positif,non-negatif,3 kelas saja
+107,,liat dipodcas raditya dika bareng dok tirta memang seperti soft spoken pake bgttt...,1,liat di podcast raditya dika bareng dok tirta memang kaya soft spoken banget...,positif,non-negatif,3 kelas saja
+107,,liat dipodcas raditya dika bareng dok tirta memang seperti soft spoken pake bgttt...,2,nonton podcast raditya dika sama dok tirta emang berasa soft spoken parah...,positif,non-negatif,3 kelas saja
+107,,liat dipodcas raditya dika bareng dok tirta memang seperti soft spoken pake bgttt...,3,liat di podcastnya raditya dika sama dok tirta emang bgt soft spoken...,positif,non-negatif,3 kelas saja
+107,,liat dipodcas raditya dika bareng dok tirta memang seperti soft spoken pake bgttt...,4,nonton podcast raditya dika bareng dok tirta memang terasa soft spoken banget...,positif,non-negatif,3 kelas saja
+107,,liat dipodcas raditya dika bareng dok tirta memang seperti soft spoken pake bgttt...,5,liat podcast raditya dika bareng dok tirta emang soft spoken bgt rasanya...,positif,non-negatif,3 kelas saja
+108,,dok ganteng amat si😭,1,dok ganteng bgt sih😭,positif,non-negatif,3 kelas saja
+108,,dok ganteng amat si😭,2,dok ganteng banget dah😭,positif,non-negatif,3 kelas saja
+108,,dok ganteng amat si😭,3,dok ganteng parah sih😭,positif,non-negatif,3 kelas saja
+108,,dok ganteng amat si😭,4,dok ganteng amat ya😭,positif,non-negatif,3 kelas saja
+108,,dok ganteng amat si😭,5,dok ganteng bener sih😭,positif,non-negatif,3 kelas saja
+111,,masyallah ☺️,1,masya Allah ☺️,positif,non-negatif,3 kelas saja
+111,,masyallah ☺️,2,masyaallah bgt ☺️,positif,non-negatif,3 kelas saja
+111,,masyallah ☺️,3,masyallah deh ☺️,positif,non-negatif,3 kelas saja
+111,,masyallah ☺️,4,masya Allah ya ☺️,positif,non-negatif,3 kelas saja
+111,,masyallah ☺️,5,masyallah bener ☺️,positif,non-negatif,3 kelas saja
+112,,"Mau di skip, tapi ini ilmu pliss😭😭😭",1,mau diskip tapi ini ilmu banget please😭😭😭,positif,non-negatif,3 kelas saja
+112,,"Mau di skip, tapi ini ilmu pliss😭😭😭",2,"mau dilewat tapi ini kan ilmu, please😭😭😭",positif,non-negatif,3 kelas saja
+112,,"Mau di skip, tapi ini ilmu pliss😭😭😭",3,mau skip tapi ini ilmu bgt please😭😭😭,positif,non-negatif,3 kelas saja
+112,,"Mau di skip, tapi ini ilmu pliss😭😭😭",4,mau diskip tp ini ilmu lho please😭😭😭,positif,non-negatif,3 kelas saja
+112,,"Mau di skip, tapi ini ilmu pliss😭😭😭",5,mau lewat tapi ini ilmu banget please😭😭😭,positif,non-negatif,3 kelas saja
+113,,trimakasih tipsnya budokter🙏🙏🙏,1,terima kasih tipsnya bu dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+113,,trimakasih tipsnya budokter🙏🙏🙏,2,makasih tipsnya bu dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+113,,trimakasih tipsnya budokter🙏🙏🙏,3,trm kasih byk tipsnya bu dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+113,,trimakasih tipsnya budokter🙏🙏🙏,4,terimakasih tips nya bu dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+113,,trimakasih tipsnya budokter🙏🙏🙏,5,makasih byk tipsnya bu dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+115,,aura bapak bapak nya tuh nge bapak banget dok,1,aura bapak-bapaknya itu kerasa banget dok,positif,non-negatif,3 kelas saja
+115,,aura bapak bapak nya tuh nge bapak banget dok,2,aura kebapakannya itu berasa bgt dok,positif,non-negatif,3 kelas saja
+115,,aura bapak bapak nya tuh nge bapak banget dok,3,aura bapak² nya tuh kental bgt dok,positif,non-negatif,3 kelas saja
+115,,aura bapak bapak nya tuh nge bapak banget dok,4,aura bapak-bapaknya tuh berasa bener dok,positif,non-negatif,3 kelas saja
+115,,aura bapak bapak nya tuh nge bapak banget dok,5,auranya bapak² bgt dok,positif,non-negatif,3 kelas saja
+116,,setujuuu dokk...,1,setuju banget dok...,positif,non-negatif,3 kelas saja
+116,,setujuuu dokk...,2,setuju dokk...,positif,non-negatif,3 kelas saja
+116,,setujuuu dokk...,3,setuju bgt dokk...,positif,non-negatif,3 kelas saja
+116,,setujuuu dokk...,4,iya setuju dok...,positif,non-negatif,3 kelas saja
+116,,setujuuu dokk...,5,setuju parah dokk...,positif,non-negatif,3 kelas saja
+119,,"semenjak liat edukasi dr.ika, udah engga terobsesi putih. cukup sesuai kulit dasar kita, yang penting engga buluk.",1,"semenjak liat edukasi dr.ika, udah ga terobsesi putih lagi. cukup sesuai warna kulit dasar kita, yg penting ga buluk",positif,non-negatif,3 kelas saja
+119,,"semenjak liat edukasi dr.ika, udah engga terobsesi putih. cukup sesuai kulit dasar kita, yang penting engga buluk.",2,"setelah liat edukasi dr.ika, aku jadi ga terobsesi putih lagi. yg penting sesuai kulit dasar, ga buluk",positif,non-negatif,3 kelas saja
+119,,"semenjak liat edukasi dr.ika, udah engga terobsesi putih. cukup sesuai kulit dasar kita, yang penting engga buluk.",3,"sejak liat edukasi dr.ika, udah ga obsesi sama putih lagi. yg penting cocok sama kulit dasar, ga buluk",positif,non-negatif,3 kelas saja
+119,,"semenjak liat edukasi dr.ika, udah engga terobsesi putih. cukup sesuai kulit dasar kita, yang penting engga buluk.",4,"semenjak nonton edukasi dr.ika, aku ga terobsesi putih lagi. cukup sesuai kulit dasar kita, yg penting ga buluk",positif,non-negatif,3 kelas saja
+119,,"semenjak liat edukasi dr.ika, udah engga terobsesi putih. cukup sesuai kulit dasar kita, yang penting engga buluk.",5,"setelah liat edukasi dr.ika, udah ga terobsesi putih. yg penting sesuai kulit dasar, asal ga buluk",positif,non-negatif,3 kelas saja
+121,,medis handal niiii👍👍👍,1,medis yg handal nih👍👍👍,positif,non-negatif,3 kelas saja
+121,,medis handal niiii👍👍👍,2,medis handal banget nih👍👍👍,positif,non-negatif,3 kelas saja
+121,,medis handal niiii👍👍👍,3,medisnya handal nih👍👍👍,positif,non-negatif,3 kelas saja
+121,,medis handal niiii👍👍👍,4,medis yg mumpuni nih👍👍👍,positif,non-negatif,3 kelas saja
+121,,medis handal niiii👍👍👍,5,medis handal parah👍👍👍,positif,non-negatif,3 kelas saja
+124,,ya ampun..dulu ak pernh pke byout..alhmduliah skrg ud lepass...,1,ya ampun.. dulu aku pernah pake byout.. alhamdulillah sekarang udah lepas,positif,non-negatif,3 kelas saja
+124,,ya ampun..dulu ak pernh pke byout..alhmduliah skrg ud lepass...,2,ya ampun.. aku dulu pernah pake byout juga.. alhamdulillah skrg udah lepas,positif,non-negatif,3 kelas saja
+124,,ya ampun..dulu ak pernh pke byout..alhmduliah skrg ud lepass...,3,ya ampun.. dulu aku sempat pake byout.. alhamdulillah sekarang sudah berhenti,positif,non-negatif,3 kelas saja
+124,,ya ampun..dulu ak pernh pke byout..alhmduliah skrg ud lepass...,4,ya ampun.. aku jg pernah pake byout dulu.. alhamdulillah skrg udh lepas,positif,non-negatif,3 kelas saja
+124,,ya ampun..dulu ak pernh pke byout..alhmduliah skrg ud lepass...,5,ya ampun.. dulu aku pernah coba byout.. alhamdulillah sekarang udah lepas,positif,non-negatif,3 kelas saja
+125,,makasih saran nya dok,1,terima kasih sarannya dok,positif,non-negatif,3 kelas saja
+125,,makasih saran nya dok,2,makasih byk sarannya dok,positif,non-negatif,3 kelas saja
+125,,makasih saran nya dok,3,terimakasih atas sarannya dok,positif,non-negatif,3 kelas saja
+125,,makasih saran nya dok,4,makasih sarannya ya dok,positif,non-negatif,3 kelas saja
+125,,makasih saran nya dok,5,makasih banget sarannya dok,positif,non-negatif,3 kelas saja
+126,,iyuh banget bentuknya tapi makasih ya dok 😭,1,geli bgt bentuknya tapi makasih ya dok😭,positif,non-negatif,3 kelas saja
+126,,iyuh banget bentuknya tapi makasih ya dok 😭,2,jijik bentuknya tapi terima kasih ya dok😭,positif,non-negatif,3 kelas saja
+126,,iyuh banget bentuknya tapi makasih ya dok 😭,3,iyuh bentuknya tapi makasih banget dok😭,positif,non-negatif,3 kelas saja
+126,,iyuh banget bentuknya tapi makasih ya dok 😭,4,geli banget liat bentuknya tapi makasih dok😭,positif,non-negatif,3 kelas saja
+126,,iyuh banget bentuknya tapi makasih ya dok 😭,5,jijik sih bentuknya tapi tetep makasih dok😭,positif,non-negatif,3 kelas saja
+128,,"sukses teruss dok,dan sehat selaluu 🫰😆.sukaa bgt liat dr.Giaa klw lg dipodcast"""",aplgi edukasi""""nya",1,"sukses terus dok dan sehat selalu🫰😆. suka bgt liat dr.gia kalo lagi dipodcast, apalagi edukasinya",positif,non-negatif,3 kelas saja
+128,,"sukses teruss dok,dan sehat selaluu 🫰😆.sukaa bgt liat dr.Giaa klw lg dipodcast"""",aplgi edukasi""""nya",2,"sukses terus dok dan sehat selalu🫰😆. suka banget liat dr.gia pas di podcast, apalagi pas edukasinya",positif,non-negatif,3 kelas saja
+128,,"sukses teruss dok,dan sehat selaluu 🫰😆.sukaa bgt liat dr.Giaa klw lg dipodcast"""",aplgi edukasi""""nya",3,"sukses terus dok, sehat selalu🫰😆. suka bgt ngeliat dr.gia di podcast, apalagi edukasinya",positif,non-negatif,3 kelas saja
+128,,"sukses teruss dok,dan sehat selaluu 🫰😆.sukaa bgt liat dr.Giaa klw lg dipodcast"""",aplgi edukasi""""nya",4,"sukses terus dok dan sehat terus🫰😆. demen bgt liat dr.gia lagi dipodcast, apalagi pas edukasi",positif,non-negatif,3 kelas saja
+128,,"sukses teruss dok,dan sehat selaluu 🫰😆.sukaa bgt liat dr.Giaa klw lg dipodcast"""",aplgi edukasi""""nya",5,"sukses terus dok, sehat selalu ya🫰😆. suka banget liat dr.gia di podcast, apalagi edukasinya itu",positif,non-negatif,3 kelas saja
+129,,izin share ulang ya dok 🤗,1,mohon izin share ulang ya dok🤗,positif,non-negatif,3 kelas saja
+129,,izin share ulang ya dok 🤗,2,ijin share ulang dok🤗,positif,non-negatif,3 kelas saja
+129,,izin share ulang ya dok 🤗,3,izin re-share ya dok🤗,positif,non-negatif,3 kelas saja
+129,,izin share ulang ya dok 🤗,4,minta izin share ulang dok🤗,positif,non-negatif,3 kelas saja
+129,,izin share ulang ya dok 🤗,5,izin bagi ulang ya dok🤗,positif,non-negatif,3 kelas saja
+130,,"dokter hebat ,,,",1,"dokter yg hebat,,,",positif,non-negatif,3 kelas saja
+130,,"dokter hebat ,,,",2,"dokter keren,,,",positif,non-negatif,3 kelas saja
+130,,"dokter hebat ,,,",3,"dokter luar biasa,,,",positif,non-negatif,3 kelas saja
+130,,"dokter hebat ,,,",4,"dokter mantap,,,",positif,non-negatif,3 kelas saja
+130,,"dokter hebat ,,,",5,"dokter top,,,",positif,non-negatif,3 kelas saja
+131,,dokter gia❤️,1,dokter gia tercinta❤️,positif,non-negatif,3 kelas saja
+131,,dokter gia❤️,2,dokter gia idola❤️,positif,non-negatif,3 kelas saja
+131,,dokter gia❤️,3,dokter gia favorit❤️,positif,non-negatif,3 kelas saja
+131,,dokter gia❤️,4,dokter gia kesayangan❤️,positif,non-negatif,3 kelas saja
+131,,dokter gia❤️,5,dokter gia ❤️ bgt,positif,non-negatif,3 kelas saja
+132,,"terimakasih sudah mengedukasi kami selama ini dok, semoga rezeki anda lancar terus, btw minta doanya dok, semoga saya juga bisa sukses jadi orang besar seperti anda hehe",1,"makasih sudah mengedukasi kami selama ini dok, semoga rezekinya lancar terus, btw minta doanya dok, semoga saya jg bisa sukses jd org besar seperti anda hehe",positif,non-negatif,3 kelas saja
+132,,"terimakasih sudah mengedukasi kami selama ini dok, semoga rezeki anda lancar terus, btw minta doanya dok, semoga saya juga bisa sukses jadi orang besar seperti anda hehe",2,"terima kasih sudah ngedidik kami selama ini dok, semoga rezekinya terus lancar, btw minta doanya dok, semoga aku jg bisa sukses jadi org besar kaya anda hehe",positif,non-negatif,3 kelas saja
+132,,"terimakasih sudah mengedukasi kami selama ini dok, semoga rezeki anda lancar terus, btw minta doanya dok, semoga saya juga bisa sukses jadi orang besar seperti anda hehe",3,"terimakasih sudah mendidik kami selama ini dok, semoga rezekinya lancar terus, btw minta doa dok, semoga saya jg bisa sukses jd org besar seperti anda hehe",positif,non-negatif,3 kelas saja
+132,,"terimakasih sudah mengedukasi kami selama ini dok, semoga rezeki anda lancar terus, btw minta doanya dok, semoga saya juga bisa sukses jadi orang besar seperti anda hehe",4,"makasih byk sudah mengedukasi kami selama ini dok, semoga rezekinya terus lancar, btw minta doanya dok, semoga saya bisa jd org besar seperti anda jg hehe",positif,non-negatif,3 kelas saja
+132,,"terimakasih sudah mengedukasi kami selama ini dok, semoga rezeki anda lancar terus, btw minta doanya dok, semoga saya juga bisa sukses jadi orang besar seperti anda hehe",5,"terima kasih sudah mengedukasi kami terus dok, semoga rezekinya lancar, btw minta doa ya dok, semoga saya juga bisa sukses jadi org besar kaya anda hehe",positif,non-negatif,3 kelas saja
+134,,terimakasih dok,1,makasih dok,positif,non-negatif,3 kelas saja
+134,,terimakasih dok,2,terima kasih ya dok,positif,non-negatif,3 kelas saja
+134,,terimakasih dok,3,makasih byk dok,positif,non-negatif,3 kelas saja
+134,,terimakasih dok,4,terimakasih byk dok,positif,non-negatif,3 kelas saja
+134,,terimakasih dok,5,makasih bgt dok,positif,non-negatif,3 kelas saja
+135,,"Dookkk pumpung di Malang Ya Allah mau dong foto bareng dookkk, di manakah dokter ganteng viral berprestasi ini beradaa",1,"dok, selagi di malang ya Allah mau dong foto bareng dok, dimana sih dokter ganteng viral berprestasi ini berada",positif,non-negatif,3 kelas saja
+135,,"Dookkk pumpung di Malang Ya Allah mau dong foto bareng dookkk, di manakah dokter ganteng viral berprestasi ini beradaa",2,"dok pas lagi di malang ya Allah mau foto bareng dok, dimana ya dokter ganteng viral berprestasi ini",positif,non-negatif,3 kelas saja
+135,,"Dookkk pumpung di Malang Ya Allah mau dong foto bareng dookkk, di manakah dokter ganteng viral berprestasi ini beradaa",3,"dok selagi masih di malang, ya Allah mau dong foto bareng dok, dimana dokter ganteng viral berprestasi ini",positif,non-negatif,3 kelas saja
+135,,"Dookkk pumpung di Malang Ya Allah mau dong foto bareng dookkk, di manakah dokter ganteng viral berprestasi ini beradaa",4,"dok pumpung di malang ya Allah pengen banget foto bareng dok, dimana ya lokasi dokter ganteng viral ini",positif,non-negatif,3 kelas saja
+135,,"Dookkk pumpung di Malang Ya Allah mau dong foto bareng dookkk, di manakah dokter ganteng viral berprestasi ini beradaa",5,"dok selagi ada di malang ya Allah mau foto bareng dok, dimana sih dokter ganteng viral berprestasi ini berada",positif,non-negatif,3 kelas saja
+136,,mksh bubidd🥰🥰,1,makasih bubid🥰🥰,positif,non-negatif,3 kelas saja
+136,,mksh bubidd🥰🥰,2,terima kasih bubid🥰🥰,positif,non-negatif,3 kelas saja
+136,,mksh bubidd🥰🥰,3,mksh byk bubid🥰🥰,positif,non-negatif,3 kelas saja
+136,,mksh bubidd🥰🥰,4,makasih bgt bubid🥰🥰,positif,non-negatif,3 kelas saja
+136,,mksh bubidd🥰🥰,5,terimakasih bubid🥰🥰,positif,non-negatif,3 kelas saja
+137,,"semngat selalu dok, semoga selalu dalam lindungan Tuhan Yang Maha Kuasa🤲",1,"semangat selalu dok, semoga selalu dalam lindungan tuhan yang maha kuasa🤲",positif,non-negatif,3 kelas saja
+137,,"semngat selalu dok, semoga selalu dalam lindungan Tuhan Yang Maha Kuasa🤲",2,"semangat terus dok, semoga terus dilindungi tuhan yang maha kuasa🤲",positif,non-negatif,3 kelas saja
+137,,"semngat selalu dok, semoga selalu dalam lindungan Tuhan Yang Maha Kuasa🤲",3,"tetap semangat dok, semoga selalu dalam lindungan tuhan🤲",positif,non-negatif,3 kelas saja
+137,,"semngat selalu dok, semoga selalu dalam lindungan Tuhan Yang Maha Kuasa🤲",4,"semangat selalu dok, semoga selalu terlindungi tuhan yang maha kuasa🤲",positif,non-negatif,3 kelas saja
+137,,"semngat selalu dok, semoga selalu dalam lindungan Tuhan Yang Maha Kuasa🤲",5,"semangat terus ya dok, semoga selalu dalam lindungan tuhan yg maha kuasa🤲",positif,non-negatif,3 kelas saja
+138,,terima kasih sudah menjawab dok sehat selalu,1,"makasih sudah menjawab dok, sehat selalu",positif,non-negatif,3 kelas saja
+138,,terima kasih sudah menjawab dok sehat selalu,2,"terimakasih udah jawab dok, sehat terus",positif,non-negatif,3 kelas saja
+138,,terima kasih sudah menjawab dok sehat selalu,3,"makasih byk sudah menjawab dok, sehat selalu",positif,non-negatif,3 kelas saja
+138,,terima kasih sudah menjawab dok sehat selalu,4,"terima kasih sudah jawab pertanyaannya dok, sehat terus",positif,non-negatif,3 kelas saja
+138,,terima kasih sudah menjawab dok sehat selalu,5,"makasih sudah menjawab dok, semoga sehat selalu",positif,non-negatif,3 kelas saja
+139,,sipp menuju hogwarts atletis dok👍,1,sip menuju hogwarts atletis dok👍,positif,non-negatif,3 kelas saja
+139,,sipp menuju hogwarts atletis dok👍,2,siap menuju hogwarts atletis dok👍,positif,non-negatif,3 kelas saja
+139,,sipp menuju hogwarts atletis dok👍,3,sipp lanjut ke hogwarts atletis dok👍,positif,non-negatif,3 kelas saja
+139,,sipp menuju hogwarts atletis dok👍,4,sip menuju hogwarts yg atletis dok👍,positif,non-negatif,3 kelas saja
+139,,sipp menuju hogwarts atletis dok👍,5,sipp menuju hogwarts atletis ya dok👍,positif,non-negatif,3 kelas saja
+140,,masyaallah dokter gia vibesx positif sekali,1,masya Allah dokter gia vibesnya positif bgt,positif,non-negatif,3 kelas saja
+140,,masyaallah dokter gia vibesx positif sekali,2,masyaallah dokter gia auranya positif banget,positif,non-negatif,3 kelas saja
+140,,masyaallah dokter gia vibesx positif sekali,3,masya Allah dokter gia vibesnya positif sekali,positif,non-negatif,3 kelas saja
+140,,masyaallah dokter gia vibesx positif sekali,4,masyaallah dokter gia emang positif vibesnya,positif,non-negatif,3 kelas saja
+140,,masyaallah dokter gia vibesx positif sekali,5,masya Allah dokter gia vibesnya positif parah,positif,non-negatif,3 kelas saja
+141,,skincarenya dokter ika bagus tuh ka,1,skincare dokter ika bagus itu kak,positif,non-negatif,3 kelas saja
+141,,skincarenya dokter ika bagus tuh ka,2,skincarenya dokter ika bagus lho kak,positif,non-negatif,3 kelas saja
+141,,skincarenya dokter ika bagus tuh ka,3,skincare dokter ika itu bagus kak,positif,non-negatif,3 kelas saja
+141,,skincarenya dokter ika bagus tuh ka,4,skincarenya dokter ika bagus bgt kak,positif,non-negatif,3 kelas saja
+141,,skincarenya dokter ika bagus tuh ka,5,skincare dokter ika bagus kok kak,positif,non-negatif,3 kelas saja
+142,,"terima kasih banyak, dokter ... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻",1,makasih banyak dokter... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻,positif,non-negatif,3 kelas saja
+142,,"terima kasih banyak, dokter ... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻",2,terimakasih byk dokter... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻,positif,non-negatif,3 kelas saja
+142,,"terima kasih banyak, dokter ... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻",3,makasih bgt dokter... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻,positif,non-negatif,3 kelas saja
+142,,"terima kasih banyak, dokter ... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻",4,terima kasih bnyk dokter... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻,positif,non-negatif,3 kelas saja
+142,,"terima kasih banyak, dokter ... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻",5,makasih banget dokter... ❤️🙏🏻🙏🏻🙏🏻🙏🏻🙏🏻,positif,non-negatif,3 kelas saja
+143,,makasih dok sudah membantu sesama manusia 🥰,1,terima kasih dok sudah membantu sesama manusia🥰,positif,non-negatif,3 kelas saja
+143,,makasih dok sudah membantu sesama manusia 🥰,2,makasih byk dok sudah bantu sesama manusia🥰,positif,non-negatif,3 kelas saja
+143,,makasih dok sudah membantu sesama manusia 🥰,3,terimakasih dok sudah menolong sesama manusia🥰,positif,non-negatif,3 kelas saja
+143,,makasih dok sudah membantu sesama manusia 🥰,4,makasih dok sudah bantu orang lain🥰,positif,non-negatif,3 kelas saja
+143,,makasih dok sudah membantu sesama manusia 🥰,5,terima kasih dok sudah menolong sesama🥰,positif,non-negatif,3 kelas saja
+145,,Dokliiipppp kesayangaaaaan mbahku🫶🏻,1,dok kesayangan mbahku bgt🫶🏻,positif,non-negatif,3 kelas saja
+145,,Dokliiipppp kesayangaaaaan mbahku🫶🏻,2,dokter kesayangan mbahku🫶🏻,positif,non-negatif,3 kelas saja
+145,,Dokliiipppp kesayangaaaaan mbahku🫶🏻,3,dok tersayang mbahku🫶🏻,positif,non-negatif,3 kelas saja
+145,,Dokliiipppp kesayangaaaaan mbahku🫶🏻,4,dok kesayangan banget mbahku🫶🏻,positif,non-negatif,3 kelas saja
+145,,Dokliiipppp kesayangaaaaan mbahku🫶🏻,5,dok paling disayang mbahku🫶🏻,positif,non-negatif,3 kelas saja
+146,,"selamat dok, terus mengedukasi masyarakat ya dok",1,"selamat dok, lanjut terus mengedukasi masyarakat ya dok",positif,non-negatif,3 kelas saja
+146,,"selamat dok, terus mengedukasi masyarakat ya dok",2,"congrats dok, terus edukasi masyarakat ya dok",positif,non-negatif,3 kelas saja
+146,,"selamat dok, terus mengedukasi masyarakat ya dok",3,"selamat dok, tetap edukasi masyarakat terus ya dok",positif,non-negatif,3 kelas saja
+146,,"selamat dok, terus mengedukasi masyarakat ya dok",4,"selamat ya dok, lanjut terus mengedukasi masyarakat",positif,non-negatif,3 kelas saja
+146,,"selamat dok, terus mengedukasi masyarakat ya dok",5,"congrats dok, terus semangat mengedukasi masyarakat ya",positif,non-negatif,3 kelas saja
+147,,Awal liat pencet tombol love dlu🥰,1,awal liat langsung pencet tombol love dulu🥰,positif,non-negatif,3 kelas saja
+147,,Awal liat pencet tombol love dlu🥰,2,"awal liat, aku pencet love duluan🥰",positif,non-negatif,3 kelas saja
+147,,Awal liat pencet tombol love dlu🥰,3,pas awal liat langsung love dulu🥰,positif,non-negatif,3 kelas saja
+147,,Awal liat pencet tombol love dlu🥰,4,awal liat aja udah pencet love🥰,positif,non-negatif,3 kelas saja
+147,,Awal liat pencet tombol love dlu🥰,5,begitu liat langsung pencet love dulu🥰,positif,non-negatif,3 kelas saja
+149,,"sehat sehat mbah dokter,",1,"sehat terus mbah dokter,",positif,non-negatif,3 kelas saja
+149,,"sehat sehat mbah dokter,",2,"semoga sehat mbah dokter,",positif,non-negatif,3 kelas saja
+149,,"sehat sehat mbah dokter,",3,"sehat selalu mbah dokter,",positif,non-negatif,3 kelas saja
+149,,"sehat sehat mbah dokter,",4,"sehat sehat terus mbah dokter,",positif,non-negatif,3 kelas saja
+149,,"sehat sehat mbah dokter,",5,"sehat ya mbah dokter,",positif,non-negatif,3 kelas saja
+150,,makin glowing aja dok,1,makin glowing aja nih dok,positif,non-negatif,3 kelas saja
+150,,makin glowing aja dok,2,makin glowing terus dok,positif,non-negatif,3 kelas saja
+150,,makin glowing aja dok,3,makin glowing ya dok,positif,non-negatif,3 kelas saja
+150,,makin glowing aja dok,4,makin glowing bgt dok,positif,non-negatif,3 kelas saja
+150,,makin glowing aja dok,5,makin glowing aja kelihatannya dok,positif,non-negatif,3 kelas saja
+151,,terima kasih dok.,1,makasih dok.,positif,non-negatif,3 kelas saja
+151,,terima kasih dok.,2,terimakasih dok.,positif,non-negatif,3 kelas saja
+151,,terima kasih dok.,3,makasih byk dok.,positif,non-negatif,3 kelas saja
+151,,terima kasih dok.,4,terima kasih byk dok.,positif,non-negatif,3 kelas saja
+151,,terima kasih dok.,5,makasih bgt dok.,positif,non-negatif,3 kelas saja
+152,,bismillahirrahmanirrahim semoga suatu saat nanti punya menantu seperti ini 🤭🤲,1,bismillah semoga suatu saat punya menantu seperti ini🤭🤲,positif,non-negatif,3 kelas saja
+152,,bismillahirrahmanirrahim semoga suatu saat nanti punya menantu seperti ini 🤭🤲,2,bismillahirrahmanirrahim semoga nanti dapat menantu kaya ini🤭🤲,positif,non-negatif,3 kelas saja
+152,,bismillahirrahmanirrahim semoga suatu saat nanti punya menantu seperti ini 🤭🤲,3,bismillah semoga kedepannya punya menantu seperti ini🤭🤲,positif,non-negatif,3 kelas saja
+152,,bismillahirrahmanirrahim semoga suatu saat nanti punya menantu seperti ini 🤭🤲,4,bismillahirrahmanirrahim semoga suatu hari punya menantu begini🤭🤲,positif,non-negatif,3 kelas saja
+152,,bismillahirrahmanirrahim semoga suatu saat nanti punya menantu seperti ini 🤭🤲,5,bismillah semoga suatu saat nanti dapat menantu kaya gini🤭🤲,positif,non-negatif,3 kelas saja
+153,,"Masyallah makasih dok, yang tadinya ovt jadi makin lega🥰",1,"masya Allah makasih dok, yg tadinya ovt skrg jd makin lega🥰",positif,non-negatif,3 kelas saja
+153,,"Masyallah makasih dok, yang tadinya ovt jadi makin lega🥰",2,"masyaallah terima kasih dok, yg awalnya ovt jd makin lega🥰",positif,non-negatif,3 kelas saja
+153,,"Masyallah makasih dok, yang tadinya ovt jadi makin lega🥰",3,"masya Allah makasih byk dok, yg tadinya ovt jadi lega bgt🥰",positif,non-negatif,3 kelas saja
+153,,"Masyallah makasih dok, yang tadinya ovt jadi makin lega🥰",4,"masyaallah makasih dok, yg tadinya ovt skrg makin lega🥰",positif,non-negatif,3 kelas saja
+153,,"Masyallah makasih dok, yang tadinya ovt jadi makin lega🥰",5,"masya Allah terimakasih dok, yg tadinya ovt sekarang lega bgt🥰",positif,non-negatif,3 kelas saja
+154,,tŕmks ìlmunyà dok 👍💪,1,terima kasih ilmunya dok👍💪,positif,non-negatif,3 kelas saja
+154,,tŕmks ìlmunyà dok 👍💪,2,makasih ilmunya dok👍💪,positif,non-negatif,3 kelas saja
+154,,tŕmks ìlmunyà dok 👍💪,3,trmksh byk ilmunya dok👍💪,positif,non-negatif,3 kelas saja
+154,,tŕmks ìlmunyà dok 👍💪,4,terimakasih byk ilmunya dok👍💪,positif,non-negatif,3 kelas saja
+154,,tŕmks ìlmunyà dok 👍💪,5,makasih bgt ilmunya dok👍💪,positif,non-negatif,3 kelas saja
+155,,positive vibes beudddd dokter yg satu ini,1,positive vibes banget dokter yg satu ini,positif,non-negatif,3 kelas saja
+155,,positive vibes beudddd dokter yg satu ini,2,vibesnya positif bgt dokter ini,positif,non-negatif,3 kelas saja
+155,,positive vibes beudddd dokter yg satu ini,3,positive vibes parah dokter yg satu ini,positif,non-negatif,3 kelas saja
+155,,positive vibes beudddd dokter yg satu ini,4,vibesnya positif banget dokter satu ini,positif,non-negatif,3 kelas saja
+155,,positive vibes beudddd dokter yg satu ini,5,positive vibes bgt dah dokter yg ini,positif,non-negatif,3 kelas saja
+156,,"gakkk nyangkaa di notisss , thank youu dokkk",1,"ga nyangka ada di notis, thank you dok",positif,non-negatif,3 kelas saja
+156,,"gakkk nyangkaa di notisss , thank youu dokkk",2,"gak nyangka masuk notis, makasih dok",positif,non-negatif,3 kelas saja
+156,,"gakkk nyangkaa di notisss , thank youu dokkk",3,"ga nyangka ternyata di notis, terima kasih dok",positif,non-negatif,3 kelas saja
+156,,"gakkk nyangkaa di notisss , thank youu dokkk",4,"gak nyangka bgt di notis, thankyou dok",positif,non-negatif,3 kelas saja
+156,,"gakkk nyangkaa di notisss , thank youu dokkk",5,"ga nyangka aku ada di notis, makasih banyak dok",positif,non-negatif,3 kelas saja
+157,,Terima kasih dokter ...,1,makasih dokter...,positif,non-negatif,3 kelas saja
+157,,Terima kasih dokter ...,2,terimakasih dokter...,positif,non-negatif,3 kelas saja
+157,,Terima kasih dokter ...,3,makasih byk dokter...,positif,non-negatif,3 kelas saja
+157,,Terima kasih dokter ...,4,terima kasih byk dokter...,positif,non-negatif,3 kelas saja
+157,,Terima kasih dokter ...,5,makasih bgt dokter...,positif,non-negatif,3 kelas saja
+159,,Benar sekali dok,1,betul sekali dok,positif,non-negatif,3 kelas saja
+159,,Benar sekali dok,2,bener bgt dok,positif,non-negatif,3 kelas saja
+159,,Benar sekali dok,3,setuju banget dok,positif,non-negatif,3 kelas saja
+159,,Benar sekali dok,4,betul banget dok,positif,non-negatif,3 kelas saja
+159,,Benar sekali dok,5,iya bener sekali dok,positif,non-negatif,3 kelas saja
+160,,Matur nuwun ilmu Pak Dokter🙏🙏🙏,1,terima kasih ilmunya pak dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+160,,Matur nuwun ilmu Pak Dokter🙏🙏🙏,2,matur suwon ilmunya pak dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+160,,Matur nuwun ilmu Pak Dokter🙏🙏🙏,3,makasih byk ilmunya pak dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+160,,Matur nuwun ilmu Pak Dokter🙏🙏🙏,4,matur nuwun atas ilmunya pak dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+160,,Matur nuwun ilmu Pak Dokter🙏🙏🙏,5,terimakasih ilmu pak dokter🙏🙏🙏,positif,non-negatif,3 kelas saja
+161,,Sudah di fase pengen ketemu dokter gia 😉,1,udah di fase pengen banget ketemu dokter gia😉,positif,non-negatif,3 kelas saja
+161,,Sudah di fase pengen ketemu dokter gia 😉,2,sudah sampe fase mau ketemu dokter gia😉,positif,non-negatif,3 kelas saja
+161,,Sudah di fase pengen ketemu dokter gia 😉,3,udah masuk fase ingin ketemu dokter gia😉,positif,non-negatif,3 kelas saja
+161,,Sudah di fase pengen ketemu dokter gia 😉,4,sudah di tahap pengen ketemu dokter gia😉,positif,non-negatif,3 kelas saja
+161,,Sudah di fase pengen ketemu dokter gia 😉,5,udah fase pengen bgt jumpa dokter gia😉,positif,non-negatif,3 kelas saja
+162,,tks dok..,1,makasih dok..,positif,non-negatif,3 kelas saja
+162,,tks dok..,2,thanks dok..,positif,non-negatif,3 kelas saja
+162,,tks dok..,3,terima kasih dok..,positif,non-negatif,3 kelas saja
+162,,tks dok..,4,thx dok..,positif,non-negatif,3 kelas saja
+162,,tks dok..,5,makasih byk dok..,positif,non-negatif,3 kelas saja
+163,,cocok jadi mentri kesehatan😁😁😁 selanjutnya,1,cocok banget jadi menteri kesehatan berikutnya😁😁😁,positif,non-negatif,3 kelas saja
+163,,cocok jadi mentri kesehatan😁😁😁 selanjutnya,2,pas jadi calon menkes selanjutnya😁😁😁,positif,non-negatif,3 kelas saja
+163,,cocok jadi mentri kesehatan😁😁😁 selanjutnya,3,cocok jadi menkes selanjutnya nih😁😁😁,positif,non-negatif,3 kelas saja
+163,,cocok jadi mentri kesehatan😁😁😁 selanjutnya,4,cocok bgt buat jadi menkes berikutnya😁😁😁,positif,non-negatif,3 kelas saja
+163,,cocok jadi mentri kesehatan😁😁😁 selanjutnya,5,pantes jadi menteri kesehatan selanjutnya😁😁😁,positif,non-negatif,3 kelas saja
+165,,smga dokter gia segera mndpt keturunan Aamiin,1,semoga dokter gia segera dapat keturunan aamiin,positif,non-negatif,3 kelas saja
+165,,smga dokter gia segera mndpt keturunan Aamiin,2,semoga dokter gia cepat dapat keturunan aamiin,positif,non-negatif,3 kelas saja
+165,,smga dokter gia segera mndpt keturunan Aamiin,3,semoga dokter gia segera diberi keturunan aamiin,positif,non-negatif,3 kelas saja
+165,,smga dokter gia segera mndpt keturunan Aamiin,4,semoga dokter gia cepat2 dpt keturunan aamiin,positif,non-negatif,3 kelas saja
+165,,smga dokter gia segera mndpt keturunan Aamiin,5,semoga dokter gia segera mendapat momongan aamiin,positif,non-negatif,3 kelas saja
+167,,"haloo dokter zie yg cantik💕..terimakasih atas remindernyaa yaaa dokter, videonyaa sudah akuu takedown darii lama setelah dokter up video reminder ini di instagram dan sudah akuu reminder jugaa ke followers untuk tidak mengikuti akuuu🫶🏻💖",1,"halo dokter zie yg cantik💕.. terima kasih atas remindernya ya dokter, videonya sudah aku takedown dari lama setelah dokter upload video reminder ini di instagram dan sudah aku ingatkan jg ke followers utk tidak mengikuti aku🫶🏻💖",positif,non-negatif,3 kelas saja
+167,,"haloo dokter zie yg cantik💕..terimakasih atas remindernyaa yaaa dokter, videonyaa sudah akuu takedown darii lama setelah dokter up video reminder ini di instagram dan sudah akuu reminder jugaa ke followers untuk tidak mengikuti akuuu🫶🏻💖",2,"halo dokter zie yg cantik💕.. makasih atas remindernya dokter, videonya udah aku hapus dari lama setelah dokter posting video reminder ini di instagram dan udah aku kasih tau jg ke followers utk ga ikutin aku🫶🏻💖",positif,non-negatif,3 kelas saja
+167,,"haloo dokter zie yg cantik💕..terimakasih atas remindernyaa yaaa dokter, videonyaa sudah akuu takedown darii lama setelah dokter up video reminder ini di instagram dan sudah akuu reminder jugaa ke followers untuk tidak mengikuti akuuu🫶🏻💖",3,"haloo dokter zie yg cantik💕.. terimakasih remindernya ya dokter, videonya udah aku takedown lama setelah dokter upload reminder ini di ig dan sudah aku ingatkan jg followers utk ga follow aku🫶🏻💖",positif,non-negatif,3 kelas saja
+167,,"haloo dokter zie yg cantik💕..terimakasih atas remindernyaa yaaa dokter, videonyaa sudah akuu takedown darii lama setelah dokter up video reminder ini di instagram dan sudah akuu reminder jugaa ke followers untuk tidak mengikuti akuuu🫶🏻💖",4,"halo dokter zie yg cantik💕.. terima kasih remindernya dokter, videonya sudah aku hapus dari lama setelah dokter post video reminder ini di instagram dan sudah aku kasih tahu jg followers utk ga ikuti aku🫶🏻💖",positif,non-negatif,3 kelas saja
+167,,"haloo dokter zie yg cantik💕..terimakasih atas remindernyaa yaaa dokter, videonyaa sudah akuu takedown darii lama setelah dokter up video reminder ini di instagram dan sudah akuu reminder jugaa ke followers untuk tidak mengikuti akuuu🫶🏻💖",5,"haloo dokter zie yg cantik💕.. makasih atas reminder ini ya dokter, videonya udah aku takedown lama setelah dokter upload video reminder ini di ig dan udah aku ingatkan jg ke followers utk ga follow aku🫶🏻💖",positif,non-negatif,3 kelas saja
+168,,terima kasih infonya dok sangat bermanfaat...ijin share dok. Terima kasih 🙏🥰,1,makasih infonya dok sangat bermanfaat... ijin share dok. terima kasih🙏🥰,positif,non-negatif,3 kelas saja
+168,,terima kasih infonya dok sangat bermanfaat...ijin share dok. Terima kasih 🙏🥰,2,terimakasih infonya dok sangat berguna... izin share dok. makasih🙏🥰,positif,non-negatif,3 kelas saja
+168,,terima kasih infonya dok sangat bermanfaat...ijin share dok. Terima kasih 🙏🥰,3,terima kasih info nya dok sangat bermanfaat... mohon izin share dok. makasih🙏🥰,positif,non-negatif,3 kelas saja
+168,,terima kasih infonya dok sangat bermanfaat...ijin share dok. Terima kasih 🙏🥰,4,makasih byk infonya dok sangat bermanfaat... ijin share ya dok. terima kasih🙏🥰,positif,non-negatif,3 kelas saja
+168,,terima kasih infonya dok sangat bermanfaat...ijin share dok. Terima kasih 🙏🥰,5,terimakasih infonya dok sangat berfaedah... izin share dok. makasih bgt🙏🥰,positif,non-negatif,3 kelas saja
