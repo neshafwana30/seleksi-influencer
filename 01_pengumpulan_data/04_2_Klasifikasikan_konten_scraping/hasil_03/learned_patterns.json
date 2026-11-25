@@ -1,21 +1,1651 @@
 {
   "metadata": {
-    "created_at": "2026-09-10T13:29:41.617508",
+    "created_at": "2026-09-19T00:00:53.782595",
     "train_split": 70.0,
     "test_split": 30.000000000000004,
-    "overall_accuracy": 79.80613893376413,
-    "overall_precision": 81.79419525065963,
-    "overall_recall": 84.69945355191257,
-    "overall_f1": 83.22147651006712
+    "overall_accuracy": 82.87560581583199,
+    "overall_precision": 83.33333333333334,
+    "overall_recall": 88.79781420765028,
+    "overall_f1": 85.97883597883599
+  },
+  "global_error_analysis": {
+    "false_negatives": {
+      "count": 41,
+      "avg_caption_length": 122.21951219512195,
+      "avg_medical_terms": 0.3902439024390244,
+      "avg_ambiguous_terms": 0.14634146341463414,
+      "short_caption_count": 23,
+      "low_confidence_count": 6,
+      "examples": [
+        {
+          "caption": "",
+          "confidence": 0.0,
+          "caption_length": 0,
+          "has_medical_terms": false,
+          "medical_term_count": 0,
+          "ambiguous_term_count": 0
+        },
+        {
+          "caption": "",
+          "confidence": 0.0,
+          "caption_length": 0,
+          "has_medical_terms": false,
+          "medical_term_count": 0,
+          "ambiguous_term_count": 0
+        },
+        {
+          "caption": "#stitch with 7679821666767392020",
+          "confidence": 0.85,
+          "caption_length": 32,
+          "has_medical_terms": false,
+          "medical_term_count": 0,
+          "ambiguous_term_count": 0
+        }
+      ]
+    },
+    "false_positives": {
+      "count": 65,
+      "avg_caption_length": 144.24615384615385,
+      "avg_medical_terms": 0.9384615384615385,
+      "avg_ambiguous_terms": 0.49230769230769234,
+      "misleading_keywords_count": 3,
+      "examples": [
+        {
+          "caption": "siapa sangka… @Ikhsanqthii, MD",
+          "confidence": 0.85,
+          "caption_length": 30,
+          "has_medical_terms": false,
+          "medical_term_count": 0,
+          "ambiguous_term_count": 0,
+          "has_non_health_terms": false
+        },
+        {
+          "caption": "Replying to @Doklip normal & Sume’eh aku tetep makan sehatt yaaach✨",
+          "confidence": 0.85,
+          "caption_length": 67,
+          "has_medical_terms": false,
+          "medical_term_count": 0,
+          "ambiguous_term_count": 1,
+          "has_non_health_terms": false
+        },
+        {
+          "caption": "Yg nanya doklip dokter apa, aku dokter spesial yaah✨🤸🏻‍♂️",
+          "confidence": 0.85,
+          "caption_length": 57,
+          "has_medical_terms": true,
+          "medical_term_count": 2,
+          "ambiguous_term_count": 0,
+          "has_non_health_terms": false
+        }
+      ]
+    },
+    "insights": []
   },
   "influencers": {
     "aliphildan": {
-      "profile_summary": "Mostly non-health content. Posts formal. Short, snappy captions.",
-      "basic_stats": {
-        "health_percentage": 23.1,
-        "no_caption_percentage": 0.0,
-        "total_videos_analyzed": 39
-      },
-      "test_performance": {
-        "accuracy": 70.6,
-        "correct_predictions": 
+      "health_percentage": 23.1,
+      "no_caption_percentage": 0.0,
+      "accuracy": 70.6,
+      "health_samples": [
+        "with Terus kenapa ada yang jadi lesung pipi pas dikasih cabe?Karena kebetulan! bukan karena cabenya!",
+        "yaahh kurang lebih tanggapan doklip sama kyk mereka berdua, tonton aja video merekaaa @Ayman Alatas ",
+        "Jangan ragu periksa ke faskes terdekat yaa kalau udh curiga🥺"
+      ],
+      "non_health_samples": [
+        "Saran model rambut yang bagus dong gais👇🏻",
+        "happy for u both 💍🌻 @Arrofi ramadhan @annsekar",
+        "6 tahun sekolah ngapain ajee 😒"
+      ],
+      "error_insights": [
+        "Caption punya medical terms tapi context sebenarnya non-health (2x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 5,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "siapa sangka… @Ikhsanqthii, MD",
+            "confidence": 0.85,
+            "caption_length": 30,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Replying to @Doklip normal & Sume’eh aku tetep makan sehatt yaaach✨",
+            "confidence": 0.85,
+            "caption_length": 67,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "aymanalts": {
+      "health_percentage": 50.0,
+      "no_caption_percentage": 29.4,
+      "accuracy": 56.7,
+      "health_samples": [
+        "#stitch with 7668618564869606674"
+      ],
+      "non_health_samples": [
+        "Replying to @Ikhsanqthii, MD",
+        "#stitch with @Kandang Santai"
+      ],
+      "error_insights": [
+        "Caption kosong/sangat pendek (3x) susah diklasifikasi",
+        "Konten health tapi medical terms kurang jelas (12x)",
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 12,
+        "false_positives_count": 1,
+        "examples_fn": [
+          {
+            "caption": "",
+            "confidence": 0.0,
+            "caption_length": 0,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          },
+          {
+            "caption": "",
+            "confidence": 0.0,
+            "caption_length": 0,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "#stitch with @Ikhsanqthii, MD",
+            "confidence": 0.8,
+            "caption_length": 29,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "bidancynthia": {
+      "health_percentage": 18.4,
+      "no_caption_percentage": 4.1,
+      "accuracy": 66.7,
+      "health_samples": [
+        "Ada yang minum pas Lebaran kemarin bumil? #sirup #ibuhamil",
+        "Bumil busui Jangan asal beli yang viral ya pastiin yang aman dipake",
+        "Ini yg aku lakuin buat annaku, Alhamdullillah ga rewel ,badannya anget aja #imunisasidpt2"
+      ],
+      "non_health_samples": [
+        "#asmr",
+        "Membalas @Hii'ItsNebyy🌱🐝 Semoga bisa lahir normal dipuskesmas 💪🏻🤲 #ibuhamil",
+        "diapers bayi atau underpad ? #bayi"
+      ],
+      "error_insights": [
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 7,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Ahirnya Naik Juga BB bumil mskipun sedikit ,tpi blm tau nih BBJ gemoy brpa soalnya blm USG lagi ,bumil sampe tm3 dah naik brpa kg ? BBJ brpa? #ibuhami",
+            "confidence": 0.95,
+            "caption_length": 163,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Makasih Mama udah bantuin dari Lahiran sampe Ricy mau 2bln, jauh” datang dari Garut - Sumbawa 🫶🏻semoga sehat” panjang Umur Nenek Ricy 🤲",
+            "confidence": 0.85,
+            "caption_length": 135,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "dionharyadi": {
+      "health_percentage": 81.8,
+      "no_caption_percentage": 0.0,
+      "accuracy": 60.0,
+      "health_samples": [
+        "Pola hidupmu yang buruk, kopi susu yang disalahkan 🥲",
+        "Sama juga dengan asap polusi sebenarnya, solusinya apa?Untuk sementara: menghindari sebisa mungkin d",
+        "Usus buntu siapanya pikiran buntu?"
+      ],
+      "non_health_samples": [
+        "Susu adalah salah satu sumber protein favorit saya. Tapi jangan sampe salah milih jenis susu ya!#Tro",
+        "Bukan mau sombong tapi negara saya udah berdiri 80 tahun 🙏"
+      ],
+      "error_insights": [
+        "Caption terlalu minim (10 chars rata-rata) kurang informasi",
+        "Konten health tapi medical terms kurang jelas (1x)"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 1,
+        "examples_fn": [
+          {
+            "caption": "Mie ayam 🙏",
+            "confidence": 0.95,
+            "caption_length": 10,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "He he heProblem negara lain begini ya ternyata hmmmm",
+            "confidence": 0.7,
+            "caption_length": 52,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "dokter.harmonospanak": {
+      "health_percentage": 46.7,
+      "no_caption_percentage": 33.3,
+      "accuracy": 50.0,
+      "health_samples": [
+        "Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M"
+      ],
+      "non_health_samples": [
+        "Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google M"
+      ],
+      "error_insights": [
+        "Caption kosong/sangat pendek (3x) susah diklasifikasi",
+        "Konten health tapi medical terms kurang jelas (3x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 3,
+        "false_positives_count": 4,
+        "examples_fn": [
+          {
+            "caption": "",
+            "confidence": 0.033333333333333354,
+            "caption_length": 0,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          },
+          {
+            "caption": "",
+            "confidence": 0.033333333333333354,
+            "caption_length": 0,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "Praktek spesialis anak Hub admin :kak Fatimah 0812 . 3024 . 6181kak Wulan 0858 . 1565 . 2806Google Map tulis :Praktek dr.Harmono PD Sp.AAlamat :Jl. Ai",
+            "confidence": 0.95,
+            "caption_length": 240,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "konsultasi peyakit anak gratisgabung grup WA...link di profil bio saya. Hari SENIN , RABU , JUM'AT jam 09.00 - 12.00. Saat grup dibuka utk konsultasi ",
+            "confidence": 0.95,
+            "caption_length": 162,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "dokter.reni.anak": {
+      "health_percentage": 50.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Bayi nangis berjam-jam dan sulit ditenangkan bisa jadi tanda KOLIK BAYI.Salah satu penyebab kolik ad"
+      ],
+      "non_health_samples": [
+        "Salam dari maba FK UNAIR angk 2026"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "dokter_ika": {
+      "health_percentage": 75.8,
+      "no_caption_percentage": 0.0,
+      "accuracy": 93.1,
+      "health_samples": [
+        "Basic Skincare juga punya syaratnya, tidak asal sabun, tidak asal moist dan tidak asal sunscreen.. #",
+        "#belajarbersamadrika #edukasidrika #jagakulitmu #drIkaJawab",
+        "Bukan semua yang cepat itu baik,bukan semua yang putih itu sehat.Ada harga yang tak terlihat,dibayar"
+      ],
+      "non_health_samples": [
+        "Setelah semuanya dijalankan dengan ikhlas dan saat ini sudah lebih tenang dan nyaman sama kulitnya d",
+        "Ngajakin buat ikutan putih ???? #belajarbersamadrika #edukasidrika #cintaiwarnamu",
+        "Ada satu bentuk mencintai diri sendiri yang kadang tidak banyak orang lihat…Memilih untuk berjuang.B"
+      ],
+      "error_insights": [
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 2,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Terima kasih buat semua yang bertemu hari ini ❤️❤️❤️ 🤗 #drichabestie #DrichaJakarta #belajarbersamadrika #Edukasidrika #KulitSehatTanpaToksik",
+            "confidence": 0.95,
+            "caption_length": 141,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 2,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Kadang kesabaran butuh kepastian kan? #belajarbersamadrika #edukasidokterika",
+            "confidence": 0.85,
+            "caption_length": 76,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "dokteramiraobgyn": {
+      "health_percentage": 76.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 91.7,
+      "health_samples": [
+        "14 tahun menikah begini endingnya #dokterobgynpedalaman#papua#fyp",
+        "banyak perempuan sepelekan hal ini padahal dampaknya parah untuk area miss v @Clogent#CLOGENT#Underw",
+        "pernah gak sih kalian sakali aja mikirin diri sendiri #pernahgaksekaliajamikirindirisendiri#fypage"
+      ],
+      "non_health_samples": [
+        "pesan untuk suami yang tidak setia dengan pasangan dan istri yang diselingkuhi #dokterobgynpedalaman",
+        "Ohh gini ya rasanya jadi orangtua #kerjakerjakerja#sekolahhlagi#fyp",
+        "jika sidia mendua waspadalah! kanker cervix mengintai anda para wanita yang bukan satu2 nya #fyp#"
+      ],
+      "error_insights": [
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "siapa para bu da yang belum pernah vaksin hpv #dokterkandunganbatulicin#vaksinhpv#fyp @dokter_kandungan.batulicin",
+            "confidence": 0.95,
+            "caption_length": 113,
+            "has_medical_terms": true,
+            "medical_term_count": 2,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "doktermatahendra": {
+      "health_percentage": 87.5,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "LASIK & SMILE Pakai Pisau Bedah? Serem Banget 😨😨... Tapi MITOS! 😁❌🔪Banyak yang masih maju-mundur mau",
+        "Sudah LASIK/SMILE tapi Masih Silau? Jangan panik — ini sering terjadi, tapi ada ada perbedaan antara",
+        "Manfaat salad bagi mata? Menjaga kesehatan mata ternyata bukan cuma soal kacamata atau vitamin 👀🥗 Ap"
+      ],
+      "non_health_samples": [
+        "Terima kasih atas kepercayaan dok @ghaisanihumairah dan dok @doktersanifparu ke tim kami di @eyequ.i",
+        "Part 2 of 2: Kacamata (Mustahil) Patah!!! Selain kualitas gagangnya yang benar2 buat berdecak kagum "
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "doktermedok": {
+      "health_percentage": 89.4,
+      "no_caption_percentage": 0.0,
+      "accuracy": 93.1,
+      "health_samples": [
+        "“Core Exercise” buat Bumil supaya engga gampang sakit & pegel di punggung bawah, pinggang, panggul, ",
+        "Kalau ada nyeri saat gerakan olahraga, apakah boleh lanjut atau harus stop? Monggo tak jelasin",
+        "Sebetulnya berapa banyak sih jumlah cairan yang hilang selama puasa? Tak kasih tauTak ingetin juga a"
+      ],
+      "non_health_samples": [
+        "Rest Active hari ini : Easy Run 🔥 Run 3K, Pace 6-7an Medannya naik turun (elevasi 70 meteran, maksim",
+        "Sumeh Junjun 👶🏻🩵",
+        "Celoteh antara Bapak & Anak Lanang 2,5 bulan Ngakak ngakak 👶🏻🩵"
+      ],
+      "error_insights": [
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 2,
+        "false_positives_count": 0,
+        "examples_fn": [
+          {
+            "caption": "Curcol dikit tentang Perawatan Rambut & Kulit Kepala Junjun 🩵 Monggo yang barusan jadi Papa atau Mama baru bisa share juga Note : Sesuaikanlah dengan ",
+            "confidence": 0.85,
+            "caption_length": 325,
+            "has_medical_terms": true,
+            "medical_term_count": 2,
+            "ambiguous_term_count": 2
+          },
+          {
+            "caption": "Kneel to Squat Challenge Test 🔥 “Fun Challenge Test”, yang bisa lakuin ini katanya Body Age 20tahunan hehe",
+            "confidence": 0.85,
+            "caption_length": 106,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": []
+      }
+    },
+    "dokternadiyah": {
+      "health_percentage": 100.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 87.5,
+      "health_samples": [
+        "Yang mageran dengan prentelan skincare, boleh coba ini ya 🙌🏻#skincare #womancare #etalagen",
+        "Replying to @Titik Nurita159 Part 2tips cegah stretch mark 🙌🏻#edukasikesehatan #stretchmarks #ciarai",
+        "Fungsi kolagen itu banyakDan penurunan produksinya ga nunggu tuaa 😰#edukasikesehatan #kolagen #tipss"
+      ],
+      "non_health_samples": [],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)",
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 0,
+        "examples_fn": [
+          {
+            "caption": "#GRWM Update seperintilan simpel perempuan buat tampil cantik 😉#perempuan #cantik #happy #eyeshadow",
+            "confidence": 0.95,
+            "caption_length": 99,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": []
+      }
+    },
+    "dokterprasadja": {
+      "health_percentage": 100.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "“Kok akhir-akhir ini aku sering lupa kata ya…?” Bukan cuma karena sibuk. Pada perempuan, insomnia & ",
+        "Ngorok bukan sekadar “ganggu pasangan”. Bisa tanda sleep apnea: napas berulang kali berhenti saat ti",
+        "Ngorok hilang, hidup balik ON 🔥 Otak lebih fokus, energi naik, libido pun kembali. Tidur berkualitas"
+      ],
+      "non_health_samples": [],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "doktervito": {
+      "health_percentage": 85.0,
+      "no_caption_percentage": 5.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Jangan nekat ikut HYROX tanpa persiapan!Finish memang membanggakan, tapi keselamatan tetap nomor sat",
+        "Ini Kesekian Kalinya, Pasien datang karena anggap enteng Pencegahan. Catat Kelompok Berisiko: 1. Per",
+        "5 Kebiasaan Sehari-hari Agar Jantung Tetap Sehatdibahas langsung oleh:Dr. dr. Vito A. Damay, SpJP(K)"
+      ],
+      "non_health_samples": [
+        "metode VITO",
+        "Pesan Papa dan Mama Waktu saya dulu bahkan masih sekolah, “ Cepat belajar lagi jangan terlena, nanti",
+        "Nah tes diri sendiri ya bisa kan? 👍🏻😄"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "dr.deamaulidia": {
+      "health_percentage": 20.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Botol terlihat bersih tapi masih keruh atau bau? Itu bukan sekadar noda.” Residu lemak & protein dar"
+      ],
+      "non_health_samples": [
+        "Pet Festival di ICE BSD pekan ini smpai hari minggu tanggal 3 Mei 2026 #petfestindonesia #petfestiva",
+        "Rekomendasi hotel kids friendly di jakarta @PT SUNTER LAKESIDE HOTEL TBK 🤍 Seru banget nginep disini",
+        "Liburan sekolah kemana lagi ya ? yuk ke AEON BSD"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "dr.mariojohan": {
+      "health_percentage": 72.7,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Kamu harus tau produksi minyak berlebih ga selalu berarti kulit terhidrasi dengan baik !! Coba tonto",
+        "Ada oknum selebgram “berkeliaran” pas lagi “diduga campak” ? Banyak yg bilang lebay banget sih netiz",
+        "Sekedar bertanya…."
+      ],
+      "non_health_samples": [
+        "POV: New CLINIC OWNER di BALI dan mau beli “mesin” kedua seharga ratusan juta… tapi plot twist-nya: ",
+        "Sorry ya bro bro gue bocorin.. #JOEinSpillTheTea",
+        "Fun fact Ramadhan ! Kulit lebih gampang kering saat puasa karena kehilangan air seharian.Trik simpel"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "dr.ndreamon": {
+      "health_percentage": 57.1,
+      "no_caption_percentage": 0.0,
+      "accuracy": 50.0,
+      "health_samples": [
+        "Jerawat membuat jadi stres… atau sebaliknya? Stres membuat jerawat? Mari kita bahas dengan sopan san",
+        "Sudah bikin target, tapi tidak dilakukan? Ini alasannya",
+        "Ini adalah filosofi kertas yang lecek."
+      ],
+      "non_health_samples": [
+        "Kalian lagi main game apa sekarang?",
+        "Pameran Doraemon di Tokyo Dream Park!Video ini ada 3 bagian soalnya panjang",
+        "Kalau ada yang nanya, jawab begini aja"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 1,
+        "examples_fn": [
+          {
+            "caption": "Saya pemalu, jadi saya nggak pede ngomong… jadi begini saja ya.",
+            "confidence": 0.85,
+            "caption_length": 63,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "Pembatas bukunya kok begini?",
+            "confidence": 0.85,
+            "caption_length": 28,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "dr.saddam_ismail": {
+      "health_percentage": 95.3,
+      "no_caption_percentage": 0.0,
+      "accuracy": 97.3,
+      "health_samples": [
+        "Udah mulai \"nabung\" buat fondasi tubuhmu di masa depan belum? Yuk, amankan produknya di keranjang ku",
+        "Rela beli kacamata anti-radiasi mahal agar mata tidak rusak saat main HP? Apakah pemakaian kacamata ",
+        "Tidur dengan rambut basah tidak menyebabkan flu karena flu disebabkan oleh virus, bukan suhu dingin."
+      ],
+      "non_health_samples": [
+        "Tahu nggak sih kalau tubuh kita butuh asupan mineral yang namanya Selenium? Nah, kali ini kita bahas",
+        "Ini loh isi dalam implan #ReaksiDokter #InfoKesehatan #EdukasiKesehatan #FaktaMedis #KesehatanWanita",
+        "madu akasia #madumurni #maduakasia #madu #maduzenoora #zenoora"
+      ],
+      "error_insights": [
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Siapa nih yang belum tau cara minum madu + kelapa #maduzenoora #airkelapa #dayatahantubuh #madumurni #maduakasia",
+            "confidence": 0.85,
+            "caption_length": 112,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "dr.ziee": {
+      "health_percentage": 85.7,
+      "no_caption_percentage": 0.0,
+      "accuracy": 83.3,
+      "health_samples": [
+        "Selain ganggu orang orang, ternyata bau mulut itu salah satu tanda kalo mulut kamu bermasalah. That’",
+        "Ini tips yang gampang banget dilakuin dan nggak susah juga dicari, tapi nggak banyak orang Indonesia",
+        "Banyak banget yang tag aku di video Abel kemarin, jadi aku coba jelasin ya 🤍 izin stitch ya bel 🙏🏻 S"
+      ],
+      "non_health_samples": [
+        "Part 10| Hal yang lagi rame dimana-mana. Apa pandangan gen milenial ketika gen z bertanya ini? Yuk #",
+        "Menurutku inovasi Sunlotion dari moell ini jadi solusi yang practical untuk keseharian anak karena b"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)",
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 0,
+        "examples_fn": [
+          {
+            "caption": "Satu “misteri” yang dialamin sama banyak cewek Indonesia, tapi sebenernya ini bisa diatasin dan caranya juga simple asal kamu tahu fakta ini! #rambut ",
+            "confidence": 0.85,
+            "caption_length": 201,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": []
+      }
+    },
+    "dr.zulvia.syarif.spkj": {
+      "health_percentage": 65.7,
+      "no_caption_percentage": 0.0,
+      "accuracy": 46.7,
+      "health_samples": [
+        "Penting nih parents untuk diketahui ya! #kesehatanmental #anakremaja #psikiater",
+        "You should be enjoying Lebaran, guysss 🥰❤️#lebaran #anxiety #psikiater",
+        "Adiksi itu gangguan mental. Kalau sudah adiksi, perlu terqpi dan rehabilitasi agar pulih. #adiksi #e"
+      ],
+      "non_health_samples": [
+        "Banyak yang terlihat kuat sebenarnya pura-pura kuat. Ada yang bisa relate?#trauma #pulih #psikiater",
+        "Mereka yang keren, saya yang bangga 😍😍😍 Guys, ini saya ajak berkunjung ke stand Akademi & BLK Talent",
+        "Rest in Love, beautiful soul #vidialdiano #restinpeace"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (2x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (2x)"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 3,
+        "false_positives_count": 5,
+        "examples_fn": [
+          {
+            "caption": "Prinsipnya, gangguan kepribadian narsisiatik bisa dialami oleh pria maupun wanita, hanya ada yg gejalanya lebih terlihat, ada yg lebih terselubung #np",
+            "confidence": 0.85,
+            "caption_length": 201,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 0
+          },
+          {
+            "caption": "Hati2 dalam berelasi ya gaess, stay safe 🫶 kalau mau saya bahas red flags mengenali pola manipulatif psikopat, komen yaaa ! #psikopat #antisocialperso",
+            "confidence": 0.95,
+            "caption_length": 175,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "Terima kasih sudah mengingatkan saya mengapa saya memilih jalur profesi ini. Terima kasih 🙏🙏🙏 Tag seseorang yang membantu kalian melewati 2025 dengan ",
+            "confidence": 0.95,
+            "caption_length": 218,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Pre order now https://linktr.ee/POTheTruthAboutNPD #npd #npdawareness #psikiater",
+            "confidence": 0.85,
+            "caption_length": 80,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "drgfira": {
+      "health_percentage": 25.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Namanya white spot ya, dan menandakan di bagian tersebut sangat rapuh 🥹 jadi butuh perawatan dan per"
+      ],
+      "non_health_samples": [
+        "Kalau kamu lagi di titik itu sekarang — titik dimana kamu hampir nyerah sama impian kamu sendiri, mu",
+        "Support system terbaik seumur hidupku🥹 #dentist #dentistlife",
+        "Kala itu cari kerja memang susah. Dalam bayangan, begitu lulus auto mudah cari kerja. Kan Indonesia "
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "drhans_spesialisanak": {
+      "health_percentage": 63.6,
+      "no_caption_percentage": 0.0,
+      "accuracy": 83.3,
+      "health_samples": [
+        "Anak itu peniru terbaik… 👀💛 Cara kita ngomong, kebiasaan kita, bahkan cara kita merawat diri — semua",
+        "Orang tua sering fokus ke makanan dan imun anak… tapi lupa satu hal penting: 'Kualitas udara di ruma",
+        "Sedih ya lihat bapak di video ini. Banyak yang menyalahkan rekan kantornya, tapi jujur, secara medis"
+      ],
+      "non_health_samples": [
+        "Sudah seharusnya dokter anak kaya begini nih, biar anak-anak ga takut diperiksa 🥰🩺🧸 #dokteranak #dok",
+        "POV Dokter Anak siap diserbu pasien kecil. Harus selalu happy, biar anak-anak juga happy 🤩🥰 #doktera",
+        "POV : Ikut Dokter Spesialis Anak Visit, Jalannya Secepat Kilat 🏃🏻💨#visitdokter #rawatinap #dokterana"
+      ],
+      "error_insights": [
+        "Ambiguous keywords seperti diet/kulit yang bisa health atau fashion (1x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Jadi dokter anak itu penuh tantangan. Salah satunya adalah gimana caranya buat anak2 merasa nyaman masuk ke ruang dokter karena kalau udah ngereog pas",
+            "confidence": 0.95,
+            "caption_length": 336,
+            "has_medical_terms": true,
+            "medical_term_count": 6,
+            "ambiguous_term_count": 3,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "drkevinmak": {
+      "health_percentage": 97.1,
+      "no_caption_percentage": 0.0,
+      "accuracy": 93.3,
+      "health_samples": [
+        "Kalau kamu termasuk yang leher nya kaku ga sih? Coba magnesium 1-2 jam sebelom tidur ya ✅ #infokeseh",
+        "Dari 3 ciri ini, kamu udah ada yang relate belum nih? Komen penyebab kamu kira3 yang mana dan Share ",
+        "Buat kamu yang punya hipertensi atau kolesterol, jangan asal pilih suplemen! D3K2 bisa jadi salah sa"
+      ],
+      "non_health_samples": [
+        "Buat kamu yang termasuk generasi sandwich, jangan lupa jaga kesehatan diri sendiri juga. Vitamin yan",
+        "Paha & betis pegel terus jangan cuma dibilang capek 😅 Bisa jadi tubuh lagi kekurangan magnesium—mine"
+      ],
+      "error_insights": [
+        "Caption punya medical terms tapi context sebenarnya non-health (2x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 2,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Kalau kamu biasa bawa vitamin apa saat travelling? #vitamin #rekomendasivitamin #vitaminpemula #dosisvitamin #infokesehatan",
+            "confidence": 0.95,
+            "caption_length": 123,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Kalau kamu punya tanda2 ini ga? Semoga rejeki taun ini lancar selalu dan berlimpah ya aminn!! #infokesehatan #money #vitamin #dokter",
+            "confidence": 0.85,
+            "caption_length": 132,
+            "has_medical_terms": true,
+            "medical_term_count": 2,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "drluckyspa": {
+      "health_percentage": 63.6,
+      "no_caption_percentage": 0.0,
+      "accuracy": 80.0,
+      "health_samples": [
+        "ibu-ibu sekarang harus lebih cerdas lagi ya biar kuliat anak gak lagi gampang iritasi #kulitbayi #mi",
+        "Bayi kelihatan lapar, tapi pas nyusu malah marah, narik puting, terus rewel? 👀 Eits buibu, ini nggak",
+        "Dokter juga manusia. Kadang poli padat, visite jalan, IGD telepon, makan siang mundur… dan di tengah"
+      ],
+      "non_health_samples": [
+        "Sebagai anak baru di RS Siloam TB Simatupang, mari kita unboxing agar tempat praktek itu menyenangka",
+        "Yuk disdik kalteng yang bener yuk",
+        "Berat hati, tapi rumah saya di Bali akan saya JUAL CEPAT , target juni sold SPEC Lokasi Bali, Bulele"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)",
+        "Banyak ambiguous terms yang membingungkan klasifikasi (1x)",
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 0,
+        "examples_fn": [
+          {
+            "caption": "Hati-hati ya bu, jangan sampai kurang stimulasi sama anak! Sesimple pakein skincare ke anak boleh banget kok... #SkincareAnak #KulitSehat #SPC2026 #Mo",
+            "confidence": 0.85,
+            "caption_length": 170,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 2
+          }
+        ],
+        "examples_fp": []
+      }
+    },
+    "drrichardlee": {
+      "health_percentage": 0.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [],
+      "non_health_samples": [
+        "doktif di tegur hakim, pesan terakhir menohok. Post by admin",
+        "Kalian suka versi cantik tp tetep terlihat natural atau cantik aneh??",
+        "DOWNLOAD 14: KALAU UDAH TAKDIR, BUAT APA DOA?! DRL KENA ULTI GARA-GARA INI?!"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "ekidarehanf": {
+      "health_percentage": 40.3,
+      "no_caption_percentage": 0.0,
+      "accuracy": 77.8,
+      "health_samples": [
+        "siapa yang mikir kalau sedot lemak bisa kurusin badan?",
+        "pernah liat tangan berurat gede kayak gitu? ternyata itu cimino untuk cuci darah #setauekida",
+        "karena lagi banyak yang sakit tenggorokan, pakai tablet hisap antiseptik sebagai pertolongan pertama"
+      ],
+      "non_health_samples": [
+        "minggir koko PIK 2 mau lewat #videolebihpanjang",
+        "kok bisa ya china musim salju, dingin, hujam, badai, angin jadi satu?",
+        "kalau kamu mau ga bayar 8 juta buat nginep di spa 24 jam china ini?"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 5,
+        "examples_fn": [
+          {
+            "caption": "menurut kalian janggal ga kalau 12 tahun udah jadi bapak?",
+            "confidence": 0.95,
+            "caption_length": 57,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "alhamdulillah hari ini diberi kesempatan jadi pembicara tentang isu kesehatan masa kini serta pengembangan penelitian untuk siswa di acara KIR SMAN 26",
+            "confidence": 0.95,
+            "caption_length": 235,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "kayaknya aku cocok makan makanan sehat vietnam",
+            "confidence": 0.8,
+            "caption_length": 46,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "fauzaannibras": {
+      "health_percentage": 18.6,
+      "no_caption_percentage": 0.0,
+      "accuracy": 60.0,
+      "health_samples": [
+        "yap cwk itu wajib bahagia, makanya jgn bikin luka yg keliatan/ga keliatan ya ke cwk 🙏🗿#dokter #dokte",
+        "malu kan punya gigi kuning, sama gua juga 😭🙏 #dokter #doktergenz #FinestToothpaste",
+        "emg kalo mau se fresh & seglowing mereka tuh hrs effort & konsisten 😭#glycolicacid #bodyacne #eksfol"
+      ],
+      "non_health_samples": [
+        "pola pikir + ibadah jg berubah 🙏😅#dokter #doktergenz #medicalstudent #CapCut",
+        "coba aja km sabar dikit, punya dokter dirumah 😔#dokter #doktergenz",
+        "gua yg dokter aja kena syndrom p-p-apah, apalg kelen 🔸🟧🧡😝"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (11x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 11,
+        "examples_fn": [
+          {
+            "caption": "kao pacar lu masih bingung dan males, suruh pake #thipankfacialwash ga ribet lg #thipankskin #growupbarengthipank",
+            "confidence": 0.95,
+            "caption_length": 113,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "pgnnya nyumput, badan segede ini nyumput dimana tp 🙏😭 #dokter #doktergenz",
+            "confidence": 0.85,
+            "caption_length": 73,
+            "has_medical_terms": true,
+            "medical_term_count": 2,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "yaa barangkali idup lagi kan? 🗿#dokter #doktergenz",
+            "confidence": 0.75,
+            "caption_length": 50,
+            "has_medical_terms": true,
+            "medical_term_count": 2,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "gelarsramdhani": {
+      "health_percentage": 31.2,
+      "no_caption_percentage": 0.0,
+      "accuracy": 85.7,
+      "health_samples": [
+        "Membalas @azyakhira Bagaimana cara merapikan gigi? #doktergigi #gigi",
+        "Membalas @caaaaaaaaaaaaaaaaa209 Gigi berlubang apakah harus dicabut?",
+        "Membalas @alexzhandria_22tambalan gigi permanen apakah perlu diganti?"
+      ],
+      "non_health_samples": [
+        "Kesehatan dan Kenyamanan Jemaah Haji adalah Tanggung Jawab Kami Petugas Haji Indonesia #haji #jemaah",
+        "Skill Lab Tatalaksana Sinkop Mahasiswa Fakultas Kedokteran Gigi Universitas Muhammadiyah Semarang (B",
+        "Pak Haji Wawan seorang sopir truk asal Kertajati Majalengka, dipanggil Allah Ta'ala untuk menunaikan"
+      ],
+      "error_insights": [
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 0,
+        "examples_fn": [
+          {
+            "caption": "Bagaimana cara menjadi dokter gigi? Dalam video ini saya menjelaskan jalur pendidikan yang perlu ditempuh oleh lulusan SMA untuk menjadi dokter gigi d",
+            "confidence": 0.85,
+            "caption_length": 660,
+            "has_medical_terms": true,
+            "medical_term_count": 10,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": []
+      }
+    },
+    "giapratamamd": {
+      "health_percentage": 75.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 77.8,
+      "health_samples": [
+        "Jadi Lahir sebagai laki-laki atau perempuan bermula dari satu pertemuan 2 sel yg membawa pesan masin",
+        "Tentang Gula Darah dan Pankreas. Podcast Radityadika dan dr. Gia Pratama. part 4.",
+        "Ini adalah Ginjal Manusia. Ginjal bekerja setiap detik menjaga darah tetap bersih. Air, garam, sisa "
+      ],
+      "non_health_samples": [
+        "Teman-teman, ada satu cara pandang sederhana tentang persepsi. Barangkali setelah mendengarnya, kita",
+        "Sabar adalah kunci, karena hidup jarang sekali memberi hasil secepat keinginan kita. Sabar membuat k",
+        "Setelah penerbangan panjang lalu langsung Umroh wajib, banyak jamaah mulai merasakan nyeri otot, lem"
+      ],
+      "error_insights": [
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 2,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Shaf Pertama",
+            "confidence": 0.95,
+            "caption_length": 12,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Rasanya penuh syukur. Bagi saya, ini lebih dari kolaborasi dengan sebuah brand. Ini adalah pertemuan antara nilai, ilmu, dan misi. Kahf punya semangat",
+            "confidence": 0.95,
+            "caption_length": 553,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 3,
+            "has_non_health_terms": true
+          }
+        ]
+      }
+    },
+    "guru.bidan.wulan": {
+      "health_percentage": 6.7,
+      "no_caption_percentage": 0.0,
+      "accuracy": 84.6,
+      "health_samples": [
+        "Kalian biasanya nomor berapa??? #fyppppppppppppppppppppppp",
+        "Katakan tidak pada r0kok yah paksu #fyppppppppppppppppppppppp",
+        "Obat Streach Mark andalang kuuh #fyppppppppppppppppppppppp #edukasi #soohoo #streachmarks"
+      ],
+      "non_health_samples": [
+        "Suami syapa tuh??? 💦🤰#fyppppppppppppppppppppppp",
+        "Bidan bisa bahasa Inggris #fyppppppppppppppppppppppp #kontenedukasi #gurubidanwulan",
+        "Serasa di timur tengah #fyp #parfumviral #parfumtimurtengah"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 4,
+        "false_positives_count": 2,
+        "examples_fn": [
+          {
+            "caption": "Ayo ke Puskesmas bun 🥰 #fyppppppppppppppppppppppp #gurubidanwulan",
+            "confidence": 0.85,
+            "caption_length": 65,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 0
+          },
+          {
+            "caption": "Hayyo suami sayapa tuh 🫣 #fyppppppppppppppppppppppp #gurubidanwulan",
+            "confidence": 0.95,
+            "caption_length": 67,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "Praktek lahiran 2023 #fyppppppppppppppppppppppp",
+            "confidence": 0.85,
+            "caption_length": 47,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "Perdana dan agak tegang tapi alhamdulillah sudah copot 😊🤕",
+            "confidence": 0.95,
+            "caption_length": 57,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "ikhsanqthii": {
+      "health_percentage": 51.6,
+      "no_caption_percentage": 3.2,
+      "accuracy": 89.3,
+      "health_samples": [
+        "Gula bukan sembarang gula 😎😎",
+        "Siapa yang baru tau kluwek ada racunnye?",
+        "No comment guys 🙏🫠"
+      ],
+      "non_health_samples": [
+        "Yah… jangn pernah nyepelein sekolah dan kuliah. AI ada iya memang, tapi sekolah tetep harus. Apalagi",
+        "Kerja dimana nih enaknya? 🥸🥸",
+        "#stitch with @igoryoman heran gue dikit2 tekdown 😡"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 2,
+        "examples_fn": [
+          {
+            "caption": "Replying to @Zifana inilah alesan kenapa ngucek mata bisa bikin silinder 👍",
+            "confidence": 0.95,
+            "caption_length": 74,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "😊",
+            "confidence": 0.016129032258064484,
+            "caption_length": 1,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          },
+          {
+            "caption": "😒😒😒😌",
+            "confidence": 0.016129032258064484,
+            "caption_length": 4,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "itsdoktermuda": {
+      "health_percentage": 89.3,
+      "no_caption_percentage": 0.0,
+      "accuracy": 91.7,
+      "health_samples": [
+        "Sebagai orang yang hampir tiap hari olahraga, aku belajar satu hal: konsistensi itu bukan cuma soal ",
+        "Yg lagi punya si kecil ada pengalaman jugaa?😊 @proem1indonesia #PROEM1Indonesia",
+        "Tapi aku masih percaya: berhenti rokok itu bisa. Banyak perokok akhirnya berhenti bukan karena sekad"
+      ],
+      "non_health_samples": [
+        "Mata uchiha sasukeee? vid: oliviapassya",
+        "Emang mirippp sihh😭😭😭",
+        "Pernah ketemu dokter di daerah kalian yg keilmuan jago dan ketrampilan komunikasi juga baik??"
+      ],
+      "error_insights": [
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Punya ceritaa apa kalian saat jadi penunggu di rumah sakit? Jaga kesehatan yaaa",
+            "confidence": 0.85,
+            "caption_length": 79,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "jamilatussadiyah": {
+      "health_percentage": 80.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Gelombang cinta adalah Cinta dan syukur yang paling dalam dari allah untuk bantu janin melihat dunia",
+        "Prenatal yoga @bumilpamil.id ❤️🫶🏻",
+        "Ibu hamil dan menyusui boleh puasa apa ngga? 🤰🏼❤️"
+      ],
+      "non_health_samples": [
+        "Kelas breastfeeding and newborn care @bumilpamil.id"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "jiemiardian": {
+      "health_percentage": 96.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 63.6,
+      "health_samples": [
+        "Mendengarkan itu ternyata NGGAK menyembuhkan? Sering kali saat curhat atau terapi, kita terlalu foku",
+        "Buat yang mau belajar lebih banyak soal trauma, bisa cari buku “Pulih Dari Trauma: Berkenalan dengan",
+        "Perfeksionisme bisa menjadi penghalang menuju kesempurnaan. Saat perfeksionis hadir karena ketakutan"
+      ],
+      "non_health_samples": [
+        "Emosi bukan bertekanan, jadi rumah bukan tempat untuk melampiaskan. Jangan jadikan keluargamu samsak"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (4x)",
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 4,
+        "false_positives_count": 0,
+        "examples_fn": [
+          {
+            "caption": "Mana sebelumnya rambutnya dicat pirang, terus begitu ketahuan balik item rambutnya si Hye Ri. Macam Londo Ireng aja. Ini ngomongin Agent Kim Reactivat",
+            "confidence": 0.95,
+            "caption_length": 177,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          },
+          {
+            "caption": "Terkadang kita perlu menerima sebelum bisa berubah. Sama seperti seorang anak, untuk berkembang, dia butuh merasa diterima apa adanya. Ini berlaku jug",
+            "confidence": 0.75,
+            "caption_length": 277,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": []
+      }
+    },
+    "meta.hanindita": {
+      "health_percentage": 100.0,
+      "no_caption_percentage": 28.6,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Salah satu tujuan pemberian MPASI adalah melatih kemampuan makan bayi agar kelak di usia setahun, ia",
+        "Untuk Buibu Pakbapak yang punya anak balita, mungkin pernah galau ya. Nutrisi yang diberikan nih uda"
+      ],
+      "non_health_samples": [],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "nadialaydrus": {
+      "health_percentage": 25.0,
+      "no_caption_percentage": 3.8,
+      "accuracy": 89.5,
+      "health_samples": [
+        "Jangan percaya hoax diluar sana ya, apalagi untuk menyembuhkan luka. kira kira baiknya pake apa sih?",
+        "Jadi masih mau minum esteh manis atau air putih ni? #serunyabelajar #edukasikesehatan #fyp",
+        "Kamu makan semuanya ga hayo? Atau malah ga ada yang kamu makan? 😂✌🏻 #serunyabelajar #edukasikesehata"
+      ],
+      "non_health_samples": [
+        "Sehat, tebel, dan mukaku keliatan cerah.",
+        "A hundred floors above Guangzhou, and somehow my favorite view is still you. ✨❤️",
+        "Tolong ya pak.."
+      ],
+      "error_insights": [
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 6,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Aku percaya anti-aging harus berbasis data klinis, bukan sekadar klaim marketing.That’s why I recommend NeoStrata Skin Active Serum, diformulasikan de",
+            "confidence": 0.95,
+            "caption_length": 533,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": true
+          },
+          {
+            "caption": "Ada yang ngalamin?",
+            "confidence": 0.85,
+            "caption_length": 18,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "nisaobgyn": {
+      "health_percentage": 50.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 50.0,
+      "health_samples": [
+        "Baru mau duduk manis buat pumping, eh tiba-tiba dipanggil meeting mendadak... Relate banget nggak si"
+      ],
+      "non_health_samples": [
+        "Busy, but grateful. ✨ Menjadi bunda 3 anak, ibu Persit, dan selalu siap kapan pun ada kehidupan baru"
+      ],
+      "error_insights": [
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "How’s life as an OBGYN? Dari kurang tidur, harus stand by terus, dan sering ditelpon dokter jaga atau bidan. Tapi bahagia setiap kali melihat bunsay &",
+            "confidence": 0.85,
+            "caption_length": 224,
+            "has_medical_terms": true,
+            "medical_term_count": 3,
+            "ambiguous_term_count": 1,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "putriemje": {
+      "health_percentage": 25.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 83.3,
+      "health_samples": [
+        "Cara baca informasi nilai gizi",
+        "Tips Lambung Sehat Selama Puasa 🌙Buka puasa coba pilih soto kuning ✨Kandungan kunyit (curcumin) bant",
+        "Dear Girls, kalo lagi haid MAKAN DAGING, ATI AYAM, IKAN, TAHU, TEMPE, DAN SAYURAN HIJAU YA, biar ngg"
+      ],
+      "non_health_samples": [
+        "How I style very long wavy curly hair, punya rambut wavy mix keriting yang super panjang biar ga cap",
+        "sidang KTI profesi Dietitian done ✅",
+        "Rekomendasi shampoo yang cocok untuk kamu yang kulit kepalanya berminyak dan sensitif salah satunya "
+      ],
+      "error_insights": [
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Sebagai ahli gizi, aku senang menemukan buku yang menyampaikan ilmu gizi dengan bahasa yang sederhana dan visual yang menarik. Kalau kalian juga ingin",
+            "confidence": 0.85,
+            "caption_length": 368,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "reisabrotoasmoro": {
+      "health_percentage": 31.4,
+      "no_caption_percentage": 0.0,
+      "accuracy": 87.5,
+      "health_samples": [
+        "Salah satu gangguan pencernaan yang bisa muncul setelah lebaran adalah susah BAB, termasuk pada anak",
+        "Video currently unavailable (deleted/private/etc)",
+        "Lovely People, Kita sering dengar tentang kanker tapi apakah kita benar-benar paham penyebabnya? Ban"
+      ],
+      "non_health_samples": [
+        "Welcoming new version lightstick 🥰✨ #bts #btslightstick",
+        "Congratulations untuk Ketum @ibnuriza dan seluruh pengurus @iespaorg periode 2026–2031 🥳 #IESPA #esp",
+        "Caption sate taichan : Hai Lovely People, yuk kita masak-masak lagi. Menu simpel yang bumbunya nggak"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (1x)",
+        "Ambiguous keywords seperti diet/kulit yang bisa health atau fashion (1x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 1,
+        "false_positives_count": 1,
+        "examples_fn": [
+          {
+            "caption": "Lovely people, Kenapa hubungan toxic bisa terus terulang?” Terkadang jawabannya tidak sesederhana yang kita kira. Tanpa disadari, pengalaman masa keci",
+            "confidence": 0.85,
+            "caption_length": 491,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "Fase newborn memang penuh tantangan. Selain memastikan kebutuhan nutrisi Si Kecil terpenuhi, kesehatan saluran cerna juga perlu diperhatikan karena pe",
+            "confidence": 0.95,
+            "caption_length": 610,
+            "has_medical_terms": true,
+            "medical_term_count": 3,
+            "ambiguous_term_count": 2,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "roozzaak": {
+      "health_percentage": 93.8,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Membalas @iniakuuu Gejala batuk pilek pada anak bisa diredakan dengan memberikan essential oil seper",
+        "#stitch dengan @MiMa ✨ #fyp #fypシ #DokterGemoy #edukasi",
+        "Membalas @🅶ᴇͫᴍᷝᴏᷤ🆈 #fyp #fypシ #DokterGemoy #edukasi #edukasikesehatan"
+      ],
+      "non_health_samples": [
+        "Tolong admin @TikTok Indonesia dibenerin lagi sistemnya jangan asal hapus begini 😪 #fyp #fypシ #Dokte",
+        "Absen sampe kota mana 👀 #fyp #fypシ #DokterGemoy #edukasi #edukasitiktok",
+        "Membalas @Nurmayanti #fyp #fypシ #DokterGemoy #vitaminD #vitaminD3"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "spesialist.kesehatan": {
+      "health_percentage": 100.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 0.0,
+      "health_samples": [
+        "Seberapa penting medical check-up buat kamu? Yuk simak sampai akhir #spesialistkesehatan #tipskeseha"
+      ],
+      "non_health_samples": [],
+      "error_insights": [
+        "Ambiguous keywords seperti diet/kulit yang bisa health atau fashion (1x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu agresif: banyak FP > FN"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 1,
+        "examples_fn": [],
+        "examples_fp": [
+          {
+            "caption": "Cek kesehatan ginjal tanpa bantuan alat… #ginjal #tipssehat #gagalginjal #gagalginjalkronis #spesialistkesehatan",
+            "confidence": 0.95,
+            "caption_length": 112,
+            "has_medical_terms": true,
+            "medical_term_count": 2,
+            "ambiguous_term_count": 3,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "tirtacipeng": {
+      "health_percentage": 37.8,
+      "no_caption_percentage": 2.7,
+      "accuracy": 76.5,
+      "health_samples": [
+        "Telapak tangan basah pertanda jantung lemah? Tonton video singkat ini yaaaa, mayan ilmu tipis2",
+        "Cek EKG sebelum ikut event itu Wajib! Bahs risiko serangan jantung saat olahraga intensitas sedang–b",
+        "Perjalanan hobi dan pola makan ko guntur sampe di level sekarang"
+      ],
+      "non_health_samples": [
+        "Pagi tadi sebelum kerja. Jumat berkah.",
+        "🙏🙏🙏🙏",
+        "Review pertandingan semalam, kebetulan saya siaran di @SEPIK BOLA | IG: @sepik.bola"
+      ],
+      "error_insights": [
+        "Konten health tapi medical terms kurang jelas (3x)",
+        "Ambiguous keywords seperti diet/kulit yang bisa health atau fashion (1x)",
+        "Caption punya medical terms tapi context sebenarnya non-health (1x)",
+        "Model terlalu konservatif: banyak FN > FP"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 3,
+        "false_positives_count": 1,
+        "examples_fn": [
+          {
+            "caption": "Tonton video ini buat kalian yang rambutnya rusak. Joooss bonvie @Bonvie Haircare",
+            "confidence": 0.95,
+            "caption_length": 81,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          },
+          {
+            "caption": "#onthisday",
+            "confidence": 0.85,
+            "caption_length": 10,
+            "has_medical_terms": false,
+            "medical_term_count": 0,
+            "ambiguous_term_count": 0
+          }
+        ],
+        "examples_fp": [
+          {
+            "caption": "Sekali2 ngajar di kelas 1 sd. Ini kebagian jadwal ngajarin hidup sehat, makan sehat dan olahraga ke temen sekelas anakku di sd al azhar jogja Bonus di",
+            "confidence": 0.95,
+            "caption_length": 185,
+            "has_medical_terms": true,
+            "medical_term_count": 1,
+            "ambiguous_term_count": 2,
+            "has_non_health_terms": false
+          }
+        ]
+      }
+    },
+    "wishdrboyke": {
+      "health_percentage": 90.0,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "Minder karena ukuran dada \"setipis kertas\"? Stop gak pede, ini faktanya! 📐✨ ​Besar kecilnya ukuran p",
+        "\"Seru di Awal, Hancur di Akhir!\" Ini Risiko Tersembunyi Seks Bebas Menurut dr. Boyke! 🫣💥 Banyak yang",
+        "Bahaya! Jangan biarkan area kewanitaan gatal & bau merusak momen percayamu di luar rumah! 🛑😱 ​Banyak"
+      ],
+      "non_health_samples": [
+        "​Dr. Boyke membagikan 3 fondasi penting yang wajib dijaga bareng pasangan: 1.​ Rendahkan egonya. Gak"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    },
+    "zickyneuro": {
+      "health_percentage": 83.3,
+      "no_caption_percentage": 0.0,
+      "accuracy": 100.0,
+      "health_samples": [
+        "PEMANASAN DONG SEBELUM MAIN Buat jaga kelenturan, cegah DOMS, kurangin resiko cedera #zickyyombana #",
+        "MAKAN KAMBING GAK BIKIN TEKANAN DARAH LOE NAIK !!! #zickyyombana #informasikesehatan #infokesehatan ",
+        "PADEL GAK CUMA BIKIN BUGAR TAPI BIKIN PINTAR Olahraga fisik dan otak, happy nya dapet, manfaatnya ba"
+      ],
+      "non_health_samples": [
+        "JANGAN MAGER, HARUS GERAK DEMI KESEHATAN"
+      ],
+      "error_insights": [
+        "Klasifikasi akurat untuk creator ini"
+      ],
+      "error_analysis": {
+        "false_negatives_count": 0,
+        "false_positives_count": 0,
+        "examples_fn": [],
+        "examples_fp": []
+      }
+    }
+  }
+}
